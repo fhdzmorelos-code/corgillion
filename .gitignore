@@ -1,0 +1,8 @@
+# Archivos internos: no se publican
+.claude/
+*.bak
+__pycache__/
+PROMPT_DIARIO.md
+CORGILLION_COMPLETO.md
+AMPLIAR_BANCO.md
+validar_datos.py

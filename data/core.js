@@ -1,0 +1,138 @@
+// Registro de categorías y comparación de respuestas.
+// Cada consigna es: ["texto", nivel0, nivel1, nivel2, nivel3, nivel4, nivel5]
+// Cada nivel es una lista separada por ";" y los alias de una respuesta van con "/".
+// Nivel 0 = la respuesta más obvia (Tierrita), nivel 5 = la más rara (Hueso de Oro).
+(function (root) {
+  "use strict";
+
+  var STOP = {};
+  ("el la los las un una the de del y and of oceano mar rio monte volcan desierto " +
+    "isla islas lago vitamina").split(" ").forEach(function (w) { STOP[w] = 1; });
+
+  function toks(s) {
+    return String(s).toLowerCase()
+      .normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/\+/g, " plus ").replace(/#/g, " sharp ").replace(/&/g, " y ")
+      .replace(/[^a-z0-9]+/g, " ").trim().split(" ").filter(Boolean);
+  }
+
+  function norm(s) {
+    var t = toks(s), f = t.filter(function (x) { return !STOP[x]; });
+    return (f.length ? f : t).join("");
+  }
+
+  function digits(s) { return s.replace(/[^0-9]/g, ""); }
+
+  // Distancia de Damerau-Levenshtein (cuenta letras intercambiadas como un solo error).
+  function dist(a, b) {
+    var m = a.length, n = b.length, i, j, d = [];
+    for (i = 0; i <= m; i++) { d[i] = [i]; }
+    for (j = 0; j <= n; j++) { d[0][j] = j; }
+    for (i = 1; i <= m; i++) {
+      for (j = 1; j <= n; j++) {
+        var c = a[i - 1] === b[j - 1] ? 0 : 1;
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + c);
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+          d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+        }
+      }
+    }
+    return d[m][n];
+  }
+
+  var cats = {}, order = [];
+
+  function add(id, meta, rows) {
+    var prompts = rows.map(function (row, pi) {
+      var answers = [];
+      for (var t = 0; t < 6; t++) {
+        String(row[t + 1] || "").split(";").forEach(function (item) {
+          item = item.trim();
+          if (!item) return;
+          var al = item.split("/").map(function (x) { return x.trim(); }).filter(Boolean);
+          var keys = [], tk = {};
+          al.forEach(function (x) {
+            var k = norm(x);
+            if (k && keys.indexOf(k) < 0) keys.push(k);
+            toks(x).forEach(function (w) {
+              if (w.length >= 4 && !STOP[w] && !/^\d+$/.test(w)) tk[w] = 1;
+            });
+          });
+          answers.push({ name: al[0], keys: keys, toks: Object.keys(tk), tier: t });
+        });
+      }
+      // since: fecha (AAAA-MM-DD) desde la que la consigna existe en el juego; sin fecha, siempre
+      return { id: id + ":" + row[0], cat: id, q: row[0], answers: answers, since: (meta && meta.since) || null };
+    });
+    if (cats[id]) { cats[id].prompts = cats[id].prompts.concat(prompts); return; }
+    var info = Object.assign({}, meta);
+    delete info.since;
+    cats[id] = Object.assign({ id: id, prompts: prompts }, info);
+    order.push(id);
+  }
+
+  // Diccionario inglés -> español: "cow=vaca;turkey=pavo|turquía".
+  var EN = {};
+  function english(str) {
+    str.split(";").forEach(function (pair) {
+      var i = pair.indexOf("=");
+      if (i > 0) EN[norm(pair.slice(0, i))] = pair.slice(i + 1).split("|");
+    });
+  }
+
+  // Devuelve {a, fixed, en} o null. Si no hay coincidencia, prueba traduciendo del inglés.
+  function match(p, raw) {
+    var m = find(p, raw), n = norm(raw), opts = EN[n] || EN[n.replace(/s$/, "")];
+    if (m || !opts) return m;
+    for (var i = 0; i < opts.length; i++) {
+      m = find(p, opts[i]);
+      if (m) { m.en = true; m.fixed = false; return m; }
+    }
+    return null;
+  }
+
+  // Primero coincidencia exacta; si no, la más cercana del banco.
+  function find(p, raw) {
+    var n = norm(raw), i, j, a;
+    if (!n) return null;
+    for (i = 0; i < p.answers.length; i++) {
+      if (p.answers[i].keys.indexOf(n) >= 0) return { a: p.answers[i], fixed: false };
+    }
+    var max = n.length < 4 ? 0 : n.length < 6 ? 1 : n.length < 10 ? 2 : 3;
+    var best = null, bd = 99, nd = digits(n);
+    if (max) {
+      for (i = 0; i < p.answers.length; i++) {
+        a = p.answers[i];
+        for (j = 0; j < a.keys.length; j++) {
+          var k = a.keys[j];
+          if (digits(k) !== nd || Math.abs(k.length - n.length) > max) continue;
+          var d = dist(n, k);
+          if (d <= max && (d < bd || (d === bd && a.tier < best.tier))) { bd = d; best = a; }
+        }
+      }
+    }
+    if (best) return { a: best, fixed: true };
+
+    // Una sola palabra de la respuesta ("chihiro" -> "El viaje de Chihiro"), si no es ambigua.
+    var hits;
+    if (n.length >= 4 && !/^\d+$/.test(n)) {
+      var tmax = n.length >= 7 ? 1 : 0;
+      hits = p.answers.filter(function (x) {
+        return x.toks.some(function (t) {
+          return t === n || (tmax && Math.abs(t.length - n.length) <= 1 && dist(t, n) <= tmax);
+        });
+      });
+      if (hits.length === 1) return { a: hits[0], fixed: true };
+    }
+    // Inicio de la respuesta ("breath of the" -> "Breath of the Wild"), si no es ambiguo.
+    if (n.length >= 5) {
+      hits = p.answers.filter(function (x) {
+        return x.keys.some(function (k2) { return k2.indexOf(n) === 0 && digits(k2) === nd; });
+      });
+      if (hits.length === 1) return { a: hits[0], fixed: true };
+    }
+    return null;
+  }
+
+  root.CC = { add: add, cats: cats, order: order, match: match, norm: norm, english: english, EN: EN };
+})(typeof window !== "undefined" ? window : globalThis);
