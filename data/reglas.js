@@ -79,9 +79,10 @@
   function inicial(p) { return CC.norm(p.es).charAt(0); }
   function letras(p) { return CC.norm(p.es).length; }
   function bst(p) { return p.st[0] + p.st[1] + p.st[2] + p.st[3] + p.st[4] + p.st[5]; }
+  // Pokémon que EVOLUCIONA con ese método (la forma de partida, no el resultado).
   function metodo(p, m) {
     var re = { nivel: /^Level/i, piedra: /Stone|Cuff|Wreath/, intercambio: /trade/i, amistad: /Friendship/ }[m];
-    return p.de.some(function (e) { return re.test(e.cond); });
+    return p.a.some(function (e) { return re.test(e.cond); });
   }
   function sinEvo(p) { return !p.evoluciona && p.de.length === 0; }
   function tiene(p, hab) { return p.hab.indexOf(hab) >= 0 || p.oculta.indexOf(hab) >= 0; }
@@ -244,5 +245,10 @@
   comp.push(["Nombra un Pokémon que evolucione con una piedra evolutiva", function (p) { return metodo(p, "piedra"); }]);
   comp.push(["Nombra un Pokémon que pueda evolucionar por amistad", function (p) { return metodo(p, "amistad"); }]);
   comp.push(["Nombra un Pokémon que no tenga evolución ni preevolución", sinEvo]);
+  comp.push(["Nombra un Pokémon cuyo nombre tenga exactamente cinco letras", function (p) { return letras(p) === 5; }]);
+  comp.push(["Nombra un Pokémon cuyo nombre empiece con la letra M", function (p) { return inicial(p) === "m"; }]);
+  comp.push(["Nombra un Pokémon cuyo nombre tenga más de una palabra, un guion o un apóstrofe", function (p) { return /[ \-'.:]/.test(p.es); }]);
+  comp.push(["Nombra una evolución de Eevee", function (p) { return p.de.some(function (e) { return e.n === 133; }); }]);
+  comp.push(["Nombra un Pokémon bebé", function (p) { return p.bebe === 1; }]);
   completar("pokemon", comp);
 })(typeof window !== "undefined" ? window : globalThis);
