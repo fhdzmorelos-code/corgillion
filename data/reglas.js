@@ -88,11 +88,78 @@
   function tiene(p, hab) { return p.hab.indexOf(hab) >= 0 || p.oculta.indexOf(hab) >= 0; }
   var H = { tipo: tipo, inicial: inicial, letras: letras, bst: bst, metodo: metodo, sinEvo: sinEvo, tiene: tiene };
 
+  // ---------- Reglas declarativas (las que escribe la tarea diaria) ----------
+  // Una regla es un objeto JSON con estas condiciones (todas deben cumplirse):
+  //   tipo: ["Fuego","Agua"]  alguno de esos tipos        tipos: [...]  todos esos tipos      sin_tipo: [...]  ninguno
+  //   num_tipos: 1 | 2        gen: [1,2]  gen_min  gen_max       leg: "no" | "legendario" | "mitico" | "cualquiera"
+  //   evo: "ninguna" | "evoluciona" | "no_evoluciona" | "es_evolucion" | "etapa0" | "etapa1" | "etapa2" | "final3"
+  //   metodo: "intercambio" | "piedra" | "amistad" | "nivel"   (el Pokémon EVOLUCIONA con ese método)
+  //   empieza: "m"   termina: "o"   letras: 5   letras_min   letras_max   (sobre el nombre en español)
+  //   alt_min alt_max (metros)   peso_min peso_max (kg)   ps_min ataque_min defensa_min ataque_esp_min defensa_esp_min velocidad_min total_min total_max
+  //   color: "Rosa"   habilidad: "Levitación"   habitat: "caverna"   bebe: 1   excluir: ["Pikachu"]
+  var CLAVES = ["tipo", "tipos", "sin_tipo", "num_tipos", "gen", "gen_min", "gen_max", "leg", "evo", "metodo", "empieza", "termina",
+    "letras", "letras_min", "letras_max", "alt_min", "alt_max", "peso_min", "peso_max", "ps_min", "ataque_min", "defensa_min",
+    "ataque_esp_min", "defensa_esp_min", "velocidad_min", "total_min", "total_max", "color", "habilidad", "habitat", "bebe", "excluir"];
+  var STATS = { ps_min: 0, ataque_min: 1, defensa_min: 2, ataque_esp_min: 3, defensa_esp_min: 4, velocidad_min: 5 };
+
+  function desde(spec) {
+    Object.keys(spec).forEach(function (k) {
+      if (CLAVES.indexOf(k) < 0) { throw new Error("condición desconocida: " + k); }
+    });
+    var lista = function (v) { return Array.isArray(v) ? v : [v]; };
+    return function (p) {
+      var nom = CC.norm(p.es), k, v;
+      for (k in spec) {
+        v = spec[k];
+        if (k === "tipo" && !lista(v).some(function (t) { return tipo(p, t); })) { return false; }
+        if (k === "tipos" && !lista(v).every(function (t) { return tipo(p, t); })) { return false; }
+        if (k === "sin_tipo" && lista(v).some(function (t) { return tipo(p, t); })) { return false; }
+        if (k === "num_tipos" && p.t.length !== v) { return false; }
+        if (k === "gen" && lista(v).indexOf(p.g) < 0) { return false; }
+        if (k === "gen_min" && p.g < v) { return false; }
+        if (k === "gen_max" && p.g > v) { return false; }
+        if (k === "leg") {
+          if (v === "no" && p.leg !== 0) { return false; }
+          if (v === "legendario" && p.leg !== 1) { return false; }
+          if (v === "mitico" && p.leg !== 2) { return false; }
+          if (v === "cualquiera" && p.leg === 0) { return false; }
+        }
+        if (k === "evo") {
+          if (v === "ninguna" && !sinEvo(p)) { return false; }
+          if (v === "evoluciona" && p.a.length === 0) { return false; }
+          if (v === "no_evoluciona" && p.a.length > 0) { return false; }
+          if (v === "es_evolucion" && p.de.length === 0) { return false; }
+          if (/^etapa\d$/.test(v) && p.etapa !== +v.charAt(5)) { return false; }
+          if (v === "final3" && !(p.etapa === 2 && p.a.length === 0)) { return false; }
+        }
+        if (k === "metodo" && !metodo(p, v)) { return false; }
+        if (k === "empieza" && !lista(v).some(function (x) { return nom.indexOf(CC.norm(x)) === 0; })) { return false; }
+        if (k === "termina" && !lista(v).some(function (x) { var t = CC.norm(x); return nom.slice(nom.length - t.length) === t; })) { return false; }
+        if (k === "letras" && nom.length !== v) { return false; }
+        if (k === "letras_min" && nom.length < v) { return false; }
+        if (k === "letras_max" && nom.length > v) { return false; }
+        if (k === "alt_min" && p.alt < v) { return false; }
+        if (k === "alt_max" && p.alt > v) { return false; }
+        if (k === "peso_min" && p.peso < v) { return false; }
+        if (k === "peso_max" && p.peso > v) { return false; }
+        if (STATS.hasOwnProperty(k) && p.st[STATS[k]] < v) { return false; }
+        if (k === "total_min" && bst(p) < v) { return false; }
+        if (k === "total_max" && bst(p) > v) { return false; }
+        if (k === "color" && p.color !== v) { return false; }
+        if (k === "habilidad" && !tiene(p, v)) { return false; }
+        if (k === "habitat" && p.habitat !== v) { return false; }
+        if (k === "bebe" && p.bebe !== v) { return false; }
+        if (k === "excluir" && lista(v).some(function (x) { return CC.norm(x) === nom || CC.norm(x) === CC.norm(p.en); })) { return false; }
+      }
+      return true;
+    };
+  }
+
   // ---------- Motor ----------
   var MIN = 12, MAX = 160;
 
   function respuestas(f) {
-    var lista = DEX.filter(f).map(function (p) { return { p: p, o: oscuridad(p) }; });
+    var lista = DEX.filter(typeof f === "function" ? f : desde(f)).map(function (p) { return { p: p, o: oscuridad(p) }; });
     lista.sort(function (a, b) { return a.o - b.o || a.p.n - b.p.n; });
     var vistos = {}, total = lista.length, niveles = [[], [], [], [], [], []];
     lista.forEach(function (x, i) {
@@ -109,7 +176,9 @@
   function regla(cat, meta, filas) {
     var rows = [];
     filas.forEach(function (fila) {
-      var r = respuestas(fila[1]);
+      var r;
+      try { r = respuestas(fila[1]); }
+      catch (e) { if (root.console) { console.warn("Regla inválida (" + e.message + "): " + fila[0]); } return; }
       if (r.n < MIN || r.n > MAX) {
         if (root.console) { console.warn("Regla fuera de rango (" + r.n + " respuestas): " + fila[0]); }
         return;
@@ -140,6 +209,7 @@
   }
 
   CC.regla = regla;
+  CC.reglasDesde = desde;
   CC.completar = completar;
   CC.reglasAyuda = H;
   CC.reglasRespuestas = respuestas;
