@@ -118,7 +118,28 @@
     if (rows.length) { CC.add(cat, meta, rows); }
   }
 
+  // Completa consignas escritas a mano con todos los Pokémon de la base de datos que cumplen la regla.
+  // Las respuestas escritas a mano se conservan (con su nivel); solo se agregan las que faltan.
+  function completar(cat, filas) {
+    var c = CC.cats[cat];
+    if (!c) { return; }
+    filas.forEach(function (fila) {
+      var r = respuestas(fila[1]), row = [fila[0]].concat(r.niveles.map(function (l) { return l.join(";"); }));
+      var nuevas = CC.build(row);
+      c.prompts.forEach(function (pr) {
+        if (pr.q !== fila[0]) { return; }
+        var claves = {};
+        pr.answers.forEach(function (a) { a.keys.forEach(function (k) { claves[k] = 1; }); });
+        nuevas.forEach(function (a) {
+          if (a.keys.some(function (k) { return claves[k]; })) { return; }
+          pr.answers.push(a);
+        });
+      });
+    });
+  }
+
   CC.regla = regla;
+  CC.completar = completar;
   CC.reglasAyuda = H;
   CC.reglasRespuestas = respuestas;
   CC.oscuridad = oscuridad;
@@ -196,4 +217,32 @@
     ["Nombra un Pokémon que habite en el mar o en agua salada", function (p) { return p.habitat === "mar" || p.habitat === "agua salada"; }],
     ["Nombra un Pokémon que habite en montañas", function (p) { return p.habitat === "montaña"; }]
   ]);
+
+  // ---------- Consignas hechas a mano que ahora se completan con la base de datos ----------
+  var GEN_DE = function (g) { return function (p) { return p.g === g; }; };
+  var TIPO_DE = function (t) { return function (p) { return tipo(p, t); }; };
+  var comp = [];
+  ["Tierra", "Roca", "Volador", "Veneno", "Agua", "Normal", "Fantasma", "Dragón", "Hielo", "Eléctrico", "Psíquico",
+   "Fuego", "Hada", "Lucha", "Siniestro", "Acero", "Bicho", "Planta"].forEach(function (t) {
+    comp.push(["Nombra un Pokémon de tipo " + t, TIPO_DE(t)]);
+  });
+  comp.push(["Nombra un Pokémon de la primera generación (los 151 originales)", GEN_DE(1)]);
+  comp.push(["Nombra un Pokémon de la segunda generación", GEN_DE(2)]);
+  comp.push(["Nombra un Pokémon de la cuarta generación", GEN_DE(4)]);
+  comp.push(["Nombra un Pokémon de la quinta generación", GEN_DE(5)]);
+  comp.push(["Nombra un Pokémon de la sexta generación", GEN_DE(6)]);
+  comp.push(["Nombra un Pokémon de la séptima generación", GEN_DE(7)]);
+  comp.push(["Nombra un Pokémon de la octava generación", GEN_DE(8)]);
+  comp.push(["Nombra un Pokémon introducido en la región de Hoenn", GEN_DE(3)]);
+  comp.push(["Nombra un Pokémon de tipo Agua de la primera generación", function (p) { return p.g === 1 && tipo(p, "Agua"); }]);
+  comp.push(["Nombra un Pokémon de tipo Veneno de la primera generación", function (p) { return p.g === 1 && tipo(p, "Veneno"); }]);
+  comp.push(["Nombra un Pokémon de tipo Normal de la primera generación", function (p) { return p.g === 1 && tipo(p, "Normal"); }]);
+  comp.push(["Nombra un Pokémon de tipo Bicho que no sea de la primera generación", function (p) { return p.g > 1 && tipo(p, "Bicho"); }]);
+  comp.push(["Nombra un Pokémon de tipo Eléctrico que no sea Pikachu", function (p) { return p.n !== 25 && tipo(p, "Eléctrico"); }]);
+  comp.push(["Nombra un Pokémon legendario o mítico", function (p) { return p.leg > 0; }]);
+  comp.push(["Nombra un Pokémon que evolucione al ser intercambiado", function (p) { return metodo(p, "intercambio"); }]);
+  comp.push(["Nombra un Pokémon que evolucione con una piedra evolutiva", function (p) { return metodo(p, "piedra"); }]);
+  comp.push(["Nombra un Pokémon que pueda evolucionar por amistad", function (p) { return metodo(p, "amistad"); }]);
+  comp.push(["Nombra un Pokémon que no tenga evolución ni preevolución", sinEvo]);
+  completar("pokemon", comp);
 })(typeof window !== "undefined" ? window : globalThis);

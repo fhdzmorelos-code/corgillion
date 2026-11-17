@@ -42,8 +42,8 @@
 
   var cats = {}, order = [];
 
-  function add(id, meta, rows) {
-    var prompts = rows.map(function (row, pi) {
+  // Convierte una fila ["consigna", n0..n5] en la lista de respuestas con sus claves.
+  function build(row) {
       var answers = [];
       for (var t = 0; t < 6; t++) {
         String(row[t + 1] || "").split(";").forEach(function (item) {
@@ -61,6 +61,12 @@
           answers.push({ name: al[0], keys: keys, toks: Object.keys(tk), tier: t });
         });
       }
+      return answers;
+  }
+
+  function add(id, meta, rows) {
+    var prompts = rows.map(function (row, pi) {
+      var answers = build(row);
       // since: fecha (AAAA-MM-DD) desde la que la consigna existe en el juego; sin fecha, siempre
       return { id: id + ":" + row[0], cat: id, q: row[0], answers: answers, since: (meta && meta.since) || null };
     });
@@ -134,5 +140,5 @@
     return null;
   }
 
-  root.CC = { add: add, cats: cats, order: order, match: match, norm: norm, english: english, EN: EN };
+  root.CC = { add: add, build: build, cats: cats, order: order, match: match, norm: norm, english: english, EN: EN };
 })(typeof window !== "undefined" ? window : globalThis);
