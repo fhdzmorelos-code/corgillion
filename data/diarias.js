@@ -74,14 +74,6 @@ CC.add("clasica", { since: "2026-11-17" }, [
     "",
     ""],
 
-  ["Nombra una película dirigida por Pedro Almodóvar",
-    "Todo sobre mi madre;Volver;Hable con ella/Habla con ella;Julieta;Dolor y gloria",
-    "Mujeres al borde de un ataque de nervios;Átame;La mala educación;Los abrazos rotos;La ley del deseo",
-    "Matador;Kika;Tacones lejanos;Carne trémula;Qué he hecho yo para merecer esto",
-    "Pepi, Luci, Bom y otras chicas del montón/Pepi Luci Bom;Entre tinieblas;Laberinto de pasiones;La flor de mi secreto",
-    "",
-    ""],
-
   ["Nombra una golosina",
     "Chocolate;Caramelo/Caramelos;Chicle/Chicles;Paleta/Piruleta;Gomita/Gomitas",
     "Malvavisco/Malvaviscos;Regaliz;Bombón/Bombones;Mazapán;Turrón",

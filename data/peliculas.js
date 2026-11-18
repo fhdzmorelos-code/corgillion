@@ -59,9 +59,6 @@ CC.add("clasica", { name: "Clásica", color: "#f6c12d", desc: "De todo un poco: 
     "Christian Bale", "Robert Pattinson;Ben Affleck;Michael Keaton", "George Clooney", "Val Kilmer;Adam West", "",
     "Lewis Wilson;Robert Lowery"],
 
-  ["Nombra un actor que haya interpretado a James Bond",
-    "Daniel Craig", "Sean Connery;Pierce Brosnan", "Roger Moore", "Timothy Dalton", "George Lazenby", "David Niven;Barry Nelson"],
-
   ["Nombra un personaje de Harry Potter",
     "Harry Potter/Harry;Hermione Granger/Hermione;Ron Weasley/Ron",
     "Albus Dumbledore/Dumbledore;Voldemort/Lord Voldemort/Tom Riddle/Tom Ryddle;Severus Snape/Snape;Hagrid/Rubeus Hagrid",
@@ -85,14 +82,6 @@ CC.add("clasica", { name: "Clásica", color: "#f6c12d", desc: "De todo un poco: 
     "Pinhead;Annabelle;La Monja/Valak;Samara/Samara Morgan;Xenomorfo/Alien;Norman Bates;Candyman;Jack Torrance;Pazuzu/Regan;El Hombre Lobo/Hombre Lobo;La Momia/Imhotep;Depredador/Predator;Carrie;M3GAN/Megan;Tiburón/Bruce",
     "Babadook/El Babadook;Art el payaso/Art the Clown/Art;Damien/Damien Thorn;Kayako;Sadako;Nosferatu/Conde Orlok;Cujo;Christine;El hombre invisible/Hombre invisible;Criatura de la laguna negra/Monstruo de la laguna negra;La Llorona;Esther;Pearl;Slender Man/Slenderman;Billy/Billy el títere;El Creeper/Creeper;Leprechaun/El duende;Tiffany;Fantasma de la ópera;La Cosa/The Thing;Demogorgon;Godzilla;King Kong",
     "Pumpkinhead;Tall Man/El hombre alto;Victor Crowley;Longlegs;Bughuul/Bagul;Toshio;Brahms;Pyramid Head;Rawhead Rex;Harry Warden/El minero;Cropsy;Maniac Cop/Matt Cordell;Dr. Giggles;Horace Pinker;Wishmaster/Djinn;Brundlemosca/La Mosca;Krampus;Otis Driftwood/Otis;Capitán Spaulding;Baby Firefly;Patrick Bateman;Annie Wilkes;Reina Alien;Jack el Destripador;Señora Voorhees/Pamela Voorhees;Mary Shaw;Rey Paimon/Paimon;Black Phillip;Hombre de mimbre;Gremlins/Stripe;Critters;Killer Klowns/Payasos asesinos;Blob/La mancha voraz;Graboid"],
-
-  ["Nombra una película dirigida por Quentin Tarantino",
-    "Pulp Fiction/Tiempos violentos",
-    "Kill Bill/Kill Bill Vol. 1/Kill Bill Volumen 1;Django sin cadenas/Django desencadenado/Django Unchained/Django",
-    "Bastardos sin gloria/Malditos bastardos/Inglourious Basterds;Perros de reserva/Reservoir Dogs/Perros de la calle;Érase una vez en Hollywood/Había una vez en Hollywood/Once Upon a Time in Hollywood",
-    "Los 8 más odiados/Los odiosos ocho/The Hateful Eight;Kill Bill Vol. 2/Kill Bill Volumen 2",
-    "Jackie Brown/Triple traición",
-    "A prueba de muerte/Death Proof;Four Rooms/Cuatro habitaciones"],
 
   ["Nombra una película basada en cómics de DC",
     "El caballero oscuro/Batman: El caballero de la noche/The Dark Knight",

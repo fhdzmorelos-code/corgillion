@@ -89,10 +89,6 @@
     return t < 0 ? '<span class="chip t-x">Nada</span>'
       : '<span class="chip t-' + t + '">' + Corgi.item(t, 18) + TIERS[t].n + "</span>";
   }
-  function rarest(p, n) {
-    return p.answers.slice().sort(function (a, b) { return b.tier - a.tier; }).slice(0, n)
-      .map(function (a) { return a.name; });
-  }
   function show(html) {
     app.innerHTML = html;
     app.classList.remove("enter"); void app.offsetWidth; app.classList.add("enter");
@@ -433,7 +429,7 @@
     var r = {
       q: p.q, tier: tier, pts: m ? t.p : 0,
       ans: m ? m.a.name : "", typed: m && m.fixed ? raw : "", en: m && m.en ? raw : "",
-      why: m ? "" : raw, top: rarest(p, 4)
+      why: m ? "" : raw
     };
     var from = G.score;
     G.phase = "dig";
@@ -486,8 +482,7 @@
       : '<div class="rv-ans miss">' + esc(r.why) + '</div><div class="rv-row">' + chip(-1) +
         '<span class="rv-pts">+0 pts</span></div>';
     $("zone").innerHTML =
-      '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head +
-      '<div class="rv-top"><b>Las más raras:</b> ' + r.top.map(esc).join(" · ") + "</div></div>" +
+      '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head + "</div>" +
       '<button class="btn" id="next" data-go="next">' + (last ? "Ver resultado" : "Siguiente") + "</button>";
     $("next").focus();
     drawTimer();
@@ -575,7 +570,7 @@
       : "Cavé un poco. La próxima, algo más raro.";
     var rows = o.results.map(function (r, i) {
       return '<tr style="--i:' + i + '"><td>' + esc(r.q) + "</td><td>" + esc(r.ans || "—") + "</td><td>" +
-        chip(r.tier) + "</td><td>+" + r.pts + '</td><td class="top">' + r.top.map(esc).join(" · ") + "</td></tr>";
+        chip(r.tier) + "</td><td>+" + r.pts + "</td></tr>";
     }).join("");
     var haul = o.results.filter(function (r) { return r.tier >= 0; }).map(function (r, i) {
       return '<span style="--i:' + i + '">' + Corgi.item(r.tier, 40) + "</span>";
@@ -594,8 +589,7 @@
       (o.mode !== "diario" ? '<button class="btn" data-go="again">Jugar de nuevo</button>' : "") +
       '<button class="btn alt" data-go="share">Copiar resultado</button></div></div></section>' +
       '<section class="panel"><h2>Tu excavación</h2>' +
-      (rows ? '<table class="rt"><tr><th>Consigna</th><th>Tu respuesta</th><th>Hallazgo</th><th>Pts</th>' +
-        "<th>Las más raras</th></tr>" + rows + "</table>" : "<p>No respondiste ninguna consigna.</p>") +
+      (rows ? '<table class="rt"><tr><th>Consigna</th><th>Tu respuesta</th><th>Hallazgo</th><th>Pts</th></tr>' + rows + "</table>" : "<p>No respondiste ninguna consigna.</p>") +
       "</section></main>"
     );
     var big = $("big"), t0 = performance.now();
