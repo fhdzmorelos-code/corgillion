@@ -337,3 +337,103 @@ CC.add("pokemon", { since: "2026-11-18" }, [
     "",
     ""]
 ]);
+
+CC.add("clasica", { since: "2026-11-19" }, [
+  ["Nombra un postre",
+    "Pastel/Tarta/Torta/Pastel de cumpleaños;Helado/Nieve;Flan;Gelatina",
+    "Pay/Pie/Tarta de manzana;Brownie;Galleta/Galletas;Arroz con leche;Churros/Churro;Cheesecake/Pastel de queso/Tarta de queso;Chocolate;Mousse/Mousse de chocolate",
+    "Tiramisú;Dona/Donas/Donut/Rosquilla;Natilla;Crepa/Crepas/Crepe;Waffle/Waffles/Gofre;Cupcake/Magdalena;Panqué;Tres leches/Pastel de tres leches;Pudín/Budín;Macarrón/Macarrones/Macaron;Paleta helada;Cajeta;Ate;Cocada;Capirotada",
+    "Baklava;Cannoli;Profiteroles/Profiterol;Éclair;Strudel;Crème brûlée/Crema catalana;Panna cotta;Merengue;Buñuelo/Buñuelos;Sorbete;Pastel de zanahoria;Torrijas/Torrija;Trufas/Trufa;Mazapán;Alegría;Jericalla;Alfajor;Dulce de leche",
+    "Pavlova;Trifle;Cassata;Zabaglione;Kulfi;Gulab jamun;Mochi;Tarta Tatin;Savarín;Soufflé/Suflé;Clafoutis;Milhojas/Mille-feuille;Halva/Halvah;Pestiños;Cuajada;Pionono",
+    "Tarta de Santiago;Coulant;Ensaimada;Quesada pasiega;Sopaipilla;Lamington"],
+
+  ["Nombra un animal que viva en el desierto",
+    "Camello/Dromedario;Serpiente/Víbora;Escorpión/Alacrán;Lagarto",
+    "Coyote;Zorro del desierto/Fénec/Zorro fénec;Tarántula;Lagartija;Águila;Buitre;Cascabel/Serpiente de cascabel",
+    "Correcaminos;Iguana;Cuervo;Tortuga del desierto;Jerbo/Gerbo;Halcón;Víbora cornuda;Hiena;Liebre;Gato de arena/Gato del desierto;Ratón canguro/Rata canguro;Monstruo de Gila;Gacela;Órix;Hormiga;Escarabajo",
+    "Diablo espinoso;Pecarí;Borrego cimarrón;Ardilla de tierra;Araña camello;Chacal;Gecko;Avestruz;Suricata;Caracal;Murciélago",
+    "Addax;Lagarto cornudo;Culebra de nariz de pala;Sapo de espuelas;Ciempiés gigante del desierto;Escincos/Escinco",
+    ""],
+
+  ["Nombra algo que se encuentre en un baño",
+    "Inodoro/Taza/Retrete/Excusado/WC/Sanitario;Regadera/Ducha;Lavabo/Lavamanos/Lavatorio;Espejo",
+    "Papel higiénico/Papel de baño;Toalla;Jabón;Shampoo/Champú;Cepillo de dientes;Pasta dental/Pasta de dientes/Dentífrico;Tina/Bañera;Cortina de baño",
+    "Báscula/Balanza;Cesto de basura/Bote de basura;Tapete/Alfombra;Desodorante;Escobilla;Crema;Cepillo;Peine;Rastrillo/Rasuradora/Máquina de afeitar;Gel;Hilo dental;Enjuague bucal;Acondicionador;Esponja;Perfume;Secadora de pelo/Secador/Secadora",
+    "Bidé;Algodón;Cotonetes/Hisopos;Botiquín;Talco;Loción;Cortaúñas;Pinzas;Ambientador/Aromatizante;Toallas sanitarias;Jabonera;Portacepillos;Gorro de baño;Desatascador/Destapacaños;Grifo/Llave/Canilla;Cisterna/Tanque",
+    "Extractor/Extractor de aire;Plato de ducha;Barra de toallas/Toallero;Cesto de ropa sucia;Bata;Chancletas/Sandalias;Sifón;Mampara/Mampara de ducha;Cepillo de espalda;Azulejo/Azulejos",
+    ""],
+
+  ["Nombra una isla del Caribe",
+    "Cuba;Jamaica;Puerto Rico;República Dominicana/Santo Domingo",
+    "Bahamas;Haití;Aruba;Barbados;Trinidad y Tobago/Trinidad;Curazao;Islas Caimán/Gran Caimán",
+    "Martinica;Guadalupe;Santa Lucía;Antigua y Barbuda/Antigua;San Martín/Sint Maarten;Granada;Dominica;San Cristóbal y Nieves/San Cristóbal;Bonaire;Islas Vírgenes;Turcas y Caicos;La Española/Hispaniola",
+    "Tobago;San Vicente y las Granadinas/San Vicente;Anguila;Montserrat;Saba;San Eustaquio;San Bartolomé/Saint-Barthélemy;Granadinas/Islas Granadinas;Nevis;Barbuda;Isla de la Juventud/Isla de Pinos;Vieques;Culebra;Tórtola",
+    "Mustique;Bequia;Isla Margarita;Providencia;San Andrés;Cozumel;Isla Mujeres;Roatán;Guanaja;Utila;Gran Turca;Marie-Galante;Navassa;Cayman Brac;Little Cayman",
+    ""],
+
+  ["Nombra una parte del ojo humano",
+    "Pupila;Iris;Párpado/Párpados;Pestañas/Pestaña",
+    "Retina;Córnea;Cristalino;Nervio óptico;Esclerótica/Esclera/Blanco del ojo",
+    "Conjuntiva;Humor vítreo/Cuerpo vítreo;Humor acuoso;Glándula lagrimal/Lagrimal;Conducto lagrimal;Músculos oculares",
+    "Mácula/Mácula lútea;Fóvea;Coroides;Úvea;Cuerpo ciliar/Músculo ciliar;Conos;Bastones;Cámara anterior;Cámara posterior;Punto ciego/Disco óptico;Carúncula/Carúncula lagrimal",
+    "Limbo esclerocorneal;Canal de Schlemm;Zónulas de Zinn/Zónula;Malla trabecular;Epitelio pigmentario;Membrana de Bowman;Membrana de Descemet;Órbita/Cavidad orbitaria",
+    "Glándulas de Meibomio/Glándula de Meibomio;Glándula de Zeis;Tarso;Músculo elevador del párpado"],
+
+  ["Nombra una princesa de Disney",
+    "Blancanieves;Cenicienta;Aurora/La Bella Durmiente;Ariel/La Sirenita;Bella;Jasmine/Jazmín;Elsa",
+    "Anna/Ana;Rapunzel;Moana/Vaiana;Mulán;Pocahontas;Tiana;Mérida",
+    "Raya;Sofía/Sofía Primera;Kida;Elena de Ávalor;Melody;Eilonwy",
+    "Atta;Dot;Kiara",
+    "",
+    ""],
+
+  ["Nombra un instrumento musical de cuerda",
+    "Guitarra;Violín;Arpa;Bajo/Bajo eléctrico",
+    "Violonchelo/Chelo/Cello;Viola;Ukulele/Ukelele;Mandolina;Banjo;Laúd;Contrabajo",
+    "Guitarrón;Cítara;Charango;Vihuela;Bandurria;Requinto;Tiple;Lira;Sitar;Clavicémbalo/Clavecín;Bouzouki;Balalaica;Cuatro;Jarana;Koto",
+    "Erhu;Shamisen;Oud;Zanfona/Viola de rueda;Dulcémele;Cimbalón;Bajo sexto;Pipa;Salterio;Kora;Guzheng;Viola de gamba;Teorba;Santur;Berimbau;Cavaquinho",
+    "Nyckelharpa;Kantele;Gusli;Rebec;Biwa;Gayageum;Sanxian;Yangqin;Tambura;Veena;Sarod;Dombra;Tres",
+    "Octobajo;Dilruba;Esraj;Gadulka;Setar;Tanbur"],
+
+  ["Nombra una saga de videojuegos de Nintendo que no sea de Mario, Zelda ni Pokémon",
+    "Donkey Kong;Kirby;Animal Crossing;Splatoon;Super Smash Bros.",
+    "Metroid;Pikmin;Star Fox;Fire Emblem;Wii Sports/Wii Fit;Xenoblade Chronicles;F-Zero",
+    "Kid Icarus;Punch-Out!;Ice Climber;Earthbound/Mother;Pilotwings;Advance Wars;Brain Training;Nintendogs;Arms;Ring Fit Adventure;Tomodachi Life;Duck Hunt;Excitebike",
+    "Golden Sun;Fossil Fighters;Rhythm Heaven;Custom Robo;Wave Race;1080° Snowboarding;Chibi-Robo!;Nintendo Land;Endless Ocean;Eternal Darkness;Pushmo",
+    "Famicom Detective Club;Mach Rider;Balloon Fight;Clu Clu Land;Devil World;Stunt Race FX;Magical Starsign",
+    ""],
+
+  ["Nombra un oficio manual o artesanal",
+    "Carpintero;Albañil;Plomero/Fontanero;Electricista;Panadero;Mecánico;Pintor/Pintor de brocha gorda",
+    "Herrero;Zapatero;Sastre/Costurero/Costurera;Jardinero;Soldador;Cerrajero;Alfarero/Ceramista;Peluquero/Barbero;Carnicero",
+    "Tejedor/Tejedora;Joyero/Orfebre;Relojero;Tapicero;Ebanista;Vidriero;Talabartero;Hojalatero;Cantero;Colchonero;Afilador;Impresor;Pastelero;Bordador;Carretero;Herrador",
+    "Cestero;Calderero;Curtidor;Peletero;Tornero;Fresador;Vitralista;Tallador;Lutier/Luthier;Guarnicionero;Cordelero;Tonelero;Escultor;Grabador;Marmolista;Yesero;Techador",
+    "Esparterero;Chocolatero;Fundidor;Cuchillero;Zurrador;Sombrerero;Tintorero;Batanero;Encuadernador;Dorador;Hilandero",
+    ""],
+
+  ["Nombra algo que se pueda conectar por USB a una computadora",
+    "Teclado;Ratón/Mouse;Impresora;Memoria USB/USB/Pendrive/Flash drive;Celular/Teléfono/Smartphone",
+    "Disco duro externo/Disco duro;Cámara web/Webcam;Micrófono;Bocinas/Altavoces/Parlantes;Audífonos/Auriculares;Monitor;Control de videojuegos/Gamepad/Mando/Joystick;Cargador;Escáner",
+    "Tableta gráfica;Cámara digital;Lector de tarjetas SD/Lector de tarjetas;Hub USB/Concentrador USB;Tarjeta de red/Adaptador WiFi;Ventilador USB;Lámpara USB;Tableta/Tablet;Unidad de DVD/Lector de CD;Impresora 3D;Teclado musical/Piano electrónico;Calentador de tazas;SSD;Kindle/Lector de libros electrónicos;Volante de carreras",
+    "Tarjeta de sonido;Lector de huellas;Cámara de seguridad;Controlador MIDI;Mezcladora de audio;Raspberry Pi;Arduino;Reloj inteligente/Smartwatch;Consola portátil;Lector de códigos de barras;Kinect;Cámara de acción;Gafas de realidad virtual/Auricular VR",
+    "Humidificador USB;Ventilador de cuello;Pluma 3D;Módem;Impresora de etiquetas;Lector de NFC;Tarjeta de captura;Controlador DJ",
+    ""]
+]);
+
+CC.add("pokemon", { since: "2026-11-19" }, [
+  ["Nombra un movimiento de tipo Psíquico",
+    "Psíquico;Confusión;Hipnosis",
+    "Psicorrayo;Barrera;Reflejo;Amnesia;Meditación;Teletransporte;Paz Mental",
+    "Psicocorte;Cabezazo Zen;Descanso;Premonición;Agilidad;Paranormal;Pantalla de Luz;Psicochoque;Cosmopoder",
+    "Psicoonda;Telequinesis;Gravedad;Poder Reserva;Zona Extraña;Zona Mágica;Truco",
+    "Psicocolmillo;Psicoataque",
+    ""],
+
+  ["Nombra un movimiento de tipo Hielo",
+    "Rayo Hielo;Ventisca;Puño Hielo;Nieve Polvo",
+    "Viento Hielo;Rayo Aurora;Granizo;Colmillo Hielo",
+    "Alud;Bola Hielo;Velo Aurora;Frío Polar;Martillo Hielo",
+    "Liofilización;Triple Axel;Esquirla Helada",
+    "",
+    ""]
+]);
