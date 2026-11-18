@@ -11,6 +11,23 @@
   var CC = root.CC, DEX = root.CC_DEX;
   if (!CC || !DEX) { return; }
 
+  // Datos extra (data/pokedex_extra.js): formas regionales, megas, ultraentes, fósiles, iniciales, anime.
+  var EX = root.CC_DEX_EXTRA || {};
+  var en = function (lista, n) { return (lista || []).indexOf(n) >= 0; };
+  DEX.forEach(function (p) {
+    var n = String(p.n);
+    p.formas = (EX.formas || {})[n] || [];
+    p.formaTipos = (EX.forma_tipos || {})[n] || [];
+    p.mega = en(EX.megas, p.n) ? 1 : 0;
+    p.megaTipos = (EX.mega_tipos || {})[n] || [];
+    p.ultraente = en(EX.ultraentes, p.n) ? 1 : 0;
+    p.fosil = en(EX.fosiles, p.n) ? 1 : 0;
+    p.inicial = en(EX.iniciales, p.n) ? 1 : 0;
+    p.lineaInicial = en(EX.linea_inicial, p.n) ? 1 : 0;
+    p.ash = en(EX.ash, p.n) ? 1 : 0;
+    p.rocket = Object.keys(EX.rocket || {}).filter(function (per) { return en(EX.rocket[per], p.n); });
+  });
+
   // ---------- Fama: lo que cualquiera diría primero ----------
   var ICONOS = ("Pikachu Charizard Charmander Bulbasaur Squirtle Eevee Mewtwo Mew Gengar Snorlax Jigglypuff Meowth Psyduck " +
     "Magikarp Gyarados Dragonite Lucario Greninja Blastoise Venusaur Lapras Arcanine Ditto Rayquaza Garchomp Umbreon Espeon " +
@@ -97,9 +114,14 @@
   //   empieza: "m"   termina: "o"   letras: 5   letras_min   letras_max   (sobre el nombre en español)
   //   alt_min alt_max (metros)   peso_min peso_max (kg)   ps_min ataque_min defensa_min ataque_esp_min defensa_esp_min velocidad_min total_min total_max
   //   color: "Rosa"   habilidad: "Levitación"   habitat: "caverna"   bebe: 1   excluir: ["Pikachu"]
+  //   forma: "Alola" | "Galar" | "Hisui" | "Paldea" | "cualquiera"   forma_tipo: ["Hielo"]  (tipo de su forma regional)
+  //   mega: 1 (puede megaevolucionar, incluye Leyendas Z-A)   mega_tipo: ["Dragón"]  (tipo de su megaevolución)
+  //   ultraente: 1   fosil: 1   inicial: "base" (primera etapa, incluye Pikachu y Eevee) | "linea" (los 27 iniciales y sus evoluciones)
+  //   ash: 1 (lo tuvo Ash en el anime)   rocket: ["Jessie", "James", "Giovanni", "Butch", "Cassidy"] | "cualquiera"
   var CLAVES = ["tipo", "tipos", "sin_tipo", "num_tipos", "gen", "gen_min", "gen_max", "leg", "evo", "metodo", "empieza", "termina",
     "letras", "letras_min", "letras_max", "alt_min", "alt_max", "peso_min", "peso_max", "ps_min", "ataque_min", "defensa_min",
-    "ataque_esp_min", "defensa_esp_min", "velocidad_min", "total_min", "total_max", "color", "habilidad", "habitat", "bebe", "excluir"];
+    "ataque_esp_min", "defensa_esp_min", "velocidad_min", "total_min", "total_max", "color", "habilidad", "habitat", "bebe", "excluir",
+    "forma", "forma_tipo", "mega", "mega_tipo", "ultraente", "fosil", "inicial", "ash", "rocket"];
   var STATS = { ps_min: 0, ataque_min: 1, defensa_min: 2, ataque_esp_min: 3, defensa_esp_min: 4, velocidad_min: 5 };
 
   function desde(spec) {
@@ -150,6 +172,15 @@
         if (k === "habitat" && p.habitat !== v) { return false; }
         if (k === "bebe" && p.bebe !== v) { return false; }
         if (k === "excluir" && lista(v).some(function (x) { return CC.norm(x) === nom || CC.norm(x) === CC.norm(p.en); })) { return false; }
+        if (k === "forma" && !(v === "cualquiera" ? p.formas.length : p.formas.indexOf(v) >= 0)) { return false; }
+        if (k === "forma_tipo" && !lista(v).some(function (t) { return p.formaTipos.indexOf(t) >= 0; })) { return false; }
+        if (k === "mega" && p.mega !== v) { return false; }
+        if (k === "mega_tipo" && !lista(v).some(function (t) { return p.megaTipos.indexOf(t) >= 0; })) { return false; }
+        if (k === "ultraente" && p.ultraente !== v) { return false; }
+        if (k === "fosil" && p.fosil !== v) { return false; }
+        if (k === "inicial" && !(v === "base" ? p.inicial : p.lineaInicial)) { return false; }
+        if (k === "ash" && p.ash !== v) { return false; }
+        if (k === "rocket" && !(v === "cualquiera" ? p.rocket.length : lista(v).some(function (x) { return p.rocket.indexOf(x) >= 0; }))) { return false; }
       }
       return true;
     };
@@ -211,6 +242,23 @@
   CC.regla = regla;
   CC.reglasDesde = desde;
   CC.completar = completar;
+
+  // Igual que completar, pero con una fila ya escrita ["consigna", n0..n5] (la usa data/pokemon_objetos.js).
+  CC.completarFilas = function (cat, filas) {
+    var c = CC.cats[cat];
+    if (!c) { return; }
+    filas.forEach(function (row) {
+      var nuevas = CC.build(row);
+      c.prompts.forEach(function (pr) {
+        if (pr.q !== row[0]) { return; }
+        var claves = {};
+        pr.answers.forEach(function (a) { a.keys.forEach(function (k) { claves[k] = 1; }); });
+        nuevas.forEach(function (a) {
+          if (!a.keys.some(function (k) { return claves[k]; })) { pr.answers.push(a); }
+        });
+      });
+    });
+  };
   CC.reglasAyuda = H;
   CC.reglasRespuestas = respuestas;
   CC.oscuridad = oscuridad;
@@ -320,5 +368,50 @@
   comp.push(["Nombra un Pokémon cuyo nombre tenga más de una palabra, un guion o un apóstrofe", function (p) { return /[ \-'.:]/.test(p.es); }]);
   comp.push(["Nombra una evolución de Eevee", function (p) { return p.de.some(function (e) { return e.n === 133; }); }]);
   comp.push(["Nombra un Pokémon bebé", function (p) { return p.bebe === 1; }]);
+  comp.push(["Nombra un Pokémon que tenga forma de Alola", function (p) { return p.formas.indexOf("Alola") >= 0; }]);
+  comp.push(["Nombra un Pokémon que tenga una forma regional", function (p) { return p.formas.length > 0; }]);
+  comp.push(["Nombra un Ultraente", function (p) { return p.ultraente === 1; }]);
+  comp.push(["Nombra un Pokémon fósil (revivido de un fósil)", function (p) { return p.fosil === 1; }]);
+  comp.push(["Nombra un Pokémon inicial de cualquier región (su primera etapa)", function (p) { return p.inicial === 1; }]);
+  comp.push(["Nombra un Pokémon que haya tenido Ash en el anime", function (p) { return p.ash === 1; }]);
+  comp.push(["Nombra un Pokémon que hayan tenido Jessie o James del Team Rocket", function (p) {
+    return p.rocket.indexOf("Jessie") >= 0 || p.rocket.indexOf("James") >= 0; }]);
+  comp.push(["Nombra un Pokémon inicial de tipo Planta o una de sus evoluciones", function (p) { return p.lineaInicial && tipo(p, "Planta"); }]);
+  comp.push(["Nombra un Pokémon inicial de tipo Fuego o una de sus evoluciones", function (p) { return p.lineaInicial && tipo(p, "Fuego"); }]);
   completar("pokemon", comp);
+
+  // ---------- Consignas nuevas con los datos de Serebii (formas, megas, iniciales, anime) ----------
+  var MEGA = function (p) { return p.mega === 1; };
+  regla("pokemon", null, [
+    ["Nombra un Pokémon que tenga forma de Galar", function (p) { return p.formas.indexOf("Galar") >= 0; }],
+    ["Nombra un Pokémon que tenga forma de Hisui", function (p) { return p.formas.indexOf("Hisui") >= 0; }],
+    ["Nombra un Pokémon de la primera generación que tenga forma regional", function (p) { return p.g === 1 && p.formas.length > 0; }],
+    ["Nombra un Pokémon cuya forma regional tenga un tipo que el original no tiene", function (p) {
+      return p.formaTipos.some(function (t) { return p.t.indexOf(t) < 0; }); }],
+    ["Nombra un Pokémon de la primera generación que pueda megaevolucionar", function (p) { return MEGA(p) && p.g === 1; }],
+    ["Nombra un Pokémon que pueda megaevolucionar y no sea de Kanto ni de Hoenn", function (p) { return MEGA(p) && p.g !== 1 && p.g !== 3; }],
+    ["Nombra un Pokémon cuya megaevolución sea de tipo Dragón, Acero o Hada", function (p) {
+      return ["Dragón", "Acero", "Hada"].some(function (t) { return p.megaTipos.indexOf(t) >= 0; }); }],
+    ["Nombra un Pokémon cuya megaevolución sea de tipo Lucha, Siniestro o Fantasma", function (p) {
+      return ["Lucha", "Siniestro", "Fantasma"].some(function (t) { return p.megaTipos.indexOf(t) >= 0; }); }],
+    ["Nombra un Pokémon inicial (en cualquier etapa) que pueda megaevolucionar", function (p) { return MEGA(p) && p.lineaInicial; }],
+    ["Nombra un Pokémon legendario o mítico que pueda megaevolucionar o tener regresión primigenia", function (p) { return MEGA(p) && p.leg > 0; }],
+    ["Nombra un Pokémon que pueda megaevolucionar y sea de tipo Agua, Hielo o Eléctrico", function (p) {
+      return MEGA(p) && (tipo(p, "Agua") || tipo(p, "Hielo") || tipo(p, "Eléctrico")); }],
+    ["Nombra un Pokémon inicial de tipo Agua o una de sus evoluciones", function (p) { return p.lineaInicial && tipo(p, "Agua"); }],
+    ["Nombra la evolución final de un Pokémon inicial", function (p) { return p.lineaInicial && p.de.length > 0 && p.a.length === 0; }],
+    ["Nombra la etapa intermedia de un Pokémon inicial", function (p) { return p.lineaInicial && p.etapa === 1 && p.a.length > 0; }],
+    ["Nombra un Pokémon inicial o una de sus evoluciones que tenga dos tipos", function (p) { return p.lineaInicial && p.t.length === 2; }],
+    ["Nombra un Pokémon fósil que no sea de la primera generación", function (p) { return p.fosil && p.g > 1; }],
+    ["Nombra un Pokémon que haya tenido Ash y que no sea de Kanto", function (p) { return p.ash && p.g > 1; }],
+    ["Nombra un Pokémon que haya tenido Ash y que sea de la primera generación", function (p) { return p.ash && p.g === 1; }],
+    ["Nombra un Pokémon que haya tenido Ash y que sea de tipo Agua, Hielo o Volador", function (p) {
+      return p.ash && (tipo(p, "Agua") || tipo(p, "Hielo") || tipo(p, "Volador")); }],
+    ["Nombra un Pokémon que haya tenido Ash y que sea de tipo Planta, Bicho, Fuego o Lucha", function (p) {
+      return p.ash && (tipo(p, "Planta") || tipo(p, "Bicho") || tipo(p, "Fuego") || tipo(p, "Lucha")); }],
+    ["Nombra un Pokémon que haya tenido alguien del Team Rocket en el anime (Jessie, James, Giovanni, Butch o Cassidy)", function (p) {
+      return p.rocket.length > 0; }],
+    ["Nombra un Pokémon que hayan tenido Giovanni, Butch o Cassidy en el anime", function (p) {
+      return ["Giovanni", "Butch", "Cassidy"].some(function (x) { return p.rocket.indexOf(x) >= 0; }); }]
+  ]);
 })(typeof window !== "undefined" ? window : globalThis);
