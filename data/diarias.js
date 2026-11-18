@@ -66,14 +66,6 @@ CC.add("clasica", { since: "2026-11-17" }, [
     "Chapultepec;Yorktown;Pichincha;Little Bighorn;Bunker Hill",
     "Kadesh/Qadesh"],
 
-  ["Nombra un tipo de nube",
-    "Cúmulo/Cúmulos;Cirro/Cirros;Estrato/Estratos;Nimbo;Cumulonimbo/Cumulonimbos",
-    "Altocúmulo/Altocúmulos;Altoestrato/Altostrato;Cirrocúmulo/Cirrocúmulos;Cirroestrato/Cirrostrato;Estratocúmulo",
-    "Nimboestrato;Mammatus/Mamatus;Lenticular;Noctilucente/Nube noctilucente",
-    "Nube nacarada/Nacarada",
-    "",
-    ""],
-
   ["Nombra una golosina",
     "Chocolate;Caramelo/Caramelos;Chicle/Chicles;Paleta/Piruleta;Gomita/Gomitas",
     "Malvavisco/Malvaviscos;Regaliz;Bombón/Bombones;Mazapán;Turrón",

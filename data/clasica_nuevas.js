@@ -143,3 +143,13 @@ CC.add("clasica", null, [
     "Máquina de autopréstamo;Fichero de catálogo;Detector antirrobo;Partitura",
     "Microfilme;Lector de microfichas;Expositor de publicaciones"]
 ]);
+
+CC.add("clasica", null, [
+  ["Nombra un artista importante de la historia del arte (pintor, escultor o muralista)",
+    "Leonardo da Vinci/Da Vinci/Leonardo;Pablo Picasso/Picasso;Vincent van Gogh/Van Gogh;Miguel Ángel/Michelangelo/Buonarroti;Salvador Dalí/Dalí;Frida Kahlo/Kahlo;Claude Monet/Monet",
+    "Rembrandt;Diego Rivera;Andy Warhol/Warhol;Rafael/Rafael Sanzio/Raphael;Diego Velázquez/Velázquez;Francisco de Goya/Goya;Sandro Botticelli/Botticelli;Joan Miró/Miró",
+    "Edvard Munch/Munch;Gustav Klimt/Klimt;Paul Cézanne/Cézanne;Henri Matisse/Matisse;Jackson Pollock/Pollock;Auguste Rodin/Rodin;Johannes Vermeer/Vermeer;Caravaggio;Donatello;Georgia O'Keeffe/O'Keeffe;René Magritte/Magritte;Edgar Degas/Degas;Pierre-Auguste Renoir/Renoir;Banksy",
+    "Paul Gauguin/Gauguin;Édouard Manet/Manet;Eugène Delacroix/Delacroix;Jacques-Louis David;Tiziano/Ticiano/Titian;El Greco;Peter Paul Rubens/Rubens;Marc Chagall/Chagall;Wassily Kandinsky/Kandinsky;Piet Mondrian/Mondrian;Roy Lichtenstein/Lichtenstein;Jean-Michel Basquiat/Basquiat;David Alfaro Siqueiros/Siqueiros;José Clemente Orozco/Orozco;Bernini/Gian Lorenzo Bernini;Giotto;Alberto Giacometti/Giacometti;Louise Bourgeois",
+    "El Bosco/Hieronymus Bosch/Bosch;Pieter Bruegel/Bruegel;Artemisia Gentileschi;Paul Klee/Klee;Egon Schiele/Schiele;Henri Rousseau;Joaquín Sorolla/Sorolla;Rufino Tamayo/Tamayo;Remedios Varo;Leonora Carrington;Kazimir Malévich/Malévich;Mark Rothko/Rothko;Yayoi Kusama/Kusama;Hokusai/Katsushika Hokusai;Constantin Brâncuși/Brancusi",
+    "Giorgione;Hans Holbein/Holbein;Duccio;Fra Angelico;Piero della Francesca;Mary Cassatt/Cassatt;Berthe Morisot/Morisot;Sofonisba Anguissola;Dr. Atl/Gerardo Murillo;Lucian Freud;Francis Bacon;Gerhard Richter;Ai Weiwei"]
+]);
