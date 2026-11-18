@@ -13,14 +13,14 @@
     { n: "Tesoro", p: 80, s: 11, say: "¡Un tesoro!" },
     { n: "Hueso de Oro", p: 100, s: 15, say: "¡¡HUESO DE ORO!!" }
   ];
-  var QTIME = 25, RUN = 7, CLOCK = 45, FULL = 7000;
+  var QTIME = 25, RUN = 7, CLOCK = 45, FULL = 7000, SKIP_PEN = 5;
   var PX = 4, GROUND = 300, PXM = 0.26, DOG = 72;
 
   var MODES = {
     diario: { n: "Diario", d: "7 consignas, las mismas para todos hoy. Un solo intento.", finite: true },
     clasico: { n: "Libre", d: "7 consignas al azar que cambian en cada intento.", finite: true },
     sinfinal: { n: "Sin final", d: "Consignas sin parar. Cava hasta que te retires.", finite: false },
-    contra: { n: "Contrarreloj", d: "0:45 en el reloj. Lo raro suma hasta +15 s.", finite: false }
+    contra: { n: "Contrarreloj", d: "0:45 en el reloj. Lo raro suma hasta +15 s; pasar resta 5 s.", finite: false }
   };
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -365,7 +365,7 @@
       'placeholder="Escribe tu respuesta" aria-label="Tu respuesta">' +
       '<button class="btn" type="submit">Cavar</button></form>' +
       '<div class="fb" id="fb">Piensa en algo que casi nadie diría.</div>' +
-      '<button class="btn ghost small" data-go="skip">Pasar esta consigna</button>';
+      '<button class="btn ghost small" data-go="skip">Pasar esta consigna' + (G.mode === "contra" ? " (-" + SKIP_PEN + " s)" : "") + "</button>";
     $("ans").focus();
     $("digger").className = "digger";
     drawTimer();
@@ -429,12 +429,14 @@
     var r = {
       q: p.q, tier: tier, pts: m ? t.p : 0,
       ans: m ? m.a.name : "", typed: m && m.fixed ? raw : "", en: m && m.en ? raw : "",
-      why: m ? "" : raw
+      why: m ? "" : raw, pen: 0
     };
     var from = G.score;
     G.phase = "dig";
     G.results.push(r); G.score += r.pts;
     if (m && G.mode === "contra") G.clock += t.s;
+    // en Contrarreloj, pasar una consigna cuesta segundos del reloj
+    if (!m && raw === "Pasaste" && G.mode === "contra") { r.pen = SKIP_PEN; G.clock = Math.max(0, G.clock - SKIP_PEN); }
     if (G.mode === "diario") {
       var d = save.daily[G.cat];
       d.results = G.results.slice(); d.score = G.score; persist();
@@ -480,7 +482,7 @@
         '<div class="rv-row">' + chip(r.tier) + '<span class="rv-pts">+' + r.pts + " pts · baja " + r.pts * 10 + " m" +
         (G.mode === "contra" ? " · +" + t.s + " s" : "") + "</span></div>"
       : '<div class="rv-ans miss">' + esc(r.why) + '</div><div class="rv-row">' + chip(-1) +
-        '<span class="rv-pts">+0 pts</span></div>';
+        '<span class="rv-pts">+0 pts' + (r.pen ? " · -" + r.pen + " s" : "") + "</span></div>";
     $("zone").innerHTML =
       '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head + "</div>" +
       '<button class="btn" id="next" data-go="next">' + (last ? "Ver resultado" : "Siguiente") + "</button>";
