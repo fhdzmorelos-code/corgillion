@@ -421,3 +421,103 @@ CC.add("pokemon", { since: "2026-11-19" }, [
     "",
     ""]
 ]);
+
+CC.add("clasica", { since: "2026-11-20" }, [
+  ["Nombra una fruta o verdura de color verde",
+    "Lechuga;Aguacate/Palta;Pepino;Brócoli/Brécol;Limón/Limones/Lima",
+    "Espinaca/Espinacas;Manzana verde/Manzana;Calabacita/Calabacín/Zucchini;Apio;Chícharo/Chícharos/Guisante/Arveja;Kiwi;Uva verde/Uva/Uvas;Chile verde/Chile",
+    "Nopal/Nopales;Ejote/Ejotes/Judía verde/Vainita/Habichuela;Pimiento verde/Pimiento/Chile morrón;Jalapeño/Chile jalapeño;Tomate verde/Tomatillo/Miltomate;Col/Repollo;Pera;Acelga/Acelgas;Cilantro;Alcachofa",
+    "Espárrago/Espárragos;Kale/Col rizada;Col de Bruselas/Coles de Bruselas;Poro/Puerro;Haba/Habas;Edamame;Chayote;Perejil",
+    "Guanábana;Feijoa;Okra/Quimbombó;Rúcula/Arúgula;Berro/Berros;Pepinillo",
+    "Chirimoya;Huauzontle;Romanesco/Brócoli romanesco;Bok choy/Pak choi"],
+
+  ["Nombra un animal cuyo nombre en español empiece con la letra C",
+    "Caballo;Cerdo/Cochino/Chancho;Conejo;Cocodrilo;Camello;Canguro",
+    "Cabra/Chivo;Cebra;Ciervo;Caracol;Cangrejo;Cisne;Cucaracha;Cuervo;Castor;Chimpancé;Colibrí;Camaleón;Calamar",
+    "Cobra;Coyote;Cóndor;Chita;Ciempiés;Caimán;Cacatúa;Canario;Cachalote;Capibara/Carpincho/Chigüiro;Chinchilla;Cigüeña;Cuy/Cobayo/Conejillo de Indias;Coala;Cotorra",
+    "Comadreja;Codorniz;Cormorán;Camarón;Caballito de mar;Cacomixtle;Chacal;Coatí;Carpa;Corzo;Chapulín;Cigarra/Chicharra;Cebú",
+    "Caracal;Cálao;Casuario;Chinche;Chotacabras;Chorlito;Corvina;Caribú;Cernícalo;Chachalaca",
+    "Celacanto;Chajá;Colobo;Cuscús;Caguama;Coipo;Cuco/Cuclillo"],
+
+  ["Nombra algo que se cuelgue en la pared",
+    "Cuadro/Pintura;Reloj/Reloj de pared;Espejo;Foto/Fotografía/Retrato;Televisión/Televisor/Tele;Calendario",
+    "Póster/Poster/Afiche/Cartel;Diploma/Título;Repisa/Estante;Perchero/Gancho;Crucifijo/Cruz;Mapa",
+    "Guitarra;Maceta colgante/Planta colgante;Pizarrón/Pizarra;Tablero de corcho/Corcho;Bandera;Portallaves/Llavero;Lámpara de pared/Aplique;Tapiz;Corona navideña/Corona",
+    "Diana/Tablero de dardos;Máscara;Atrapasueños;Medalla/Medallas;Bicicleta;Escudo;Extintor;Ventilador de pared;Herradura;Plato decorativo",
+    "Botiquín;Barómetro;Sarape;Espada;Hamaca;Tabla de surf;Banderín",
+    "Ristra de ajos;Sartén/Sartenes;Tablero de herramientas;Rosario"],
+
+  ["Nombra la capital de un país de América",
+    "Ciudad de México/CDMX/México;Buenos Aires;Washington/Washington D. C.;Bogotá;Lima;Santiago/Santiago de Chile",
+    "Caracas;Quito;La Habana/Habana;Ottawa;Montevideo;Brasilia;Asunción",
+    "San José;Managua;Tegucigalpa;Ciudad de Guatemala/Guatemala;San Salvador;Ciudad de Panamá/Panamá;Santo Domingo;La Paz;Sucre",
+    "Kingston;Puerto Príncipe;Belmopán;Georgetown;Paramaribo;Nasáu/Nassau",
+    "Bridgetown;Castries;Puerto España",
+    "Roseau;Basseterre;Saint John's;Kingstown;Saint George's"],
+
+  ["Nombra una parte del cuerpo humano cuyo nombre en español tenga exactamente cuatro letras",
+    "Mano;Boca;Cara;Dedo;Pelo",
+    "Codo;Ceja;Piel;Nuca",
+    "Iris;Vena;Puño;Seno",
+    "Sien;Bazo;Pene",
+    "Yema;Timo;Mama",
+    "Axón;Ulna"],
+
+  ["Nombra un personaje de las películas de Shrek",
+    "Shrek;Burro/Asno;Fiona/Princesa Fiona;Gato con Botas/El Gato con Botas",
+    "Lord Farquaad/Farquaad;Dragona/Dragón;Jengi/Hombre de Jengibre/Galleta de jengibre/Gingy;Pinocho;Hada Madrina;Príncipe Encantador/Príncipe Azul",
+    "Rey Harold;Reina Lillian;Tres cerditos/Los tres cerditos/Cerditos;Lobo Feroz/Lobo;Tres ratones ciegos/Ratones ciegos;Rumpelstiltskin;Artie/Arturo/Rey Arturo",
+    "Merlín;Blancanieves;Cenicienta;Bella Durmiente;Rapunzel;Capitán Garfio",
+    "Doris;Mongo;Brogan;Cookie;Mabel",
+    "Farkle;Fergus;Felicia;Thelonius;Robin Hood"],
+
+  ["Nombra una banda de rock en español",
+    "Maná;Soda Stereo;Caifanes;Café Tacvba/Café Tacuba;Héroes del Silencio",
+    "Enanitos Verdes/Los Enanitos Verdes;Molotov;Zoé;El Tri;Hombres G;Los Prisioneros;Los Fabulosos Cadillacs/Fabulosos Cadillacs",
+    "Jaguares;Aterciopelados;La Ley;Babasónicos;Los Bunkers;Fito y Fitipaldis;Extremoduro;Divididos;Panteón Rococó;Moderatto;Enjambre;La Maldita Vecindad/Maldita Vecindad",
+    "Patricio Rey y sus Redonditos de Ricota/Los Redondos/Redonditos de Ricota;Sumo;Los Rodríguez;Los Auténticos Decadentes/Auténticos Decadentes;El Cuarteto de Nos/Cuarteto de Nos;No Te Va Gustar;La Renga;Vilma Palma e Vampiros/Vilma Palma;Barón Rojo;Rata Blanca;Bersuit Vergarabat/Bersuit;Vetusta Morla;Ska-P",
+    "Los Tres;Los Jaivas;Ataque 77;Virus;Los Abuelos de la Nada;Porter;División Minúscula;Jumbo;Love of Lesbian;Los Planetas;Libido;Allison",
+    "Real de Catorce;Botellita de Jerez;Serú Girán;Almendra;Los Saicos;Leusemia;Pescado Rabioso;Radio Futura;Los Secretos;Mägo de Oz/Mago de Oz"],
+
+  ["Nombra un videojuego de terror",
+    "Resident Evil;Five Nights at Freddy's/FNAF;Silent Hill;Outlast",
+    "Dead Space;Amnesia/Amnesia: The Dark Descent;Little Nightmares;Phasmophobia;Dead by Daylight;Poppy Playtime;Alan Wake",
+    "The Evil Within;Until Dawn;Alien: Isolation/Alien Isolation;Slender/Slender: The Eight Pages;Bendy and the Ink Machine/Bendy;Layers of Fear;Lethal Company;Granny;Hello Neighbor",
+    "Fatal Frame/Project Zero;SOMA;Doki Doki Literature Club;Clock Tower;Dino Crisis;F.E.A.R./FEAR;Visage;The Mortuary Assistant;Content Warning;Cry of Fear;Alone in the Dark",
+    "P.T.;Siren/Forbidden Siren;Signalis;Darkwood;Condemned/Condemned: Criminal Origins;Parasite Eve;The Medium;Observer;Iron Lung;Corpse Party",
+    "Sweet Home;Haunting Ground;Rule of Rose;Fear & Hunger/Fear and Hunger;Kuon;Echo Night"],
+
+  ["Nombra un objeto que se use en un partido de fútbol",
+    "Balón/Pelota/Bola;Portería/Arco/Meta;Silbato/Pito;Tarjeta roja;Tarjeta amarilla",
+    "Red;Guantes/Guantes de portero;Espinilleras/Canilleras/Espinillera;Tacos/Tachones/Botines/Taquetes/Zapatos de fútbol;Camiseta/Jersey/Playera;Banderín/Banderín de córner",
+    "Marcador;Brazalete de capitán/Brazalete/Gafete;Medias/Calcetas/Calcetines;Short/Pantaloncillo/Pantalón corto;Conos;Cronómetro/Reloj;Inflador/Bomba de aire",
+    "Tablero de cambios/Tablero de sustituciones;Espuma del árbitro/Aerosol/Spray evanescente;Bandera del asistente/Bandera del juez de línea;VAR/Pantalla del VAR;Moneda/Moneda del sorteo;Camilla;Petos/Peto/Chalecos;Botella de agua/Botella",
+    "Cal/Pintura de líneas;Vendas/Vendaje;Pizarra táctica;Auricular del árbitro/Intercomunicador",
+    "Tecnología de línea de gol/Ojo de halcón;Tobilleras;Cinta adhesiva"],
+
+  ["Nombra un oficio o profesión cuyo nombre en español termine en -ero o -era",
+    "Bombero/Bombera;Panadero/Panadera;Cocinero/Cocinera;Enfermero/Enfermera;Carpintero/Carpintera;Mesero/Mesera/Camarero/Camarera",
+    "Plomero/Plomera/Fontanero/Fontanera;Ingeniero/Ingeniera;Jardinero/Jardinera;Cartero/Cartera;Carnicero/Carnicera;Peluquero/Peluquera;Cajero/Cajera;Zapatero/Zapatera",
+    "Barrendero/Barrendera;Cerrajero/Cerrajera;Joyero/Joyera;Herrero/Herrera;Granjero/Granjera;Marinero/Marinera;Banquero/Banquera;Pastelero/Pastelera;Niñera/Niñero;Costurera/Costurero;Mensajero/Mensajera;Portero/Portera;Torero/Torera",
+    "Minero/Minera;Vaquero/Vaquera;Camionero/Camionera;Relojero/Relojera;Tapicero/Tapicera;Ganadero/Ganadera;Pescadero/Pescadera;Cantinero/Cantinera;Basurero/Basurera;Consejero/Consejera;Tesorero/Tesorera;Bodeguero/Bodeguera;Hotelero/Hotelera",
+    "Alfarero/Alfarera;Tornero/Tornera;Vidriero/Vidriera;Aduanero/Aduanera;Frutero/Frutera;Lechero/Lechera;Cervecero/Cervecera;Archivero/Archivera;Arriero/Arriera;Chatarrero/Chatarrera",
+    "Pregonero/Pregonera;Sombrerero/Sombrerera;Talabartero/Talabartera;Curandero/Curandera;Platero/Platera;Tonelero/Tonelera;Carbonero/Carbonera;Sepulturero/Sepulturera;Ropavejero/Ropavejera"]
+]);
+
+CC.add("pokemon", { since: "2026-11-20" }, [
+  ["Nombra un movimiento de tipo Lucha",
+    "Patada Baja;Golpe Kárate;A Bocajarro;Esfera Aural",
+    "Patada Salto Alta;Patada Salto;Sumisión;Demolición;Puñodinámico/Puño Dinámico;Corpulencia;Doble Patada",
+    "Tajo Cruzado;Fuerza Bruta;Ultrapuño;Golpe Roca;Puño Certero;Movimiento Sísmico/Mov. Sísmico;Contraataque;Puño Drenaje;Onda Certera;Detección",
+    "Gancho Alto;Machada;Onda Vacío;Inversión;Desquite;Triple Patada;Patada Giro;Tiro Vital;Plancha Corporal",
+    "Palmeo;Espabila;Empujón;Puntapié;Llave Giro;Puño Incremento;Espada Santa;Anticipo",
+    "Sable Místico;Sacrificio"],
+
+  ["Nombra una ciudad, pueblo o lugar de la región de Johto",
+    "Ciudad Trigal/Trigal;Pueblo Primavera/Primavera;Ciudad Malva/Malva;Ciudad Iris",
+    "Pueblo Azalea/Azalea;Ciudad Olivo/Olivo;Ciudad Cerezo/Cerezo;Ciudad Endrino/Endrino;Pueblo Caoba/Caoba;Ciudad Orquídea/Orquídea",
+    "Torre Quemada;Torre Campana/Torre Hojalata;Ruinas Alfa;Pozo Slowpoke;Encinar/Bosque Encinar;Lago de la Furia/Lago Furia",
+    "Cueva Unión;Torre Bellsprout;Faro Olivo;Parque Nacional;Monte Plateado;Islas Remolino;Cueva Oscura",
+    "Guarida Dragón;Calle Victoria;Torre Radio;Monte Mortero;Granja Muu Muu",
+    "Frente Batalla"]
+]);

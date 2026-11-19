@@ -16,3 +16,14 @@ CC.regla("pokemon", { since: "2026-11-19" }, [
   ["Nombra un Pokémon que pueda tener la habilidad Mudar", {"habilidad": "Mudar"}],
   ["Nombra un Pokémon que habite en el bosque", {"habitat": "bosque"}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-20" }, [
+  ["Nombra un Pokémon de tipo Agua que pese 100 kilos o más", {"tipo": ["Agua"], "peso_min": 100}],
+  ["Nombra un Pokémon que sea de tipo Planta y Veneno a la vez", {"tipos": ["Planta", "Veneno"]}],
+  ["Nombra un Pokémon que pueda tener la habilidad Nado Rápido", {"habilidad": "Nado Rápido"}],
+  ["Nombra un Pokémon que habite en la ciudad", {"habitat": "ciudad"}],
+  ["Nombra un Pokémon cuyo nombre en español termine en la letra A", {"termina": "a"}],
+  ["Nombra un Pokémon con 110 o más de ataque especial base que no sea legendario ni mítico", {"ataque_esp_min": 110, "leg": "no"}],
+  ["Nombra un Pokémon de color rojo", {"color": "Rojo"}],
+  ["Nombra un Pokémon de tipo Volador con 100 o más de velocidad base", {"tipo": ["Volador"], "velocidad_min": 100}]
+]);
