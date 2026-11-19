@@ -18,7 +18,7 @@ create table if not exists public.jugadores (
 create table if not exists public.diarios (
   apodo      text not null references public.jugadores(apodo) on delete cascade,
   fecha      date not null,
-  categoria  text not null check (categoria in ('clasica', 'pokemon')),
+  categoria  text not null check (categoria in ('clasica', 'pokemon', 'deportes')),
   puntos     int,
   respuestas jsonb,
   iniciado   timestamptz not null default now(),
@@ -28,7 +28,7 @@ create table if not exists public.diarios (
 
 create table if not exists public.records (
   apodo       text not null references public.jugadores(apodo) on delete cascade,
-  categoria   text not null check (categoria in ('clasica', 'pokemon')),
+  categoria   text not null check (categoria in ('clasica', 'pokemon', 'deportes')),
   modo        text not null check (modo in ('clasico', 'sinfinal', 'contra')),
   puntos      int not null check (puntos >= 0),
   actualizado timestamptz not null default now(),
@@ -111,7 +111,7 @@ begin
   if not public.pin_correcto(p_apodo, p_pin) then
     return json_build_object('ok', false, 'error', 'pin');
   end if;
-  if p_categoria not in ('clasica', 'pokemon') then
+  if p_categoria not in ('clasica', 'pokemon', 'deportes') then
     return json_build_object('ok', false, 'error', 'categoria');
   end if;
 
@@ -177,7 +177,7 @@ begin
   if not public.pin_correcto(p_apodo, p_pin) then
     return json_build_object('ok', false, 'error', 'pin');
   end if;
-  if p_categoria not in ('clasica', 'pokemon') or p_modo not in ('clasico', 'sinfinal', 'contra') then
+  if p_categoria not in ('clasica', 'pokemon', 'deportes') or p_modo not in ('clasico', 'sinfinal', 'contra') then
     return json_build_object('ok', false, 'error', 'datos');
   end if;
 
