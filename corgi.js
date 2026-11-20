@@ -116,6 +116,11 @@
       rows: ["..OOOOOOOO..", "OOOYLYYYYOOO", "OYOYLYYYYOYO", "OYOYLYYYDOYO", ".OOYYYYYDOO.", "..OYYYYYDO..",
         "...OYYYDO...", "....OYDO....", "....OYDO....", "...OOOOOO...", "..OBBBBBBO..", "..OOOOOOOO.."]
     },
+    planeta: {
+      pal: { O: "#1c1410", B: "#3f8fd6", L: "#8fd3ff", G: "#5bb04a", D: "#3f8a35" },
+      rows: ["....OOOO....", "..OOLBGGOO..", ".OLBGGGBBBO.", ".OBGGDBBBGO.", "OBBGGBBBGGBO", "OBBBDBBBGDBO",
+        "OBGGBBBBBBBO", "OBGDGBBGGBBO", ".OBGGBBGDBO.", ".OBBBBBBBBO.", "..OOBBBBOO..", "....OOOO...."]
+    },
     balon: {
       pal: { O: "#1c1410", W: "#ffffff", K: "#1c1410", S: "#d5dbe2" },
       rows: ["....OOOO....", "..OOWWWWOO..", ".OWWWKKWWWO.", ".OWWKKKKWWO.", "OKWWWKKWWWKO", "OKKWWWWWWKKO",

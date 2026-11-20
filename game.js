@@ -14,7 +14,7 @@
     { n: "Hueso de Oro", p: 100, s: 15, say: "¡¡HUESO DE ORO!!" }
   ];
   // Ícono pixelado de cada categoría (ver Corgi.icon).
-  var CAT_ICON = { clasica: "trofeo", pokemon: "pokeball", deportes: "balon" };
+  var CAT_ICON = { clasica: "trofeo", pokemon: "pokeball", deportes: "balon", geografia: "planeta" };
   function catIcon(id, size) { return CAT_ICON[id] ? Corgi.icon(CAT_ICON[id], size) : ""; }
   var QTIME = 25, RUN = 7, CLOCK = 45, FULL = 7000, SKIP_PEN = 5;
   var PX = 4, GROUND = 300, PXM = 0.26, DOG = 72;
