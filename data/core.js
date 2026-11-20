@@ -70,7 +70,12 @@
       // since: fecha (AAAA-MM-DD) desde la que la consigna existe en el juego; sin fecha, siempre
       return { id: id + ":" + row[0], cat: id, q: row[0], answers: answers, since: (meta && meta.since) || null };
     });
-    if (cats[id]) { cats[id].prompts = cats[id].prompts.concat(prompts); return; }
+    if (cats[id]) {
+      cats[id].prompts = cats[id].prompts.concat(prompts);
+      // si la categoría la creó antes un bloque diario (sin nombre), aquí recibe su nombre, color y descripción
+      if (meta && meta.name) { var extra = Object.assign({}, meta); delete extra.since; Object.assign(cats[id], extra); }
+      return;
+    }
     var info = Object.assign({}, meta);
     delete info.since;
     cats[id] = Object.assign({ id: id, prompts: prompts }, info);
