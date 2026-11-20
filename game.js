@@ -913,43 +913,92 @@
       if (r() < 0.035) { px(x, G - 2, ["#ffffff", "#ffcf3f", "#f28fb8", "#b48cff"][Math.floor(r() * 4)]); px(x, G - 1, "#3f8a35"); }
     }
 
-    // tierra: una loseta que se repite sin costuras
-    var T = 128, tile = pixelCanvas(T * PX, T * PX), tp = tile.px, tr = seeded("tierra-corgi");
-    var tierra = ["#9a6237", "#a36a3d", "#8f5a31", "#ad7446"];
-    for (y = 0; y < T; y += 2) for (x = 0; x < T; x += 2) {
-      var q = tr();
-      tp(x, y, tierra[q < 0.55 ? 0 : q < 0.75 ? 1 : q < 0.92 ? 2 : 3], 2, 2);
-      if (tr() < 0.25) tp(x + (tr() < 0.5 ? 0 : 1), y + (tr() < 0.5 ? 0 : 1), tierra[Math.floor(tr() * 4)]);
-    }
-    function wrap(a, b, col, w, h) { for (var yy = 0; yy < (h || 1); yy++) for (var xx = 0; xx < (w || 1); xx++) tp((a + xx + T) % T, (b + yy + T) % T, col); }
-    // vetas onduladas (periódicas para no cortar la loseta)
-    [[17, "#86522b"], [58, "#7c4a27"], [99, "#86522b"]].forEach(function (v) {
-      for (x = 0; x < T; x++) {
-        var yy = v[0] + Math.round(Math.sin(x * Math.PI * 2 / T) * 2 + Math.sin(x * Math.PI * 4 / T + 1));
-        wrap(x, yy, v[1]); if (x % 3) wrap(x, yy + 1, v[1]);
+    // tierra por capas, como en el juego: cuanto más bajas en la página, más honda y rara la roca.
+    // Cada capa es una franja que se repite a lo ancho; la última se repite hasta el fondo.
+    var T = 128, BH = 100, tr = seeded("tierra-corgi");
+    var PALS = [
+      ["#9a6237", "#a36a3d", "#8f5a31", "#ad7446"],
+      ["#87572f", "#95633a", "#784b27", "#8d5c33"],
+      ["#6b6f7a", "#7a7e89", "#5b5f69", "#73777f"],
+      ["#4a3f66", "#574a77", "#3d3356", "#514570"],
+      ["#7a2a22", "#8e352b", "#64201a", "#83302a"],
+      ["#2a2433", "#352e40", "#201b28", "#2f2939"]
+    ];
+    function band(k) {
+      var c = pixelCanvas(T * PX, BH * PX), tp = c.px, pal = PALS[k], nx = PALS[k + 1];
+      function wrap(a, b, col, w, h) {
+        for (var yy = 0; yy < (h || 1); yy++) for (var xx = 0; xx < (w || 1); xx++) {
+          var by = b + yy; if (by >= 0 && by < BH) tp((a + xx + T) % T, by, col);
+        }
       }
-    });
-    // piedritas, huesitos y raíces
-    for (i = 0; i < 26; i++) {
-      x = Math.floor(tr() * T); y = Math.floor(tr() * T);
-      if (tr() < 0.5) { wrap(x, y, "#8a6a4f", 2, 1); continue; }
-      wrap(x, y, "#7d838c", 3, 2); wrap(x, y, "#b9c1ca", 2, 1); wrap(x + 1, y + 2, "#5d3b1e", 2, 1);
+      for (var yy = 0; yy < BH; yy += 2) for (var xx = 0; xx < T; xx += 2) {
+        var q = tr();
+        tp(xx, yy, pal[q < 0.55 ? 0 : q < 0.75 ? 1 : q < 0.92 ? 2 : 3], 2, 2);
+        if (tr() < 0.25) tp(xx + (tr() < 0.5 ? 0 : 1), yy + (tr() < 0.5 ? 0 : 1), pal[Math.floor(tr() * 4)]);
+      }
+      [18, 52, 80].forEach(function (v0, vi) {
+        for (var a = 0; a < T; a++) {
+          var vy = v0 + Math.round(Math.sin(a * Math.PI * 2 / T + vi) * 2 + Math.sin(a * Math.PI * 4 / T + 1));
+          wrap(a, vy, pal[2]); if (a % 3) wrap(a, vy + 1, pal[2]);
+        }
+      });
+      var a, b2, m;
+      function spots(n) { return Array.apply(null, Array(n)).map(function () { return [Math.floor(tr() * T), 3 + Math.floor(tr() * (BH - 12))]; }); }
+      if (k <= 1) {
+        spots(k ? 14 : 22).forEach(function (s2) {
+          if (tr() < 0.5) wrap(s2[0], s2[1], k ? "#6e5440" : "#8a6a4f", 2, 1);
+          else { wrap(s2[0], s2[1], "#7d838c", 3, 2); wrap(s2[0], s2[1], "#b9c1ca", 2, 1); }
+        });
+        spots(k ? 4 : 2).forEach(function (s2) {
+          a = s2[0]; b2 = s2[1];
+          wrap(a, b2, "#f1e7d0", 4, 1); wrap(a - 1, b2 - 1, "#f1e7d0"); wrap(a - 1, b2 + 1, "#f1e7d0"); wrap(a + 4, b2 - 1, "#f1e7d0"); wrap(a + 4, b2 + 1, "#f1e7d0");
+        });
+        if (!k) spots(3).forEach(function (s2) { for (m = 0; m < 5; m++) { wrap(s2[0], s2[1] + m, "#6b4425"); if (tr() < 0.4) s2[0] += tr() < 0.5 ? -1 : 1; } });
+        if (k) spots(2).forEach(function (s2) { wrap(s2[0], s2[1], "#d9cbb0", 3, 1); wrap(s2[0], s2[1] + 1, "#d9cbb0"); wrap(s2[0] + 2, s2[1] + 1, "#d9cbb0"); wrap(s2[0], s2[1] + 2, "#d9cbb0", 3, 1); });
+        spots(2).forEach(function (s2) { wrap(s2[0], s2[1], "#f6c12d", 2, 1); wrap(s2[0], s2[1], "#fff1a8"); });
+      } else if (k === 2) {
+        spots(10).forEach(function (s2) { for (m = 0; m < 4; m++) wrap(s2[0] + m, s2[1] + (m % 2), "#3f434c"); });
+        spots(8).forEach(function (s2) { wrap(s2[0], s2[1], "#1f2126", 2, 2); wrap(s2[0] + 2, s2[1] + 1, "#1f2126"); });
+        spots(5).forEach(function (s2) { wrap(s2[0], s2[1], "#d9e2ea", 2, 1); wrap(s2[0] + 1, s2[1] + 1, "#aab4bf", 2, 1); });
+        spots(2).forEach(function (s2) { wrap(s2[0], s2[1], "#f6c12d", 2, 2); wrap(s2[0], s2[1], "#fff1a8"); });
+      } else if (k === 3) {
+        spots(9).forEach(function (s2) {
+          var col = tr() < 0.5 ? ["#7fe3ff", "#d6f7ff", "#3ba6c9"] : ["#f28fd0", "#ffd9f1", "#b34f93"];
+          wrap(s2[0] + 1, s2[1], col[0]); wrap(s2[0], s2[1] + 1, col[0], 3, 1); wrap(s2[0] + 1, s2[1] + 2, col[2]); wrap(s2[0] + 1, s2[1] + 1, col[1]);
+        });
+        spots(8).forEach(function (s2) { wrap(s2[0], s2[1], "#2f2847", 3, 1); });
+      } else if (k === 4) {
+        spots(10).forEach(function (s2) {
+          if (tr() < 0.6) { wrap(s2[0], s2[1], "#ff8a2a", 4, 1); wrap(s2[0] + 1, s2[1] + 1, "#ff8a2a", 3, 1); wrap(s2[0] + 1, s2[1], "#ffe066", 2, 1); }
+          else wrap(s2[0], s2[1], "#3a100c", 2, 1);
+        });
+      } else {
+        spots(8).forEach(function (s2) { wrap(s2[0], s2[1], "#6f5aa8", 1, 3); wrap(s2[0] + 1, s2[1] + 1, "#a892e6"); wrap(s2[0] - 1, s2[1] + 2, "#17121d", 3, 1); });
+        spots(6).forEach(function (s2) { wrap(s2[0], s2[1], "#ffe066", 1, 1); });
+      }
+      // borde ondulado hacia la capa siguiente
+      if (nx) {
+        for (a = 0; a < T; a++) {
+          var e = BH - 6 + Math.round(Math.sin(a * Math.PI * 2 / T) * 2 + Math.sin(a * Math.PI * 4 / T + 1));
+          for (m = e; m < BH; m++) { var q2 = tr(); tp(a, m, nx[q2 < 0.6 ? 0 : q2 < 0.85 ? 1 : 3]); }
+          tp(a, e, nx[2]); tp(a, e - 1, pal[2]);
+        }
+      }
+      return c.cv.toDataURL();
     }
-    for (i = 0; i < 3; i++) {
-      x = Math.floor(tr() * T); y = Math.floor(tr() * T);
-      wrap(x, y, "#f1e7d0", 4, 1); wrap(x - 1, y - 1, "#f1e7d0"); wrap(x - 1, y + 1, "#f1e7d0"); wrap(x + 4, y - 1, "#f1e7d0"); wrap(x + 4, y + 1, "#f1e7d0");
-    }
-    for (i = 0; i < 3; i++) {
-      x = Math.floor(tr() * T); y = Math.floor(tr() * T); n = 3 + Math.floor(tr() * 4);
-      for (var k = 0; k < n; k++) { wrap(x, y + k, "#6b4425"); if (tr() < 0.4) x += tr() < 0.5 ? -1 : 1; }
-    }
-    for (i = 0; i < 3; i++) { x = Math.floor(tr() * T); y = Math.floor(tr() * T); wrap(x, y, "#f6c12d", 2, 1); wrap(x, y, "#fff1a8"); }
 
+    var y0 = SKY_H + GRASS_H, imgs = ["url(" + top.cv.toDataURL() + ")"], reps = ["no-repeat"], poss = ["top center"];
+    for (i = 0; i < PALS.length; i++) {
+      imgs.push("url(" + band(i) + ")");
+      var last = i === PALS.length - 1;
+      reps.push(last ? "repeat" : "repeat-x");
+      poss.push("0 " + (y0 + i * BH * PX) + "px");
+    }
     var b = document.body.style;
-    b.backgroundImage = "url(" + top.cv.toDataURL() + "), url(" + tile.cv.toDataURL() + ")";
-    b.backgroundRepeat = "no-repeat, repeat";
-    b.backgroundPosition = "top center, 0 " + (SKY_H + GRASS_H) + "px";
-    b.backgroundColor = "#9a6237";
+    b.backgroundImage = imgs.join(", ");
+    b.backgroundRepeat = reps.join(", ");
+    b.backgroundPosition = poss.join(", ");
+    b.backgroundColor = PALS[PALS.length - 1][0];
   }
 
   var rz = null;
