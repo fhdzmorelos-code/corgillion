@@ -42,21 +42,21 @@
   // Accesorios: [fila, columna inicial, píxeles]; "." deja ver lo de abajo.
   var VARIANTS = [
     {
-      name: "Canela", desc: "Rojo y blanco con pañuelo",
+      name: "Donna", desc: "Roja y blanca con pañuelo",
       pal: { F: "#e08a3c", D: "#c26f27", L: "#f0a65c", C: "#c26f27", W: "#fff6e6", a: "#d8343a", b: "#9c1f2b" },
       acc: [[15, 6, "aaaaaaaaaaaa"], [16, 9, "abaaba"], [17, 10, "abba"], [18, 11, "aa"]]
     },
     {
-      name: "Carbón", desc: "Tricolor con casco de minero",
+      name: "Jaquavius", desc: "Tricolor con casco de minero",
       pal: { F: "#35343f", D: "#24232c", L: "#4a4957", C: "#d98a45", B: "#d98a45", W: "#fff6e6", y: "#f6c12d", l: "#fffbe0", d: "#b98510" },
       acc: [[1, 9, "yyyyyy"], [2, 8, "yyyllyyy"], [3, 8, "yyyllyyy"], [4, 6, "dddddddddddd"]]
     },
     {
-      name: "Sable", desc: "Sable con casco de fútbol americano",
-      pal: { F: "#b8763a", D: "#8a5527", L: "#cf8f52", C: "#5b3a22", W: "#f7ead2", h: "#d0283a", d: "#8e1424", w: "#ffffff", m: "#6b737e", x: "#1c1410" },
+      name: "Brady", desc: "Sable con casco plateado estilo Patriots",
+      pal: { F: "#b8763a", D: "#8a5527", L: "#cf8f52", C: "#5b3a22", W: "#f7ead2", h: "#c4cbd2", d: "#8f979f", n: "#0c2340", r: "#c60c30", w: "#ffffff", m: "#0c2340", x: "#1c1410" },
       acc: [
-        [1, 8, "xxxxxxxx"], [2, 6, "xhhhhwwhhhhx"], [3, 4, "xhhhhhhwwhhhhhhx"], [4, 3, "xhhhhhhhwwhhhhhhhx"],
-        [5, 2, "xhhhhhhhhwwhhhhhhhhx"], [6, 2, "xhxhhhhhhwwhhhhhhxhx"], [7, 2, "xddddddddddddddddddx"],
+        [1, 8, "xxxxxxxx"], [2, 6, "xhhhhwhhhhhx"], [3, 4, "xhhhhhwhhhhhhhhx"], [4, 3, "xhnnrhhhhhhhhrnnhx"],
+        [5, 2, "xhhwnnhhhhhhhhnnwhhx"], [6, 2, "xhxhhhhhhhhhhhhhhxhx"], [7, 2, "xddddddddddddddddddx"],
         [8, 3, "m"], [8, 20, "m"], [9, 3, "m"], [9, 20, "m"], [10, 3, "m"], [10, 20, "m"], [11, 3, "m"], [11, 20, "m"],
         [12, 3, "mmmmmmm"], [12, 14, "mmmmmmm"]
       ]

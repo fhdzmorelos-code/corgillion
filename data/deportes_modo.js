@@ -1,5 +1,5 @@
 // Categoría "Deportes": fútbol (Liga MX, LaLiga, Premier League y más), NFL, MLB, tenis y deporte en general.
-CC.add("deportes", { name: "Deportes", color: "#3fa34d", desc: "Fútbol (Liga MX, LaLiga, Premier), NFL, MLB, tenis y algo de deporte en general." }, [
+CC.add("deportes", { name: "Deportes", color: "#3fa34d", desc: "Fútbol soccer, fútbol americano, básquetbol y un poco de todo lo demás." }, [
   // ---------- Liga MX y fútbol mexicano ----------
   ["Nombra un equipo que haya sido campeón del fútbol mexicano (Liga MX o Primera División)",
     "América/Club América;Chivas/Guadalajara;Cruz Azul;Pumas/UNAM",
@@ -108,21 +108,21 @@ CC.add("deportes", { name: "Deportes", color: "#3fa34d", desc: "Fútbol (Liga MX
     "George Graham;Roberto Di Matteo/Di Matteo;Avram Grant;André Villas-Boas;Ralf Rangnick/Rangnick;Graeme Souness/Souness;Roy Evans"],
 
   // ---------- Más fútbol ----------
-  ["Nombra un club que haya sido campeón de la Serie A de Italia",
-    "Juventus/Juve;Inter de Milán/Inter;AC Milan/Milan",
-    "Napoli/Nápoles;Roma/AS Roma",
-    "Lazio;Fiorentina",
-    "Torino;Bologna/Bolonia;Genoa",
-    "Sampdoria;Cagliari;Hellas Verona/Verona",
-    "Pro Vercelli;Casale;Novese"],
+  ["Nombra un club de fútbol de Italia",
+    "Juventus/Juve;Inter de Milán/Inter;AC Milan/Milan;Napoli/Nápoles;Roma/AS Roma",
+    "Lazio;Fiorentina;Atalanta;Torino",
+    "Bologna/Bolonia;Genoa;Sampdoria;Udinese",
+    "Parma;Cagliari;Hellas Verona/Verona;Sassuolo;Lecce",
+    "Empoli;Como;Monza;Palermo;Bari;Brescia",
+    "Salernitana;Venezia;Cremonese;Spezia;Frosinone;Pisa"],
 
-  ["Nombra un club que haya sido campeón de la Bundesliga de Alemania",
-    "Bayern Múnich/Bayern Munich/Bayern",
-    "Borussia Dortmund/Dortmund",
-    "Bayer Leverkusen/Leverkusen;Borussia Mönchengladbach/Mönchengladbach/Gladbach",
-    "Werder Bremen/Bremen;Hamburgo/Hamburger SV;Stuttgart/VfB Stuttgart",
-    "Wolfsburg;Kaiserslautern;Colonia/FC Köln",
-    "1860 Múnich/1860 Munich;Eintracht Braunschweig/Braunschweig;Núremberg/Nuremberg/FC Nürnberg"],
+  ["Nombra un club de fútbol de Alemania",
+    "Bayern Múnich/Bayern Munich/Bayern;Borussia Dortmund/Dortmund",
+    "Bayer Leverkusen/Leverkusen;Schalke 04/Schalke;RB Leipzig/Leipzig;Borussia Mönchengladbach/Mönchengladbach/Gladbach",
+    "Wolfsburg;Hamburgo/Hamburger SV;Werder Bremen/Bremen;Stuttgart/VfB Stuttgart;Eintracht Fráncfort/Eintracht Frankfurt",
+    "Colonia/FC Köln;Hertha Berlín/Hertha;Union Berlín/Union Berlin;Friburgo/Freiburg;Hoffenheim;Mainz/Maguncia",
+    "Augsburgo/Augsburg;Kaiserslautern;Núremberg/Nuremberg;Hannover 96/Hannover;Bochum;St. Pauli",
+    "Heidenheim;Darmstadt;Fortuna Düsseldorf/Düsseldorf;Karlsruhe;1860 Múnich;Holstein Kiel"],
 
   ["Nombra una selección que haya jugado una final de la Copa del Mundo masculina",
     "Brasil;Argentina;Alemania;Francia",
@@ -286,5 +286,54 @@ CC.add("deportes", { name: "Deportes", color: "#3fa34d", desc: "Fútbol (Liga MX
     "Paola Espinosa;Soraya Jiménez;María del Rosario Espinoza;Érik Morales/Terrible Morales;Marco Antonio Barrera;Rommel Pacheco;Pato O'Ward",
     "Alejandra Valencia;Alejandra Orozco;Raúl González;Ernesto Canto;Ricardo López/Finito López;Salvador Sánchez;Rubén Olivares;Osmar Olvera",
     "Joaquín Capilla;Humberto Mariles;Daniel Bautista;Germán Sánchez;Iván García;Abraham Ancer;Carlos Ortiz",
-    "Pedro Rodríguez;Ricardo Rodríguez;Adrián Fernández;Esteban Gutiérrez;Carlos Girón"]
+    "Pedro Rodríguez;Ricardo Rodríguez;Adrián Fernández;Esteban Gutiérrez;Carlos Girón"],
+
+  // ---------- Más generales: fútbol, básquetbol y Olimpiadas ----------
+  ["Nombra un futbolista famoso (actual o histórico)",
+    "Lionel Messi/Messi;Cristiano Ronaldo/CR7;Pelé;Diego Maradona/Maradona;Neymar;Kylian Mbappé/Mbappé;Ronaldinho;Zinedine Zidane/Zidane",
+    "Erling Haaland/Haaland;Vinícius Júnior/Vinicius;Robert Lewandowski/Lewandowski;Luka Modrić/Modric;Karim Benzema/Benzema;Ronaldo Nazário;David Beckham/Beckham;Javier Hernández/Chicharito;Hugo Sánchez;Rafael Márquez/Rafa Márquez",
+    "Kaká;Andrés Iniesta/Iniesta;Xavi Hernández/Xavi;Zlatan Ibrahimović/Ibrahimovic;Mohamed Salah/Salah;Harry Kane/Kane;Jude Bellingham/Bellingham;Lamine Yamal;Guillermo Ochoa/Memo Ochoa;Wayne Rooney/Rooney;Thierry Henry/Henry;Luis Suárez",
+    "Gianluigi Buffon/Buffon;Iker Casillas/Casillas;Sergio Ramos;Johan Cruyff/Cruyff;Franz Beckenbauer/Beckenbauer;Paolo Maldini/Maldini;Andrea Pirlo/Pirlo;Francesco Totti/Totti;Steven Gerrard/Gerrard;Didier Drogba/Drogba;Kevin De Bruyne/De Bruyne",
+    "Ferenc Puskás/Puskás;Alfredo Di Stéfano/Di Stéfano;Eusébio;Roberto Baggio/Baggio;Frank Lampard/Lampard;Samuel Eto'o/Eto'o;Manuel Neuer/Neuer;Toni Kroos/Kroos;Antoine Griezmann/Griezmann;Paul Pogba/Pogba;Cuauhtémoc Blanco",
+    "Lev Yashin/Yashin;Gerd Müller;Garrincha;George Best;Bobby Charlton;Michel Platini/Platini;Marco van Basten/Van Basten;Romário;Hristo Stoichkov/Stoichkov"],
+
+  ["Nombra un club de fútbol de Europa",
+    "Real Madrid;Barcelona/FC Barcelona/Barça;Manchester United/Man United;Liverpool;Bayern Múnich/Bayern;Chelsea;Juventus",
+    "Manchester City/Man City;Arsenal;Atlético de Madrid/Atlético;PSG/Paris Saint-Germain;AC Milan/Milan;Inter de Milán/Inter;Borussia Dortmund/Dortmund",
+    "Tottenham/Spurs;Ajax;Benfica;Porto/FC Porto;Sevilla;Napoli/Nápoles;Roma;Valencia;Olympique de Marsella/Marsella",
+    "Celtic;Rangers;PSV Eindhoven/PSV;Sporting de Lisboa/Sporting;Galatasaray;Fenerbahçe;Lyon/Olympique de Lyon;Athletic Club/Athletic Bilbao;Real Sociedad;Villarreal;Bayer Leverkusen/Leverkusen",
+    "Feyenoord;Besiktas;Mónaco/AS Mónaco;Shakhtar Donetsk/Shakhtar;Dinamo de Kiev;Lazio;Atalanta;Newcastle United/Newcastle;Aston Villa;Everton;West Ham",
+    "Estrella Roja;Club Brujas/Brujas;Anderlecht;Olympiacos;Panathinaikos;Zenit;CSKA Moscú;Dinamo Zagreb;Salzburgo/Red Bull Salzburgo;Basilea;Copenhague/FC Copenhague"],
+
+  ["Nombra un equipo de la NBA",
+    "Lakers de Los Ángeles/Lakers/Los Angeles Lakers;Bulls de Chicago/Bulls/Chicago Bulls;Celtics de Boston/Celtics/Boston Celtics;Warriors de Golden State/Warriors/Golden State Warriors;Heat de Miami/Heat/Miami Heat",
+    "Knicks de Nueva York/Knicks/New York Knicks;Spurs de San Antonio/Spurs/San Antonio Spurs;Mavericks de Dallas/Mavericks/Dallas Mavericks;Rockets de Houston/Rockets/Houston Rockets;Nets de Brooklyn/Nets/Brooklyn Nets;Clippers/Los Angeles Clippers",
+    "Cavaliers de Cleveland/Cavaliers/Cavs/Cleveland Cavaliers;Suns de Phoenix/Suns/Phoenix Suns;76ers de Filadelfia/76ers/Sixers/Philadelphia 76ers;Thunder de Oklahoma City/Thunder/Oklahoma City Thunder;Bucks de Milwaukee/Bucks/Milwaukee Bucks;Raptors de Toronto/Raptors/Toronto Raptors",
+    "Nuggets de Denver/Nuggets/Denver Nuggets;Jazz de Utah/Jazz/Utah Jazz;Trail Blazers de Portland/Trail Blazers/Blazers/Portland Trail Blazers;Pistons de Detroit/Pistons/Detroit Pistons;Timberwolves de Minnesota/Timberwolves/Wolves/Minnesota Timberwolves",
+    "Pacers de Indiana/Pacers/Indiana Pacers;Hawks de Atlanta/Hawks/Atlanta Hawks;Magic de Orlando/Magic/Orlando Magic;Kings de Sacramento/Kings/Sacramento Kings;Pelicans de Nueva Orleans/Pelicans/New Orleans Pelicans;Grizzlies de Memphis/Grizzlies/Memphis Grizzlies",
+    "Hornets de Charlotte/Hornets/Charlotte Hornets;Wizards de Washington/Wizards/Washington Wizards"],
+
+  ["Nombra un jugador de la NBA (actual o histórico)",
+    "Michael Jordan/Jordan;LeBron James/LeBron;Kobe Bryant/Kobe;Stephen Curry/Curry;Shaquille O'Neal/Shaq;Magic Johnson",
+    "Larry Bird/Bird;Kevin Durant/Durant;Giannis Antetokounmpo/Giannis;Tim Duncan/Duncan;Kareem Abdul-Jabbar/Kareem;Dirk Nowitzki/Nowitzki;Luka Dončić/Luka Doncic/Doncic;Dennis Rodman/Rodman;Scottie Pippen/Pippen",
+    "Allen Iverson/Iverson;Dwyane Wade;Kevin Garnett;Hakeem Olajuwon;Nikola Jokić/Jokic;Victor Wembanyama/Wembanyama;Wilt Chamberlain;Bill Russell;Chris Paul;James Harden;Russell Westbrook;Kawhi Leonard",
+    "Jayson Tatum;Anthony Davis;Damian Lillard;Jimmy Butler;Paul Pierce;Ray Allen;Carmelo Anthony;Vince Carter;Tony Parker;Manu Ginóbili/Ginóbili;Pau Gasol;Yao Ming;Shai Gilgeous-Alexander",
+    "Charles Barkley;Karl Malone;John Stockton;Patrick Ewing;Isiah Thomas;Julius Erving/Dr. J;Steve Nash;Klay Thompson;Draymond Green;Anthony Edwards;Ja Morant;Joel Embiid;Kyrie Irving",
+    "Reggie Miller;Gary Payton;Jason Kidd;David Robinson;Tracy McGrady;Pete Maravich;Jerry West;Oscar Robertson;Moses Malone;Eduardo Nájera;Gustavo Ayón;Horacio Llamas;Juan Toscano-Anderson;Jaime Jaquez Jr."],
+
+  ["Nombra un equipo que haya sido campeón de la NBA",
+    "Lakers/Los Angeles Lakers;Celtics/Boston Celtics;Bulls/Chicago Bulls;Warriors/Golden State Warriors;Spurs/San Antonio Spurs;Heat/Miami Heat",
+    "Pistons/Detroit Pistons;76ers/Sixers/Philadelphia 76ers;Knicks/New York Knicks;Rockets/Houston Rockets",
+    "Bucks/Milwaukee Bucks;Nuggets/Denver Nuggets;Cavaliers/Cavs/Cleveland Cavaliers;Mavericks/Dallas Mavericks",
+    "Raptors/Toronto Raptors;Thunder/Oklahoma City Thunder;Trail Blazers/Portland Trail Blazers",
+    "Hawks/Atlanta Hawks;Wizards/Washington Wizards/Washington Bullets",
+    "Kings/Sacramento Kings/Rochester Royals"],
+
+  ["Nombra una ciudad que haya sido sede de unos Juegos Olímpicos (de verano o de invierno)",
+    "Ciudad de México/México;Los Ángeles;Barcelona;Londres;París;Tokio;Río de Janeiro/Río",
+    "Pekín/Beijing;Atenas;Sídney;Atlanta;Seúl;Moscú;Montreal",
+    "Múnich;Roma;Berlín;Ámsterdam;Vancouver;Sochi;Salt Lake City",
+    "Turín;Nagano;Lillehammer;Calgary;Sarajevo;Lake Placid;Melbourne;Helsinki;Milán/Milán-Cortina;Pyeongchang",
+    "Amberes;Estocolmo;San Luis/St. Louis;Innsbruck;Sapporo;Grenoble;Albertville;Oslo",
+    "Squaw Valley;Cortina d'Ampezzo/Cortina;St. Moritz/Saint Moritz;Garmisch-Partenkirchen;Chamonix"]
 ]);

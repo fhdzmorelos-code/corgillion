@@ -135,7 +135,7 @@
 
     show(
       '<header class="logo"><h1>' + Corgi.item(2, 44, "logo-deco") + "<span>" + GAME_NAME + "</span>" + Corgi.item(5, 44, "logo-deco flip") + "</h1><p>Cuanto más rara tu respuesta, más hondo cava tu corgi.</p></header>" +
-      '<main class="home"><div class="col">' +
+      '<main class="home"><div class="col side">' +
       '<section class="panel kennel"><h2>Tu corgi</h2>' +
       '<div class="bubble">¡Guau! Soy ' + esc(v.name) + ". ¿Cavamos?</div>" +
       '<div class="stage">' + Corgi.svg(save.corgi, 192, "idle") + '<div class="mound"></div></div>' +
@@ -144,9 +144,32 @@
       "<p>Cada consigna pide nombrar algo y tiene muchas respuestas válidas. Las obvias valen poco; las que casi nadie diría, mucho. " +
       "Si escribes con erratas, el corgi toma la respuesta más parecida de su lista. También entiende respuestas en inglés.</p>" +
       "<table><tr><th>Hallazgo</th><th>Puntos</th><th>Cava</th><th>Reloj</th></tr>" + legend + "</table></section>" +
+      recordsPanel() +
       '</div><div class="col">' + cats + "</div></main>"
     );
+    stickSide();
     flush();
+  }
+
+  // Tus récords: lo más hondo que has cavado en cada categoría y modo.
+  function recordsPanel() {
+    var t = today();
+    var head = "<tr><th></th>" + Object.keys(MODES).map(function (m) { return "<th>" + MODES[m].n + "</th>"; }).join("") + "</tr>";
+    var rows = CC.order.map(function (id) {
+      var d = save.daily[id];
+      return '<tr><td class="rec-cat" title="' + esc(CC.cats[id].name) + '">' + catIcon(id, 22) + "</td>" + Object.keys(MODES).map(function (m) {
+        var v = m === "diario" ? (d && d.date === t && d.done ? d.score : 0) : bestOf(id, m);
+        return "<td>" + (v ? meters(v) : "—") + "</td>";
+      }).join("") + "</tr>";
+    }).join("");
+    return '<section class="panel recs"><h2>Tus récords</h2><table>' + head + rows + "</table>" +
+      '<p class="recs-note">El diario muestra lo de hoy; los demás, tu mejor marca.</p></section>';
+  }
+
+  // La columna del corgi acompaña al bajar: se queda fija y, si es más alta que la ventana, se fija por su parte de abajo.
+  function stickSide() {
+    var el = document.querySelector(".home .side");
+    if (el) el.style.top = Math.min(16, window.innerHeight - el.offsetHeight - 16) + "px";
   }
 
   // ---------- subsuelo dibujado (pantalla completa) ----------
@@ -932,7 +955,7 @@
   var rz = null;
   window.addEventListener("resize", function () {
     clearTimeout(rz);
-    rz = setTimeout(function () { paintBackdrop(); if (G && $("strata")) paintWorld(); }, 200);
+    rz = setTimeout(function () { paintBackdrop(); stickSide(); if (G && $("strata")) paintWorld(); }, 200);
   });
 
   try { paintBackdrop(); } catch (e) { /* si falla, queda el fondo de styles.css */ }
