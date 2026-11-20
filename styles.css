@@ -371,3 +371,24 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
 .rank td:first-child, .rank th:first-child { width: 48px; }
 .rank tr { animation: rise .35s var(--ease) both; animation-delay: calc(var(--i, 0) * .03s); }
 .rank tr.me td { background: #fff1a8; font-weight: bold; }
+
+/* ---------- íconos de categoría ---------- */
+svg.icon { image-rendering: pixelated; display: inline-block; flex: none; filter: drop-shadow(2px 2px 0 rgba(28, 20, 16, .45)); }
+.cat-head h2 { display: flex; align-items: center; gap: 12px; }
+.hud-title { display: inline-flex; align-items: center; gap: 6px; }
+.results-head h1, header h1[style] { display: inline-flex; align-items: center; gap: 10px; }
+
+/* ---------- decoración de la pantalla inicial ---------- */
+.logo h1 { display: inline-flex; align-items: center; justify-content: center; gap: 22px; align-self: center; }
+.logo-deco { filter: drop-shadow(3px 3px 0 rgba(28, 20, 16, .55)); animation: bob 2.4s ease-in-out infinite; }
+.logo-deco.flip { transform: scaleX(-1); animation-delay: 1.2s; }
+@keyframes bob { 50% { translate: 0 -5px; } }
+.logo p {
+  align-self: center; display: inline-block; padding: 3px 14px;
+  background: rgba(255, 244, 214, .9); border: 3px solid var(--ink); box-shadow: 4px 4px 0 rgba(28, 20, 16, .45);
+}
+.cat-head {
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, .12) 0 12px, transparent 12px 24px);
+}
+.catbox .mode { border-top-width: 10px; border-top-color: var(--c); }
+.catbox .mode:hover { background: #fffaf0; }

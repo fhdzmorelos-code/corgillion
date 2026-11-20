@@ -52,9 +52,14 @@
       acc: [[1, 9, "yyyyyy"], [2, 8, "yyyllyyy"], [3, 8, "yyyllyyy"], [4, 6, "dddddddddddd"]]
     },
     {
-      name: "Sable", desc: "Sable con sombrero de explorador",
-      pal: { F: "#b8763a", D: "#8a5527", L: "#cf8f52", C: "#5b3a22", W: "#f7ead2", h: "#7a5230", k: "#2f6b4f" },
-      acc: [[1, 9, "hhhhhh"], [2, 8, "hhhhhhhh"], [3, 8, "kkkkkkkk"], [4, 5, "hhhhhhhhhhhhhh"]]
+      name: "Sable", desc: "Sable con casco de fútbol americano",
+      pal: { F: "#b8763a", D: "#8a5527", L: "#cf8f52", C: "#5b3a22", W: "#f7ead2", h: "#d0283a", d: "#8e1424", w: "#ffffff", m: "#6b737e", x: "#1c1410" },
+      acc: [
+        [1, 8, "xxxxxxxx"], [2, 6, "xhhhhwwhhhhx"], [3, 4, "xhhhhhhwwhhhhhhx"], [4, 3, "xhhhhhhhwwhhhhhhhx"],
+        [5, 2, "xhhhhhhhhwwhhhhhhhhx"], [6, 2, "xhxhhhhhhwwhhhhhhxhx"], [7, 2, "xddddddddddddddddddx"],
+        [8, 3, "m"], [8, 20, "m"], [9, 3, "m"], [9, 20, "m"], [10, 3, "m"], [10, 20, "m"], [11, 3, "m"], [11, 20, "m"],
+        [12, 3, "mmmmmmm"], [12, 14, "mmmmmmm"]
+      ]
     },
     {
       name: "Niebla", desc: "Azul merle con gafas de piloto",
@@ -99,6 +104,25 @@
     }
   ];
 
+  // Íconos de categoría (12x12).
+  var ICONS = {
+    pokeball: {
+      pal: { O: "#1c1410", R: "#e3363b", L: "#ff9a9a", W: "#ffffff", S: "#cfd6de" },
+      rows: ["....OOOO....", "..OORRRROO..", ".ORRLLRRRRO.", ".ORLRRRRRRO.", "ORRROOOORRRO", "OOOOWWWWOOOO",
+        "OWWWOOOOWWWO", "OSWWWWWWWWSO", ".OSWWWWWWSO.", ".OSSWWWWSSO.", "..OOSSSSOO..", "....OOOO...."]
+    },
+    trofeo: {
+      pal: { O: "#1c1410", Y: "#f6c12d", L: "#fff1a8", D: "#b98510", B: "#7a4a28" },
+      rows: ["..OOOOOOOO..", "OOOYLYYYYOOO", "OYOYLYYYYOYO", "OYOYLYYYDOYO", ".OOYYYYYDOO.", "..OYYYYYDO..",
+        "...OYYYDO...", "....OYDO....", "....OYDO....", "...OOOOOO...", "..OBBBBBBO..", "..OOOOOOOO.."]
+    },
+    balon: {
+      pal: { O: "#1c1410", W: "#ffffff", K: "#1c1410", S: "#d5dbe2" },
+      rows: ["....OOOO....", "..OOWWWWOO..", ".OWWWKKWWWO.", ".OWWKKKKWWO.", "OKWWWKKWWWKO", "OKKWWWWWWKKO",
+        "OWWKWWWWKWWO", "OWKKKWWKKKSO", ".OWKWWWWKSO.", ".OWWWKKWSSO.", "..OOSKKSOO..", "....OOOO...."]
+    }
+  };
+
   function rects(g, pal) {
     var out = "";
     for (var y = 0; y < g.length; y++) {
@@ -133,5 +157,12 @@
       rects(it.rows.map(function (r) { return r.split(""); }), it.pal) + "</svg>";
   }
 
-  root.Corgi = { svg: svg, item: item, variants: VARIANTS };
+  function icon(name, size) {
+    var it = ICONS[name];
+    if (!it) return "";
+    return '<svg class="icon" width="' + size + '" height="' + size + '" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">' +
+      rects(it.rows.map(function (r) { return r.split(""); }), it.pal) + "</svg>";
+  }
+
+  root.Corgi = { svg: svg, item: item, icon: icon, variants: VARIANTS };
 })(typeof window !== "undefined" ? window : globalThis);
