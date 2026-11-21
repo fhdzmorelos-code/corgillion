@@ -1,0 +1,6 @@
+SELECT ?c ?pop ?iso ?sl ?t WHERE {
+  ?c wdt:P1082 ?pop . FILTER(?pop >= 100000)
+  ?c wdt:P625 ?coord ; wdt:P17 ?pais ; wikibase:sitelinks ?sl ; wdt:P31 ?t .
+  ?pais wdt:P298 ?iso .
+  FILTER NOT EXISTS { ?c wdt:P576 ?fin }
+}

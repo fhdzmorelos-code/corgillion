@@ -1,0 +1,51 @@
+{
+ "bloques": [
+  {"since": null, "filas": [
+   ["Nombra una ciudad de México con más de 500 mil habitantes", {"tipo": "ciudad", "pais": "MEX", "pob_min": 500000}],
+   ["Nombra una ciudad de Estados Unidos que empiece con la letra S", {"tipo": "ciudad", "pais": "USA", "empieza": "s"}],
+   ["Nombra una ciudad de Estados Unidos con más de 500 mil habitantes", {"tipo": "ciudad", "pais": "USA", "pob_min": 500000}],
+   ["Nombra una ciudad de Perú o de Chile", {"tipo": "ciudad", "pais": ["PER", "CHL"]}],
+   ["Nombra una ciudad de África con más de un millón de habitantes", {"tipo": "ciudad", "continente": "África", "pob_min": 1000000}],
+   ["Nombra una ciudad de Asia que empiece con la letra K", {"tipo": "ciudad", "continente": "Asia", "empieza": "k"}],
+   ["Nombra una ciudad de Europa con más de 500 mil habitantes que no sea capital de su país", {"tipo": "ciudad", "continente": "Europa", "pob_min": 500000, "capital": false}],
+   ["Nombra una ciudad de un país donde se hable portugués", {"tipo": "ciudad", "pais_cond": {"idioma": "Portuguese"}}],
+   ["Nombra un río de Sudamérica", {"tipo": "rio", "continente": "Sudamérica"}],
+   ["Nombra un río que pase por dos países o más", {"tipo": "rio", "varios_paises": true, "fama_min": 30}],
+   ["Nombra un río de más de 2,000 kilómetros de largo", {"tipo": "rio", "medida_min": 2000}],
+   ["Nombra un lago de Norteamérica (incluye México y Centroamérica)", {"tipo": "lago", "continente": "Norteamérica"}],
+   ["Nombra un lago de Europa", {"tipo": "lago", "continente": "Europa", "fama_min": 20}],
+   ["Nombra una montaña de más de 7,000 metros de altura", {"tipo": "montana", "medida_min": 7000}],
+   ["Nombra una montaña o un volcán de Sudamérica", {"tipo": "montana", "continente": "Sudamérica"}],
+   ["Nombra un volcán de América", {"tipo": "volcan", "continente": "América"}],
+   ["Nombra un volcán de Asia o de Oceanía", {"tipo": "volcan", "continente": ["Asia", "Oceanía"], "fama_min": 15}],
+   ["Nombra una isla de Europa", {"tipo": "isla", "continente": "Europa", "fama_min": 30}],
+   ["Nombra una isla de Oceanía", {"tipo": "isla", "continente": "Oceanía", "fama_min": 25}],
+   ["Nombra una isla de más de 50 mil kilómetros cuadrados", {"tipo": "isla", "medida_min": 50000}]
+  ]}
+ ],
+ "completar": [
+  ["Nombra una ciudad de Argentina", {"tipo": "ciudad", "pais": "ARG"}],
+  ["Nombra una isla de Asia", {"tipo": "isla", "continente": "Asia", "fama_min": 30}],
+  ["Nombra una ciudad de Estados Unidos", {"tipo": "ciudad", "pais": "USA"}],
+  ["Nombra una ciudad de España", {"tipo": "ciudad", "pais": "ESP"}],
+  ["Nombra una ciudad de Italia", {"tipo": "ciudad", "pais": "ITA"}],
+  ["Nombra una ciudad de Alemania", {"tipo": "ciudad", "pais": "DEU"}],
+  ["Nombra una ciudad de Francia", {"tipo": "ciudad", "pais": "FRA"}],
+  ["Nombra una ciudad de China", {"tipo": "ciudad", "pais": "CHN"}],
+  ["Nombra una ciudad de Japón", {"tipo": "ciudad", "pais": "JPN"}],
+  ["Nombra una ciudad del Reino Unido", {"tipo": "ciudad", "pais": "GBR"}],
+  ["Nombra una ciudad de Colombia", {"tipo": "ciudad", "pais": "COL"}],
+  ["Nombra una ciudad de la India", {"tipo": "ciudad", "pais": "IND"}],
+  ["Nombra una ciudad de Canadá", {"tipo": "ciudad", "pais": "CAN"}],
+  ["Nombra una ciudad de Brasil", {"tipo": "ciudad", "pais": "BRA"}],
+  ["Nombra una ciudad de Centroamérica", {"tipo": "ciudad", "pais": ["GTM", "BLZ", "HND", "SLV", "NIC", "CRI", "PAN"]}],
+  ["Nombra una ciudad de Sudamérica que no sea capital de su país", {"tipo": "ciudad", "continente": "Sudamérica", "capital": false}],
+  ["Nombra un río de América", {"tipo": "rio", "continente": "América"}],
+  ["Nombra un río de Europa", {"tipo": "rio", "continente": "Europa"}],
+  ["Nombra un río de Asia, África u Oceanía", {"tipo": "rio", "continente": ["Asia", "África", "Oceanía"]}],
+  ["Nombra un volcán (activo o extinto)", {"tipo": "volcan", "fama_min": 20}],
+  ["Nombra un lago", {"tipo": "lago", "fama_min": 30}],
+  ["Nombra una montaña o un pico famoso", {"tipo": "montana", "fama_min": 40}],
+  ["Nombra una isla del mar Caribe", {"tipo": "isla", "subregion": "Caribbean"}]
+ ]
+}

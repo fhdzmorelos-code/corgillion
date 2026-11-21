@@ -9,3 +9,5 @@ validar_datos.py
 validar_reglas.py
 geografia_fuente/mledoze.json
 geografia_fuente/wb.json
+geografia_fuente/wd/
+geografia_fuente/consultas/_tmp.rq
