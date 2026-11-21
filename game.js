@@ -410,6 +410,8 @@
       '<div class="fb" id="fb">Piensa en algo que casi nadie diría.</div>' +
       '<button class="btn ghost small" data-go="skip">Pasar esta consigna' + (G.mode === "contra" ? " (-" + SKIP_PEN + " s)" : "") + "</button>";
     $("ans").focus();
+    // las consignas de cine arman sus miles de respuestas al primer uso: se adelanta mientras se lee la consigna
+    setTimeout(function () { void p.answers; }, 60);
     $("digger").className = "digger";
     drawTimer();
   }

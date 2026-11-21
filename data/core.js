@@ -54,6 +54,9 @@
           al.forEach(function (x) {
             var k = norm(x);
             if (k && keys.indexOf(k) < 0) keys.push(k);
+            // "Tiempos violentos (1994)" también vale sin el año
+            var sin = /\s\(\d{4}\)$/.test(x) ? norm(x.replace(/\s\(\d{4}\)$/, "")) : "";
+            if (sin && keys.indexOf(sin) < 0) keys.push(sin);
             toks(x).forEach(function (w) {
               if (w.length >= 4 && !STOP[w] && !/^\d+$/.test(w)) tk[w] = 1;
             });
@@ -110,6 +113,8 @@
       if (p.answers[i].keys.indexOf(n) >= 0) return { a: p.answers[i], fixed: false };
     }
     var max = n.length < 4 ? 0 : n.length < 6 ? 1 : n.length < 10 ? 2 : 3;
+    // en consignas con miles de respuestas casi cualquier error de dedo cae en otro título: se tolera un error menos
+    if (p.answers.length > 1500 && max) { max--; }
     var best = null, bd = 99, nd = digits(n);
     if (max) {
       for (i = 0; i < p.answers.length; i++) {
@@ -126,10 +131,13 @@
 
     // Una sola palabra de la respuesta ("chihiro" -> "El viaje de Chihiro"), si no es ambigua.
     var hits;
+    // En consignas enormes solo se buscan entre las respuestas conocidas (niveles 0 y 1):
+    // "tarantino" -> Quentin Tarantino, pero "titanic" no cae en un título raro que contenga esa palabra.
+    var grande = p.answers.length > 1500;
     if (n.length >= 4 && !/^\d+$/.test(n)) {
       var tmax = n.length >= 7 ? 1 : 0;
       hits = p.answers.filter(function (x) {
-        return x.toks.some(function (t) {
+        return (!grande || x.tier <= 1) && x.toks.some(function (t) {
           return t === n || (tmax && Math.abs(t.length - n.length) <= 1 && dist(t, n) <= tmax);
         });
       });

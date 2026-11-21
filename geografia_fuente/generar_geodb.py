@@ -379,7 +379,7 @@ def niveles(items):
         o = 1 - f
         a = next((j for j, c in enumerate(CORTES) if o < c), 5)
         r = next((j for j, c in enumerate(PCT) if i / len(items2) < c), 5)
-        out[0 if i == 0 else round((a + r) / 2)].append(t)
+        out[0 if i == 0 else (a + r + 1) // 2].append(t)   # .5 hacia arriba, como Math.round
     return [";".join(x) for x in out], len(items2)
 
 
