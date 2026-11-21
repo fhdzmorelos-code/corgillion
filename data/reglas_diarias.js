@@ -37,3 +37,13 @@ CC.regla("pokemon", { since: "2026-11-21" }, [
   ["Nombra un Pokémon de tipo Roca con 100 o más de defensa base", {"tipo": ["Roca"], "defensa_min": 100}],
   ["Nombra un Pokémon con 100 o más de PS base que no sea legendario ni mítico", {"ps_min": 100, "leg": "no"}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-22" }, [
+  ["Nombra un Pokémon cuyo nombre en español empiece con la letra P", {"empieza": "p"}],
+  ["Nombra un Pokémon que pueda tener la habilidad Clorofila", {"habilidad": "Clorofila"}],
+  ["Nombra un Pokémon con 110 o más de defensa especial base que no sea legendario ni mítico", {"defensa_esp_min": 110, "leg": "no"}],
+  ["Nombra un Pokémon cuyas estadísticas base sumen 600 o más", {"total_min": 600}],
+  ["Nombra un Pokémon de tipo Hielo que también tenga otro tipo", {"tipo": ["Hielo"], "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Acero que pese 100 kilos o más", {"tipo": ["Acero"], "peso_min": 100}],
+  ["Nombra un Pokémon de tipo Veneno que no sea de la primera generación", {"tipo": ["Veneno"], "gen_min": 2}]
+]);
