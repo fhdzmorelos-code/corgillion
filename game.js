@@ -169,7 +169,7 @@
   function paintWorld() {
     var cv = $("strata");
     if (!cv) return;
-    var W = Math.ceil(Math.max(window.innerWidth, 1040) / PX) + 2;
+    var W = Math.ceil(Math.max(window.innerWidth, 320) / PX) + 2;
     var H = Math.ceil((GROUND + worldDepth() * PXM + 700) / PX);
     var G0 = GROUND / PX, r = seeded("estratos-corgi"), x, y, i, n;
     cv.width = W; cv.height = H;
