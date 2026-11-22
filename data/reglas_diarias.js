@@ -47,3 +47,13 @@ CC.regla("pokemon", { since: "2026-11-22" }, [
   ["Nombra un Pokémon de tipo Acero que pese 100 kilos o más", {"tipo": ["Acero"], "peso_min": 100}],
   ["Nombra un Pokémon de tipo Veneno que no sea de la primera generación", {"tipo": ["Veneno"], "gen_min": 2}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-23" }, [
+  ["Nombra un Pokémon cuyo nombre en español empiece con la letra B", {"empieza": "b"}],
+  ["Nombra un Pokémon que pueda tener la habilidad Absorbe Agua", {"habilidad": "Absorbe Agua"}],
+  ["Nombra un Pokémon de tipo Lucha que también tenga otro tipo", {"tipo": ["Lucha"], "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Planta que mida un metro o más", {"tipo": ["Planta"], "alt_min": 1}],
+  ["Nombra un Pokémon de la tercera generación de un solo tipo", {"gen": 3, "num_tipos": 1}],
+  ["Nombra un Pokémon de tipo Eléctrico con 100 o más de velocidad base", {"tipo": ["Eléctrico"], "velocidad_min": 100}],
+  ["Nombra un Pokémon que habite en el campo", {"habitat": "campo"}]
+]);

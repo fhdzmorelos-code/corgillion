@@ -21,6 +21,14 @@
    ["Nombra una isla de Europa", {"tipo": "isla", "continente": "Europa", "fama_min": 30}],
    ["Nombra una isla de Oceanía", {"tipo": "isla", "continente": "Oceanía", "fama_min": 25}],
    ["Nombra una isla de más de 50 mil kilómetros cuadrados", {"tipo": "isla", "medida_min": 50000}]
+  ]},
+  {"since": "2026-11-23", "filas": [
+   ["Nombra una ciudad de Venezuela o de Ecuador", {"tipo": "ciudad", "pais": ["VEN", "ECU"]}],
+   ["Nombra una ciudad de Corea del Sur", {"tipo": "ciudad", "pais": "KOR"}],
+   ["Nombra un río de Norteamérica de más de 1,000 kilómetros", {"tipo": "rio", "continente": "Norteamérica", "medida_min": 1000}],
+   ["Nombra un país con más de 50 millones de habitantes", {"tipo": "pais", "pob_min": 50000000}],
+   ["Nombra un país que tenga frontera con Nigeria, Sudán o la República Democrática del Congo", {"tipo": "pais", "frontera_con": ["NGA", "SDN", "COD"]}],
+   ["Nombra una capital nacional cuyo nombre termine en la letra A", {"tipo": "capital", "termina": "a"}]
   ]}
  ],
  "completar": [

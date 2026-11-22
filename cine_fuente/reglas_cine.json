@@ -47,6 +47,9 @@
    ["Nombra una serie de HBO o HBO Max", {"tipo": "serie", "cadena": ["Q23633", "Q65359104"]}],
    ["Nombra una serie de Corea del Sur (1,000+ votos en IMDb)", {"tipo": "serie", "pais": "KOR"}],
    ["Nombra una serie hablada en español (1,000+ votos en IMDb)", {"tipo": "serie", "idioma": "es"}]
+  ]},
+  {"since": "2026-11-23", "filas": [
+   ["Nombra una película de los años 2000 (1,000+ votos en IMDb)", {"anio_min": 2000, "anio_max": 2009}]
   ]}
  ],
  "completar": [
