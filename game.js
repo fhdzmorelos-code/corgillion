@@ -422,14 +422,23 @@
     G.last = now;
     if (G.mode === "contra") {
       G.clock -= dt;
-      if (G.clock <= 0) { G.clock = 0; drawTimer(); return finish(); }
+      if (G.clock <= 0) { G.clock = 0; drawTimer(); return enviarUltimo() || finish(); }
     } else {
       G.qLeft -= dt;
-      if (G.qLeft <= 0) { G.qLeft = 0; drawTimer(); return resolve(null, "Se acabó el tiempo"); }
+      if (G.qLeft <= 0) { G.qLeft = 0; drawTimer(); return enviarUltimo() || resolve(null, "Se acabó el tiempo"); }
     }
     var left = G.mode === "contra" ? G.clock : G.qLeft, lim = G.mode === "contra" ? 10 : 5, sec = Math.ceil(left);
     if (left <= lim && sec !== G.lastTick) { G.lastTick = sec; SFX.tick(); }
     drawTimer();
+  }
+
+  // Al acabarse el tiempo se manda lo que quedó escrito, solo si coincide o se parece de verdad a una respuesta.
+  function enviarUltimo() {
+    var input = $("ans"), raw = input ? input.value.trim() : "";
+    var m = raw ? CC.matchFinal(G.deck[G.idx], raw) : null;
+    if (!m) return false;
+    resolve(m, raw);
+    return true;
   }
 
   function drawTimer() {

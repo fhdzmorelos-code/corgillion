@@ -156,5 +156,43 @@
     return null;
   }
 
-  root.CC = { add: add, build: build, cats: cats, order: order, match: match, norm: norm, english: english, EN: EN };
+  // Qué tanto se parece lo escrito a una clave (0 = nada). Más estricto que match: aquí nadie pudo revisar antes de enviar.
+  function similitud(n, k) {
+    if (n === k) return 1;
+    if (n[0] !== k[0] || digits(n) !== digits(k)) return 0;
+    var largo = Math.max(n.length, k.length);
+    // palabra a medio escribir: "narut" -> "naruto", pero no "breat" -> "breathwild"
+    if (k.indexOf(n) === 0) return n.length / largo >= 0.6 ? n.length / largo : 0;
+    if (largo - Math.min(n.length, k.length) > largo * 0.2) return 0;
+    // error de dedo: al menos 80% igual ("pera" no se vuelve "Perú")
+    var s = 1 - dist(n, k) / largo;
+    return s >= 0.8 ? s : 0;
+  }
+
+  // Para lo que quedó escrito al acabarse el tiempo: la respuesta exacta o, si no, la más parecida, solo si se parece de verdad.
+  function matchFinal(p, raw) {
+    var m = match(p, raw), n = norm(raw), grande = p.answers.length > 1500, mejor = null, ms = 0, hits = [], hs = 0;
+    if (m && !m.fixed) return m;
+    if (n.length < 4) return null;
+    // Un apellido o palabra que comparten varias respuestas ("uzumaki") no dice cuál era.
+    if (p.answers.filter(function (a) { return (!grande || a.tier <= 1) && a.toks.indexOf(n) >= 0; }).length > 1) return null;
+    p.answers.forEach(function (a) {
+      if (grande && a.tier > 2) return;
+      a.keys.forEach(function (k) {
+        if (grande && romano(k) !== romano(n)) return;
+        var s = similitud(n, k);
+        if (s > ms || (s && s === ms && a.tier < mejor.tier)) { ms = s; mejor = a; }
+      });
+    });
+    if (mejor) return { a: mejor, fixed: true };
+    // Una sola palabra de la respuesta ("tarantin" -> Quentin Tarantino), solo si no es ambigua.
+    p.answers.forEach(function (a) {
+      if (grande && a.tier > 1) return;
+      var s = a.toks.reduce(function (x, t) { return Math.max(x, similitud(n, t)); }, 0);
+      if (s > hs) { hs = s; hits = [a]; } else if (s && s === hs) { hits.push(a); }
+    });
+    return hits.length === 1 ? { a: hits[0], fixed: true } : null;
+  }
+
+  root.CC = { add: add, build: build, cats: cats, order: order, match: match, matchFinal: matchFinal, norm: norm, english: english, EN: EN };
 })(typeof window !== "undefined" ? window : globalThis);
