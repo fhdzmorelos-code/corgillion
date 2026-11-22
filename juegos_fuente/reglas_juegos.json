@@ -1,0 +1,45 @@
+{
+ "bloques": [
+  {"since": null, "filas": [
+   ["Nombra un videojuego de Nintendo Wii", {"plataforma": "Q8079"}],
+   ["Nombra un videojuego que se pueda jugar en PS5, Xbox Series X o Nintendo Switch", {"plataforma": ["Q63184502", "Q98973368", "Q19610114", "Q122761124"]}],
+   ["Nombra un videojuego de la primera PlayStation", {"plataforma": "Q10677"}],
+   ["Nombra un videojuego de PlayStation 2", {"plataforma": "Q10680"}],
+   ["Nombra un videojuego de Nintendo 64", {"plataforma": "Q184839"}],
+   ["Nombra un videojuego de Super Nintendo", {"plataforma": "Q183259"}],
+   ["Nombra un videojuego del Nintendo clásico (NES)", {"plataforma": "Q172742"}],
+   ["Nombra un videojuego de Nintendo GameCube", {"plataforma": "Q182172"}],
+   ["Nombra un videojuego de Game Boy (original, Color o Advance)", {"plataforma": ["Q186437", "Q203992", "Q188642"]}],
+   ["Nombra un videojuego de Nintendo DS o 3DS", {"plataforma": ["Q170323", "Q203597"]}],
+   ["Nombra un videojuego de Nintendo Switch", {"plataforma": ["Q19610114", "Q122761124"]}],
+   ["Nombra un videojuego de Xbox 360", {"plataforma": "Q48263"}],
+   ["Nombra un videojuego para celular (iOS o Android)", {"plataforma": ["Q48493", "Q94"]}],
+   ["Nombra un videojuego de arcade (maquinitas)", {"plataforma": "Q192851"}],
+   ["Nombra un videojuego de plataformas", {"genero": "Q828322"}],
+   ["Nombra un videojuego de carreras", {"genero": "Q860750"}],
+   ["Nombra un videojuego de pelea", {"genero": "Q846224"}],
+   ["Nombra un videojuego de rol (RPG)", {"genero": ["Q744038", "Q1422746", "Q1529437"]}],
+   ["Nombra un videojuego de disparos en primera persona", {"genero": "Q185029"}],
+   ["Nombra un videojuego battle royale", {"genero": "Q30607131"}],
+   ["Nombra un videojuego de estrategia", {"genero": ["Q472055", "Q208189", "Q2176159"]}],
+   ["Nombra un videojuego de simulación", {"genero": ["Q1610017", "Q1199309", "Q1198141"]}],
+   ["Nombra un videojuego de rompecabezas", {"genero": "Q54767"}],
+   ["Nombra un videojuego publicado por Nintendo", {"editora": "Q8093"}],
+   ["Nombra un videojuego de Capcom", {"empresa": "Q14428"}],
+   ["Nombra un videojuego de Sega", {"empresa": "Q122741"}],
+   ["Nombra un videojuego de Ubisoft", {"empresa": ["Q188273", "Q903621"]}],
+   ["Nombra un videojuego de Konami", {"empresa": ["Q45700", "Q13403412"]}],
+   ["Nombra un videojuego de Square o Square Enix", {"empresa": ["Q207784", "Q739552"]}],
+   ["Nombra un videojuego lanzado antes del año 2000", {"anio_max": 1999}],
+   ["Nombra un videojuego con un número escrito en cifras en el título", {"contiene_numero": true}],
+   ["Nombra un videojuego cuyo título sea de una sola palabra", {"palabras_max": 1}],
+   ["Nombra un videojuego con modo cooperativo", {"modo": "Q1758804"}]
+  ]}
+ ],
+ "completar": [
+  ["Nombra un juego de la saga The Legend of Zelda", {"saga": "Q12393"}],
+  ["Nombra un juego de Rockstar Games", {"empresa": ["Q94912", "Q1831780", "Q1542578", "Q2020713", "Q1989672", "Q2083043", "Q2291482"]}],
+  ["Nombra un videojuego de terror", {"genero": ["Q333967", "Q11338014", "Q113940368", "Q113940337", "Q59536813", "Q139304815"]}],
+  ["Nombra un videojuego de deportes", {"genero": ["Q868217", "Q1478420"]}]
+ ]
+}

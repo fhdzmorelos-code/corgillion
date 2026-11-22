@@ -1,0 +1,39 @@
+{
+ "bloques": [
+  {"since": null, "filas": [
+   ["Nombra cualquier anime (listado en MyAnimeList)", {}],
+   ["Nombra un personaje protagonista de un anime", {"persona": "principal"}],
+   ["Nombra un personaje de anime", {"persona": "cualquiera"}],
+   ["Nombra una película de anime", {"formato": "pelicula"}],
+   ["Nombra un anime estrenado antes del año 2000", {"anio_max": 1999}],
+   ["Nombra un anime de los años 2000", {"anio_min": 2000, "anio_max": 2009}],
+   ["Nombra un anime estrenado de 2020 en adelante", {"anio_min": 2020}],
+   ["Nombra un anime shonen", {"etiqueta": "Shounen"}],
+   ["Nombra un anime seinen", {"etiqueta": "Seinen"}],
+   ["Nombra un anime shojo", {"etiqueta": "Shoujo"}],
+   ["Nombra un anime isekai", {"etiqueta": "Isekai"}],
+   ["Nombra un anime de romance", {"genero": "Romance"}],
+   ["Nombra un anime de terror", {"genero": "Horror"}],
+   ["Nombra un anime de robots gigantes (mecha)", {"genero": "Mecha"}],
+   ["Nombra un anime de comedia", {"genero": "Comedy"}],
+   ["Nombra un anime de misterio", {"genero": "Mystery"}],
+   ["Nombra un anime de ciencia ficción", {"genero": "Sci-Fi"}],
+   ["Nombra un anime de chicas mágicas (Mahou Shoujo)", {"genero": "Mahou Shoujo"}],
+   ["Nombra un anime de vida cotidiana (Slice of Life)", {"genero": "Slice of Life"}],
+   ["Nombra un anime con 100 episodios o más", {"formato": "serie", "episodios_min": 100}],
+   ["Nombra un anime con calificación de 85 o más en AniList", {"calif_min": 85}],
+   ["Nombra un anime del estudio MAPPA", {"estudio": "MAPPA"}],
+   ["Nombra un anime del estudio Toei Animation", {"estudio": "Toei Animation"}],
+   ["Nombra un anime del estudio Madhouse", {"estudio": "MADHOUSE"}],
+   ["Nombra un anime de Kyoto Animation, ufotable o Bones", {"estudio": ["Kyoto Animation", "ufotable", "BONES"]}]
+  ]}
+ ],
+ "completar": [
+  ["Nombra un anime de deportes", {"genero": "Sports"}],
+  ["Nombra un personaje de Naruto", {"persona": "cualquiera", "titulo": ["Naruto", "Boruto"]}],
+  ["Nombra un personaje de One Piece", {"persona": "cualquiera", "titulo": "One Piece"}],
+  ["Nombra un personaje de Dragon Ball", {"persona": "cualquiera", "titulo": "Dragon Ball"}],
+  ["Nombra un personaje de Attack on Titan (Shingeki no Kyojin)", {"persona": "cualquiera", "titulo": "Shingeki no Kyojin"}],
+  ["Nombra un personaje de Demon Slayer (Kimetsu no Yaiba)", {"persona": "cualquiera", "titulo": "Kimetsu no Yaiba"}]
+ ]
+}

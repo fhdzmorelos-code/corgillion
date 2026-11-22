@@ -75,7 +75,7 @@ def cargar():
     for t in T:
         t["ns"] = nombres(t)
         t["f"] = fama(t)
-    T = [t for t in T if t["ns"]]
+    T = [t for t in T if t["ns"] and "Adult" not in t["g"]]   # sin cine para adultos
     T.sort(key=lambda t: (-t["f"], -t["v"], t["id"]))
     for i, t in enumerate(T): t["i"] = i
     # personas: directores (nombres de IMDb) y reparto (nombres de Wikidata)

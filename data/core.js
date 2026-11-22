@@ -22,6 +22,7 @@
   }
 
   function digits(s) { return s.replace(/[^0-9]/g, ""); }
+  function romano(s) { var m = s.match(/(?:iii|ii|iv|viii|vii|vi|ix|xiii|xii|xi)$/); return m ? m[0] : ""; }
 
   // Distancia de Damerau-Levenshtein (cuenta letras intercambiadas como un solo error).
   function dist(a, b) {
@@ -114,7 +115,8 @@
     }
     var max = n.length < 4 ? 0 : n.length < 6 ? 1 : n.length < 10 ? 2 : 3;
     // en consignas con miles de respuestas casi cualquier error de dedo cae en otro título: se tolera un error menos
-    if (p.answers.length > 1500 && max) { max--; }
+    var grande = p.answers.length > 1500;
+    if (grande && max) { max--; }
     var best = null, bd = 99, nd = digits(n);
     if (max) {
       for (i = 0; i < p.answers.length; i++) {
@@ -122,6 +124,8 @@
         for (j = 0; j < a.keys.length; j++) {
           var k = a.keys[j];
           if (digits(k) !== nd || Math.abs(k.length - n.length) > max) continue;
+          // en listas enormes: nada de caer en títulos raros ni confundir "Street Fighter II" con "VI"
+          if (grande && (a.tier > 2 || romano(k) !== romano(n))) continue;
           var d = dist(n, k);
           if (d <= max && (d < bd || (d === bd && a.tier < best.tier))) { bd = d; best = a; }
         }
@@ -133,7 +137,6 @@
     var hits;
     // En consignas enormes solo se buscan entre las respuestas conocidas (niveles 0 y 1):
     // "tarantino" -> Quentin Tarantino, pero "titanic" no cae en un título raro que contenga esa palabra.
-    var grande = p.answers.length > 1500;
     if (n.length >= 4 && !/^\d+$/.test(n)) {
       var tmax = n.length >= 7 ? 1 : 0;
       hits = p.answers.filter(function (x) {

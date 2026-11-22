@@ -1,0 +1,4 @@
+SELECT ?mal ?l ?t WHERE { ?item wdt:P4086 ?mal .
+ { ?item rdfs:label ?l BIND("l" AS ?t) FILTER(lang(?l) IN ("es","es-419","es-mx")) } UNION
+ { ?item skos:altLabel ?l BIND("a" AS ?t) FILTER(lang(?l) IN ("es","es-419","es-mx")) } UNION
+ { ?w schema:about ?item ; schema:isPartOf <https://es.wikipedia.org/> ; schema:name ?l BIND("w" AS ?t) } }
