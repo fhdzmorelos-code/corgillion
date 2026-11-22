@@ -328,7 +328,6 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
 .rv-fix { grid-column: 1 / -1; color: #7c4a27; }
 .rv-row { display: flex; align-items: center; gap: 12px; }
 .rv-pts { font-size: 24px; white-space: nowrap; }
-.rv-top { grid-column: 1 / -1; border-top: 3px dashed rgba(28, 20, 16, .25); padding-top: 6px; font-size: 22px; }
 
 /* ---------- resultado ---------- */
 .results { display: grid; gap: 24px; margin-top: 36px; }
@@ -340,7 +339,6 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
 .rec { font-family: var(--head); font-size: 12px; font-weight: 400; background: #ffcf3f; border: 3px solid var(--ink); padding: 4px 6px; }
 .acts { display: flex; gap: 14px; margin-top: 16px; flex-wrap: wrap; }
 .rt tr { animation: rise .4s var(--ease) both; animation-delay: calc(var(--i, 0) * .06s + .2s); }
-.rt td.top { font-size: 20px; opacity: .8; }
 .rt td:first-child { max-width: 340px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -349,7 +347,7 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
 }
 
 /* botón de sonido */
-#mute { position: fixed; top: 80px; left: 24px; z-index: 20; }
+#mute { position: absolute; top: 80px; left: 24px; z-index: 20; }
 
 /* ---------- jugador y tabla de posiciones ---------- */
 .login { max-width: 760px; margin: 36px auto 0; }
@@ -373,6 +371,36 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
 .rank td:first-child, .rank th:first-child { width: 48px; }
 .rank tr { animation: rise .35s var(--ease) both; animation-delay: calc(var(--i, 0) * .03s); }
 .rank tr.me td { background: #fff1a8; font-weight: bold; }
+
+/* ---------- íconos de categoría ---------- */
+svg.icon { image-rendering: pixelated; display: inline-block; flex: none; filter: drop-shadow(2px 2px 0 rgba(28, 20, 16, .45)); }
+.cat-head h2 { display: flex; align-items: center; gap: 12px; }
+.hud-title { display: inline-flex; align-items: center; gap: 6px; }
+.results-head h1, header h1[style] { display: inline-flex; align-items: center; gap: 10px; }
+
+/* ---------- decoración de la pantalla inicial ---------- */
+.logo h1 { display: inline-flex; align-items: center; justify-content: center; gap: 22px; align-self: center; }
+.logo-deco { filter: drop-shadow(3px 3px 0 rgba(28, 20, 16, .55)); animation: bob 2.4s ease-in-out infinite; }
+.logo-deco.flip { transform: scaleX(-1); animation-delay: 1.2s; }
+@keyframes bob { 50% { translate: 0 -5px; } }
+.logo p {
+  align-self: center; display: inline-block; padding: 3px 14px;
+  background: rgba(255, 244, 214, .9); border: 3px solid var(--ink); box-shadow: 4px 4px 0 rgba(28, 20, 16, .45);
+}
+.cat-head {
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, .12) 0 12px, transparent 12px 24px);
+}
+.catbox .mode { border-top-width: 10px; border-top-color: var(--c); }
+.catbox .mode:hover { background: #fffaf0; }
+
+/* ---------- columna del corgi que acompaña al bajar y panel de récords ---------- */
+.home .side { position: sticky; align-self: start; }
+.recs table { width: 100%; border-collapse: collapse; font-size: 18px; text-align: center; }
+.recs th { font-size: 8px; padding: 4px 2px; }
+.recs td { padding: 4px 2px; border-top: 2px dashed rgba(28, 20, 16, .2); white-space: nowrap; }
+.recs .rec-cat { width: 30px; }
+.recs .rec-cat svg { margin: 0 auto; }
+.recs-note { margin: 8px 0 0; font-size: 17px; opacity: .7; }
 
 /* ---------- celular ---------- */
 @media (max-width: 820px) {
@@ -469,3 +497,20 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
   #zone, #form { max-width: 100%; }
 }
 @media (max-width: 820px) { input { font-size: 18px; } .lform input { font-size: 20px; } }
+
+/* celular: lo nuevo de la pantalla inicial (columna del corgi, récords, íconos) */
+@media (max-width: 820px) {
+  .home .side { display: contents; }
+  .home .side > * { order: 1; }
+  .home .side > .how, .home .side > .recs { order: 3; }
+  .home > .col:not(.side) { order: 2; }
+  .logo { height: auto; padding: 8px 0 4px; }
+  .logo h1 { gap: 10px; }
+  .logo-deco { width: 30px; height: 30px; }
+  .logo p { font-size: 18px; padding: 3px 10px; }
+  .cat-head h2 { gap: 8px; }
+  .recs table { font-size: 15px; }
+  .recs th { font-size: 6px; letter-spacing: 0; }
+  .recs td { white-space: normal; }
+  .recs-note { font-size: 16px; }
+}

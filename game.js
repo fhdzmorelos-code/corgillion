@@ -13,14 +13,17 @@
     { n: "Tesoro", p: 80, s: 11, say: "¡Un tesoro!" },
     { n: "Hueso de Oro", p: 100, s: 15, say: "¡¡HUESO DE ORO!!" }
   ];
-  var QTIME = 25, RUN = 7, CLOCK = 45, FULL = 7000;
+  // Ícono pixelado de cada categoría (ver Corgi.icon).
+  var CAT_ICON = { clasica: "trofeo", pokemon: "pokeball", deportes: "balon", geografia: "planeta" };
+  function catIcon(id, size) { return CAT_ICON[id] ? Corgi.icon(CAT_ICON[id], size) : ""; }
+  var QTIME = 25, RUN = 7, CLOCK = 45, FULL = 7000, SKIP_PEN = 5;
   var PX = 4, GROUND = 300, PXM = 0.26, DOG = 72;
 
   var MODES = {
     diario: { n: "Diario", d: "7 consignas, las mismas para todos hoy. Un solo intento.", finite: true },
     clasico: { n: "Libre", d: "7 consignas al azar que cambian en cada intento.", finite: true },
     sinfinal: { n: "Sin final", d: "Consignas sin parar. Cava hasta que te retires.", finite: false },
-    contra: { n: "Contrarreloj", d: "0:45 en el reloj. Lo raro suma hasta +15 s.", finite: false }
+    contra: { n: "Contrarreloj", d: "0:45 en el reloj. Lo raro suma hasta +15 s; pasar resta 5 s.", finite: false }
   };
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -89,10 +92,6 @@
     return t < 0 ? '<span class="chip t-x">Nada</span>'
       : '<span class="chip t-' + t + '">' + Corgi.item(t, 18) + TIERS[t].n + "</span>";
   }
-  function rarest(p, n) {
-    return p.answers.slice().sort(function (a, b) { return b.tier - a.tier; }).slice(0, n)
-      .map(function (a) { return a.name; });
-  }
   function show(html) {
     app.innerHTML = html;
     app.classList.remove("enter"); void app.offsetWidth; app.classList.add("enter");
@@ -127,7 +126,7 @@
           '<span class="mode-n">' + MODES[m].n + '</span><span class="mode-d">' + MODES[m].d +
           '</span><span class="mode-x">' + extra + "</span></button>";
       }).join("");
-      return '<section class="panel catbox" style="--c:' + c.color + '"><div class="cat-head"><h2>' + esc(c.name) +
+      return '<section class="panel catbox" style="--c:' + c.color + '"><div class="cat-head"><h2>' + catIcon(id, 28) + "<span>" + esc(c.name) + "</span>" +
         "</h2><p>" + esc(c.desc) + '</p></div><div class="modegrid">' + modes + "</div></section>";
     }).join("");
     var legend = TIERS.map(function (x, i) {
@@ -135,8 +134,8 @@
     }).join("");
 
     show(
-      '<header class="logo"><h1>' + GAME_NAME + "</h1><p>Cuanto más rara tu respuesta, más hondo cava tu corgi.</p></header>" +
-      '<main class="home"><div class="col">' +
+      '<header class="logo"><h1>' + Corgi.item(2, 44, "logo-deco") + "<span>" + GAME_NAME + "</span>" + Corgi.item(5, 44, "logo-deco flip") + "</h1><p>Cuanto más rara tu respuesta, más hondo cava tu corgi.</p></header>" +
+      '<main class="home"><div class="col side">' +
       '<section class="panel kennel"><h2>Tu corgi</h2>' +
       '<div class="bubble">¡Guau! Soy ' + esc(v.name) + ". ¿Cavamos?</div>" +
       '<div class="stage">' + Corgi.svg(save.corgi, 192, "idle") + '<div class="mound"></div></div>' +
@@ -145,9 +144,32 @@
       "<p>Cada consigna pide nombrar algo y tiene muchas respuestas válidas. Las obvias valen poco; las que casi nadie diría, mucho. " +
       "Si escribes con erratas, el corgi toma la respuesta más parecida de su lista. También entiende respuestas en inglés.</p>" +
       "<table><tr><th>Hallazgo</th><th>Puntos</th><th>Cava</th><th>Reloj</th></tr>" + legend + "</table></section>" +
+      recordsPanel() +
       '</div><div class="col">' + cats + "</div></main>"
     );
+    stickSide();
     flush();
+  }
+
+  // Tus récords: lo más hondo que has cavado en cada categoría y modo.
+  function recordsPanel() {
+    var t = today();
+    var head = "<tr><th></th>" + Object.keys(MODES).map(function (m) { return "<th>" + MODES[m].n + "</th>"; }).join("") + "</tr>";
+    var rows = CC.order.map(function (id) {
+      var d = save.daily[id];
+      return '<tr><td class="rec-cat" title="' + esc(CC.cats[id].name) + '">' + catIcon(id, 22) + "</td>" + Object.keys(MODES).map(function (m) {
+        var v = m === "diario" ? (d && d.date === t && d.done ? d.score : 0) : bestOf(id, m);
+        return "<td>" + (v ? meters(v) : "—") + "</td>";
+      }).join("") + "</tr>";
+    }).join("");
+    return '<section class="panel recs"><h2>Tus récords</h2><table>' + head + rows + "</table>" +
+      '<p class="recs-note">El diario muestra lo de hoy; los demás, tu mejor marca.</p></section>';
+  }
+
+  // La columna del corgi acompaña al bajar: se queda fija y, si es más alta que la ventana, se fija por su parte de abajo.
+  function stickSide() {
+    var el = document.querySelector(".home .side");
+    if (el) el.style.top = Math.min(16, window.innerHeight - el.offsetHeight - 16) + "px";
   }
 
   // ---------- subsuelo dibujado (pantalla completa) ----------
@@ -186,12 +208,23 @@
         }
       }
     }
-    var sky = ["#5fb8ff", "#6ec3ff", "#7fcbff", "#93d5ff", "#a8deff", "#bfe8ff"];
+    var sky = ["#2f86f0", "#3f97f7", "#55a9fc", "#6db9ff", "#88c9ff", "#a6d9ff"];
     for (y = 0; y < G0; y++) px(0, y, sky[Math.min(5, Math.floor(y / (G0 / 6)))], W, 1);
     x = W - 60; px(x, 34, "#fff3a0", 8, 8); px(x + 2, 32, "#fff3a0", 4, 12); px(x - 2, 36, "#fff3a0", 12, 4);
     for (i = 0; i < Math.ceil(W / 40); i++) {
       x = Math.floor(r() * W); y = 30 + Math.floor(r() * 30); n = 8 + Math.floor(r() * 10);
       px(x, y, "#ffffff", n, 2); px(x + 2, y - 1, "#ffffff", n - 5, 1); px(x + 1, y + 2, "#e6f5ff", n - 3, 1);
+    }
+    // colinas y arbolitos en el horizonte
+    for (x = 0; x < W; x++) {
+      var hh1 = Math.round(5 + Math.sin(x * 0.045) * 3 + Math.sin(x * 0.11 + 1) * 1.5);
+      px(x, G0 - hh1 - 3, "#8fd07c", 1, hh1 + 3);
+      var hh2 = Math.round(2 + Math.sin(x * 0.08 + 2) * 2 + Math.sin(x * 0.19) * 1);
+      if (hh2 > 0) px(x, G0 - hh2, "#6cbf58", 1, hh2);
+    }
+    for (i = 0; i < Math.ceil(W / 60); i++) {
+      x = 4 + Math.floor(r() * (W - 8)); y = G0 - 8 - Math.floor(r() * 3);
+      px(x + 1, y + 3, "#6b4425", 1, 3); px(x, y, "#3f8f3f", 3, 3); px(x + 1, y - 1, "#3f8f3f"); px(x, y, "#5fae4d");
     }
     var wob = [];
     for (x = 0; x < W; x++) wob[x] = Math.round(Math.sin(x * 0.21) * 2 + Math.sin(x * 0.07) * 2 + (r() - 0.5) * 1.5);
@@ -208,6 +241,12 @@
         if (k !== prev && prev >= 0) px(x, y - 1, LAYERS[prev].c[2]);
         prev = k;
       }
+    }
+    // vetas de sedimento para que la tierra no se vea plana
+    for (i = 0, n = Math.floor(W * (H - G0) / 45); i < n; i++) {
+      x = Math.floor(r() * W); y = G0 + 4 + Math.floor(r() * (H - G0 - 6));
+      var kv = layerAt(x, y), lv = 3 + Math.floor(r() * 7), cv2 = r() < 0.6 ? LAYERS[kv].c[2] : LAYERS[kv].c[1];
+      for (var m2 = 0; m2 < lv; m2++) if (layerAt(x + m2, y) === kv) px(x + m2, y, cv2);
     }
     // raíces bajo el pasto
     for (i = 0; i < W / 5; i++) {
@@ -325,7 +364,7 @@
       '<div id="ticks"></div><div class="tunnel" id="tunnel"></div><div id="relics"></div>' +
       '<div class="digger" id="digger">' + Corgi.svg(save.corgi, DOG) + '</div><div class="found" id="found"></div></div></div>' +
       '<header class="hud"><button class="btn ghost" data-go="quit">' + (fin ? "Salir" : "Retirarse") + "</button>" +
-      '<div class="trailbox"><div class="hud-title" style="--c:' + c.color + '">' + esc(c.name) + " · " + MODES[G.mode].n +
+      '<div class="trailbox"><div class="hud-title" style="--c:' + c.color + '">' + catIcon(G.cat, 16) + esc(c.name) + " · " + MODES[G.mode].n +
       '</div><div class="trail" id="trail"></div></div>' +
       '<div class="depth"><b id="dnum">0 m</b><span id="dpts">0 pts</span></div></header>' +
       '<section class="ask"><div class="timer"><div class="timer-fill" id="tfill"></div><span class="timer-txt" id="ttxt"></span></div>' +
@@ -369,8 +408,10 @@
       'placeholder="Escribe tu respuesta" aria-label="Tu respuesta">' +
       '<button class="btn" type="submit">Cavar</button></form>' +
       '<div class="fb" id="fb">Piensa en algo que casi nadie diría.</div>' +
-      '<button class="btn ghost small" data-go="skip">Pasar esta consigna</button>';
+      '<button class="btn ghost small" data-go="skip">Pasar esta consigna' + (G.mode === "contra" ? " (-" + SKIP_PEN + " s)" : "") + "</button>";
     $("ans").focus();
+    // las consignas de cine arman sus miles de respuestas al primer uso: se adelanta mientras se lee la consigna
+    setTimeout(function () { void p.answers; }, 60);
     $("digger").className = "digger";
     drawTimer();
   }
@@ -433,12 +474,14 @@
     var r = {
       q: p.q, tier: tier, pts: m ? t.p : 0,
       ans: m ? m.a.name : "", typed: m && m.fixed ? raw : "", en: m && m.en ? raw : "",
-      why: m ? "" : raw, top: rarest(p, 4)
+      why: m ? "" : raw, pen: 0
     };
     var from = G.score;
     G.phase = "dig";
     G.results.push(r); G.score += r.pts;
     if (m && G.mode === "contra") G.clock += t.s;
+    // en Contrarreloj, pasar una consigna cuesta segundos del reloj
+    if (!m && raw === "Pasaste" && G.mode === "contra") { r.pen = SKIP_PEN; G.clock = Math.max(0, G.clock - SKIP_PEN); }
     if (G.mode === "diario") {
       var d = save.daily[G.cat];
       d.results = G.results.slice(); d.score = G.score; persist();
@@ -484,10 +527,9 @@
         '<div class="rv-row">' + chip(r.tier) + '<span class="rv-pts">+' + r.pts + " pts · baja " + r.pts * 10 + " m" +
         (G.mode === "contra" ? " · +" + t.s + " s" : "") + "</span></div>"
       : '<div class="rv-ans miss">' + esc(r.why) + '</div><div class="rv-row">' + chip(-1) +
-        '<span class="rv-pts">+0 pts</span></div>';
+        '<span class="rv-pts">+0 pts' + (r.pen ? " · -" + r.pen + " s" : "") + "</span></div>";
     $("zone").innerHTML =
-      '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head +
-      '<div class="rv-top"><b>Las más raras:</b> ' + r.top.map(esc).join(" · ") + "</div></div>" +
+      '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head + "</div>" +
       '<button class="btn" id="next" data-go="next">' + (last ? "Ver resultado" : "Siguiente") + "</button>";
     $("next").focus();
     drawTimer();
@@ -575,14 +617,14 @@
       : "Cavé un poco. La próxima, algo más raro.";
     var rows = o.results.map(function (r, i) {
       return '<tr style="--i:' + i + '"><td>' + esc(r.q) + "</td><td>" + esc(r.ans || "—") + "</td><td>" +
-        chip(r.tier) + "</td><td>+" + r.pts + '</td><td class="top">' + r.top.map(esc).join(" · ") + "</td></tr>";
+        chip(r.tier) + "</td><td>+" + r.pts + "</td></tr>";
     }).join("");
     var haul = o.results.filter(function (r) { return r.tier >= 0; }).map(function (r, i) {
       return '<span style="--i:' + i + '">' + Corgi.item(r.tier, 40) + "</span>";
     }).join("");
     show(
       '<header class="bar"><button class="btn ghost" data-go="home">Inicio</button>' +
-      '<h1 style="--c:' + c.color + '">' + esc(c.name) + " · " + MODES[o.mode].n + "</h1><span></span></header>" +
+      '<h1 style="--c:' + c.color + '">' + catIcon(o.cat, 22) + esc(c.name) + " · " + MODES[o.mode].n + "</h1><span></span></header>" +
       '<main class="results">' +
       '<section class="panel score"><div class="stage">' + Corgi.svg(save.corgi, 168, hits ? "happy" : "sadloop") +
       '<div class="mound"></div></div><div><div class="bubble">' + say + "</div>" +
@@ -594,8 +636,7 @@
       (o.mode !== "diario" ? '<button class="btn" data-go="again">Jugar de nuevo</button>' : "") +
       '<button class="btn alt" data-go="share">Copiar resultado</button></div></div></section>' +
       '<section class="panel"><h2>Tu excavación</h2>' +
-      (rows ? '<table class="rt"><tr><th>Consigna</th><th>Tu respuesta</th><th>Hallazgo</th><th>Pts</th>' +
-        "<th>Las más raras</th></tr>" + rows + "</table>" : "<p>No respondiste ninguna consigna.</p>") +
+      (rows ? '<table class="rt"><tr><th>Consigna</th><th>Tu respuesta</th><th>Hallazgo</th><th>Pts</th></tr>' + rows + "</table>" : "<p>No respondiste ninguna consigna.</p>") +
       "</section></main>"
     );
     var big = $("big"), t0 = performance.now();
@@ -823,12 +864,152 @@
   });
   paintMute();
 
+
+  // ---------- Fondo de la página: cielo pintado y tierra con textura ----------
+  function pixelCanvas(w, h) {
+    var cv = document.createElement("canvas");
+    cv.width = w; cv.height = h;
+    var c = cv.getContext("2d");
+    return { cv: cv, c: c, px: function (x, y, col, ww, hh) { c.fillStyle = col; c.fillRect(x * PX, y * PX, (ww || 1) * PX, (hh || 1) * PX); } };
+  }
+  var SKY_H = 152, GRASS_H = 24;
+  function paintBackdrop() {
+    var W = Math.ceil(Math.max(window.innerWidth, 1100) / PX), H = Math.ceil((SKY_H + GRASS_H) / PX), G = SKY_H / PX;
+    var r = seeded("cielo-corgi"), x, y, i, n;
+    var top = pixelCanvas(W * PX, H * PX), px = top.px;
+    var bands = ["#2a7ee8", "#3a90f3", "#4ba1fa", "#5fb2ff", "#76c2ff", "#91d1ff", "#afdfff"];
+    for (y = 0; y < G; y++) px(0, y, bands[Math.min(bands.length - 1, Math.floor(y / (G / bands.length)))], W, 1);
+    // sol con rayos
+    var sx = W - 30, sy = 9;
+    px(sx - 3, sy - 1, "#ffe066", 6, 8); px(sx - 4, sy, "#ffe066", 8, 6); px(sx - 2, sy, "#fff6b0", 3, 2);
+    [[-7, 2, 2, 1], [5, 2, 2, 1], [0, -4, 1, 2], [0, 8, 1, 2], [-6, -3, 1, 1], [5, -3, 1, 1], [-6, 7, 1, 1], [5, 7, 1, 1]]
+      .forEach(function (a) { px(sx + a[0], sy + a[1], "#ffd23f", a[2], a[3]); });
+    // nubes
+    function nube(a, b, w) {
+      px(a + 2, b, "#ffffff", w - 4, 1); px(a + 1, b + 1, "#ffffff", w - 2, 1); px(a, b + 2, "#ffffff", w, 2);
+      px(a + 3, b - 1, "#ffffff", Math.max(2, Math.floor(w / 3)), 1); px(a, b + 4, "#d7ecff", w, 1); px(a + 1, b + 5, "#bcdcf7", w - 2, 1);
+    }
+    for (i = 0; i < Math.ceil(W / 45); i++) {
+      x = Math.floor(r() * (W - 20)); y = 4 + Math.floor(r() * 16);
+      if (Math.abs(x - sx) < 16 && y < 18) continue;
+      nube(x, y, 10 + Math.floor(r() * 12));
+    }
+    // colinas lejanas y cercanas
+    for (x = 0; x < W; x++) {
+      var h1 = Math.round(5 + Math.sin(x * 0.045) * 3 + Math.sin(x * 0.11 + 1) * 1.5);
+      px(x, G - h1 - 3, "#8fd07c", 1, h1 + 3);
+      var h2 = Math.round(2 + Math.sin(x * 0.08 + 2) * 2 + Math.sin(x * 0.19) * 1);
+      if (h2 > 0) px(x, G - h2, "#6cbf58", 1, h2);
+    }
+    // árboles pequeños sobre las colinas
+    for (i = 0; i < Math.ceil(W / 70); i++) {
+      x = 4 + Math.floor(r() * (W - 8)); y = G - 7 - Math.floor(r() * 3);
+      px(x + 1, y + 3, "#6b4425", 1, 3); px(x, y, "#3f8f3f", 3, 3); px(x + 1, y - 1, "#3f8f3f"); px(x, y, "#5fae4d");
+    }
+    // pasto con matas y flores
+    for (x = 0; x < W; x++) {
+      px(x, G, r() < 0.5 ? "#7ed957" : "#6cc24a"); px(x, G + 1, "#5bb04a"); px(x, G + 2, r() < 0.5 ? "#4a9a3c" : "#5bb04a");
+      px(x, G + 3, "#3f8a35", 1, 2); px(x, G + 5, r() < 0.55 ? "#3f8a35" : "#6b4425", 1, 1);
+      if (r() < 0.3) px(x, G - 1, "#6cc24a");
+      if (r() < 0.08) px(x, G - 2, "#7ed957");
+      if (r() < 0.035) { px(x, G - 2, ["#ffffff", "#ffcf3f", "#f28fb8", "#b48cff"][Math.floor(r() * 4)]); px(x, G - 1, "#3f8a35"); }
+    }
+
+    // tierra por capas, como en el juego: cuanto más bajas en la página, más honda y rara la roca.
+    // Cada capa es una franja que se repite a lo ancho; la última se repite hasta el fondo.
+    var T = 128, BH = 100, tr = seeded("tierra-corgi");
+    var PALS = [
+      ["#9a6237", "#a36a3d", "#8f5a31", "#ad7446"],
+      ["#87572f", "#95633a", "#784b27", "#8d5c33"],
+      ["#6b6f7a", "#7a7e89", "#5b5f69", "#73777f"],
+      ["#4a3f66", "#574a77", "#3d3356", "#514570"],
+      ["#7a2a22", "#8e352b", "#64201a", "#83302a"],
+      ["#2a2433", "#352e40", "#201b28", "#2f2939"]
+    ];
+    function band(k) {
+      var c = pixelCanvas(T * PX, BH * PX), tp = c.px, pal = PALS[k], nx = PALS[k + 1];
+      function wrap(a, b, col, w, h) {
+        for (var yy = 0; yy < (h || 1); yy++) for (var xx = 0; xx < (w || 1); xx++) {
+          var by = b + yy; if (by >= 0 && by < BH) tp((a + xx + T) % T, by, col);
+        }
+      }
+      for (var yy = 0; yy < BH; yy += 2) for (var xx = 0; xx < T; xx += 2) {
+        var q = tr();
+        tp(xx, yy, pal[q < 0.55 ? 0 : q < 0.75 ? 1 : q < 0.92 ? 2 : 3], 2, 2);
+        if (tr() < 0.25) tp(xx + (tr() < 0.5 ? 0 : 1), yy + (tr() < 0.5 ? 0 : 1), pal[Math.floor(tr() * 4)]);
+      }
+      [18, 52, 80].forEach(function (v0, vi) {
+        for (var a = 0; a < T; a++) {
+          var vy = v0 + Math.round(Math.sin(a * Math.PI * 2 / T + vi) * 2 + Math.sin(a * Math.PI * 4 / T + 1));
+          wrap(a, vy, pal[2]); if (a % 3) wrap(a, vy + 1, pal[2]);
+        }
+      });
+      var a, b2, m;
+      function spots(n) { return Array.apply(null, Array(n)).map(function () { return [Math.floor(tr() * T), 3 + Math.floor(tr() * (BH - 12))]; }); }
+      if (k <= 1) {
+        spots(k ? 14 : 22).forEach(function (s2) {
+          if (tr() < 0.5) wrap(s2[0], s2[1], k ? "#6e5440" : "#8a6a4f", 2, 1);
+          else { wrap(s2[0], s2[1], "#7d838c", 3, 2); wrap(s2[0], s2[1], "#b9c1ca", 2, 1); }
+        });
+        spots(k ? 4 : 2).forEach(function (s2) {
+          a = s2[0]; b2 = s2[1];
+          wrap(a, b2, "#f1e7d0", 4, 1); wrap(a - 1, b2 - 1, "#f1e7d0"); wrap(a - 1, b2 + 1, "#f1e7d0"); wrap(a + 4, b2 - 1, "#f1e7d0"); wrap(a + 4, b2 + 1, "#f1e7d0");
+        });
+        if (!k) spots(3).forEach(function (s2) { for (m = 0; m < 5; m++) { wrap(s2[0], s2[1] + m, "#6b4425"); if (tr() < 0.4) s2[0] += tr() < 0.5 ? -1 : 1; } });
+        if (k) spots(2).forEach(function (s2) { wrap(s2[0], s2[1], "#d9cbb0", 3, 1); wrap(s2[0], s2[1] + 1, "#d9cbb0"); wrap(s2[0] + 2, s2[1] + 1, "#d9cbb0"); wrap(s2[0], s2[1] + 2, "#d9cbb0", 3, 1); });
+        spots(2).forEach(function (s2) { wrap(s2[0], s2[1], "#f6c12d", 2, 1); wrap(s2[0], s2[1], "#fff1a8"); });
+      } else if (k === 2) {
+        spots(10).forEach(function (s2) { for (m = 0; m < 4; m++) wrap(s2[0] + m, s2[1] + (m % 2), "#3f434c"); });
+        spots(8).forEach(function (s2) { wrap(s2[0], s2[1], "#1f2126", 2, 2); wrap(s2[0] + 2, s2[1] + 1, "#1f2126"); });
+        spots(5).forEach(function (s2) { wrap(s2[0], s2[1], "#d9e2ea", 2, 1); wrap(s2[0] + 1, s2[1] + 1, "#aab4bf", 2, 1); });
+        spots(2).forEach(function (s2) { wrap(s2[0], s2[1], "#f6c12d", 2, 2); wrap(s2[0], s2[1], "#fff1a8"); });
+      } else if (k === 3) {
+        spots(9).forEach(function (s2) {
+          var col = tr() < 0.5 ? ["#7fe3ff", "#d6f7ff", "#3ba6c9"] : ["#f28fd0", "#ffd9f1", "#b34f93"];
+          wrap(s2[0] + 1, s2[1], col[0]); wrap(s2[0], s2[1] + 1, col[0], 3, 1); wrap(s2[0] + 1, s2[1] + 2, col[2]); wrap(s2[0] + 1, s2[1] + 1, col[1]);
+        });
+        spots(8).forEach(function (s2) { wrap(s2[0], s2[1], "#2f2847", 3, 1); });
+      } else if (k === 4) {
+        spots(10).forEach(function (s2) {
+          if (tr() < 0.6) { wrap(s2[0], s2[1], "#ff8a2a", 4, 1); wrap(s2[0] + 1, s2[1] + 1, "#ff8a2a", 3, 1); wrap(s2[0] + 1, s2[1], "#ffe066", 2, 1); }
+          else wrap(s2[0], s2[1], "#3a100c", 2, 1);
+        });
+      } else {
+        spots(8).forEach(function (s2) { wrap(s2[0], s2[1], "#6f5aa8", 1, 3); wrap(s2[0] + 1, s2[1] + 1, "#a892e6"); wrap(s2[0] - 1, s2[1] + 2, "#17121d", 3, 1); });
+        spots(6).forEach(function (s2) { wrap(s2[0], s2[1], "#ffe066", 1, 1); });
+      }
+      // borde ondulado hacia la capa siguiente
+      if (nx) {
+        for (a = 0; a < T; a++) {
+          var e = BH - 6 + Math.round(Math.sin(a * Math.PI * 2 / T) * 2 + Math.sin(a * Math.PI * 4 / T + 1));
+          for (m = e; m < BH; m++) { var q2 = tr(); tp(a, m, nx[q2 < 0.6 ? 0 : q2 < 0.85 ? 1 : 3]); }
+          tp(a, e, nx[2]); tp(a, e - 1, pal[2]);
+        }
+      }
+      return c.cv.toDataURL();
+    }
+
+    var y0 = SKY_H + GRASS_H, imgs = ["url(" + top.cv.toDataURL() + ")"], reps = ["no-repeat"], poss = ["top center"];
+    for (i = 0; i < PALS.length; i++) {
+      imgs.push("url(" + band(i) + ")");
+      var last = i === PALS.length - 1;
+      reps.push(last ? "repeat" : "repeat-x");
+      poss.push("0 " + (y0 + i * BH * PX) + "px");
+    }
+    var b = document.body.style;
+    b.backgroundImage = imgs.join(", ");
+    b.backgroundRepeat = reps.join(", ");
+    b.backgroundPosition = poss.join(", ");
+    b.backgroundColor = PALS[PALS.length - 1][0];
+  }
+
   var rz = null;
   window.addEventListener("resize", function () {
     clearTimeout(rz);
-    rz = setTimeout(function () { if (G && $("strata")) paintWorld(); }, 200);
+    rz = setTimeout(function () { paintBackdrop(); stickSide(); if (G && $("strata")) paintWorld(); }, 200);
   });
 
+  try { paintBackdrop(); } catch (e) { /* si falla, queda el fondo de styles.css */ }
   window.CorgiCava = { home: home, start: start, state: function () { return G; } };
   home();
 })();

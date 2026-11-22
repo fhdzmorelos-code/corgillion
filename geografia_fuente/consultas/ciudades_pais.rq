@@ -1,0 +1,10 @@
+SELECT ?c ?pop ?sl ?t ?es ?en ?alias ?cap WHERE {
+  ?pais wdt:P298 "ISO" .
+  ?c wdt:P17 ?pais ; wdt:P1082 ?pop . FILTER(?pop >= 100000)
+  ?c wdt:P625 ?coord ; wikibase:sitelinks ?sl ; wdt:P31 ?t .
+  FILTER NOT EXISTS { ?c wdt:P576 ?fin }
+  OPTIONAL { ?c rdfs:label ?es FILTER(lang(?es)="es") }
+  OPTIONAL { ?c rdfs:label ?en FILTER(lang(?en)="en") }
+  OPTIONAL { ?c skos:altLabel ?alias FILTER(lang(?alias)="es") }
+  OPTIONAL { ?c wdt:P1376 ?cap }
+}

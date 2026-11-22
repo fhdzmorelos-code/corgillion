@@ -1,0 +1,9 @@
+SELECT ?c ?es ?en ?iso ?pop ?sl ?adm ?admEs ?cap WHERE {
+  ?c wdt:P31/wdt:P279* wd:Q515 ; wdt:P1082 ?pop ; wdt:P17 ?pais ; wikibase:sitelinks ?sl .
+  FILTER(?pop >= 100000)
+  ?pais wdt:P298 ?iso .
+  OPTIONAL { ?c rdfs:label ?es FILTER(lang(?es)="es") }
+  OPTIONAL { ?c rdfs:label ?en FILTER(lang(?en)="en") }
+  OPTIONAL { ?c wdt:P131 ?adm . ?adm rdfs:label ?admEs FILTER(lang(?admEs)="es") }
+  OPTIONAL { ?c wdt:P1376 ?cap }
+}

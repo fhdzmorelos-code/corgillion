@@ -1,0 +1,11 @@
+SELECT ?c ?sl ?es ?en ?alias ?iso ?cont ?m WHERE {
+  VALUES ?k { wd:Q23397 wd:Q188025 wd:Q211302 wd:Q204324 wd:Q9019918 } ?c wdt:P31 ?k .
+  ?c wikibase:sitelinks ?sl . FILTER(?sl >= 15)
+  FILTER NOT EXISTS { ?c wdt:P576 ?fin }
+  OPTIONAL { ?c wdt:P17 ?pais . ?pais wdt:P298 ?iso }
+  OPTIONAL { ?c wdt:P30 ?cont }
+  OPTIONAL { ?c wdt:P2046 ?m }
+  OPTIONAL { ?c rdfs:label ?es FILTER(lang(?es)="es") }
+  OPTIONAL { ?c rdfs:label ?en FILTER(lang(?en)="en") }
+  OPTIONAL { ?c skos:altLabel ?alias FILTER(lang(?alias)="es") }
+}

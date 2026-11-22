@@ -1,0 +1,7481 @@
+[
+ {
+  "id": "AFG",
+  "nombres": [
+   "Afganistán",
+   "Afghanistan"
+  ],
+  "capital": [
+   "Kabul"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "IRN",
+   "PAK",
+   "TKM",
+   "UZB",
+   "TJK",
+   "CHN"
+  ],
+  "idiomas": [
+   "Dari",
+   "Pashto",
+   "Turkmen"
+  ],
+  "superficie": 652230,
+  "poblacion": 41454761,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "AGO",
+  "nombres": [
+   "Angola"
+  ],
+  "capital": [
+   "Luanda"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "COG",
+   "COD",
+   "ZMB",
+   "NAM"
+  ],
+  "idiomas": [
+   "Portuguese"
+  ],
+  "superficie": 1246700,
+  "poblacion": 36749906,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ALB",
+  "nombres": [
+   "Albania"
+  ],
+  "capital": [
+   "Tirana"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "MNE",
+   "GRC",
+   "MKD",
+   "UNK"
+  ],
+  "idiomas": [
+   "Albanian"
+  ],
+  "superficie": 28748,
+  "poblacion": 2411658,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "AND",
+  "nombres": [
+   "Andorra"
+  ],
+  "capital": [
+   "Andorra la Vella"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "FRA",
+   "ESP"
+  ],
+  "idiomas": [
+   "Catalan"
+  ],
+  "superficie": 468,
+  "poblacion": 80856,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ARE",
+  "nombres": [
+   "Emiratos Árabes Unidos",
+   "Emiratos Árabes",
+   "EAU",
+   "United Arab Emirates"
+  ],
+  "capital": [
+   "Abu Dabi",
+   "Abu Dhabi"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "OMN",
+   "SAU"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 83600,
+  "poblacion": 10483751,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": true
+ },
+ {
+  "id": "ARG",
+  "nombres": [
+   "Argentina"
+  ],
+  "capital": [
+   "Buenos Aires"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "BOL",
+   "BRA",
+   "CHL",
+   "PRY",
+   "URY"
+  ],
+  "idiomas": [
+   "Guaraní",
+   "Spanish"
+  ],
+  "superficie": 2780400,
+  "poblacion": 45538401,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ARM",
+  "nombres": [
+   "Armenia"
+  ],
+  "capital": [
+   "Ereván",
+   "Yerevan"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia",
+   "Europa"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "AZE",
+   "GEO",
+   "IRN",
+   "TUR"
+  ],
+  "idiomas": [
+   "Armenian"
+  ],
+  "superficie": 29743,
+  "poblacion": 2964300,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ATG",
+  "nombres": [
+   "Antigua y Barbuda",
+   "Antigua and Barbuda"
+  ],
+  "capital": [
+   "Saint John",
+   "Saint John's"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 442,
+  "poblacion": 93316,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "AUS",
+  "nombres": [
+   "Australia"
+  ],
+  "capital": [
+   "Canberra"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Australia and New Zealand",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 7692024,
+  "poblacion": 26659922,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "AUT",
+  "nombres": [
+   "Austria"
+  ],
+  "capital": [
+   "Viena",
+   "Vienna"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Central Europe",
+  "fronteras": [
+   "CZE",
+   "DEU",
+   "HUN",
+   "ITA",
+   "LIE",
+   "SVK",
+   "SVN",
+   "CHE"
+  ],
+  "idiomas": [
+   "Austro-Bavarian German"
+  ],
+  "superficie": 83871,
+  "poblacion": 9131761,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "AZE",
+  "nombres": [
+   "Azerbaiyán",
+   "Azerbaijan"
+  ],
+  "capital": [
+   "Bakú",
+   "Baku"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia",
+   "Europa"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "ARM",
+   "GEO",
+   "IRN",
+   "RUS",
+   "TUR"
+  ],
+  "idiomas": [
+   "Azerbaijani",
+   "Russian"
+  ],
+  "superficie": 86600,
+  "poblacion": 10153958,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BDI",
+  "nombres": [
+   "Burundi"
+  ],
+  "capital": [
+   "Gitega"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "COD",
+   "RWA",
+   "TZA"
+  ],
+  "idiomas": [
+   "French",
+   "Kirundi"
+  ],
+  "superficie": 27834,
+  "poblacion": 13689450,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BEL",
+  "nombres": [
+   "Bélgica",
+   "Belgium"
+  ],
+  "capital": [
+   "Bruselas",
+   "Brussels"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "FRA",
+   "DEU",
+   "LUX",
+   "NLD"
+  ],
+  "idiomas": [
+   "Dutch",
+   "French",
+   "German"
+  ],
+  "superficie": 30528,
+  "poblacion": 11779946,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BEN",
+  "nombres": [
+   "Benín",
+   "Benin"
+  ],
+  "capital": [
+   "Porto-Novo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "BFA",
+   "NER",
+   "NGA",
+   "TGO"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 112622,
+  "poblacion": 14111034,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "BFA",
+  "nombres": [
+   "Burkina Faso"
+  ],
+  "capital": [
+   "Uagadugú",
+   "Ouagadougou"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "BEN",
+   "CIV",
+   "GHA",
+   "MLI",
+   "NER",
+   "TGO"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 272967,
+  "poblacion": 23025776,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BGD",
+  "nombres": [
+   "Bangladesh"
+  ],
+  "capital": [
+   "Daca",
+   "Dhaka"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "MMR",
+   "IND"
+  ],
+  "idiomas": [
+   "Bengali"
+  ],
+  "superficie": 147570,
+  "poblacion": 171466990,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BGR",
+  "nombres": [
+   "Bulgaria"
+  ],
+  "capital": [
+   "Sofía"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "GRC",
+   "MKD",
+   "ROU",
+   "SRB",
+   "TUR"
+  ],
+  "idiomas": [
+   "Bulgarian"
+  ],
+  "superficie": 110879,
+  "poblacion": 6446596,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BHR",
+  "nombres": [
+   "Baréin",
+   "Bahréin",
+   "Bahrein",
+   "Bahrain"
+  ],
+  "capital": [
+   "Manama"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 765,
+  "poblacion": 1577059,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "BHS",
+  "nombres": [
+   "Bahamas"
+  ],
+  "capital": [
+   "Nassau"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 13943,
+  "poblacion": 399440,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BIH",
+  "nombres": [
+   "Bosnia y Herzegovina",
+   "Bosnia",
+   "Bosnia and Herzegovina"
+  ],
+  "capital": [
+   "Sarajevo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "HRV",
+   "MNE",
+   "SRB"
+  ],
+  "idiomas": [
+   "Bosnian",
+   "Croatian",
+   "Serbian"
+  ],
+  "superficie": 51209,
+  "poblacion": 3185073,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BLR",
+  "nombres": [
+   "Bielorrusia",
+   "Belarús"
+  ],
+  "capital": [
+   "Minsk"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Eastern Europe",
+  "fronteras": [
+   "LVA",
+   "LTU",
+   "POL",
+   "RUS",
+   "UKR"
+  ],
+  "idiomas": [
+   "Belarusian",
+   "Russian"
+  ],
+  "superficie": 207600,
+  "poblacion": 9178298,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BLZ",
+  "nombres": [
+   "Belice",
+   "Belize"
+  ],
+  "capital": [
+   "Belmopan"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "GTM",
+   "MEX"
+  ],
+  "idiomas": [
+   "Belizean Creole",
+   "English",
+   "Spanish"
+  ],
+  "superficie": 22966,
+  "poblacion": 411106,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "BOL",
+  "nombres": [
+   "Bolivia"
+  ],
+  "capital": [
+   "Sucre"
+  ],
+  "capitales_extra": [
+   "La Paz"
+  ],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "ARG",
+   "BRA",
+   "CHL",
+   "PRY",
+   "PER"
+  ],
+  "idiomas": [
+   "Aymara",
+   "Guaraní",
+   "Quechua",
+   "Spanish"
+  ],
+  "superficie": 1098581,
+  "poblacion": 12244159,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "BRA",
+  "nombres": [
+   "Brasil",
+   "Brazil"
+  ],
+  "capital": [
+   "Brasilia"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "ARG",
+   "BOL",
+   "COL",
+   "GUY",
+   "PRY",
+   "PER",
+   "SUR",
+   "URY",
+   "VEN"
+  ],
+  "idiomas": [
+   "Portuguese"
+  ],
+  "superficie": 8515767,
+  "poblacion": 211140729,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "BRB",
+  "nombres": [
+   "Barbados"
+  ],
+  "capital": [
+   "Bridgetown"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 430,
+  "poblacion": 282336,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BRN",
+  "nombres": [
+   "Brunéi",
+   "Brunei"
+  ],
+  "capital": [
+   "Bandar Seri Begawan"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "MYS"
+  ],
+  "idiomas": [
+   "Malay"
+  ],
+  "superficie": 5765,
+  "poblacion": 458949,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BTN",
+  "nombres": [
+   "Bután",
+   "Bhutan"
+  ],
+  "capital": [
+   "Timbu",
+   "Thimphu"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "CHN",
+   "IND"
+  ],
+  "idiomas": [
+   "Dzongkha"
+  ],
+  "superficie": 38394,
+  "poblacion": 786385,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "BWA",
+  "nombres": [
+   "Botsuana",
+   "Botswana"
+  ],
+  "capital": [
+   "Gaborone"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Southern Africa",
+  "fronteras": [
+   "NAM",
+   "ZAF",
+   "ZMB",
+   "ZWE"
+  ],
+  "idiomas": [
+   "English",
+   "Tswana"
+  ],
+  "superficie": 582000,
+  "poblacion": 2480244,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CAF",
+  "nombres": [
+   "República Centroafricana",
+   "Centroáfrica",
+   "Central African Republic"
+  ],
+  "capital": [
+   "Bangui"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "CMR",
+   "TCD",
+   "COD",
+   "COG",
+   "SSD",
+   "SDN"
+  ],
+  "idiomas": [
+   "French",
+   "Sango"
+  ],
+  "superficie": 622984,
+  "poblacion": 5152421,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CAN",
+  "nombres": [
+   "Canadá"
+  ],
+  "capital": [
+   "Ottawa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "North America",
+  "fronteras": [
+   "USA"
+  ],
+  "idiomas": [
+   "English",
+   "French"
+  ],
+  "superficie": 9984670,
+  "poblacion": 40049088,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "CHE",
+  "nombres": [
+   "Suiza",
+   "Switzerland"
+  ],
+  "capital": [
+   "Berna",
+   "Bern"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "AUT",
+   "FRA",
+   "ITA",
+   "LIE",
+   "DEU"
+  ],
+  "idiomas": [
+   "French",
+   "Italian",
+   "Romansh",
+   "Swiss German"
+  ],
+  "superficie": 41284,
+  "poblacion": 8888822,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "CHL",
+  "nombres": [
+   "Chile"
+  ],
+  "capital": [
+   "Santiago"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "ARG",
+   "BOL",
+   "PER"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 756102,
+  "poblacion": 19658835,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CHN",
+  "nombres": [
+   "China"
+  ],
+  "capital": [
+   "Pekín",
+   "Beijing"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Eastern Asia",
+  "fronteras": [
+   "AFG",
+   "BTN",
+   "MMR",
+   "IND",
+   "KAZ",
+   "NPL",
+   "PRK",
+   "KGZ",
+   "LAO",
+   "MNG",
+   "PAK",
+   "RUS",
+   "TJK",
+   "VNM"
+  ],
+  "idiomas": [
+   "Chinese"
+  ],
+  "superficie": 9706961,
+  "poblacion": 1410710000,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "CIV",
+  "nombres": [
+   "Costa de Marfil",
+   "Ivory Coast"
+  ],
+  "capital": [
+   "Yamusukro",
+   "Yamoussoukro"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "BFA",
+   "GHA",
+   "GIN",
+   "LBR",
+   "MLI"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 322463,
+  "poblacion": 31165654,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "CMR",
+  "nombres": [
+   "Camerún",
+   "Cameroon"
+  ],
+  "capital": [
+   "Yaundé",
+   "Yaoundé"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "CAF",
+   "TCD",
+   "COG",
+   "GNQ",
+   "GAB",
+   "NGA"
+  ],
+  "idiomas": [
+   "English",
+   "French"
+  ],
+  "superficie": 475442,
+  "poblacion": 28372687,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "COD",
+  "nombres": [
+   "República Democrática del Congo",
+   "RD Congo",
+   "Congo-Kinsasa",
+   "Congo Kinshasa",
+   "DR Congo"
+  ],
+  "capital": [
+   "Kinshasa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "AGO",
+   "BDI",
+   "CAF",
+   "COG",
+   "RWA",
+   "SSD",
+   "TZA",
+   "UGA",
+   "ZMB"
+  ],
+  "idiomas": [
+   "French",
+   "Kikongo",
+   "Lingala",
+   "Swahili",
+   "Tshiluba"
+  ],
+  "superficie": 2344858,
+  "poblacion": 105789731,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "COG",
+  "nombres": [
+   "República del Congo",
+   "Congo",
+   "Congo-Brazzaville"
+  ],
+  "capital": [
+   "Brazzaville"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "AGO",
+   "CMR",
+   "CAF",
+   "COD",
+   "GAB"
+  ],
+  "idiomas": [
+   "French",
+   "Kikongo",
+   "Lingala"
+  ],
+  "superficie": 342000,
+  "poblacion": 6182885,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "COL",
+  "nombres": [
+   "Colombia"
+  ],
+  "capital": [
+   "Bogotá"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "BRA",
+   "ECU",
+   "PAN",
+   "PER",
+   "VEN"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 1141748,
+  "poblacion": 52321152,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "COM",
+  "nombres": [
+   "Comoras",
+   "Comoros"
+  ],
+  "capital": [
+   "Moroni"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [],
+  "idiomas": [
+   "Arabic",
+   "Comorian",
+   "French"
+  ],
+  "superficie": 1862,
+  "poblacion": 850387,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CPV",
+  "nombres": [
+   "Cabo Verde",
+   "Cape Verde"
+  ],
+  "capital": [
+   "Praia"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [],
+  "idiomas": [
+   "Portuguese"
+  ],
+  "superficie": 4033,
+  "poblacion": 522331,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CRI",
+  "nombres": [
+   "Costa Rica"
+  ],
+  "capital": [
+   "San José"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "NIC",
+   "PAN"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 51100,
+  "poblacion": 5105525,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CUB",
+  "nombres": [
+   "Cuba"
+  ],
+  "capital": [
+   "La Habana",
+   "Habana",
+   "Havana"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 109884,
+  "poblacion": 11019931,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "CYP",
+  "nombres": [
+   "Chipre",
+   "Cyprus"
+  ],
+  "capital": [
+   "Nicosia"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa",
+   "Asia"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [],
+  "idiomas": [
+   "Greek",
+   "Turkish"
+  ],
+  "superficie": 9251,
+  "poblacion": 1344976,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "CZE",
+  "nombres": [
+   "Chequia",
+   "República Checa",
+   "Czechia"
+  ],
+  "capital": [
+   "Praga",
+   "Prague"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Central Europe",
+  "fronteras": [
+   "AUT",
+   "DEU",
+   "POL",
+   "SVK"
+  ],
+  "idiomas": [
+   "Czech",
+   "Slovak"
+  ],
+  "superficie": 78865,
+  "poblacion": 10864042,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "DEU",
+  "nombres": [
+   "Alemania",
+   "Germany"
+  ],
+  "capital": [
+   "Berlín"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "AUT",
+   "BEL",
+   "CZE",
+   "DNK",
+   "FRA",
+   "LUX",
+   "NLD",
+   "POL",
+   "CHE"
+  ],
+  "idiomas": [
+   "German"
+  ],
+  "superficie": 357114,
+  "poblacion": 83287273,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "DJI",
+  "nombres": [
+   "Yibuti",
+   "Djibouti"
+  ],
+  "capital": [
+   "Yibuti",
+   "Djibouti"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "ERI",
+   "ETH",
+   "SOM"
+  ],
+  "idiomas": [
+   "Arabic",
+   "French"
+  ],
+  "superficie": 23200,
+  "poblacion": 1152944,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "DMA",
+  "nombres": [
+   "Dominica"
+  ],
+  "capital": [
+   "Roseau"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 751,
+  "poblacion": 66510,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "DNK",
+  "nombres": [
+   "Dinamarca",
+   "Denmark"
+  ],
+  "capital": [
+   "Copenhague",
+   "Copenhagen"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "DEU"
+  ],
+  "idiomas": [
+   "Danish"
+  ],
+  "superficie": 43094,
+  "poblacion": 5946952,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "DOM",
+  "nombres": [
+   "República Dominicana",
+   "Dominicana",
+   "Dominican Republic"
+  ],
+  "capital": [
+   "Santo Domingo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [
+   "HTI"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 48671,
+  "poblacion": 11331265,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "DZA",
+  "nombres": [
+   "Argelia",
+   "Algeria"
+  ],
+  "capital": [
+   "Argel",
+   "Algiers"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Northern Africa",
+  "fronteras": [
+   "TUN",
+   "LBY",
+   "NER",
+   "MRT",
+   "MLI",
+   "MAR"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 2381741,
+  "poblacion": 46164219,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ECU",
+  "nombres": [
+   "Ecuador"
+  ],
+  "capital": [
+   "Quito"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "COL",
+   "PER"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 276841,
+  "poblacion": 17980083,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "EGY",
+  "nombres": [
+   "Egipto",
+   "Egypt"
+  ],
+  "capital": [
+   "El Cairo",
+   "Cairo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África",
+   "Asia"
+  ],
+  "subregion": "Northern Africa",
+  "fronteras": [
+   "ISR",
+   "LBY",
+   "PSE",
+   "SDN"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 1002450,
+  "poblacion": 114535772,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "ERI",
+  "nombres": [
+   "Eritrea"
+  ],
+  "capital": [
+   "Asmara"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "DJI",
+   "ETH",
+   "SDN"
+  ],
+  "idiomas": [
+   "Arabic",
+   "English",
+   "Tigrinya"
+  ],
+  "superficie": 117600,
+  "poblacion": 3470390,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ESP",
+  "nombres": [
+   "España",
+   "Spain"
+  ],
+  "capital": [
+   "Madrid"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "AND",
+   "FRA",
+   "PRT",
+   "MAR"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 505992,
+  "poblacion": 48352528,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "EST",
+  "nombres": [
+   "Estonia"
+  ],
+  "capital": [
+   "Tallinn"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "LVA",
+   "RUS"
+  ],
+  "idiomas": [
+   "Estonian"
+  ],
+  "superficie": 45227,
+  "poblacion": 1370286,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ETH",
+  "nombres": [
+   "Etiopía",
+   "Ethiopia"
+  ],
+  "capital": [
+   "Adís Abeba",
+   "Addis Abeba",
+   "Addis Ababa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "DJI",
+   "ERI",
+   "KEN",
+   "SOM",
+   "SSD",
+   "SDN"
+  ],
+  "idiomas": [
+   "Amharic"
+  ],
+  "superficie": 1104300,
+  "poblacion": 128691692,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "FIN",
+  "nombres": [
+   "Finlandia",
+   "Finland"
+  ],
+  "capital": [
+   "Helsinki"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "NOR",
+   "SWE",
+   "RUS"
+  ],
+  "idiomas": [
+   "Finnish",
+   "Swedish"
+  ],
+  "superficie": 338424,
+  "poblacion": 5583911,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "FJI",
+  "nombres": [
+   "Fiyi",
+   "Fiji"
+  ],
+  "capital": [
+   "Suva"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Melanesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Fiji Hindi",
+   "Fijian"
+  ],
+  "superficie": 18272,
+  "poblacion": 924145,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "FRA",
+  "nombres": [
+   "Francia",
+   "France"
+  ],
+  "capital": [
+   "París"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "AND",
+   "BEL",
+   "DEU",
+   "ITA",
+   "LUX",
+   "MCO",
+   "ESP",
+   "CHE"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 551695,
+  "poblacion": 68372286,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "FSM",
+  "nombres": [
+   "Micronesia",
+   "Estados Federados de Micronesia"
+  ],
+  "capital": [
+   "Palikir"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Micronesia",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 702,
+  "poblacion": 112630,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GAB",
+  "nombres": [
+   "Gabón"
+  ],
+  "capital": [
+   "Libreville"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "CMR",
+   "COG",
+   "GNQ"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 267668,
+  "poblacion": 2484789,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GBR",
+  "nombres": [
+   "Reino Unido",
+   "Gran Bretaña",
+   "UK",
+   "United Kingdom"
+  ],
+  "capital": [
+   "Londres",
+   "London"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "IRL"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 242900,
+  "poblacion": 68526000,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GEO",
+  "nombres": [
+   "Georgia"
+  ],
+  "capital": [
+   "Tiflis",
+   "Tbilisi"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia",
+   "Europa"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "ARM",
+   "AZE",
+   "RUS",
+   "TUR"
+  ],
+  "idiomas": [
+   "Georgian"
+  ],
+  "superficie": 69700,
+  "poblacion": 3715483,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GHA",
+  "nombres": [
+   "Ghana"
+  ],
+  "capital": [
+   "Accra"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "BFA",
+   "CIV",
+   "TGO"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 238533,
+  "poblacion": 33787914,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GIN",
+  "nombres": [
+   "Guinea"
+  ],
+  "capital": [
+   "Conakry"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "CIV",
+   "GNB",
+   "LBR",
+   "MLI",
+   "SEN",
+   "SLE"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 245857,
+  "poblacion": 14405468,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GMB",
+  "nombres": [
+   "Gambia"
+  ],
+  "capital": [
+   "Banjul"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "SEN"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 10689,
+  "poblacion": 2697845,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GNB",
+  "nombres": [
+   "Guinea-Bisáu",
+   "Guinea-Bissau"
+  ],
+  "capital": [
+   "Bissau"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "GIN",
+   "SEN"
+  ],
+  "idiomas": [
+   "Portuguese",
+   "Upper Guinea Creole"
+  ],
+  "superficie": 36125,
+  "poblacion": 2153339,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GNQ",
+  "nombres": [
+   "Guinea Ecuatorial",
+   "Equatorial Guinea"
+  ],
+  "capital": [
+   "Malabo",
+   "Ciudad de la Paz"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "CMR",
+   "GAB"
+  ],
+  "idiomas": [
+   "French",
+   "Portuguese",
+   "Spanish"
+  ],
+  "superficie": 28051,
+  "poblacion": 1847549,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "GRC",
+  "nombres": [
+   "Grecia",
+   "Greece"
+  ],
+  "capital": [
+   "Atenas",
+   "Athens"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "ALB",
+   "BGR",
+   "TUR",
+   "MKD"
+  ],
+  "idiomas": [
+   "Greek"
+  ],
+  "superficie": 131990,
+  "poblacion": 10407351,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GRD",
+  "nombres": [
+   "Granada",
+   "Grenada"
+  ],
+  "capital": [
+   "Saint George",
+   "Saint George's",
+   "St. George's"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 344,
+  "poblacion": 117081,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GTM",
+  "nombres": [
+   "Guatemala"
+  ],
+  "capital": [
+   "Ciudad de Guatemala",
+   "Guatemala",
+   "Guatemala City"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "BLZ",
+   "SLV",
+   "HND",
+   "MEX"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 108889,
+  "poblacion": 18124838,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "GUY",
+  "nombres": [
+   "Guyana"
+  ],
+  "capital": [
+   "Georgetown"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "BRA",
+   "SUR",
+   "VEN"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 214969,
+  "poblacion": 826353,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "HND",
+  "nombres": [
+   "Honduras"
+  ],
+  "capital": [
+   "Tegucigalpa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "GTM",
+   "SLV",
+   "NIC"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 112492,
+  "poblacion": 10644851,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "HRV",
+  "nombres": [
+   "Croacia",
+   "Croatia"
+  ],
+  "capital": [
+   "Zagreb"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "BIH",
+   "HUN",
+   "MNE",
+   "SRB",
+   "SVN"
+  ],
+  "idiomas": [
+   "Croatian"
+  ],
+  "superficie": 56594,
+  "poblacion": 3859686,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "HTI",
+  "nombres": [
+   "Haití"
+  ],
+  "capital": [
+   "Puerto Príncipe",
+   "Port-au-Prince"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [
+   "DOM"
+  ],
+  "idiomas": [
+   "French",
+   "Haitian Creole"
+  ],
+  "superficie": 27750,
+  "poblacion": 11637398,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "HUN",
+  "nombres": [
+   "Hungría",
+   "Hungary"
+  ],
+  "capital": [
+   "Budapest"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Central Europe",
+  "fronteras": [
+   "AUT",
+   "HRV",
+   "ROU",
+   "SRB",
+   "SVK",
+   "SVN",
+   "UKR"
+  ],
+  "idiomas": [
+   "Hungarian"
+  ],
+  "superficie": 93028,
+  "poblacion": 9592186,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "IDN",
+  "nombres": [
+   "Indonesia"
+  ],
+  "capital": [
+   "Yakarta",
+   "Jakarta"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "TLS",
+   "MYS",
+   "PNG"
+  ],
+  "idiomas": [
+   "Indonesian"
+  ],
+  "superficie": 1904569,
+  "poblacion": 281190067,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": true,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "IND",
+  "nombres": [
+   "India"
+  ],
+  "capital": [
+   "Nueva Delhi",
+   "Delhi",
+   "New Delhi"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "BGD",
+   "BTN",
+   "MMR",
+   "CHN",
+   "NPL",
+   "PAK"
+  ],
+  "idiomas": [
+   "English",
+   "Hindi",
+   "Tamil"
+  ],
+  "superficie": 3287590,
+  "poblacion": 1438069596,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "IRL",
+  "nombres": [
+   "Irlanda",
+   "Ireland"
+  ],
+  "capital": [
+   "Dublín"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "GBR"
+  ],
+  "idiomas": [
+   "English",
+   "Irish"
+  ],
+  "superficie": 70273,
+  "poblacion": 5311538,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "IRN",
+  "nombres": [
+   "Irán"
+  ],
+  "capital": [
+   "Teherán",
+   "Tehran"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "AFG",
+   "ARM",
+   "AZE",
+   "IRQ",
+   "PAK",
+   "TUR",
+   "TKM"
+  ],
+  "idiomas": [
+   "Persian (Farsi)"
+  ],
+  "superficie": 1648195,
+  "poblacion": 90608707,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "IRQ",
+  "nombres": [
+   "Irak",
+   "Iraq"
+  ],
+  "capital": [
+   "Bagdad",
+   "Baghdad"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "IRN",
+   "JOR",
+   "KWT",
+   "SAU",
+   "SYR",
+   "TUR"
+  ],
+  "idiomas": [
+   "Arabic",
+   "Aramaic",
+   "Sorani"
+  ],
+  "superficie": 438317,
+  "poblacion": 45074049,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "ISL",
+  "nombres": [
+   "Islandia",
+   "Iceland"
+  ],
+  "capital": [
+   "Reikiavik",
+   "Reykjavik"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [],
+  "idiomas": [
+   "Icelandic"
+  ],
+  "superficie": 103000,
+  "poblacion": 385663,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ISR",
+  "nombres": [
+   "Israel"
+  ],
+  "capital": [
+   "Jerusalén",
+   "Jerusalem"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "EGY",
+   "JOR",
+   "LBN",
+   "PSE",
+   "SYR"
+  ],
+  "idiomas": [
+   "Arabic",
+   "Hebrew"
+  ],
+  "superficie": 20770,
+  "poblacion": 9849000,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "ITA",
+  "nombres": [
+   "Italia",
+   "Italy"
+  ],
+  "capital": [
+   "Roma",
+   "Rome"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "AUT",
+   "FRA",
+   "SMR",
+   "SVN",
+   "CHE",
+   "VAT"
+  ],
+  "idiomas": [
+   "Italian"
+  ],
+  "superficie": 301336,
+  "poblacion": 58984216,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "JAM",
+  "nombres": [
+   "Jamaica"
+  ],
+  "capital": [
+   "Kingston"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Jamaican Patois"
+  ],
+  "superficie": 10991,
+  "poblacion": 2839786,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "JOR",
+  "nombres": [
+   "Jordania",
+   "Jordan"
+  ],
+  "capital": [
+   "Amán",
+   "Amman"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "IRQ",
+   "ISR",
+   "PSE",
+   "SAU",
+   "SYR"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 89342,
+  "poblacion": 11439213,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "JPN",
+  "nombres": [
+   "Japón",
+   "Japan"
+  ],
+  "capital": [
+   "Tokio",
+   "Tokyo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Eastern Asia",
+  "fronteras": [],
+  "idiomas": [
+   "Japanese"
+  ],
+  "superficie": 377930,
+  "poblacion": 124516650,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KAZ",
+  "nombres": [
+   "Kazajistán",
+   "Kazajstán",
+   "Kazakhstan"
+  ],
+  "capital": [
+   "Astaná",
+   "Astana"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia",
+   "Europa"
+  ],
+  "subregion": "Central Asia",
+  "fronteras": [
+   "CHN",
+   "KGZ",
+   "RUS",
+   "TKM",
+   "UZB"
+  ],
+  "idiomas": [
+   "Kazakh",
+   "Russian"
+  ],
+  "superficie": 2724900,
+  "poblacion": 20330104,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "KEN",
+  "nombres": [
+   "Kenia",
+   "Kenya"
+  ],
+  "capital": [
+   "Nairobi"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "ETH",
+   "SOM",
+   "SSD",
+   "TZA",
+   "UGA"
+  ],
+  "idiomas": [
+   "English",
+   "Swahili"
+  ],
+  "superficie": 580367,
+  "poblacion": 55339003,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": true,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KGZ",
+  "nombres": [
+   "Kirguistán",
+   "Kirguizistán",
+   "Kyrgyzstan"
+  ],
+  "capital": [
+   "Biskek",
+   "Bishkek"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Central Asia",
+  "fronteras": [
+   "CHN",
+   "KAZ",
+   "TJK",
+   "UZB"
+  ],
+  "idiomas": [
+   "Kyrgyz",
+   "Russian"
+  ],
+  "superficie": 199951,
+  "poblacion": 7099750,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KHM",
+  "nombres": [
+   "Camboya",
+   "Cambodia"
+  ],
+  "capital": [
+   "Nom Pen",
+   "Phnom Penh"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "LAO",
+   "THA",
+   "VNM"
+  ],
+  "idiomas": [
+   "Khmer"
+  ],
+  "superficie": 181035,
+  "poblacion": 17423880,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KIR",
+  "nombres": [
+   "Kiribati"
+  ],
+  "capital": [
+   "Tarawa",
+   "Tarawa Sur",
+   "South Tarawa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Micronesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Gilbertese"
+  ],
+  "superficie": 811,
+  "poblacion": 132530,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KNA",
+  "nombres": [
+   "San Cristóbal y Nieves",
+   "Saint Kitts and Nevis"
+  ],
+  "capital": [
+   "Basseterre"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 261,
+  "poblacion": 46758,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KOR",
+  "nombres": [
+   "Corea del Sur",
+   "South Korea"
+  ],
+  "capital": [
+   "Seúl",
+   "Seoul"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Eastern Asia",
+  "fronteras": [
+   "PRK"
+  ],
+  "idiomas": [
+   "Korean"
+  ],
+  "superficie": 100210,
+  "poblacion": 51712619,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "UNK",
+  "nombres": [
+   "Kosovo"
+  ],
+  "capital": [
+   "Pristina"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "ALB",
+   "MKD",
+   "MNE",
+   "SRB"
+  ],
+  "idiomas": [
+   "Albanian",
+   "Serbian"
+  ],
+  "superficie": 10908,
+  "poblacion": 1682668,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "KWT",
+  "nombres": [
+   "Kuwait",
+   "Kuwáit"
+  ],
+  "capital": [
+   "Ciudad de Kuwait",
+   "Kuwait",
+   "Kuwait City"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "IRQ",
+   "SAU"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 17818,
+  "poblacion": 4853420,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "LAO",
+  "nombres": [
+   "Laos"
+  ],
+  "capital": [
+   "Vientián",
+   "Vientiane"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "MMR",
+   "KHM",
+   "CHN",
+   "THA",
+   "VNM"
+  ],
+  "idiomas": [
+   "Lao"
+  ],
+  "superficie": 236800,
+  "poblacion": 7664993,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LBN",
+  "nombres": [
+   "Líbano",
+   "Lebanon"
+  ],
+  "capital": [
+   "Beirut"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "ISR",
+   "SYR"
+  ],
+  "idiomas": [
+   "Arabic",
+   "French"
+  ],
+  "superficie": 10452,
+  "poblacion": 5773493,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "LBR",
+  "nombres": [
+   "Liberia"
+  ],
+  "capital": [
+   "Monrovia"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "GIN",
+   "CIV",
+   "SLE"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 111369,
+  "poblacion": 5493031,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LBY",
+  "nombres": [
+   "Libia",
+   "Libya"
+  ],
+  "capital": [
+   "Trípoli"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Northern Africa",
+  "fronteras": [
+   "DZA",
+   "TCD",
+   "EGY",
+   "NER",
+   "SDN",
+   "TUN"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 1759540,
+  "poblacion": 7305659,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LCA",
+  "nombres": [
+   "Santa Lucía",
+   "Saint Lucia"
+  ],
+  "capital": [
+   "Castries"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 616,
+  "poblacion": 179285,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LIE",
+  "nombres": [
+   "Liechtenstein"
+  ],
+  "capital": [
+   "Vaduz"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "AUT",
+   "CHE"
+  ],
+  "idiomas": [
+   "German"
+  ],
+  "superficie": 160,
+  "poblacion": 39846,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "LKA",
+  "nombres": [
+   "Sri Lanka"
+  ],
+  "capital": [
+   "Colombo",
+   "Sri Jayawardenepura Kotte",
+   "Kotte"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "IND"
+  ],
+  "idiomas": [
+   "Sinhala",
+   "Tamil"
+  ],
+  "superficie": 65610,
+  "poblacion": 22037000,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "LSO",
+  "nombres": [
+   "Lesoto",
+   "Lesotho"
+  ],
+  "capital": [
+   "Maseru"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Southern Africa",
+  "fronteras": [
+   "ZAF"
+  ],
+  "idiomas": [
+   "English",
+   "Sotho"
+  ],
+  "superficie": 30355,
+  "poblacion": 2311472,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LTU",
+  "nombres": [
+   "Lituania",
+   "Lithuania"
+  ],
+  "capital": [
+   "Vilnius"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "BLR",
+   "LVA",
+   "POL",
+   "RUS"
+  ],
+  "idiomas": [
+   "Lithuanian"
+  ],
+  "superficie": 65300,
+  "poblacion": 2871585,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LUX",
+  "nombres": [
+   "Luxemburgo",
+   "Luxembourg"
+  ],
+  "capital": [
+   "Luxemburgo",
+   "Ciudad de Luxemburgo",
+   "Luxembourg"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "BEL",
+   "FRA",
+   "DEU"
+  ],
+  "idiomas": [
+   "French",
+   "German",
+   "Luxembourgish"
+  ],
+  "superficie": 2586,
+  "poblacion": 666430,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "LVA",
+  "nombres": [
+   "Letonia",
+   "Latvia"
+  ],
+  "capital": [
+   "Riga"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "BLR",
+   "EST",
+   "LTU",
+   "RUS"
+  ],
+  "idiomas": [
+   "Latvian"
+  ],
+  "superficie": 64559,
+  "poblacion": 1883710,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MAR",
+  "nombres": [
+   "Marruecos",
+   "Morocco"
+  ],
+  "capital": [
+   "Rabat"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Northern Africa",
+  "fronteras": [
+   "DZA",
+   "ESP"
+  ],
+  "idiomas": [
+   "Arabic",
+   "Berber"
+  ],
+  "superficie": 446550,
+  "poblacion": 37712505,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "MCO",
+  "nombres": [
+   "Mónaco"
+  ],
+  "capital": [
+   "Mónaco"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "FRA"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 2.02,
+  "poblacion": 38956,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MDA",
+  "nombres": [
+   "Moldavia",
+   "Moldova"
+  ],
+  "capital": [
+   "Chisináu",
+   "Chisinau",
+   "Kishinev"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Eastern Europe",
+  "fronteras": [
+   "ROU",
+   "UKR"
+  ],
+  "idiomas": [
+   "Moldavian"
+  ],
+  "superficie": 33846,
+  "poblacion": 2457783,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MDG",
+  "nombres": [
+   "Madagascar"
+  ],
+  "capital": [
+   "Antananarivo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [],
+  "idiomas": [
+   "French",
+   "Malagasy"
+  ],
+  "superficie": 587041,
+  "poblacion": 31195932,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MDV",
+  "nombres": [
+   "Maldivas",
+   "Maldives"
+  ],
+  "capital": [
+   "Malé"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [],
+  "idiomas": [
+   "Maldivian"
+  ],
+  "superficie": 300,
+  "poblacion": 525994,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MEX",
+  "nombres": [
+   "México"
+  ],
+  "capital": [
+   "Ciudad de México",
+   "CDMX",
+   "DF",
+   "Mexico City"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "North America",
+  "fronteras": [
+   "BLZ",
+   "GTM",
+   "USA"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 1964375,
+  "poblacion": 129739759,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MHL",
+  "nombres": [
+   "Islas Marshall",
+   "Marshall Islands"
+  ],
+  "capital": [
+   "Majuro"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Micronesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Marshallese"
+  ],
+  "superficie": 181,
+  "poblacion": 38827,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MKD",
+  "nombres": [
+   "Macedonia del Norte",
+   "Macedonia",
+   "North Macedonia"
+  ],
+  "capital": [
+   "Skopie",
+   "Skopje"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "ALB",
+   "BGR",
+   "GRC",
+   "UNK",
+   "SRB"
+  ],
+  "idiomas": [
+   "Macedonian"
+  ],
+  "superficie": 25713,
+  "poblacion": 1827816,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MLI",
+  "nombres": [
+   "Malí",
+   "Mali"
+  ],
+  "capital": [
+   "Bamako"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "DZA",
+   "BFA",
+   "GIN",
+   "CIV",
+   "MRT",
+   "NER",
+   "SEN"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 1240192,
+  "poblacion": 23769127,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MLT",
+  "nombres": [
+   "Malta"
+  ],
+  "capital": [
+   "Valletta"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Maltese"
+  ],
+  "superficie": 316,
+  "poblacion": 552747,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "MMR",
+  "nombres": [
+   "Myanmar",
+   "Birmania"
+  ],
+  "capital": [
+   "Naipyidó",
+   "Naypyidaw"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "BGD",
+   "CHN",
+   "IND",
+   "LAO",
+   "THA"
+  ],
+  "idiomas": [
+   "Burmese"
+  ],
+  "superficie": 676578,
+  "poblacion": 54133798,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "MNE",
+  "nombres": [
+   "Montenegro"
+  ],
+  "capital": [
+   "Podgorica"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "ALB",
+   "BIH",
+   "HRV",
+   "UNK",
+   "SRB"
+  ],
+  "idiomas": [
+   "Montenegrin"
+  ],
+  "superficie": 13812,
+  "poblacion": 623529,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MNG",
+  "nombres": [
+   "Mongolia"
+  ],
+  "capital": [
+   "Ulán Bator",
+   "Ulan Bator"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Eastern Asia",
+  "fronteras": [
+   "CHN",
+   "RUS"
+  ],
+  "idiomas": [
+   "Mongolian"
+  ],
+  "superficie": 1564110,
+  "poblacion": 3481145,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MOZ",
+  "nombres": [
+   "Mozambique"
+  ],
+  "capital": [
+   "Maputo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "MWI",
+   "ZAF",
+   "SWZ",
+   "TZA",
+   "ZMB",
+   "ZWE"
+  ],
+  "idiomas": [
+   "Portuguese"
+  ],
+  "superficie": 801590,
+  "poblacion": 33635160,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MRT",
+  "nombres": [
+   "Mauritania"
+  ],
+  "capital": [
+   "Nuakchot",
+   "Nouakchott"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "DZA",
+   "MLI",
+   "SEN"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 1030700,
+  "poblacion": 5022441,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MUS",
+  "nombres": [
+   "Mauricio",
+   "Mauritius"
+  ],
+  "capital": [
+   "Port Louis"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "French",
+   "Mauritian Creole"
+  ],
+  "superficie": 2040,
+  "poblacion": 1248647,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MWI",
+  "nombres": [
+   "Malaui",
+   "Malawi"
+  ],
+  "capital": [
+   "Lilongwe"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "MOZ",
+   "TZA",
+   "ZMB"
+  ],
+  "idiomas": [
+   "Chewa",
+   "English"
+  ],
+  "superficie": 118484,
+  "poblacion": 21104482,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "MYS",
+  "nombres": [
+   "Malasia",
+   "Malaysia"
+  ],
+  "capital": [
+   "Kuala Lumpur"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "BRN",
+   "IDN",
+   "THA"
+  ],
+  "idiomas": [
+   "English",
+   "Malay"
+  ],
+  "superficie": 330803,
+  "poblacion": 35126298,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NAM",
+  "nombres": [
+   "Namibia"
+  ],
+  "capital": [
+   "Windhoek"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Southern Africa",
+  "fronteras": [
+   "AGO",
+   "BWA",
+   "ZAF",
+   "ZMB"
+  ],
+  "idiomas": [
+   "Afrikaans",
+   "English",
+   "German",
+   "Herero",
+   "Khoekhoe",
+   "Kwangali",
+   "Lozi",
+   "Ndonga",
+   "Tswana"
+  ],
+  "superficie": 825615,
+  "poblacion": 2963095,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NER",
+  "nombres": [
+   "Níger",
+   "Niger"
+  ],
+  "capital": [
+   "Niamey"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "DZA",
+   "BEN",
+   "BFA",
+   "TCD",
+   "LBY",
+   "MLI",
+   "NGA"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 1267000,
+  "poblacion": 26159867,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NGA",
+  "nombres": [
+   "Nigeria"
+  ],
+  "capital": [
+   "Abuya",
+   "Abuja"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "BEN",
+   "CMR",
+   "TCD",
+   "NER"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 923768,
+  "poblacion": 227882945,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "NIC",
+  "nombres": [
+   "Nicaragua"
+  ],
+  "capital": [
+   "Managua"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "CRI",
+   "HND"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 130373,
+  "poblacion": 6823613,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NLD",
+  "nombres": [
+   "Países Bajos",
+   "Holanda",
+   "Netherlands"
+  ],
+  "capital": [
+   "Ámsterdam"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Western Europe",
+  "fronteras": [
+   "BEL",
+   "DEU"
+  ],
+  "idiomas": [
+   "Dutch"
+  ],
+  "superficie": 41850,
+  "poblacion": 17877117,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NOR",
+  "nombres": [
+   "Noruega",
+   "Norway"
+  ],
+  "capital": [
+   "Oslo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "FIN",
+   "SWE",
+   "RUS"
+  ],
+  "idiomas": [
+   "Norwegian Bokmål",
+   "Norwegian Nynorsk",
+   "Sami"
+  ],
+  "superficie": 323802,
+  "poblacion": 5519601,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NPL",
+  "nombres": [
+   "Nepal"
+  ],
+  "capital": [
+   "Katmandú",
+   "Kathmandu"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "CHN",
+   "IND"
+  ],
+  "idiomas": [
+   "Nepali"
+  ],
+  "superficie": 147181,
+  "poblacion": 29694614,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NRU",
+  "nombres": [
+   "Nauru"
+  ],
+  "capital": [
+   "Yaren"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Micronesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Nauru"
+  ],
+  "superficie": 21,
+  "poblacion": 11875,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "NZL",
+  "nombres": [
+   "Nueva Zelanda",
+   "New Zealand"
+  ],
+  "capital": [
+   "Wellington"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Australia and New Zealand",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Māori",
+   "New Zealand Sign Language"
+  ],
+  "superficie": 270467,
+  "poblacion": 5200000,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "OMN",
+  "nombres": [
+   "Omán",
+   "Oman"
+  ],
+  "capital": [
+   "Mascate",
+   "Muscat"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "SAU",
+   "ARE",
+   "YEM"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 309500,
+  "poblacion": 5049269,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "PAK",
+  "nombres": [
+   "Pakistán"
+  ],
+  "capital": [
+   "Islamabad"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Southern Asia",
+  "fronteras": [
+   "AFG",
+   "CHN",
+   "IND",
+   "IRN"
+  ],
+  "idiomas": [
+   "English",
+   "Urdu"
+  ],
+  "superficie": 881912,
+  "poblacion": 247504495,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "PAN",
+  "nombres": [
+   "Panamá"
+  ],
+  "capital": [
+   "Ciudad de Panamá",
+   "Panamá",
+   "Panama City"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "COL",
+   "CRI"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 75417,
+  "poblacion": 4458759,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PER",
+  "nombres": [
+   "Perú"
+  ],
+  "capital": [
+   "Lima"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "BOL",
+   "BRA",
+   "CHL",
+   "COL",
+   "ECU"
+  ],
+  "idiomas": [
+   "Aymara",
+   "Quechua",
+   "Spanish"
+  ],
+  "superficie": 1285216,
+  "poblacion": 33845617,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PHL",
+  "nombres": [
+   "Filipinas",
+   "Philippines"
+  ],
+  "capital": [
+   "Manila"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Filipino"
+  ],
+  "superficie": 342353,
+  "poblacion": 114891199,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "PLW",
+  "nombres": [
+   "Palau"
+  ],
+  "capital": [
+   "Ngerulmud"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Micronesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Palauan"
+  ],
+  "superficie": 459,
+  "poblacion": 17727,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PNG",
+  "nombres": [
+   "Papúa Nueva Guinea",
+   "Papua New Guinea"
+  ],
+  "capital": [
+   "Port Moresby"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Melanesia",
+  "fronteras": [
+   "IDN"
+  ],
+  "idiomas": [
+   "English",
+   "Hiri Motu",
+   "Tok Pisin"
+  ],
+  "superficie": 462840,
+  "poblacion": 10389635,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "POL",
+  "nombres": [
+   "Polonia",
+   "Poland"
+  ],
+  "capital": [
+   "Varsovia",
+   "Warsaw"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Central Europe",
+  "fronteras": [
+   "BLR",
+   "CZE",
+   "DEU",
+   "LTU",
+   "RUS",
+   "SVK",
+   "UKR"
+  ],
+  "idiomas": [
+   "Polish"
+  ],
+  "superficie": 312679,
+  "poblacion": 36687353,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PRK",
+  "nombres": [
+   "Corea del Norte",
+   "North Korea"
+  ],
+  "capital": [
+   "Pionyang",
+   "Pyongyang"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Eastern Asia",
+  "fronteras": [
+   "CHN",
+   "KOR",
+   "RUS"
+  ],
+  "idiomas": [
+   "Korean"
+  ],
+  "superficie": 120538,
+  "poblacion": 26418204,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PRT",
+  "nombres": [
+   "Portugal"
+  ],
+  "capital": [
+   "Lisboa",
+   "Lisbon"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "ESP"
+  ],
+  "idiomas": [
+   "Portuguese"
+  ],
+  "superficie": 92090,
+  "poblacion": 10578174,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PRY",
+  "nombres": [
+   "Paraguay"
+  ],
+  "capital": [
+   "Asunción"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "ARG",
+   "BOL",
+   "BRA"
+  ],
+  "idiomas": [
+   "Guaraní",
+   "Spanish"
+  ],
+  "superficie": 406752,
+  "poblacion": 6844146,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "PSE",
+  "nombres": [
+   "Palestina",
+   "Palestine"
+  ],
+  "capital": [
+   "Ramala",
+   "Ramallah"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "ISR",
+   "EGY",
+   "JOR"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 6220,
+  "poblacion": 5165775,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "QAT",
+  "nombres": [
+   "Catar",
+   "Qatar"
+  ],
+  "capital": [
+   "Doha"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "SAU"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 11586,
+  "poblacion": 2656032,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "ROU",
+  "nombres": [
+   "Rumania",
+   "Romania"
+  ],
+  "capital": [
+   "Bucarest",
+   "Bucharest"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "BGR",
+   "HUN",
+   "MDA",
+   "SRB",
+   "UKR"
+  ],
+  "idiomas": [
+   "Romanian"
+  ],
+  "superficie": 238391,
+  "poblacion": 19061062,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "RUS",
+  "nombres": [
+   "Rusia",
+   "Russia"
+  ],
+  "capital": [
+   "Moscú",
+   "Moscow"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa",
+   "Asia"
+  ],
+  "subregion": "Eastern Europe",
+  "fronteras": [
+   "AZE",
+   "BLR",
+   "CHN",
+   "EST",
+   "FIN",
+   "GEO",
+   "KAZ",
+   "PRK",
+   "LVA",
+   "LTU",
+   "MNG",
+   "NOR",
+   "POL",
+   "UKR"
+  ],
+  "idiomas": [
+   "Russian"
+  ],
+  "superficie": 17098242,
+  "poblacion": 143826130,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "RWA",
+  "nombres": [
+   "Ruanda",
+   "Rwanda"
+  ],
+  "capital": [
+   "Kigali"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "BDI",
+   "COD",
+   "TZA",
+   "UGA"
+  ],
+  "idiomas": [
+   "English",
+   "French",
+   "Kinyarwanda"
+  ],
+  "superficie": 26338,
+  "poblacion": 13954471,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SAU",
+  "nombres": [
+   "Arabia Saudita",
+   "Arabia Saudí",
+   "Saudi Arabia"
+  ],
+  "capital": [
+   "Riad",
+   "Riyadh"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "IRQ",
+   "JOR",
+   "KWT",
+   "OMN",
+   "QAT",
+   "ARE",
+   "YEM"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 2149690,
+  "poblacion": 33702731,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "SDN",
+  "nombres": [
+   "Sudán"
+  ],
+  "capital": [
+   "Jartum",
+   "Khartoum"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Northern Africa",
+  "fronteras": [
+   "CAF",
+   "TCD",
+   "EGY",
+   "ERI",
+   "ETH",
+   "LBY",
+   "SSD"
+  ],
+  "idiomas": [
+   "Arabic",
+   "English"
+  ],
+  "superficie": 1886068,
+  "poblacion": 50042791,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SEN",
+  "nombres": [
+   "Senegal"
+  ],
+  "capital": [
+   "Dakar"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "GMB",
+   "GIN",
+   "GNB",
+   "MLI",
+   "MRT"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 196722,
+  "poblacion": 18077573,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SGP",
+  "nombres": [
+   "Singapur",
+   "Singapore"
+  ],
+  "capital": [
+   "Singapur",
+   "Singapore"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [],
+  "idiomas": [
+   "Chinese",
+   "English",
+   "Malay",
+   "Tamil"
+  ],
+  "superficie": 710,
+  "poblacion": 5917648,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SLB",
+  "nombres": [
+   "Islas Salomón",
+   "Solomon Islands"
+  ],
+  "capital": [
+   "Honiara"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Melanesia",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 28896,
+  "poblacion": 800005,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SLE",
+  "nombres": [
+   "Sierra Leona",
+   "Sierra Leone"
+  ],
+  "capital": [
+   "Freetown"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "GIN",
+   "LBR"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 71740,
+  "poblacion": 8460512,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SLV",
+  "nombres": [
+   "El Salvador"
+  ],
+  "capital": [
+   "San Salvador"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Central America",
+  "fronteras": [
+   "GTM",
+   "HND"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 21041,
+  "poblacion": 6309624,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SMR",
+  "nombres": [
+   "San Marino"
+  ],
+  "capital": [
+   "San Marino",
+   "Ciudad de San Marino",
+   "City of San Marino"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "ITA"
+  ],
+  "idiomas": [
+   "Italian"
+  ],
+  "superficie": 61,
+  "poblacion": 33860,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SOM",
+  "nombres": [
+   "Somalia"
+  ],
+  "capital": [
+   "Mogadiscio",
+   "Mogadishu"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "DJI",
+   "ETH",
+   "KEN"
+  ],
+  "idiomas": [
+   "Arabic",
+   "Somali"
+  ],
+  "superficie": 637657,
+  "poblacion": 18358615,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SRB",
+  "nombres": [
+   "Serbia"
+  ],
+  "capital": [
+   "Belgrado",
+   "Belgrade"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southeast Europe",
+  "fronteras": [
+   "BIH",
+   "BGR",
+   "HRV",
+   "HUN",
+   "UNK",
+   "MKD",
+   "MNE",
+   "ROU"
+  ],
+  "idiomas": [
+   "Serbian"
+  ],
+  "superficie": 88361,
+  "poblacion": 6623183,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SSD",
+  "nombres": [
+   "Sudán del Sur",
+   "South Sudan"
+  ],
+  "capital": [
+   "Juba"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "CAF",
+   "COD",
+   "ETH",
+   "KEN",
+   "SDN",
+   "UGA"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 619745,
+  "poblacion": 11483374,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "STP",
+  "nombres": [
+   "Santo Tomé y Príncipe",
+   "São Tomé and Príncipe"
+  ],
+  "capital": [
+   "Santo Tomé",
+   "São Tomé"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [],
+  "idiomas": [
+   "Portuguese"
+  ],
+  "superficie": 964,
+  "poblacion": 230871,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SUR",
+  "nombres": [
+   "Surinam",
+   "Suriname"
+  ],
+  "capital": [
+   "Paramaribo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "BRA",
+   "GUY"
+  ],
+  "idiomas": [
+   "Dutch"
+  ],
+  "superficie": 163820,
+  "poblacion": 628886,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SVK",
+  "nombres": [
+   "Eslovaquia",
+   "Slovakia"
+  ],
+  "capital": [
+   "Bratislava"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Central Europe",
+  "fronteras": [
+   "AUT",
+   "CZE",
+   "HUN",
+   "POL",
+   "UKR"
+  ],
+  "idiomas": [
+   "Slovak"
+  ],
+  "superficie": 49037,
+  "poblacion": 5426740,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SVN",
+  "nombres": [
+   "Eslovenia",
+   "Slovenia"
+  ],
+  "capital": [
+   "Liubliana",
+   "Ljubljana"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Central Europe",
+  "fronteras": [
+   "AUT",
+   "HRV",
+   "ITA",
+   "HUN"
+  ],
+  "idiomas": [
+   "Slovene"
+  ],
+  "superficie": 20273,
+  "poblacion": 2120461,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SWE",
+  "nombres": [
+   "Suecia",
+   "Sweden"
+  ],
+  "capital": [
+   "Estocolmo",
+   "Stockholm"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Northern Europe",
+  "fronteras": [
+   "FIN",
+   "NOR"
+  ],
+  "idiomas": [
+   "Swedish"
+  ],
+  "superficie": 450295,
+  "poblacion": 10536632,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": true,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SWZ",
+  "nombres": [
+   "Esuatini",
+   "Suazilandia",
+   "Eswatini"
+  ],
+  "capital": [
+   "Mbabane",
+   "Lobamba"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Southern Africa",
+  "fronteras": [
+   "MOZ",
+   "ZAF"
+  ],
+  "idiomas": [
+   "English",
+   "Swazi"
+  ],
+  "superficie": 17364,
+  "poblacion": 1230506,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SYC",
+  "nombres": [
+   "Seychelles"
+  ],
+  "capital": [
+   "Victoria"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "French",
+   "Seychellois Creole"
+  ],
+  "superficie": 452,
+  "poblacion": 119773,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "SYR",
+  "nombres": [
+   "Siria",
+   "Syria"
+  ],
+  "capital": [
+   "Damasco",
+   "Damascus"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "IRQ",
+   "ISR",
+   "JOR",
+   "LBN",
+   "TUR"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 185180,
+  "poblacion": 23594623,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "TCD",
+  "nombres": [
+   "Chad"
+  ],
+  "capital": [
+   "Yamena",
+   "N'Djamena"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Middle Africa",
+  "fronteras": [
+   "CMR",
+   "CAF",
+   "LBY",
+   "NER",
+   "NGA",
+   "SDN"
+  ],
+  "idiomas": [
+   "Arabic",
+   "French"
+  ],
+  "superficie": 1284000,
+  "poblacion": 19319064,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TGO",
+  "nombres": [
+   "Togo"
+  ],
+  "capital": [
+   "Lomé"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Western Africa",
+  "fronteras": [
+   "BEN",
+   "BFA",
+   "GHA"
+  ],
+  "idiomas": [
+   "French"
+  ],
+  "superficie": 56785,
+  "poblacion": 8223850,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "THA",
+  "nombres": [
+   "Tailandia",
+   "Thailand"
+  ],
+  "capital": [
+   "Bangkok"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "MMR",
+   "KHM",
+   "LAO",
+   "MYS"
+  ],
+  "idiomas": [
+   "Thai"
+  ],
+  "superficie": 513120,
+  "poblacion": 71702435,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TJK",
+  "nombres": [
+   "Tayikistán",
+   "Tajikistan"
+  ],
+  "capital": [
+   "Dusambé",
+   "Dushanbe"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Central Asia",
+  "fronteras": [
+   "AFG",
+   "CHN",
+   "KGZ",
+   "UZB"
+  ],
+  "idiomas": [
+   "Russian",
+   "Tajik"
+  ],
+  "superficie": 143100,
+  "poblacion": 10389799,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TKM",
+  "nombres": [
+   "Turkmenistán"
+  ],
+  "capital": [
+   "Asjabad",
+   "Ashgabat"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Central Asia",
+  "fronteras": [
+   "AFG",
+   "IRN",
+   "KAZ",
+   "UZB"
+  ],
+  "idiomas": [
+   "Russian",
+   "Turkmen"
+  ],
+  "superficie": 488100,
+  "poblacion": 7364438,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TLS",
+  "nombres": [
+   "Timor Oriental",
+   "Timor-Leste"
+  ],
+  "capital": [
+   "Dili"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "IDN"
+  ],
+  "idiomas": [
+   "Portuguese",
+   "Tetum"
+  ],
+  "superficie": 14874,
+  "poblacion": 1384286,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TON",
+  "nombres": [
+   "Tonga"
+  ],
+  "capital": [
+   "Nuku'alofa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Polynesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Tongan"
+  ],
+  "superficie": 747,
+  "poblacion": 104597,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TTO",
+  "nombres": [
+   "Trinidad y Tobago",
+   "Trinidad and Tobago"
+  ],
+  "capital": [
+   "Puerto España",
+   "Port of Spain"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 5130,
+  "poblacion": 1367510,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TUN",
+  "nombres": [
+   "Túnez",
+   "Tunisia"
+  ],
+  "capital": [
+   "Túnez",
+   "Tunis"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Northern Africa",
+  "fronteras": [
+   "DZA",
+   "LBY"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 163610,
+  "poblacion": 12200431,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TUR",
+  "nombres": [
+   "Turquía",
+   "Türkiye"
+  ],
+  "capital": [
+   "Ankara"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia",
+   "Europa"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "ARM",
+   "AZE",
+   "BGR",
+   "GEO",
+   "GRC",
+   "IRN",
+   "IRQ",
+   "SYR"
+  ],
+  "idiomas": [
+   "Turkish"
+  ],
+  "superficie": 783562,
+  "poblacion": 85325965,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": true,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": true
+ },
+ {
+  "id": "TUV",
+  "nombres": [
+   "Tuvalu"
+  ],
+  "capital": [
+   "Funafuti"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Polynesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Tuvaluan"
+  ],
+  "superficie": 26,
+  "poblacion": 9816,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TWN",
+  "nombres": [
+   "Taiwán",
+   "Taiwan"
+  ],
+  "capital": [
+   "Taipéi",
+   "Taipei"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Eastern Asia",
+  "fronteras": [],
+  "idiomas": [
+   "Chinese"
+  ],
+  "superficie": 36193,
+  "poblacion": 23400000,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "TZA",
+  "nombres": [
+   "Tanzania"
+  ],
+  "capital": [
+   "Dodoma"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "BDI",
+   "COD",
+   "KEN",
+   "MWI",
+   "MOZ",
+   "RWA",
+   "UGA",
+   "ZMB"
+  ],
+  "idiomas": [
+   "English",
+   "Swahili"
+  ],
+  "superficie": 945087,
+  "poblacion": 66617606,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "UGA",
+  "nombres": [
+   "Uganda"
+  ],
+  "capital": [
+   "Kampala"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "COD",
+   "KEN",
+   "RWA",
+   "SSD",
+   "TZA"
+  ],
+  "idiomas": [
+   "English",
+   "Swahili"
+  ],
+  "superficie": 241550,
+  "poblacion": 48656601,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": true,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "UKR",
+  "nombres": [
+   "Ucrania",
+   "Ukraine"
+  ],
+  "capital": [
+   "Kiev",
+   "Kyiv"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Eastern Europe",
+  "fronteras": [
+   "BLR",
+   "HUN",
+   "MDA",
+   "POL",
+   "ROU",
+   "RUS",
+   "SVK"
+  ],
+  "idiomas": [
+   "Ukrainian"
+  ],
+  "superficie": 603500,
+  "poblacion": 37732836,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "URY",
+  "nombres": [
+   "Uruguay"
+  ],
+  "capital": [
+   "Montevideo"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "ARG",
+   "BRA"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 181034,
+  "poblacion": 3388081,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "USA",
+  "nombres": [
+   "Estados Unidos",
+   "EUA",
+   "EEUU",
+   "EE. UU.",
+   "USA",
+   "Estados Unidos de América",
+   "United States"
+  ],
+  "capital": [
+   "Washington",
+   "Washington D.C."
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "North America",
+  "fronteras": [
+   "CAN",
+   "MEX"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 9372610,
+  "poblacion": 336755052,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": true,
+  "mediterraneo": false,
+  "otan": true,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "UZB",
+  "nombres": [
+   "Uzbekistán"
+  ],
+  "capital": [
+   "Taskent",
+   "Tashkent"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Central Asia",
+  "fronteras": [
+   "AFG",
+   "KAZ",
+   "KGZ",
+   "TJK",
+   "TKM"
+  ],
+  "idiomas": [
+   "Russian",
+   "Uzbek"
+  ],
+  "superficie": 447400,
+  "poblacion": 35652307,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": true,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "VAT",
+  "nombres": [
+   "Vaticano",
+   "Ciudad del Vaticano",
+   "Santa Sede",
+   "Vatican City"
+  ],
+  "capital": [
+   "Ciudad del Vaticano",
+   "Vatican City"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Europa"
+  ],
+  "subregion": "Southern Europe",
+  "fronteras": [
+   "ITA"
+  ],
+  "idiomas": [
+   "Italian",
+   "Latin"
+  ],
+  "superficie": 0.44,
+  "poblacion": 800,
+  "sin_mar": true,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "VCT",
+  "nombres": [
+   "San Vicente y las Granadinas",
+   "San Vicente y Granadinas",
+   "Saint Vincent and the Grenadines"
+  ],
+  "capital": [
+   "Kingstown"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Norteamérica"
+  ],
+  "subregion": "Caribbean",
+  "fronteras": [],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 389,
+  "poblacion": 101323,
+  "sin_mar": false,
+  "monarquia": true,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "VEN",
+  "nombres": [
+   "Venezuela"
+  ],
+  "capital": [
+   "Caracas"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Sudamérica"
+  ],
+  "subregion": "South America",
+  "fronteras": [
+   "BRA",
+   "COL",
+   "GUY"
+  ],
+  "idiomas": [
+   "Spanish"
+  ],
+  "superficie": 916445,
+  "poblacion": 28300854,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "VNM",
+  "nombres": [
+   "Vietnam"
+  ],
+  "capital": [
+   "Hanói",
+   "Hanoi"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "South-Eastern Asia",
+  "fronteras": [
+   "KHM",
+   "CHN",
+   "LAO"
+  ],
+  "idiomas": [
+   "Vietnamese"
+  ],
+  "superficie": 331212,
+  "poblacion": 100352192,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "VUT",
+  "nombres": [
+   "Vanuatu"
+  ],
+  "capital": [
+   "Port Vila"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Melanesia",
+  "fronteras": [],
+  "idiomas": [
+   "Bislama",
+   "English",
+   "French"
+  ],
+  "superficie": 12189,
+  "poblacion": 320409,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "WSM",
+  "nombres": [
+   "Samoa"
+  ],
+  "capital": [
+   "Apia"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Oceanía"
+  ],
+  "subregion": "Polynesia",
+  "fronteras": [],
+  "idiomas": [
+   "English",
+   "Samoan"
+  ],
+  "superficie": 2842,
+  "poblacion": 216663,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "YEM",
+  "nombres": [
+   "Yemen"
+  ],
+  "capital": [
+   "Saná",
+   "Sanaa"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "Asia"
+  ],
+  "subregion": "Western Asia",
+  "fronteras": [
+   "OMN",
+   "SAU"
+  ],
+  "idiomas": [
+   "Arabic"
+  ],
+  "superficie": 527968,
+  "poblacion": 39390799,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": false,
+  "ecuador": false,
+  "capital_sur": false,
+  "capital_no_mayor": false,
+  "oriente_medio": true
+ },
+ {
+  "id": "ZAF",
+  "nombres": [
+   "Sudáfrica",
+   "South Africa"
+  ],
+  "capital": [
+   "Pretoria"
+  ],
+  "capitales_extra": [
+   "Ciudad del Cabo",
+   "Bloemfontein"
+  ],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Southern Africa",
+  "fronteras": [
+   "BWA",
+   "LSO",
+   "MOZ",
+   "NAM",
+   "SWZ",
+   "ZWE"
+  ],
+  "idiomas": [
+   "Afrikaans",
+   "English",
+   "Northern Sotho",
+   "Southern Ndebele",
+   "Southern Sotho",
+   "Swazi",
+   "Tsonga",
+   "Tswana",
+   "Venda",
+   "Xhosa",
+   "Zulu"
+  ],
+  "superficie": 1221037,
+  "poblacion": 63212384,
+  "sin_mar": false,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": true,
+  "oriente_medio": false
+ },
+ {
+  "id": "ZMB",
+  "nombres": [
+   "Zambia"
+  ],
+  "capital": [
+   "Lusaka"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "AGO",
+   "BWA",
+   "COD",
+   "MWI",
+   "MOZ",
+   "NAM",
+   "TZA",
+   "ZWE"
+  ],
+  "idiomas": [
+   "English"
+  ],
+  "superficie": 752612,
+  "poblacion": 20723965,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ },
+ {
+  "id": "ZWE",
+  "nombres": [
+   "Zimbabue",
+   "Zimbabwe"
+  ],
+  "capital": [
+   "Harare"
+  ],
+  "capitales_extra": [],
+  "continentes": [
+   "África"
+  ],
+  "subregion": "Eastern Africa",
+  "fronteras": [
+   "BWA",
+   "MOZ",
+   "ZAF",
+   "ZMB"
+  ],
+  "idiomas": [
+   "Chewa",
+   "Chibarwe",
+   "English",
+   "Kalanga",
+   "Khoisan",
+   "Ndau",
+   "Northern Ndebele",
+   "Shona",
+   "Sotho",
+   "Tonga",
+   "Tsonga",
+   "Tswana",
+   "Venda",
+   "Xhosa",
+   "Zimbabwean Sign Language"
+  ],
+  "superficie": 390757,
+  "poblacion": 16340822,
+  "sin_mar": true,
+  "monarquia": false,
+  "ue": false,
+  "urss": false,
+  "nuclear": false,
+  "mediterraneo": false,
+  "otan": false,
+  "izquierda": true,
+  "ecuador": false,
+  "capital_sur": true,
+  "capital_no_mayor": false,
+  "oriente_medio": false
+ }
+]

@@ -1,0 +1,1 @@
+SELECT ?t WHERE { ?t wdt:P279* wd:Q515 . }

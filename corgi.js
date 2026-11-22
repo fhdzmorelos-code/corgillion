@@ -42,19 +42,24 @@
   // Accesorios: [fila, columna inicial, píxeles]; "." deja ver lo de abajo.
   var VARIANTS = [
     {
-      name: "Canela", desc: "Rojo y blanco con pañuelo",
+      name: "Donna", desc: "Roja y blanca con pañuelo",
       pal: { F: "#e08a3c", D: "#c26f27", L: "#f0a65c", C: "#c26f27", W: "#fff6e6", a: "#d8343a", b: "#9c1f2b" },
       acc: [[15, 6, "aaaaaaaaaaaa"], [16, 9, "abaaba"], [17, 10, "abba"], [18, 11, "aa"]]
     },
     {
-      name: "Carbón", desc: "Tricolor con casco de minero",
+      name: "Jaquavius", desc: "Tricolor con casco de minero",
       pal: { F: "#35343f", D: "#24232c", L: "#4a4957", C: "#d98a45", B: "#d98a45", W: "#fff6e6", y: "#f6c12d", l: "#fffbe0", d: "#b98510" },
       acc: [[1, 9, "yyyyyy"], [2, 8, "yyyllyyy"], [3, 8, "yyyllyyy"], [4, 6, "dddddddddddd"]]
     },
     {
-      name: "Sable", desc: "Sable con sombrero de explorador",
-      pal: { F: "#b8763a", D: "#8a5527", L: "#cf8f52", C: "#5b3a22", W: "#f7ead2", h: "#7a5230", k: "#2f6b4f" },
-      acc: [[1, 9, "hhhhhh"], [2, 8, "hhhhhhhh"], [3, 8, "kkkkkkkk"], [4, 5, "hhhhhhhhhhhhhh"]]
+      name: "Brady", desc: "Sable con casco plateado estilo Patriots",
+      pal: { F: "#b8763a", D: "#8a5527", L: "#cf8f52", C: "#5b3a22", W: "#f7ead2", h: "#c4cbd2", d: "#8f979f", n: "#0c2340", r: "#c60c30", w: "#ffffff", m: "#0c2340", x: "#1c1410" },
+      acc: [
+        [1, 8, "xxxxxxxx"], [2, 6, "xhhhhwhhhhhx"], [3, 4, "xhhhhhwhhhhhhhhx"], [4, 3, "xhnnrhhhhhhhhrnnhx"],
+        [5, 2, "xhhwnnhhhhhhhhnnwhhx"], [6, 2, "xhxhhhhhhhhhhhhhhxhx"], [7, 2, "xddddddddddddddddddx"],
+        [8, 3, "m"], [8, 20, "m"], [9, 3, "m"], [9, 20, "m"], [10, 3, "m"], [10, 20, "m"], [11, 3, "m"], [11, 20, "m"],
+        [12, 3, "mmmmmmm"], [12, 14, "mmmmmmm"]
+      ]
     },
     {
       name: "Niebla", desc: "Azul merle con gafas de piloto",
@@ -99,6 +104,30 @@
     }
   ];
 
+  // Íconos de categoría (12x12).
+  var ICONS = {
+    pokeball: {
+      pal: { O: "#1c1410", R: "#e3363b", L: "#ff9a9a", W: "#ffffff", S: "#cfd6de" },
+      rows: ["....OOOO....", "..OORRRROO..", ".ORRLLRRRRO.", ".ORLRRRRRRO.", "ORRROOOORRRO", "OOOOWWWWOOOO",
+        "OWWWOOOOWWWO", "OSWWWWWWWWSO", ".OSWWWWWWSO.", ".OSSWWWWSSO.", "..OOSSSSOO..", "....OOOO...."]
+    },
+    trofeo: {
+      pal: { O: "#1c1410", Y: "#f6c12d", L: "#fff1a8", D: "#b98510", B: "#7a4a28" },
+      rows: ["..OOOOOOOO..", "OOOYLYYYYOOO", "OYOYLYYYYOYO", "OYOYLYYYDOYO", ".OOYYYYYDOO.", "..OYYYYYDO..",
+        "...OYYYDO...", "....OYDO....", "....OYDO....", "...OOOOOO...", "..OBBBBBBO..", "..OOOOOOOO.."]
+    },
+    planeta: {
+      pal: { O: "#1c1410", B: "#3f8fd6", L: "#8fd3ff", G: "#5bb04a", D: "#3f8a35" },
+      rows: ["....OOOO....", "..OOLBGGOO..", ".OLBGGGBBBO.", ".OBGGDBBBGO.", "OBBGGBBBGGBO", "OBBBDBBBGDBO",
+        "OBGGBBBBBBBO", "OBGDGBBGGBBO", ".OBGGBBGDBO.", ".OBBBBBBBBO.", "..OOBBBBOO..", "....OOOO...."]
+    },
+    balon: {
+      pal: { O: "#1c1410", W: "#ffffff", K: "#1c1410", S: "#d5dbe2" },
+      rows: ["....OOOO....", "..OOWWWWOO..", ".OWWWKKWWWO.", ".OWWKKKKWWO.", "OKWWWKKWWWKO", "OKKWWWWWWKKO",
+        "OWWKWWWWKWWO", "OWKKKWWKKKSO", ".OWKWWWWKSO.", ".OWWWKKWSSO.", "..OOSKKSOO..", "....OOOO...."]
+    }
+  };
+
   function rects(g, pal) {
     var out = "";
     for (var y = 0; y < g.length; y++) {
@@ -133,5 +162,12 @@
       rects(it.rows.map(function (r) { return r.split(""); }), it.pal) + "</svg>";
   }
 
-  root.Corgi = { svg: svg, item: item, variants: VARIANTS };
+  function icon(name, size) {
+    var it = ICONS[name];
+    if (!it) return "";
+    return '<svg class="icon" width="' + size + '" height="' + size + '" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">' +
+      rects(it.rows.map(function (r) { return r.split(""); }), it.pal) + "</svg>";
+  }
+
+  root.Corgi = { svg: svg, item: item, icon: icon, variants: VARIANTS };
 })(typeof window !== "undefined" ? window : globalThis);

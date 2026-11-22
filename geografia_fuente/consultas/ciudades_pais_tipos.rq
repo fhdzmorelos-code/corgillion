@@ -1,0 +1,11 @@
+SELECT ?c ?pop ?sl ?t ?es ?en ?alias ?cap WHERE {
+  VALUES ?raiz { wd:Q515 wd:Q3957 wd:Q1093829 wd:Q7930989 }
+  ?k wdt:P279* ?raiz . ?c wdt:P31 ?k .
+  ?c wdt:P17 wd:PAISQ ; wdt:P1082 ?pop . FILTER(?pop >= 100000)
+  ?c wikibase:sitelinks ?sl ; wdt:P31 ?t .
+  FILTER NOT EXISTS { ?c wdt:P576 ?fin }
+  OPTIONAL { ?c rdfs:label ?es FILTER(lang(?es)="es") }
+  OPTIONAL { ?c rdfs:label ?en FILTER(lang(?en)="en") }
+  OPTIONAL { ?c skos:altLabel ?alias FILTER(lang(?alias)="es") }
+  OPTIONAL { ?c wdt:P1376 ?cap }
+}

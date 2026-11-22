@@ -1,0 +1,8 @@
+SELECT ?c ?es ?en ?iso ?pop ?sl ?tipo WHERE {
+  ?c wdt:P1082 ?pop . FILTER(?pop >= 100000)
+  ?c wdt:P31 ?tipo . ?tipo wdt:P279* wd:Q486972 .
+  ?c wdt:P17 ?pais ; wikibase:sitelinks ?sl . ?pais wdt:P298 ?iso .
+  FILTER NOT EXISTS { ?c wdt:P576 ?fin }
+  OPTIONAL { ?c rdfs:label ?es FILTER(lang(?es)="es") }
+  OPTIONAL { ?c rdfs:label ?en FILTER(lang(?en)="en") }
+}
