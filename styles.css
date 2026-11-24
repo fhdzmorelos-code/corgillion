@@ -164,7 +164,7 @@ td { padding: 8px; border-bottom: 3px dashed rgba(28, 20, 16, .25); vertical-ali
 
 /* ---------- barra ---------- */
 .bar { display: grid; grid-template-columns: 220px 1fr 220px; align-items: center; height: 150px; gap: 16px; }
-.bar .btn { justify-self: start; }
+.bar .btn { justify-self: start; align-self: start; margin-top: 4px; } /* arriba, para no quedar debajo del botón de sonido */
 .bar h1 {
   justify-self: center; font-size: 18px; margin: 0;
   background: var(--c); border: var(--px) solid var(--ink); padding: 14px 18px;
