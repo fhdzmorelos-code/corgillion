@@ -6,7 +6,7 @@ CC.add("clasica", { name: "Clásica", color: "#f6c12d", desc: "De todo un poco: 
     "Cabra/Chivo;Burro/Asno;Conejo;Guajolote/Pavo;Toro",
     "Ganso/Oca;Mula;Perro;Gato;Buey;Yegua;Ternero/Becerro",
     "Codorniz;Llama;Alpaca;Abeja;Búfalo/Búfalo de agua;Poni;Cuy/Cobayo;Paloma",
-    "Avestruz;Emú;Gallina de Guinea/Pintada/Coquena;Faisán;Yak;Cebú;Reno;Camello;Gusano de seda;Trucha;Tilapia;Carnero;Lechón;Potro;Pavo real"],
+    "Avestruz;Emú;Gallina de Guinea/Pintada/Coquena;Faisán;Yak;Cebú;Reno;Camello;Gusano de seda;Trucha;Tilapia;Carnero;Lechón;Potro;Pavo real;Leo;Ude"],
 
   ["Nombra una herramienta para cavar",
     "Pala",

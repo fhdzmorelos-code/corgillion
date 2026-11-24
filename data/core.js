@@ -123,7 +123,8 @@
         a = p.answers[i];
         for (j = 0; j < a.keys.length; j++) {
           var k = a.keys[j];
-          if (digits(k) !== nd || Math.abs(k.length - n.length) > max) continue;
+          // una respuesta de 3 letras o menos se escribe exacta: "león" no puede convertirse en "Leo"
+          if (k.length < 4 || digits(k) !== nd || Math.abs(k.length - n.length) > max) continue;
           // en listas enormes: nada de caer en títulos raros ni confundir "Street Fighter II" con "VI"
           if (grande && (a.tier > 2 || romano(k) !== romano(n))) continue;
           var d = dist(n, k);
