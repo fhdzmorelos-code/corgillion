@@ -188,6 +188,68 @@
     return rgbMemo[h] || (rgbMemo[h] = [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]);
   }
 
+  // ---------- Cielo y colores según la hora en que se juega ----------
+  // cielo: franjas de arriba hacia abajo; tinte: color y fuerza con que se tiñen colinas, árboles y pasto.
+  var HORAS = {
+    amanecer: { cielo: ["#3d4f9e", "#6b6fb5", "#a585b8", "#dc9ea2", "#f4b58e", "#ffcf98", "#ffe4b8"], astro: "sol",
+      sol: ["#ff9f4a", "#ffd27a"], nube: ["#ffe4dc", "#f5c6bd", "#e4aaa8"], tinte: ["#ff9a5c", 0.14], estrellas: 0 },
+    dia: { cielo: ["#2a7ee8", "#3a90f3", "#4ba1fa", "#5fb2ff", "#76c2ff", "#91d1ff", "#afdfff"], astro: "sol",
+      sol: ["#ffe066", "#fff6b0"], nube: ["#ffffff", "#d7ecff", "#bcdcf7"], tinte: null, estrellas: 0 },
+    atardecer: { cielo: ["#2c2f7a", "#55408f", "#8f4f93", "#cc5f7c", "#ec855e", "#ffaa5c", "#ffcd7a"], astro: "sol",
+      sol: ["#ff6a2a", "#ffb25e"], nube: ["#ffc9a8", "#f0a28a", "#d8817a"], tinte: ["#ff7a3d", 0.2], estrellas: 0 },
+    noche: { cielo: ["#070b24", "#0b1335", "#101b45", "#152455", "#1b2d66", "#223878", "#2a4388"], astro: "luna",
+      sol: ["#f4f1d0", "#fffbe8"], nube: ["#3b4876", "#323e68", "#29335a"], tinte: ["#0b1335", 0.5], estrellas: 1 }
+  };
+  // ?hora=noche (o amanecer, dia, atardecer) en la dirección fuerza un momento, para probarlo
+  var horaFija = (location.search.match(/[?&]hora=(amanecer|dia|atardecer|noche)/) || [])[1];
+  function momento() {
+    if (horaFija) return horaFija;
+    var h = new Date().getHours();
+    return h >= 6 && h < 8 ? "amanecer" : h >= 8 && h < 18 ? "dia" : h >= 18 && h < 20 ? "atardecer" : "noche";
+  }
+  var HORA = HORAS[momento()], tonoMemo = {};
+  function aplicarHora() {
+    var m = momento();
+    HORA = HORAS[m]; tonoMemo = {};
+    document.documentElement.setAttribute("data-hora", m);
+    return m;
+  }
+  // tiñe un color de la superficie (colinas, árboles, pasto) con la luz del momento
+  function tono(col) {
+    if (!HORA.tinte) return col;
+    if (tonoMemo[col]) return tonoMemo[col];
+    var a = rgb(col), b = rgb(HORA.tinte[0]), k = HORA.tinte[1], out = "#";
+    for (var i = 0; i < 3; i++) { var v = Math.round(a[i] + (b[i] - a[i]) * k); out += (v < 16 ? "0" : "") + v.toString(16); }
+    return (tonoMemo[col] = out);
+  }
+  // sol (con rayos de día) o media luna; x, y es su centro aproximado
+  function dibujaAstro(px, x, y) {
+    var c = HORA.sol;
+    if (HORA.astro === "luna") {
+      px(x - 3, y - 1, c[0], 6, 8); px(x - 4, y, c[0], 8, 6); px(x - 2, y + 1, "#d9d4b0", 2, 2); px(x + 1, y + 4, "#d9d4b0", 2, 1);
+      px(x, y - 1, HORA.cielo[1], 4, 3); px(x + 1, y + 2, HORA.cielo[1], 3, 2);
+      return;
+    }
+    px(x - 3, y - 1, c[0], 6, 8); px(x - 4, y, c[0], 8, 6); px(x - 2, y, c[1], 3, 2);
+    if (HORA === HORAS.dia) {
+      [[-7, 2, 2, 1], [5, 2, 2, 1], [0, -4, 1, 2], [0, 8, 1, 2], [-6, -3, 1, 1], [5, -3, 1, 1], [-6, 7, 1, 1], [5, 7, 1, 1]]
+        .forEach(function (a) { px(x + a[0], y + a[1], "#ffd23f", a[2], a[3]); });
+    }
+  }
+  function dibujaEstrellas(px, r, W, alto) {
+    if (!HORA.estrellas) return;
+    for (var i = 0, n = Math.floor(W * alto / 40); i < n; i++) {
+      var x = Math.floor(r() * W), y = Math.floor(r() * alto);
+      px(x, y, r() < 0.7 ? "#ffffff" : "#c9d6ff");
+      if (r() < 0.08) { px(x - 1, y, "#8fa3e0"); px(x + 1, y, "#8fa3e0"); px(x, y - 1, "#8fa3e0"); px(x, y + 1, "#8fa3e0"); }
+    }
+  }
+  // dónde va el sol o la luna: al amanecer sale por la izquierda y al atardecer se pone por la derecha
+  function lugarAstro(W, alto, yDia) {
+    var m = momento();
+    return m === "amanecer" ? [18, alto - 9] : m === "atardecer" ? [W - 26, alto - 9] : [W - 30, yDia];
+  }
+
   function paintWorld() {
     var cv = $("strata");
     if (!cv) return;
@@ -208,23 +270,25 @@
         }
       }
     }
-    var sky = ["#2f86f0", "#3f97f7", "#55a9fc", "#6db9ff", "#88c9ff", "#a6d9ff"];
-    for (y = 0; y < G0; y++) px(0, y, sky[Math.min(5, Math.floor(y / (G0 / 6)))], W, 1);
-    x = W - 60; px(x, 34, "#fff3a0", 8, 8); px(x + 2, 32, "#fff3a0", 4, 12); px(x - 2, 36, "#fff3a0", 12, 4);
+    var sky = HORA.cielo, nb = HORA.nube;
+    for (y = 0; y < G0; y++) px(0, y, sky[Math.min(sky.length - 1, Math.floor(y / (G0 / sky.length)))], W, 1);
+    dibujaEstrellas(px, seeded("estrellas-juego"), W, G0 - 14);
+    var ast = lugarAstro(W - 30, G0, 38); dibujaAstro(px, ast[0], ast[1]);
     for (i = 0; i < Math.ceil(W / 40); i++) {
       x = Math.floor(r() * W); y = 30 + Math.floor(r() * 30); n = 8 + Math.floor(r() * 10);
-      px(x, y, "#ffffff", n, 2); px(x + 2, y - 1, "#ffffff", n - 5, 1); px(x + 1, y + 2, "#e6f5ff", n - 3, 1);
+      if (HORA.estrellas && i % 3) continue;   // de noche, menos nubes
+      px(x, y, nb[0], n, 2); px(x + 2, y - 1, nb[0], n - 5, 1); px(x + 1, y + 2, nb[1], n - 3, 1);
     }
     // colinas y arbolitos en el horizonte
     for (x = 0; x < W; x++) {
       var hh1 = Math.round(5 + Math.sin(x * 0.045) * 3 + Math.sin(x * 0.11 + 1) * 1.5);
-      px(x, G0 - hh1 - 3, "#8fd07c", 1, hh1 + 3);
+      px(x, G0 - hh1 - 3, tono("#8fd07c"), 1, hh1 + 3);
       var hh2 = Math.round(2 + Math.sin(x * 0.08 + 2) * 2 + Math.sin(x * 0.19) * 1);
-      if (hh2 > 0) px(x, G0 - hh2, "#6cbf58", 1, hh2);
+      if (hh2 > 0) px(x, G0 - hh2, tono("#6cbf58"), 1, hh2);
     }
     for (i = 0; i < Math.ceil(W / 60); i++) {
       x = 4 + Math.floor(r() * (W - 8)); y = G0 - 8 - Math.floor(r() * 3);
-      px(x + 1, y + 3, "#6b4425", 1, 3); px(x, y, "#3f8f3f", 3, 3); px(x + 1, y - 1, "#3f8f3f"); px(x, y, "#5fae4d");
+      px(x + 1, y + 3, tono("#6b4425"), 1, 3); px(x, y, tono("#3f8f3f"), 3, 3); px(x + 1, y - 1, tono("#3f8f3f")); px(x, y, tono("#5fae4d"));
     }
     var wob = [];
     for (x = 0; x < W; x++) wob[x] = Math.round(Math.sin(x * 0.21) * 2 + Math.sin(x * 0.07) * 2 + (r() - 0.5) * 1.5);
@@ -288,9 +352,9 @@
     }
     // pasto y flores
     for (x = 0; x < W; x++) {
-      px(x, G0, r() < 0.5 ? "#6cc24a" : "#5bb04a"); px(x, G0 + 1, "#4a9a3c"); px(x, G0 + 2, r() < 0.6 ? "#3f8a35" : "#5d3b1e");
-      if (r() < 0.25) px(x, G0 - 1, "#6cc24a");
-      if (r() < 0.04) { px(x, G0 - 2, ["#ffffff", "#ffcf3f", "#f28fb8"][Math.floor(r() * 3)]); px(x, G0 - 1, "#3f8a35"); }
+      px(x, G0, tono(r() < 0.5 ? "#6cc24a" : "#5bb04a")); px(x, G0 + 1, tono("#4a9a3c")); px(x, G0 + 2, r() < 0.6 ? tono("#3f8a35") : "#5d3b1e");
+      if (r() < 0.25) px(x, G0 - 1, tono("#6cc24a"));
+      if (r() < 0.04) { px(x, G0 - 2, tono(["#ffffff", "#ffcf3f", "#f28fb8"][Math.floor(r() * 3)])); px(x, G0 - 1, tono("#3f8a35")); }
     }
     c.putImageData(img, 0, 0);
 
@@ -613,6 +677,84 @@
       "Cavé " + meters(o.score) + " (" + o.score + " pts)";
   }
 
+  // ---------- Curva de campana del resultado ----------
+  // Todavía no hay puntajes de otros jugadores: la curva se estima con lo que suele sacar una persona en cada consigna.
+  var TIPICO = [0.18, 0.34, 0.2, 0.13, 0.08, 0.04, 0.03];   // nada, Tierrita, Piedrita, Hueso, Fósil, Tesoro, Hueso de Oro
+  function repartoTipico(n) {
+    var d = [1];
+    for (var k = 0; k < n; k++) {
+      var nd = [];
+      for (var j = 0; j < d.length + 20; j++) nd.push(0);
+      for (var i = 0; i < d.length; i++) {
+        if (!d[i]) continue;
+        nd[i] += d[i] * TIPICO[0];
+        for (var t = 0; t < 6; t++) nd[i + TIERS[t].p / 5] += d[i] * TIPICO[t + 1];
+      }
+      d = nd;
+    }
+    return d;   // d[i]: probabilidad de sacar i * 5 puntos
+  }
+  function campana(o) {
+    var n = o.results.length;
+    if (!n) return { html: "" };
+    var d = repartoTipico(n), media = 0, v = 0, i;
+    for (i = 0; i < d.length; i++) media += d[i] * i * 5;
+    for (i = 0; i < d.length; i++) v += d[i] * Math.pow(i * 5 - media, 2);
+    var sd = Math.sqrt(v), max = Math.max(media + 3.2 * sd, o.score * 1.08, 60);
+    function pct(pts) {
+      var a = 0, k = Math.round(pts / 5);
+      for (var j = 0; j < d.length && j <= k; j++) a += j < k ? d[j] : d[j] / 2;
+      return a;
+    }
+    function frase(q) { return q < 0.01 ? "menos del 1%" : q > 0.99 ? "más del 99%" : "el " + Math.round(q * 100) + "%"; }
+    // la curva exacta va en escalones de 5 puntos; se suaviza para que se vea como campana
+    var bw = Math.max(8, sd * 0.35);
+    function alto(p) {
+      var y = 0;
+      for (var j = 0; j < d.length; j++) if (d[j] > 1e-9) y += d[j] * Math.exp(-Math.pow((j * 5 - p) / bw, 2) / 2);
+      return y;
+    }
+    var W = 1000, H = 190, top = 34, pie = 26, xs = [], ys = [], ym = 0, x;
+    for (x = 0; x <= 160; x++) { var p = max * x / 160, y = alto(p); xs.push(p); ys.push(y); ym = Math.max(ym, y); }
+    var X = function (p) { return 16 + (W - 32) * Math.min(p, max) / max; };
+    var Y = function (y) { return H - pie - (H - pie - top) * y / ym; };
+    var linea = xs.map(function (p, j) { return (j ? "L" : "M") + X(p).toFixed(1) + " " + Y(ys[j]).toFixed(1); }).join(" ");
+    var area = linea + " L" + X(max).toFixed(1) + " " + (H - pie) + " L" + X(0).toFixed(1) + " " + (H - pie) + " Z";
+    var paso = [10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000].filter(function (s) { return max / s <= 5; })[0] || 5000, eje = "";
+    for (var t = 0; t <= max; t += paso) {
+      eje += '<text class="curva-eje" x="' + X(t).toFixed(1) + '" y="' + (H - 4) + '" text-anchor="middle">' + meters(t) + "</text>";
+    }
+    var tx = X(o.score), ty = Y(alto(o.score)), q = pct(o.score);
+    var ancla = tx < 60 ? "start" : tx > W - 60 ? "end" : "middle";
+    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Curva estimada de puntajes; cavaste más hondo que ' + frase(q) + ' de los jugadores">' +
+      '<path class="curva-area" d="' + area + '"/><path class="curva-linea" d="' + linea + '"/>' +
+      '<line class="curva-base" x1="16" x2="' + (W - 16) + '" y1="' + (H - pie) + '" y2="' + (H - pie) + '"/>' + eje +
+      '<line class="curva-guia" id="curvaGuia" x1="0" x2="0" y1="' + top + '" y2="' + (H - pie) + '"/>' +
+      '<line class="curva-tu" x1="' + tx.toFixed(1) + '" x2="' + tx.toFixed(1) + '" y1="' + (ty - 4).toFixed(1) + '" y2="' + (H - pie) + '"/>' +
+      '<circle class="curva-punto" cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="7"/>' +
+      '<text class="curva-tu-txt" x="' + tx.toFixed(1) + '" y="' + Math.max(12, ty - 14).toFixed(1) + '" text-anchor="' + ancla + '">TÚ</text></svg>';
+    return {
+      html: '<section class="panel curva"><h2>¿Qué tan hondo cavaste?</h2>' +
+        '<p class="curva-txt">Cavaste más hondo que <b>' + frase(q) + "</b> de los jugadores.</p>" +
+        '<div class="curva-box" id="curva">' + svg + '<div class="curva-tip" id="curvaTip" hidden></div></div>' +
+        '<p class="nota">Es una estimación: todavía no hay puntajes de otros jugadores, así que la curva sale de cómo le suele ir a una persona en ' +
+        n + (n === 1 ? " consigna." : " consignas.") + "</p></section>",
+      activar: function () {
+        var box = $("curva"), tip = $("curvaTip"), guia = $("curvaGuia");
+        if (!box) return;
+        box.addEventListener("pointermove", function (e) {
+          var r = box.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width * W;
+          var pts = Math.round(Math.max(0, Math.min(max, (fx - 16) / (W - 32) * max)) / 5) * 5;
+          tip.hidden = false;
+          tip.textContent = meters(pts) + ": más hondo que " + frase(pct(pts));
+          tip.style.left = Math.max(90, Math.min(r.width - 90, e.clientX - r.left)) + "px";
+          guia.setAttribute("x1", X(pts)); guia.setAttribute("x2", X(pts)); guia.style.opacity = 1;
+        });
+        box.addEventListener("pointerleave", function () { tip.hidden = true; guia.style.opacity = 0; });
+      }
+    };
+  }
+
   var shown = null;
   function results(o) {
     stopTimer(); shown = o;
@@ -628,6 +770,7 @@
       return '<tr style="--i:' + i + '"><td>' + esc(r.q) + "</td><td>" + esc(r.ans || "—") + "</td><td>" +
         chip(r.tier) + "</td><td>+" + r.pts + "</td></tr>";
     }).join("");
+    var curva = campana(o);
     var haul = o.results.filter(function (r) { return r.tier >= 0; }).map(function (r, i) {
       return '<span style="--i:' + i + '">' + Corgi.item(r.tier, 40) + "</span>";
     }).join("");
@@ -644,10 +787,12 @@
       '<div class="acts">' +
       (o.mode !== "diario" ? '<button class="btn" data-go="again">Jugar de nuevo</button>' : "") +
       '<button class="btn alt" data-go="share">Copiar resultado</button></div></div></section>' +
+      curva.html +
       '<section class="panel"><h2>Tu excavación</h2>' +
       (rows ? '<table class="rt"><tr><th>Consigna</th><th>Tu respuesta</th><th>Hallazgo</th><th>Pts</th></tr>' + rows + "</table>" : "<p>No respondiste ninguna consigna.</p>") +
       "</section></main>"
     );
+    if (curva.activar) curva.activar();
     var big = $("big"), t0 = performance.now();
     if (reduce) { big.textContent = meters(o.score); return; }
     (function step(now) {
@@ -886,42 +1031,42 @@
     var W = Math.ceil(Math.max(window.innerWidth, 1100) / PX), H = Math.ceil((SKY_H + GRASS_H) / PX), G = SKY_H / PX;
     var r = seeded("cielo-corgi"), x, y, i, n;
     var top = pixelCanvas(W * PX, H * PX), px = top.px;
-    var bands = ["#2a7ee8", "#3a90f3", "#4ba1fa", "#5fb2ff", "#76c2ff", "#91d1ff", "#afdfff"];
+    var bands = HORA.cielo, nb = HORA.nube;
     for (y = 0; y < G; y++) px(0, y, bands[Math.min(bands.length - 1, Math.floor(y / (G / bands.length)))], W, 1);
-    // sol con rayos
-    var sx = W - 30, sy = 9;
-    px(sx - 3, sy - 1, "#ffe066", 6, 8); px(sx - 4, sy, "#ffe066", 8, 6); px(sx - 2, sy, "#fff6b0", 3, 2);
-    [[-7, 2, 2, 1], [5, 2, 2, 1], [0, -4, 1, 2], [0, 8, 1, 2], [-6, -3, 1, 1], [5, -3, 1, 1], [-6, 7, 1, 1], [5, 7, 1, 1]]
-      .forEach(function (a) { px(sx + a[0], sy + a[1], "#ffd23f", a[2], a[3]); });
+    dibujaEstrellas(px, seeded("estrellas-menu"), W, G - 10);
+    // sol (o luna)
+    var ast = lugarAstro(W, G, 9), sx = ast[0], sy = ast[1];
+    dibujaAstro(px, sx, sy);
     // nubes
     function nube(a, b, w) {
-      px(a + 2, b, "#ffffff", w - 4, 1); px(a + 1, b + 1, "#ffffff", w - 2, 1); px(a, b + 2, "#ffffff", w, 2);
-      px(a + 3, b - 1, "#ffffff", Math.max(2, Math.floor(w / 3)), 1); px(a, b + 4, "#d7ecff", w, 1); px(a + 1, b + 5, "#bcdcf7", w - 2, 1);
+      px(a + 2, b, nb[0], w - 4, 1); px(a + 1, b + 1, nb[0], w - 2, 1); px(a, b + 2, nb[0], w, 2);
+      px(a + 3, b - 1, nb[0], Math.max(2, Math.floor(w / 3)), 1); px(a, b + 4, nb[1], w, 1); px(a + 1, b + 5, nb[2], w - 2, 1);
     }
     for (i = 0; i < Math.ceil(W / 45); i++) {
       x = Math.floor(r() * (W - 20)); y = 4 + Math.floor(r() * 16);
-      if (Math.abs(x - sx) < 16 && y < 18) continue;
+      if (Math.abs(x - sx) < 16 && Math.abs(y - sy) < 10) continue;
+      if (HORA.estrellas && i % 3) continue;   // de noche, menos nubes
       nube(x, y, 10 + Math.floor(r() * 12));
     }
     // colinas lejanas y cercanas
     for (x = 0; x < W; x++) {
       var h1 = Math.round(5 + Math.sin(x * 0.045) * 3 + Math.sin(x * 0.11 + 1) * 1.5);
-      px(x, G - h1 - 3, "#8fd07c", 1, h1 + 3);
+      px(x, G - h1 - 3, tono("#8fd07c"), 1, h1 + 3);
       var h2 = Math.round(2 + Math.sin(x * 0.08 + 2) * 2 + Math.sin(x * 0.19) * 1);
-      if (h2 > 0) px(x, G - h2, "#6cbf58", 1, h2);
+      if (h2 > 0) px(x, G - h2, tono("#6cbf58"), 1, h2);
     }
     // árboles pequeños sobre las colinas
     for (i = 0; i < Math.ceil(W / 70); i++) {
       x = 4 + Math.floor(r() * (W - 8)); y = G - 7 - Math.floor(r() * 3);
-      px(x + 1, y + 3, "#6b4425", 1, 3); px(x, y, "#3f8f3f", 3, 3); px(x + 1, y - 1, "#3f8f3f"); px(x, y, "#5fae4d");
+      px(x + 1, y + 3, tono("#6b4425"), 1, 3); px(x, y, tono("#3f8f3f"), 3, 3); px(x + 1, y - 1, tono("#3f8f3f")); px(x, y, tono("#5fae4d"));
     }
     // pasto con matas y flores
     for (x = 0; x < W; x++) {
-      px(x, G, r() < 0.5 ? "#7ed957" : "#6cc24a"); px(x, G + 1, "#5bb04a"); px(x, G + 2, r() < 0.5 ? "#4a9a3c" : "#5bb04a");
-      px(x, G + 3, "#3f8a35", 1, 2); px(x, G + 5, r() < 0.55 ? "#3f8a35" : "#6b4425", 1, 1);
-      if (r() < 0.3) px(x, G - 1, "#6cc24a");
-      if (r() < 0.08) px(x, G - 2, "#7ed957");
-      if (r() < 0.035) { px(x, G - 2, ["#ffffff", "#ffcf3f", "#f28fb8", "#b48cff"][Math.floor(r() * 4)]); px(x, G - 1, "#3f8a35"); }
+      px(x, G, tono(r() < 0.5 ? "#7ed957" : "#6cc24a")); px(x, G + 1, tono("#5bb04a")); px(x, G + 2, tono(r() < 0.5 ? "#4a9a3c" : "#5bb04a"));
+      px(x, G + 3, tono("#3f8a35"), 1, 2); px(x, G + 5, r() < 0.55 ? tono("#3f8a35") : "#6b4425", 1, 1);
+      if (r() < 0.3) px(x, G - 1, tono("#6cc24a"));
+      if (r() < 0.08) px(x, G - 2, tono("#7ed957"));
+      if (r() < 0.035) { px(x, G - 2, tono(["#ffffff", "#ffcf3f", "#f28fb8", "#b48cff"][Math.floor(r() * 4)])); px(x, G - 1, tono("#3f8a35")); }
     }
 
     // tierra por capas, como en el juego: cuanto más bajas en la página, más honda y rara la roca.
@@ -1018,7 +1163,14 @@
     rz = setTimeout(function () { paintBackdrop(); stickSide(); if (G && $("strata")) paintWorld(); }, 200);
   });
 
+  aplicarHora();
   try { paintBackdrop(); } catch (e) { /* si falla, queda el fondo de styles.css */ }
+  // si cambia el momento del día mientras juegas (por ejemplo, anochece), se repinta el cielo
+  setInterval(function () {
+    if (HORAS[momento()] === HORA) return;
+    aplicarHora();
+    try { paintBackdrop(); if (G && $("strata")) paintWorld(); } catch (e) { /* se queda el cielo anterior */ }
+  }, 60000);
   window.CorgiCava = { home: home, start: start, state: function () { return G; } };
   home();
 })();

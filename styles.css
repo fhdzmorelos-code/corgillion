@@ -401,3 +401,24 @@ svg.icon { image-rendering: pixelated; display: inline-block; flex: none; filter
 .recs .rec-cat { width: 30px; }
 .recs .rec-cat svg { margin: 0 auto; }
 .recs-note { margin: 8px 0 0; font-size: 17px; opacity: .7; }
+
+/* ---------- colores de la interfaz según la hora (game.js pone data-hora en <html>) ---------- */
+:root[data-hora="amanecer"] { --paper: #fff1dd; --paper2: #f7d9bd; --accent: #ec7f45; --sky: #f4b58e; }
+:root[data-hora="atardecer"] { --paper: #ffeed8; --paper2: #f3cfa8; --accent: #e0663a; --alt: #7656c4; --sky: #cc5f7c; }
+:root[data-hora="noche"] { --paper: #ece7f4; --paper2: #d4cbe8; --accent: #e9a23b; --alt: #4f6fd8; --sky: #152455; }
+
+/* ---------- curva de campana del resultado ---------- */
+.curva h2 { margin: 0 0 6px; }
+.curva-txt { margin: 0 0 8px; font-size: 26px; }
+.curva-box { position: relative; padding-top: 34px; }
+.curva-box svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
+.curva-area { fill: var(--alt); opacity: .22; }
+.curva-linea { fill: none; stroke: var(--alt); stroke-width: 2; }
+.curva-base { stroke: var(--ink); stroke-opacity: .35; stroke-width: 2; }
+.curva-eje { font-family: var(--body); font-size: 20px; fill: var(--ink); fill-opacity: .7; }
+.curva-tu { stroke: var(--accent); stroke-width: 3; }
+.curva-punto { fill: var(--accent); stroke: var(--paper); stroke-width: 3; }
+.curva-tu-txt { font-family: var(--head); font-size: 12px; fill: var(--ink); }
+.curva-guia { stroke: var(--ink); stroke-opacity: .45; stroke-width: 2; stroke-dasharray: 4 4; opacity: 0; }
+.curva-tip { position: absolute; top: 0; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 4px 10px; font-size: 20px; white-space: nowrap; pointer-events: none; }
+.curva .nota { margin: 8px 0 0; font-size: 19px; opacity: .75; }
