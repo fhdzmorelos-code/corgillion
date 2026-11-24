@@ -551,7 +551,7 @@
     };
     var from = G.score;
     G.phase = "dig";
-    G.results.push(r); G.score += r.pts;
+    G.results.push(r); G.score += r.pts; G.acierto = m ? m.a : null;
     if (m && G.mode === "contra") G.clock += t.s;
     // en Contrarreloj, pasar una consigna cuesta segundos del reloj
     if (!m && raw === "Pasaste" && G.mode === "contra") { r.pen = SKIP_PEN; G.clock = Math.max(0, G.clock - SKIP_PEN); }
@@ -589,6 +589,87 @@
     }, reduce ? 0 : 1100);
   }
 
+  // Tres respuestas al azar que valían Hueso o menos, para cuando fallas o pasas
+  function sugerencias(p) {
+    // cada lugar sale de un nivel al azar (Tierrita, Piedrita o Hueso) y dentro de él una respuesta al azar,
+    // para que no salgan siempre las mismas ni tres Huesos rarísimos en las listas enormes
+    var por = [[], [], []], elegidas = [];
+    p.answers.forEach(function (a) { if (a.tier <= 2) por[a.tier].push(a); });
+    while (elegidas.length < 3) {
+      var llenos = por.filter(function (l) { return l.length; });
+      if (!llenos.length) break;
+      var l = llenos[Math.floor(Math.random() * llenos.length)];
+      elegidas.push(l.splice(Math.floor(Math.random() * l.length), 1)[0]);
+    }
+    if (!elegidas.length) return "";
+    elegidas.sort(function (a, b) { return a.tier - b.tier; });
+    return '<div class="rv-sug"><span>Podías decir:</span>' + elegidas.map(function (a) {
+      return '<span class="sug">' + esc(a.name) + chip(a.tier) + "</span>";
+    }).join("") + "</div>";
+  }
+
+  // ---------- Descripción corta del acierto (Wikipedia en español) ----------
+  var DESC = {};
+  var TEMAS = ("película serie videojuego juego anime personaje animal planeta país capital ciudad río lago montaña volcán isla " +
+    "pokémon director directora actor actriz cantante grupo banda deporte equipo futbolista jugador comida fruta verdura " +
+    "instrumento elemento dios diosa raza árbol flor ave pez dinosaurio libro canción marca estado provincia").split(" ");
+  // palabra que dice de qué trata la consigna ("película", "planeta"...), para buscar el artículo correcto
+  function palabraTema(q) {
+    var w = q.toLowerCase().replace(/\([^)]*\)/g, " ").split(/[\s,]+/);
+    for (var i = 0; i < w.length; i++) if (TEMAS.indexOf(w[i]) >= 0) return w[i];
+    for (i = 1; i < w.length; i++) if (w[i] && !/^(un|una|unos|unas|a|al|el|la|los|las|alguien|que|haya|cualquier|algo|lo|de|del)$/.test(w[i])) return w[i];
+    return "";
+  }
+  function wiki(params) {
+    var url = "https://es.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1" +
+      "&prop=extracts%7Cpageprops%7Cinfo&inprop=url&exintro=1&explaintext=1&exsentences=2&" + params;
+    var ctl = window.AbortController ? new AbortController() : null;
+    if (ctl) setTimeout(function () { ctl.abort(); }, 6000);
+    return fetch(url, ctl ? { signal: ctl.signal } : {}).then(function (res) { return res.json(); }).then(function (d) {
+      var pg = (d.query && d.query.pages) || {};
+      return Object.keys(pg).map(function (k) { return pg[k]; }).sort(function (a, b) { return (a.index || 0) - (b.index || 0); });
+    });
+  }
+  function desamb(pg) { return pg.pageprops && "disambiguation" in pg.pageprops; }
+  function frasePagina(pg) {
+    // las páginas que son listas ("Anexo:Pokémon de la primera generación") no describen la respuesta
+    if (/^Anexo:/.test(pg.title) || /^(esta es una |la siguiente es una )?lista/i.test(pg.extract || "")) return null;
+    var t = (pg.extract || "").replace(/[\u200b\u200e]/g, "").replace(/\s+/g, " ").trim();
+    // sin paréntesis (pronunciación, idioma original...), aunque estén anidados
+    for (var antes = ""; antes !== t;) { antes = t; t = t.replace(/\s*\([^()]*\)/g, ""); }
+    if (!t) return null;
+    if (t.length > 230) t = t.slice(0, 227).replace(/\s+\S*$/, "") + "…";
+    return { texto: t, url: pg.fullurl };
+  }
+  function describir(a, q, el) {
+    if (!el || !window.fetch) return;
+    var nombre = a.name.replace(/\s\(\d{4}\)$/, ""), anio = (a.name.match(/\((\d{4})\)$/) || [])[1] || "";
+    var tema = palabraTema(q), clave = a.name + "|" + tema;
+    function poner(d) {
+      DESC[clave] = d || false;
+      if (!d || !el.isConnected) return;
+      el.innerHTML = esc(d.texto) + ' <a href="' + esc(d.url) + '" target="_blank" rel="noopener">Wikipedia</a>';
+      el.hidden = false;
+    }
+    if (clave in DESC) return poner(DESC[clave]);
+    var raiz = CC.norm(tema).slice(0, 5);
+    wiki("generator=search&gsrlimit=5&gsrsearch=" + encodeURIComponent((nombre + " " + anio + " " + tema).trim())).then(function (pgs) {
+      // el artículo debe llamarse como la respuesta; si lleva paréntesis, que diga el año o el tema ("Titanic (película de 1997)")
+      for (var i = 0; i < pgs.length; i++) {
+        var pg = pgs[i], m = pg.title.match(/^(.*?)(?:\s*\(([^)]*)\))?$/), par = CC.norm(m[2] || "");
+        if (desamb(pg) || a.keys.indexOf(CC.norm(m[1])) < 0) continue;
+        if (par && !(anio && par.indexOf(anio) >= 0) && !(raiz && par.indexOf(raiz) >= 0)) continue;
+        return frasePagina(pg);
+      }
+      if (anio) return null;
+      // si no, el artículo con ese nombre exacto (o al que redirige), salvo que sea de desambiguación
+      return wiki("titles=" + encodeURIComponent(nombre)).then(function (p2) {
+        var pg = p2[0];
+        return !pg || "missing" in pg || desamb(pg) ? null : frasePagina(pg);
+      });
+    }).then(poner, function () { poner(null); });
+  }
+
   function reveal(r) {
     var m = r.tier >= 0, t = TIERS[r.tier];
     G.phase = "reveal";
@@ -598,13 +679,16 @@
         (r.typed ? '<div class="rv-fix">Escribiste «' + esc(r.typed) + "»; lo tomé como «" + esc(r.ans) + "».</div>" : "") +
         (r.en ? '<div class="rv-fix">«' + esc(r.en) + "» en español es «" + esc(r.ans) + "».</div>" : "") +
         '<div class="rv-row">' + chip(r.tier) + '<span class="rv-pts">+' + r.pts + " pts · baja " + r.pts * 10 + " m" +
-        (G.mode === "contra" ? " · +" + t.s + " s" : "") + "</span></div>"
+        (G.mode === "contra" ? " · +" + t.s + " s" : "") + "</span></div>" +
+        '<div class="rv-desc" id="rvDesc" hidden></div>'
       : '<div class="rv-ans miss">' + esc(r.why) + '</div><div class="rv-row">' + chip(-1) +
-        '<span class="rv-pts">+0 pts' + (r.pen ? " · -" + r.pen + " s" : "") + "</span></div>";
+        '<span class="rv-pts">+0 pts' + (r.pen ? " · -" + r.pen + " s" : "") + "</span></div>" +
+        sugerencias(G.deck[G.idx]);
     $("zone").innerHTML =
       '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head + "</div>" +
       '<button class="btn" id="next" data-go="next">' + (last ? "Ver resultado" : "Siguiente") + "</button>";
     $("next").focus();
+    if (m && G.acierto) describir(G.acierto, r.q, $("rvDesc"));
     drawTimer();
     if (G.mode === "contra") {
       var g = G;

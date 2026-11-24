@@ -328,6 +328,10 @@ input.shake { animation: no .4s ease-in-out; border-color: #d8343a; }
 .rv-fix { grid-column: 1 / -1; color: #7c4a27; }
 .rv-row { display: flex; align-items: center; gap: 12px; }
 .rv-pts { font-size: 24px; white-space: nowrap; }
+.rv-desc { grid-column: 1 / -1; font-size: 20px; line-height: 1.2; color: #4a3b30; }
+.rv-desc a { color: var(--alt); }
+.rv-sug { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 20px; color: #4a3b30; }
+.rv-sug .sug { display: inline-flex; align-items: center; gap: 6px; }
 
 /* ---------- resultado ---------- */
 .results { display: grid; gap: 24px; margin-top: 36px; }
