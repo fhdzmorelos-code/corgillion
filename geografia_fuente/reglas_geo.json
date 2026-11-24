@@ -36,6 +36,15 @@
   ["Nombra una capital nacional cuyo nombre empiece con la letra M", {"tipo": "capital", "empieza": "M"}],
   ["Nombra un país que tenga frontera terrestre con España, Italia o Polonia", {"tipo": "pais", "frontera_con": ["ESP", "ITA", "POL"]}],
   ["Nombra una isla de Grecia", {"tipo": "isla", "pais": "GRC", "fama_min": 10}]
+ ]},
+ {"since": "2026-11-25", "filas": [
+  ["Nombra una ciudad de México cuyo nombre empiece con la letra C", {"tipo": "ciudad", "pais": "MEX", "empieza": "C"}],
+  ["Nombra una ciudad de Australia", {"tipo": "ciudad", "pais": "AUS"}],
+  ["Nombra un país de Asia o de África sin salida al mar", {"tipo": "pais", "continente": ["Asia", "África"], "sin_mar": true}],
+  ["Nombra una capital nacional cuyo nombre termine en la letra N", {"tipo": "capital", "termina": "N", "excluir": ["Saint John"]}],
+  ["Nombra un país de África con más de 30 millones de habitantes", {"tipo": "pais", "continente": "África", "pob_min": 30000000}],
+  ["Nombra un país de Europa con menos de 5 millones de habitantes", {"tipo": "pais", "continente": "Europa", "pob_max": 5000000}],
+  ["Nombra un volcán de Japón, Indonesia o Filipinas", {"tipo": "volcan", "pais": ["JPN", "IDN", "PHL"], "fama_min": 20}]
  ]}
  ],
  "completar": [

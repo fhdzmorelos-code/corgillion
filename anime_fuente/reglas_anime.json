@@ -26,6 +26,9 @@
    ["Nombra un anime del estudio Toei Animation", {"estudio": "Toei Animation"}],
    ["Nombra un anime del estudio Madhouse", {"estudio": "MADHOUSE"}],
    ["Nombra un anime de Kyoto Animation, ufotable o Bones", {"estudio": ["Kyoto Animation", "ufotable", "BONES"]}]
+  ]},
+  {"since": "2026-11-25", "filas": [
+   ["Nombra un anime psicológico (Psychological en AniList)", {"genero": "Psychological"}]
   ]}
  ],
  "completar": [

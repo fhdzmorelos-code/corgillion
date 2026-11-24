@@ -68,3 +68,13 @@ CC.regla("pokemon", { since: "2026-11-24" }, [
   ["Nombra un Pokémon de tipo Fuego con 90 o más de velocidad base", {"tipo": ["Fuego"], "velocidad_min": 90}],
   ["Nombra un Pokémon de tipo Psíquico con 100 o más de ataque especial base", {"tipo": ["Psíquico"], "ataque_esp_min": 100}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-25" }, [
+  ["Nombra un Pokémon cuyo nombre en español empiece con la letra L", {"empieza": "l"}],
+  ["Nombra un Pokémon que pueda tener la habilidad Cuerpo Llama", {"habilidad": "Cuerpo Llama"}],
+  ["Nombra un Pokémon de tipo Tierra que pese 100 kilos o más", {"tipo": ["Tierra"], "peso_min": 100}],
+  ["Nombra un Pokémon que sea de tipo Normal y Volador a la vez", {"tipos": ["Normal", "Volador"]}],
+  ["Nombra un Pokémon de tipo Agua con 90 o más de velocidad base", {"tipo": ["Agua"], "velocidad_min": 90}],
+  ["Nombra un Pokémon de la quinta generación de un solo tipo", {"gen": 5, "num_tipos": 1}],
+  ["Nombra un Pokémon de tipo Hada que también tenga otro tipo", {"tipo": ["Hada"], "num_tipos": 2}]
+]);
