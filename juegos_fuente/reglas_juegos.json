@@ -34,7 +34,10 @@
    ["Nombra un videojuego con un número escrito en cifras en el título", {"contiene_numero": true}],
    ["Nombra un videojuego cuyo título sea de una sola palabra", {"palabras_max": 1}],
    ["Nombra un videojuego con modo cooperativo", {"modo": "Q1758804"}]
-  ]}
+  ]},
+ {"since": "2026-11-24", "filas": [
+  ["Nombra un videojuego de PlayStation 4", {"plataforma": "Q5014725"}]
+ ]}
  ],
  "completar": [
   ["Nombra un juego de la saga The Legend of Zelda", {"saga": "Q12393"}],

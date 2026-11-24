@@ -50,7 +50,10 @@
   ]},
   {"since": "2026-11-23", "filas": [
    ["Nombra una película de los años 2000 (1,000+ votos en IMDb)", {"anio_min": 2000, "anio_max": 2009}]
-  ]}
+  ]},
+ {"since": "2026-11-24", "filas": [
+  ["Nombra una película de deportes (Sport en IMDb, 1,000+ votos)", {"genero": "Sport"}]
+ ]}
  ],
  "completar": [
   ["Nombra una película de Pixar", {"productora": "Q127552", "genero": "Animation"}],

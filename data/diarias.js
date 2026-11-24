@@ -1209,3 +1209,187 @@ CC.add("geografia", { since: "2026-11-23" }, [
     "Altar de la Patria/Monumento a Víctor Manuel II;Campo de' Fiori;Santa María la Mayor;San Juan de Letrán;Galería Borghese;Columna de Trajano",
     "Mausoleo de Augusto;Teatro de Marcelo;Ara Pacis;Foros Imperiales;Pirámide Cestia"]
 ]);
+
+CC.add("clasica", { since: "2026-11-24" }, [
+  ["Nombra una sopa o un caldo",
+    "Sopa de fideo/Fideo/Fideos;Caldo de pollo;Pozole;Sopa de tortilla/Sopa azteca;Consomé",
+    "Menudo/Pancita;Birria;Crema de elote;Crema de champiñones;Sopa de verduras;Caldo tlalpeño;Sopa de lentejas/Lentejas;Caldo de res",
+    "Ramen;Gazpacho;Sopa de cebolla;Caldo de camarón;Sopa de letras;Crema de brócoli;Minestrone;Sopa de frijol;Crema de calabaza",
+    "Sopa de miso/Miso;Pho;Borscht/Borsch;Crema de almejas/Clam chowder;Caldo de pescado;Sancocho;Ajiaco;Mole de olla;Chilpachole;Bullabesa/Bouillabaisse",
+    "Salmorejo;Caldo gallego;Laksa;Tom yum;Gumbo;Vichyssoise;Sopa de médula;Sopa de flor de calabaza;Sopa tarasca;Sopa wonton/Wonton",
+    "Harira;Gulash/Goulash;Avgolemono;Chupe de camarones/Chupe;Locro;Mondongo;Caldo de piedra;Sopa de lima;Shchi"],
+
+  ["Nombra un animal que tenga alas y no sea un ave",
+    "Mariposa;Abeja;Murciélago;Mosca;Mosquito/Zancudo",
+    "Libélula;Avispa;Catarina/Mariquita;Polilla;Cucaracha;Grillo",
+    "Saltamontes/Chapulín;Escarabajo;Luciérnaga;Abejorro;Mantis/Mantis religiosa;Cigarra/Chicharra",
+    "Tábano;Moscardón;Avispón;Efímera;Crisopa;Mayate",
+    "Escarabajo rinoceronte;Escarabajo Hércules;Mariposa monarca;Polilla atlas;Tijereta;Caballito del diablo;Escarabajo pelotero",
+    "Frigánea;Mosca de la fruta/Drosófila;Mosca tsetsé/Tsetsé;Murciélago vampiro/Vampiro común;Zorro volador;Hormiga león;Mosca escorpión"],
+
+  ["Nombra algo que se encuentre en una recámara",
+    "Cama;Almohada;Clóset/Armario/Ropero;Buró/Mesita de noche;Cobija/Manta/Frazada",
+    "Colchón;Sábana/Sábanas;Lámpara;Espejo;Cómoda;Televisión/Tele/Televisor",
+    "Cortina/Cortinas;Tocador;Despertador;Edredón;Cojín;Alfombra/Tapete;Ropa;Cargador",
+    "Perchero;Gancho/Ganchos;Cabecera;Ventilador;Escritorio;Silla;Librero;Portarretratos",
+    "Base de cama/Box spring;Colcha/Cubrecama;Joyero;Zapatera;Persiana;Humidificador;Baúl",
+    "Dosel;Biombo;Diván;Futón;Litera;Cuna"],
+
+  ["Nombra un lugar donde se necesite boleto para entrar",
+    "Cine;Concierto;Estadio;Teatro;Museo",
+    "Parque de diversiones;Avión;Zoológico/Zoo;Autobús/Camión;Metro",
+    "Tren;Acuario;Circo;Arena de lucha libre/Lucha libre;Plaza de toros;Barco/Ferry",
+    "Planetario;Zona arqueológica;Palenque;Festival;Autódromo;Balneario",
+    "Parque acuático;Hipódromo;Ópera;Teleférico;Exposición/Expo;Galería de arte",
+    "Funicular;Casa embrujada;Castillo;Catacumbas;Mirador;Crucero"],
+
+  ["Nombra una parte de una planta",
+    "Hoja;Raíz;Tallo;Flor;Fruto",
+    "Semilla;Pétalo;Rama;Tronco;Espina",
+    "Polen;Savia;Corteza;Yema/Brote;Bulbo",
+    "Pistilo;Estambre;Sépalo;Nervadura;Zarcillo",
+    "Antera;Estigma;Ovario;Estoma/Estomas;Cloroplasto;Tubérculo",
+    "Xilema;Floema;Cáliz;Corola;Cotiledón;Rizoma;Pedúnculo;Peciolo/Pecíolo"],
+
+  ["Nombra una cantante de pop",
+    "Taylor Swift;Shakira;Beyoncé;Lady Gaga;Ariana Grande;Madonna;Rihanna;Billie Eilish;Thalía",
+    "Katy Perry;Dua Lipa;Britney Spears;Selena Gomez/Selena Gómez;Adele;Paulina Rubio;Gloria Trevi;Belinda;Sabrina Carpenter;Olivia Rodrigo",
+    "Miley Cyrus;Christina Aguilera;Jennifer Lopez/Jennifer López/JLo;Mariah Carey;Demi Lovato;Sia;Alejandra Guzmán;Karol G;Natalia Lafourcade;Laura Pausini;Kylie Minogue;Whitney Houston",
+    "Cher;Nelly Furtado;Avril Lavigne;Fey;Julieta Venegas;Lana Del Rey;Doja Cat;Charli XCX;Chappell Roan;Camila Cabello;Anitta;Rosalía;Danna Paola/Danna",
+    "Ellie Goulding;Carly Rae Jepsen;Meghan Trainor;Tove Lo;Lorde;Janet Jackson;Cyndi Lauper;Yuridia;Ximena Sariñana;Kany García",
+    "Robyn;Kim Petras;Zara Larsson;Rina Sawayama;Carla Morrison;Mon Laferte;Sophie Ellis-Bextor;Aitana"],
+
+  ["Nombra algo que tenga cierre (zíper)",
+    "Chamarra/Chaqueta;Mochila;Pantalón/Pantalones;Bolsa/Bolso;Maleta",
+    "Sudadera;Cartera/Monedero;Estuche/Lapicera;Jeans/Mezclilla;Vestido",
+    "Falda;Bota/Botas;Lonchera;Cosmetiquera;Tienda de campaña/Casa de campaña",
+    "Saco de dormir/Bolsa de dormir;Funda de cojín;Portafolio;Riñonera/Cangurera;Funda de laptop",
+    "Traje de neopreno;Overol;Portatrajes;Mameluco;Funda de guitarra",
+    "Chaleco;Traje de esquí;Pants;Traje de motociclista;Funda de colchón"],
+
+  ["Nombra un trabajo en el que se maneje un vehículo",
+    "Taxista;Chofer/Chófer/Conductor;Camionero/Trailero;Repartidor;Piloto",
+    "Policía;Bombero;Paramédico;Conductor de Uber/Uber;Operador de autobús/Autobusero",
+    "Maquinista;Capitán de barco/Capitán;Piloto de carreras;Mensajero;Cartero",
+    "Tractorista;Operador de grúa;Montacarguista/Operador de montacargas;Valet/Valet parking;Instructor de manejo;Operador de metro",
+    "Transportista;Recolector de basura;Fletero;Piloto de helicóptero;Lanchero",
+    "Astronauta;Piloto de pruebas;Operador de excavadora;Conductor de tranvía/Tranviario;Microbusero;Trolebusero"]
+]);
+
+CC.add("pokemon", { since: "2026-11-24" }, [
+  ["Nombra un movimiento de tipo Fantasma",
+    "Bola Sombra;Lengüetazo;Rayo Confuso",
+    "Tinieblas;Garra Umbría;Puño Sombra;Sombra Vil",
+    "Pesadilla;Maldición;Infortunio;Impresionar",
+    "Mismo Destino;Rencor;Viento Aciago;Golpe Umbrío",
+    "Golpe Fantasma;Truco o Trato",
+    "Poltergeist"],
+
+  ["Nombra un movimiento de tipo Bicho",
+    "Picadura;Disparo Demora;Tijera X",
+    "Pin Misil;Chupavidas;Corte Furia;Megacuerno",
+    "Ida y Vuelta;Zumbido;Viento Plata;Doble Rayo",
+    "Danza Aleteo;Telaraña;Polvo Ira;Estoicismo",
+    "Red Viscosa;Aguijón Letal;Escaramuza;Plancha",
+    "Al Ataque;A Defender;Auxilio;Ráfaga;Doble Ataque"]
+]);
+
+CC.add("deportes", { since: "2026-11-24" }, [
+  ["Nombra un futbolista que haya jugado en Cruz Azul (actual o histórico)",
+    "Óscar Pérez/Conejo Pérez/El Conejo;Carlos Hermosillo/Hermosillo;Jesús Corona/Chuy Corona/José de Jesús Corona;Christian Giménez/Chaco Giménez;Santiago Giménez/Bebote",
+    "Orbelín Pineda;Roberto Alvarado/Piojo Alvarado;Luis Romo;Uriel Antuna/Antuna;Francisco Palencia/Paco Palencia;Gerardo Torrado/Torrado",
+    "Julio César Domínguez/Cata Domínguez;Jonathan Rodríguez/Cabecita Rodríguez;Yoshimar Yotún/Yotún;Elías Hernández;Rafael Baca;Carlos Rodríguez/Charly Rodríguez;Marco Fabián",
+    "Miguel Marín;Alberto Quintano;Cesáreo Victorino;Javier Aquino;Joao Rojas;Emanuel Villa",
+    "Milton Caraglio;Walter Montoya;Pablo Aguilar;Édgar Méndez;Igor Lichnovsky;Juan Escobar;Alexis Gutiérrez",
+    "Ignacio Flores;Octavio Muciño;Fernando Bustos"],
+
+  ["Nombra un futbolista italiano (actual o histórico)",
+    "Gianluigi Buffon/Buffon;Andrea Pirlo/Pirlo;Francesco Totti/Totti;Paolo Maldini/Maldini;Roberto Baggio/Baggio",
+    "Alessandro Del Piero/Del Piero;Fabio Cannavaro/Cannavaro;Mario Balotelli/Balotelli;Gennaro Gattuso/Gattuso;Alessandro Nesta/Nesta;Giorgio Chiellini/Chiellini",
+    "Leonardo Bonucci/Bonucci;Gianluigi Donnarumma/Donnarumma;Marco Verratti/Verratti;Daniele De Rossi/De Rossi;Filippo Inzaghi/Pippo Inzaghi;Christian Vieri/Vieri;Federico Chiesa/Chiesa;Franco Baresi/Baresi",
+    "Dino Zoff/Zoff;Paolo Rossi;Marco Materazzi/Materazzi;Giacinto Facchetti/Facchetti;Ciro Immobile/Immobile;Jorginho;Luca Toni;Gianluca Vialli/Vialli;Roberto Mancini/Mancini;Salvatore Schillaci/Totò Schillaci",
+    "Gianfranco Zola/Zola;Giuseppe Meazza/Meazza;Gianni Rivera/Rivera;Sandro Mazzola/Mazzola;Antonio Cassano/Cassano;Lorenzo Insigne/Insigne;Nicolò Barella/Barella;Antonio Conte/Conte;Gaetano Scirea/Scirea",
+    "Silvio Piola/Piola;Luigi Riva/Gigi Riva;Marco Tardelli/Tardelli;Claudio Gentile/Gentile;Giuseppe Bergomi/Bergomi;Demetrio Albertini/Albertini;Sandro Tonali/Tonali;Riccardo Calafiori/Calafiori"],
+
+  ["Nombra un futbolista que haya jugado en el Liverpool (actual o histórico)",
+    "Mohamed Salah/Salah/Mo Salah;Steven Gerrard/Gerrard;Luis Suárez/Suárez;Virgil van Dijk/Van Dijk;Fernando Torres/Niño Torres",
+    "Sadio Mané/Mané;Roberto Firmino/Firmino;Alisson/Alisson Becker;Trent Alexander-Arnold/Alexander-Arnold;Xabi Alonso;Michael Owen/Owen;Philippe Coutinho/Coutinho",
+    "Jamie Carragher/Carragher;Kenny Dalglish/Dalglish;Kevin Keegan/Keegan;Jordan Henderson/Henderson;Andrew Robertson/Andy Robertson/Robertson;Javier Mascherano/Mascherano;Pepe Reina/Reina;Darwin Núñez/Núñez;Luis Díaz/Lucho Díaz",
+    "Ian Rush/Rush;Robbie Fowler/Fowler;John Barnes/Barnes;Raheem Sterling/Sterling;Daniel Sturridge/Sturridge;Alexis Mac Allister/Mac Allister;Dominik Szoboszlai/Szoboszlai;Cody Gakpo/Gakpo;Diogo Jota/Jota;Fabinho;Thiago Alcántara/Thiago",
+    "Graeme Souness/Souness;Peter Crouch/Crouch;Dirk Kuyt/Kuyt;Sami Hyypiä/Hyypiä;Harry Kewell/Kewell;Jerzy Dudek/Dudek;Georginio Wijnaldum/Wijnaldum;Joe Gomez;Ibrahima Konaté/Konaté",
+    "Bruce Grobbelaar/Grobbelaar;Alan Hansen/Hansen;Ray Clemence/Clemence;Emlyn Hughes;Phil Neal;Divock Origi/Origi;Albert Riera/Riera;Luis García;Djibril Cissé/Cissé"],
+
+  ["Nombra un ala cerrada (tight end) de la NFL (actual o histórico)",
+    "Travis Kelce/Kelce;Rob Gronkowski/Gronkowski/Gronk;Tony Gonzalez/Tony González;George Kittle/Kittle",
+    "Jason Witten/Witten;Antonio Gates/Gates;Shannon Sharpe/Sharpe;Mark Andrews;Darren Waller/Waller;Zach Ertz/Ertz",
+    "Greg Olsen/Olsen;Jimmy Graham/Graham;Mike Ditka/Ditka;T. J. Hockenson/Hockenson;Kyle Pitts/Pitts;Sam LaPorta/LaPorta;Brock Bowers/Bowers;Trey McBride/McBride",
+    "Dallas Clark;Vernon Davis;Kellen Winslow;Ozzie Newsome/Newsome;Evan Engram/Engram;David Njoku/Njoku;Dallas Goedert/Goedert;Jordan Reed",
+    "John Mackey/Mackey;Dave Casper/Casper;Heath Miller;Jeremy Shockey/Shockey;Todd Heap/Heap;Martellus Bennett;Delanie Walker;Hunter Henry",
+    "Jackie Smith;Charlie Sanders;Ben Coates/Coates;Mark Bavaro/Bavaro;Owen Daniels;Jermichael Finley/Finley;Tyler Eifert/Eifert;Cole Kmet/Kmet;Pat Freiermuth/Freiermuth"],
+
+  ["Nombra un entrenador en jefe de la NFL (actual o histórico)",
+    "Bill Belichick/Belichick;Andy Reid;Vince Lombardi/Lombardi;John Madden/Madden",
+    "Mike Tomlin/Tomlin;Sean McVay/McVay;Kyle Shanahan;Pete Carroll/Carroll;Bill Parcells/Parcells",
+    "Don Shula/Shula;Tom Landry/Landry;Bill Walsh/Walsh;Mike McCarthy;Sean Payton/Payton;John Harbaugh;Jim Harbaugh;Dan Campbell",
+    "Joe Gibbs/Gibbs;Chuck Noll/Noll;Jimmy Johnson;Mike Ditka/Ditka;Tony Dungy/Dungy;Mike Shanahan;Jon Gruden/Gruden;Nick Sirianni/Sirianni;Zac Taylor",
+    "Tom Coughlin/Coughlin;Mike Holmgren/Holmgren;Bruce Arians/Arians;Doug Pederson/Pederson;Bill Cowher/Cowher;Marv Levy/Levy;Mike McDaniel;Matt LaFleur/LaFleur;Kevin O'Connell",
+    "George Halas/Halas;Paul Brown;Hank Stram/Stram;Bud Grant;Weeb Ewbank/Ewbank;Dick Vermeil/Vermeil;Tom Flores;Sid Gillman;Mike Vrabel/Vrabel"],
+
+  ["Nombra un jugador que haya jugado en los Golden State Warriors (actual o histórico)",
+    "Stephen Curry/Curry/Steph Curry;Klay Thompson;Draymond Green;Kevin Durant/Durant;Wilt Chamberlain/Chamberlain",
+    "Andre Iguodala/Iguodala;Andrew Wiggins/Wiggins;Jordan Poole/Poole;Chris Mullin/Mullin;Baron Davis",
+    "Tim Hardaway;Mitch Richmond;Rick Barry;Harrison Barnes;DeMarcus Cousins/Cousins;Jimmy Butler",
+    "Monta Ellis;Latrell Sprewell/Sprewell;Shaun Livingston/Livingston;Andrew Bogut/Bogut;Kevon Looney/Looney;Gary Payton II;Jonathan Kuminga/Kuminga;Chris Paul;D'Angelo Russell;Zaza Pachulia/Pachulia",
+    "Nate Thurmond/Thurmond;David Lee;Jason Richardson;Antawn Jamison/Jamison;Stephen Jackson;Moses Moody;Brandin Podziemski/Podziemski;JaVale McGee/McGee;David West",
+    "Manute Bol;Šarūnas Marčiulionis/Sarunas Marciulionis;Tom Meschery/Meschery;Paul Arizin/Arizin;Joe Fulks/Fulks;Jamaal Wilkes;Purvis Short"],
+
+  ["Nombra un boxeador famoso que no sea mexicano (actual o histórico)",
+    "Muhammad Ali/Cassius Clay;Mike Tyson;Manny Pacquiao/Pacquiao;Floyd Mayweather/Mayweather;Rocky Marciano/Marciano",
+    "George Foreman/Foreman;Joe Frazier/Frazier;Evander Holyfield/Holyfield;Tyson Fury/Fury;Anthony Joshua",
+    "Lennox Lewis;Sugar Ray Leonard;Roberto Durán/Mano de Piedra;Joe Louis;Gennady Golovkin/Golovkin/GGG;Oleksandr Usyk/Usyk;Naoya Inoue/Inoue;Deontay Wilder/Wilder",
+    "Sugar Ray Robinson;Marvin Hagler/Hagler;Thomas Hearns/Hearns;Jack Dempsey/Dempsey;Wladimir Klitschko;Miguel Cotto/Cotto;Félix Trinidad/Tito Trinidad;Terence Crawford/Crawford",
+    "Sonny Liston/Liston;Bernard Hopkins/Hopkins;Roy Jones Jr./Roy Jones;Carlos Monzón/Monzón;Vitali Klitschko;Gervonta Davis/Tank Davis;Shane Mosley/Mosley",
+    "Jack Johnson;Joe Calzaghe/Calzaghe;Max Schmeling/Schmeling;Primo Carnera/Carnera;Alexis Argüello/Argüello;Héctor Camacho/Macho Camacho;Wilfredo Gómez;Ricardo Mayorga/Mayorga;Vasyl Lomachenko/Lomachenko"]
+]);
+
+CC.add("geografia", { since: "2026-11-24" }, [
+  ["Nombra un Pueblo Mágico de México",
+    "Taxco;Tequila;Valle de Bravo;Bacalar;Tepoztlán",
+    "Real de Catorce;Pátzcuaro;Izamal;Cholula;Isla Mujeres;Palenque;Tlaquepaque;San Cristóbal de las Casas",
+    "Bernal;Tapalpa;Mazunte;Todos Santos;Loreto;Huasca de Ocampo;Zacatlán;Malinalco;Creel;Mineral del Chico",
+    "Cuetzalan;Tequisquiapan;Comala;Mazamitla;Jerez;Sayulita;Álamos;Batopilas;Parras;Xilitla;Cosalá",
+    "Capulálpam de Méndez;Tlalpujahua;Santa Clara del Cobre;Tacámbaro;Chignahuapan;Orizaba;Coatepec;Xico;Papantla;Tlayacapan;El Oro",
+    "Cuitzeo;Cadereyta de Montes;Sombrerete;Pinos;Nochistlán;Bustamante;Santiago;Arteaga;Viesca;Mier;Tecozautla"],
+
+  ["Nombra una provincia de España",
+    "Madrid;Barcelona;Sevilla;Valencia;Málaga;Granada",
+    "Alicante/Alacant;Zaragoza;Cádiz;Murcia;Toledo;Córdoba;Salamanca",
+    "Asturias;Cantabria;Navarra;La Rioja/Rioja;Vizcaya/Bizkaia;Guipúzcoa/Gipuzkoa;Islas Baleares/Baleares;Las Palmas;Santa Cruz de Tenerife/Tenerife",
+    "Almería;Huelva;Jaén;Burgos;León;Valladolid;Segovia;Ávila;La Coruña/A Coruña/Coruña;Pontevedra;Girona/Gerona;Tarragona;Castellón/Castelló",
+    "Álava/Araba;Badajoz;Cáceres;Ciudad Real;Cuenca;Guadalajara;Albacete;Lérida/Lleida;Lugo;Orense/Ourense;Huesca;Teruel",
+    "Palencia;Soria;Zamora"],
+
+  ["Nombra un estado federado de Alemania",
+    "Baviera/Bayern;Berlín/Berlin",
+    "Hamburgo/Hamburg;Sajonia/Sachsen;Bremen",
+    "Hesse/Hessen;Baja Sajonia/Niedersachsen;Renania del Norte-Westfalia/Nordrhein-Westfalen",
+    "Baden-Wurtemberg/Baden-Württemberg;Renania-Palatinado/Rheinland-Pfalz;Brandeburgo/Brandenburg",
+    "Sarre/Saarland;Turingia/Thüringen;Sajonia-Anhalt/Sachsen-Anhalt",
+    "Schleswig-Holstein;Mecklemburgo-Pomerania Occidental/Mecklenburg-Vorpommern"],
+
+  ["Nombra un departamento de Perú",
+    "Lima;Cusco/Cuzco;Arequipa",
+    "Puno;Piura;Ica;Cajamarca",
+    "Ayacucho;Loreto;La Libertad;Tacna;Amazonas",
+    "Áncash/Ancash;Junín;Lambayeque;Tumbes;Madre de Dios",
+    "Apurímac;Huánuco;San Martín;Ucayali",
+    "Huancavelica;Moquegua;Pasco"],
+
+  ["Nombra un lugar o monumento famoso de Londres",
+    "Big Ben;Puente de la Torre/Tower Bridge;Palacio de Buckingham/Buckingham;Ojo de Londres/London Eye;Torre de Londres/Tower of London",
+    "Abadía de Westminster/Westminster;Museo Británico/British Museum;Hyde Park;Plaza de Trafalgar/Trafalgar Square;Piccadilly Circus/Piccadilly;Catedral de San Pablo/St Paul's",
+    "Palacio de Westminster/Parlamento;Estadio de Wembley/Wembley;Abbey Road;Notting Hill;Camden Town/Camden;Soho;Covent Garden;Baker Street/Calle Baker;Galería Nacional/National Gallery",
+    "Tate Modern;The Shard/Shard;Museo de Historia Natural;Regent's Park;Observatorio de Greenwich/Greenwich;Harrods;Madame Tussauds/Museo de cera;Puente de Londres/London Bridge;Río Támesis/Támesis",
+    "Teatro del Globo/Shakespeare's Globe/Globe;Palacio de Kensington/Kensington;Oxford Street/Calle Oxford;Museo de Victoria y Alberto/Victoria and Albert Museum;Borough Market;Wimbledon;Jardines de Kew/Kew Gardens;The Gherkin/Pepinillo",
+    "Palacio de Hampton Court/Hampton Court;Downing Street;Leicester Square;Royal Albert Hall/Albert Hall;Cementerio de Highgate/Highgate;Puente del Milenio/Millennium Bridge;Central eléctrica de Battersea/Battersea"]
+]);

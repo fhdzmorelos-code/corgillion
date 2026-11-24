@@ -57,3 +57,14 @@ CC.regla("pokemon", { since: "2026-11-23" }, [
   ["Nombra un Pokémon de tipo Eléctrico con 100 o más de velocidad base", {"tipo": ["Eléctrico"], "velocidad_min": 100}],
   ["Nombra un Pokémon que habite en el campo", {"habitat": "campo"}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-24" }, [
+  ["Nombra un Pokémon cuyo nombre en español empiece con la letra D", {"empieza": "d"}],
+  ["Nombra un Pokémon cuyo nombre en español termine en la letra N", {"termina": "n"}],
+  ["Nombra un Pokémon que pueda tener la habilidad Fuerza Mental", {"habilidad": "Fuerza Mental"}],
+  ["Nombra un Pokémon de tipo Bicho que también tenga otro tipo", {"tipo": ["Bicho"], "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Dragón que pese 100 kilos o más", {"tipo": ["Dragón"], "peso_min": 100}],
+  ["Nombra un Pokémon de la cuarta generación con dos tipos", {"gen": 4, "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Fuego con 90 o más de velocidad base", {"tipo": ["Fuego"], "velocidad_min": 90}],
+  ["Nombra un Pokémon de tipo Psíquico con 100 o más de ataque especial base", {"tipo": ["Psíquico"], "ataque_esp_min": 100}]
+]);

@@ -29,7 +29,14 @@
    ["Nombra un país con más de 50 millones de habitantes", {"tipo": "pais", "pob_min": 50000000}],
    ["Nombra un país que tenga frontera con Nigeria, Sudán o la República Democrática del Congo", {"tipo": "pais", "frontera_con": ["NGA", "SDN", "COD"]}],
    ["Nombra una capital nacional cuyo nombre termine en la letra A", {"tipo": "capital", "termina": "a"}]
-  ]}
+  ]},
+ {"since": "2026-11-24", "filas": [
+  ["Nombra una ciudad de Turquía", {"tipo": "ciudad", "pais": "TUR", "fama_min": 25}],
+  ["Nombra un río de África de más de 1,000 kilómetros", {"tipo": "rio", "continente": "África", "medida_min": 1000}],
+  ["Nombra una capital nacional cuyo nombre empiece con la letra M", {"tipo": "capital", "empieza": "M"}],
+  ["Nombra un país que tenga frontera terrestre con España, Italia o Polonia", {"tipo": "pais", "frontera_con": ["ESP", "ITA", "POL"]}],
+  ["Nombra una isla de Grecia", {"tipo": "isla", "pais": "GRC", "fama_min": 10}]
+ ]}
  ],
  "completar": [
   ["Nombra una ciudad de Argentina", {"tipo": "ciudad", "pais": "ARG"}],
