@@ -87,12 +87,42 @@
   }
 
   // Diccionario inglés -> español: "cow=vaca;turkey=pavo|turquía".
-  var EN = {};
+  // ENR es el camino de vuelta (español -> inglés), para mostrar las respuestas en inglés cuando el juego está en English.
+  var EN = {}, ENR = {};
   function english(str) {
     str.split(";").forEach(function (pair) {
       var i = pair.indexOf("=");
-      if (i > 0) EN[norm(pair.slice(0, i))] = pair.slice(i + 1).split("|");
+      if (i <= 0) return;
+      var en = pair.slice(0, i).trim(), es = pair.slice(i + 1).split("|");
+      EN[norm(en)] = es;
+      es.forEach(function (x) { var k = norm(x); if (k && !ENR[k]) ENR[k] = en.charAt(0).toUpperCase() + en.slice(1); });
     });
+  }
+  // Nombre en inglés de una respuesta, si el diccionario lo tiene (por su nombre o por cualquiera de sus alias).
+  function nameEN(name, keys) {
+    var k = norm(name);
+    if (ENR[k]) return ENR[k];
+    for (var i = 0; keys && i < keys.length; i++) if (ENR[keys[i]]) return ENR[keys[i]];
+    return name;
+  }
+
+  // Consignas en inglés: primero la traducción exacta y, si no hay, un molde ("de tipo Fuego" -> "Fire-type").
+  var QEN = {}, QPAT = [], QWORDS = {};
+  function traducciones(o) { for (var k in o) QEN[k] = o[k]; }
+  function traduccionesPatron(pats, words) {
+    QPAT = QPAT.concat(pats);
+    for (var k in words || {}) QWORDS[k] = words[k];
+  }
+  function qEN(q) {
+    if (QEN[q]) return QEN[q];
+    for (var i = 0; i < QPAT.length; i++) {
+      var m = q.match(QPAT[i][0]);
+      if (m) {
+        return QPAT[i][1].replace(/\$(\d)/g, function (_, n) { var w = m[+n] || ""; return QWORDS[w] || w; })
+          .replace(/\ba (?=[AEIOU])/g, "an ");   // "a Electric-type" -> "an Electric-type"
+      }
+    }
+    return q;
   }
 
   // Devuelve {a, fixed, en} o null. Si no hay coincidencia, prueba traduciendo del inglés.
@@ -195,5 +225,6 @@
     return hits.length === 1 ? { a: hits[0], fixed: true } : null;
   }
 
-  root.CC = { add: add, build: build, cats: cats, order: order, match: match, matchFinal: matchFinal, norm: norm, english: english, EN: EN };
+  root.CC = { add: add, build: build, cats: cats, order: order, match: match, matchFinal: matchFinal, norm: norm, english: english, EN: EN,
+    nameEN: nameEN, traducciones: traducciones, traduccionesPatron: traduccionesPatron, qEN: qEN };
 })(typeof window !== "undefined" ? window : globalThis);

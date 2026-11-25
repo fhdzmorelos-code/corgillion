@@ -6,12 +6,12 @@
   var app = document.getElementById("app");
 
   var TIERS = [
-    { n: "Tierrita", p: 10, s: 2, say: "Solo tierrita…" },
-    { n: "Piedrita", p: 20, s: 3, say: "Una piedrita." },
-    { n: "Hueso", p: 35, s: 5, say: "¡Un hueso!" },
-    { n: "Fósil", p: 60, s: 8, say: "¡Un fósil!" },
-    { n: "Tesoro", p: 80, s: 11, say: "¡Un tesoro!" },
-    { n: "Hueso de Oro", p: 100, s: 15, say: "¡¡HUESO DE ORO!!" }
+    { n: "Tierrita", en: "Dirt", p: 10, s: 2, say: "Solo tierrita…", sayEn: "Just dirt…" },
+    { n: "Piedrita", en: "Pebble", p: 20, s: 3, say: "Una piedrita.", sayEn: "A pebble." },
+    { n: "Hueso", en: "Bone", p: 35, s: 5, say: "¡Un hueso!", sayEn: "A bone!" },
+    { n: "Fósil", en: "Fossil", p: 60, s: 8, say: "¡Un fósil!", sayEn: "A fossil!" },
+    { n: "Tesoro", en: "Treasure", p: 80, s: 11, say: "¡Un tesoro!", sayEn: "A treasure!" },
+    { n: "Hueso de Oro", en: "Golden Bone", p: 100, s: 15, say: "¡¡HUESO DE ORO!!", sayEn: "GOLDEN BONE!!" }
   ];
   // Ícono pixelado de cada categoría (ver Corgi.icon).
   var CAT_ICON = { clasica: "trofeo", pokemon: "pokeball", deportes: "balon", geografia: "planeta" };
@@ -20,10 +20,14 @@
   var PX = 4, GROUND = 300, PXM = 0.26, DOG = 72;
 
   var MODES = {
-    diario: { n: "Diario", d: "7 consignas, las mismas para todos hoy. Un solo intento.", finite: true },
-    clasico: { n: "Libre", d: "7 consignas al azar que cambian en cada intento.", finite: true },
-    sinfinal: { n: "Sin final", d: "Consignas sin parar. Cava hasta que te retires.", finite: false },
-    contra: { n: "Contrarreloj", d: "0:45 en el reloj. Lo raro suma hasta +15 s; pasar resta 5 s.", finite: false }
+    diario: { n: "Diario", en: "Daily", d: "7 consignas, las mismas para todos hoy. Un solo intento.",
+      de: "7 prompts, the same for everyone today. One try.", finite: true },
+    clasico: { n: "Libre", en: "Free play", d: "7 consignas al azar que cambian en cada intento.",
+      de: "7 random prompts that change every time.", finite: true },
+    sinfinal: { n: "Sin final", en: "Endless", d: "Consignas sin parar. Cava hasta que te retires.",
+      de: "Prompts nonstop. Dig until you retire.", finite: false },
+    contra: { n: "Contrarreloj", en: "Time attack", d: "0:45 en el reloj. Lo raro suma hasta +15 s; pasar resta 5 s.",
+      de: "0:45 on the clock. Rare answers add up to +15 s; skipping costs 5 s.", finite: false }
   };
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -34,6 +38,36 @@
   try { Object.assign(save, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) { /* sin guardado */ }
   function persist() { try { localStorage.setItem(KEY, JSON.stringify(save)); } catch (e) { /* sin guardado */ } }
   SFX.setOn(save.sound !== false);
+
+  // ---------- idioma (Ajustes) ----------
+  // Las consignas y la interfaz se traducen; las respuestas siguen siendo las del banco en español,
+  // pero se muestran en inglés cuando el diccionario de data/ingles.js tiene la palabra.
+  var LANG = save.lang === "en" ? "en" : "es";
+  function L(es, en) { return LANG === "en" ? en : es; }
+  function tn(i) { return L(TIERS[i].n, TIERS[i].en); }
+  function mn(m) { return L(MODES[m].n, MODES[m].en); }
+  var CAT_EN = {
+    clasica: ["Classic", "A bit of everything: everyday things, science, movies, games, sports and geography."],
+    pokemon: ["Pokémon", "Only Pokémon: types, regions, generations, characters and items."],
+    deportes: ["Sports", "Soccer, American football, basketball and a bit of everything else."],
+    geografia: ["Geography", "Countries, capitals, borders, languages, cities, rivers, mountains and more."]
+  };
+  function cn(id) { return LANG === "en" && CAT_EN[id] ? CAT_EN[id][0] : CC.cats[id].name; }
+  function cd(id) { return LANG === "en" && CAT_EN[id] ? CAT_EN[id][1] : CC.cats[id].desc; }
+  function qt(q) { return LANG === "en" ? CC.qEN(q) : q; }
+  function an(name, keys, q) { return LANG === "en" && name && !/nombre/.test(q || "") ? CC.nameEN(name, keys) : name; }
+  // engrane pixelado para el botón de Ajustes
+  function engrane(size) {
+    var rows = ["...##...", ".#.##.#.", "..####..", "###..###", "###..###", "..####..", ".#.##.#.", "...##..."], r = "";
+    rows.forEach(function (fila, y) { for (var x = 0; x < 8; x++) if (fila[x] === "#") r += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>'; });
+    return '<svg class="icon gear-ic" viewBox="0 0 8 8" width="' + size + '" height="' + size + '" shape-rendering="crispEdges" aria-hidden="true">' + r + "</svg>";
+  }
+  var CORGI_EN = ["Red and white with a bandana", "Tricolor with a miner's helmet", "Sable with a silver Patriots-style helmet",
+    "Blue merle with pilot goggles", "Fluffy cream with a crown"];
+  function vd(i) { return LANG === "en" && CORGI_EN[i] ? CORGI_EN[i] : Corgi.variants[i].desc; }
+  // "Se acabó el tiempo" y "Pasaste" se guardan así en los resultados; aquí solo se traducen al mostrarse
+  function porque(w) { return LANG === "en" ? ({ "Se acabó el tiempo": "Time's up", "Pasaste": "Skipped" })[w] || w : w; }
+  document.documentElement.lang = LANG;
 
   // ---------- utilidades ----------
   function $(id) { return document.getElementById(id); }
@@ -86,13 +120,14 @@
     s = Math.max(0, Math.ceil(s));
     return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2);
   }
-  function meters(pts) { return Math.round(pts * 10).toLocaleString("es-MX") + " m"; }
+  function meters(pts) { return Math.round(pts * 10).toLocaleString(LANG === "en" ? "en-US" : "es-MX") + " m"; }
   function bestOf(cat, mode) { return (save.best[cat] || {})[mode] || 0; }
   function chip(t) {
-    return t < 0 ? '<span class="chip t-x">Nada</span>'
-      : '<span class="chip t-' + t + '">' + Corgi.item(t, 18) + TIERS[t].n + "</span>";
+    return t < 0 ? '<span class="chip t-x">' + L("Nada", "Nothing") + "</span>"
+      : '<span class="chip t-' + t + '">' + Corgi.item(t, 18) + tn(t) + "</span>";
   }
   function show(html) {
+    document.body.classList.remove("jugando");
     app.innerHTML = html;
     app.classList.remove("enter"); void app.offsetWidth; app.classList.add("enter");
     window.scrollTo(0, 0);
@@ -104,46 +139,51 @@
   function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
 
   function home() {
-    stopTimer(); G = null;
+    stopTimer(); G = null; vista = home;
     var v = Corgi.variants[save.corgi], t = today();
     var picks = Corgi.variants.map(function (x, i) {
       return '<button class="pick' + (i === save.corgi ? " on" : "") + '" data-corgi="' + i +
-        '" title="' + esc(x.desc) + '">' + Corgi.svg(i, 48) + "<span>" + esc(x.name) + "</span></button>";
+        '" title="' + esc(vd(i)) + '">' + Corgi.svg(i, 48) + "<span>" + esc(x.name) + "</span></button>";
     }).join("");
     var cats = CC.order.map(function (id) {
       var c = CC.cats[id], d = save.daily[id];
       var modes = Object.keys(MODES).map(function (m) {
         var extra;
         if (m === "diario") {
-          if (d && d.date === t && d.done) extra = "Hoy: " + meters(d.score);
-          else if (d && d.date === t) extra = "En curso";
-          else if (Online.enabled && !save.player) extra = "Pide entrar";
-          else extra = "Nuevo hoy";
+          if (d && d.date === t && d.done) extra = L("Hoy: ", "Today: ") + meters(d.score);
+          else if (d && d.date === t) extra = L("En curso", "In progress");
+          else if (Online.enabled && !save.player) extra = L("Pide entrar", "Sign in first");
+          else extra = L("Nuevo hoy", "New today");
         } else {
-          extra = bestOf(id, m) ? "Récord " + meters(bestOf(id, m)) : "Sin récord";
+          extra = bestOf(id, m) ? L("Récord ", "Best ") + meters(bestOf(id, m)) : L("Sin récord", "No record");
         }
         return '<button class="mode" data-cat="' + id + '" data-mode="' + m + '">' +
-          '<span class="mode-n">' + MODES[m].n + '</span><span class="mode-d">' + MODES[m].d +
+          '<span class="mode-n">' + mn(m) + '</span><span class="mode-d">' + L(MODES[m].d, MODES[m].de) +
           '</span><span class="mode-x">' + extra + "</span></button>";
       }).join("");
-      return '<section class="panel catbox" style="--c:' + c.color + '"><div class="cat-head"><h2>' + catIcon(id, 28) + "<span>" + esc(c.name) + "</span>" +
-        "</h2><p>" + esc(c.desc) + '</p></div><div class="modegrid">' + modes + "</div></section>";
+      return '<section class="panel catbox" style="--c:' + c.color + '"><div class="cat-head"><h2>' + catIcon(id, 28) + "<span>" + esc(cn(id)) + "</span>" +
+        "</h2><p>" + esc(cd(id)) + '</p></div><div class="modegrid">' + modes + "</div></section>";
     }).join("");
     var legend = TIERS.map(function (x, i) {
       return "<tr><td>" + chip(i) + "</td><td>" + x.p + " pts</td><td>" + x.p * 10 + " m</td><td>+" + x.s + " s</td></tr>";
     }).join("");
 
     show(
-      '<header class="logo"><h1>' + Corgi.item(2, 44, "logo-deco") + "<span>" + GAME_NAME + "</span>" + Corgi.item(5, 44, "logo-deco flip") + "</h1><p>Cuanto más rara tu respuesta, más hondo cava tu corgi.</p></header>" +
+      '<header class="logo"><h1>' + Corgi.item(2, 44, "logo-deco") + "<span>" + GAME_NAME + "</span>" + Corgi.item(5, 44, "logo-deco flip") + "</h1><p>" +
+      L("Cuanto más rara tu respuesta, más hondo cava tu corgi.", "The rarer your answer, the deeper your corgi digs.") + "</p></header>" +
       '<main class="home"><div class="col side">' +
-      '<section class="panel kennel"><h2>Tu corgi</h2>' +
-      '<div class="bubble">¡Guau! Soy ' + esc(v.name) + ". ¿Cavamos?</div>" +
+      '<section class="panel kennel"><h2>' + L("Tu corgi", "Your corgi") + "</h2>" +
+      '<div class="bubble">' + L("¡Guau! Soy ", "Woof! I'm ") + esc(v.name) + L(". ¿Cavamos?", ". Shall we dig?") + "</div>" +
       '<div class="stage">' + Corgi.svg(save.corgi, 192, "idle") + '<div class="mound"></div></div>' +
-      '<p class="vdesc">' + esc(v.desc) + '</p><div class="picks">' + picks + "</div></section>" + whoPanel() +
-      '<section class="panel how"><h2>Cómo se juega</h2>' +
-      "<p>Cada consigna pide nombrar algo y tiene muchas respuestas válidas. Las obvias valen poco; las que casi nadie diría, mucho. " +
-      "Si escribes con erratas, el corgi toma la respuesta más parecida de su lista. También entiende respuestas en inglés.</p>" +
-      "<table><tr><th>Hallazgo</th><th>Puntos</th><th>Cava</th><th>Reloj</th></tr>" + legend + "</table></section>" +
+      '<p class="vdesc">' + esc(vd(save.corgi)) + '</p><div class="picks">' + picks + "</div></section>" + whoPanel() +
+      '<section class="panel how"><h2>' + L("Cómo se juega", "How to play") + "</h2><p>" +
+      L("Cada consigna pide nombrar algo y tiene muchas respuestas válidas. Las obvias valen poco; las que casi nadie diría, mucho. " +
+        "Si escribes con erratas, el corgi toma la respuesta más parecida de su lista. También entiende respuestas en inglés.",
+        "Each prompt asks you to name something, and it has lots of valid answers. Obvious ones are worth little; the ones almost nobody " +
+        "would say are worth a lot. If you make a typo, the corgi takes the closest answer on its list. The answer bank is in Spanish, " +
+        "but common words and most names also work in English.") + "</p>" +
+      "<table><tr><th>" + L("Hallazgo", "Find") + "</th><th>" + L("Puntos", "Points") + "</th><th>" + L("Cava", "Digs") + "</th><th>" +
+      L("Reloj", "Clock") + "</th></tr>" + legend + "</table></section>" +
       recordsPanel() +
       '</div><div class="col">' + cats + "</div></main>"
     );
@@ -154,16 +194,17 @@
   // Tus récords: lo más hondo que has cavado en cada categoría y modo.
   function recordsPanel() {
     var t = today();
-    var head = "<tr><th></th>" + Object.keys(MODES).map(function (m) { return "<th>" + MODES[m].n + "</th>"; }).join("") + "</tr>";
+    var head = "<tr><th></th>" + Object.keys(MODES).map(function (m) { return "<th>" + mn(m) + "</th>"; }).join("") + "</tr>";
     var rows = CC.order.map(function (id) {
       var d = save.daily[id];
-      return '<tr><td class="rec-cat" title="' + esc(CC.cats[id].name) + '">' + catIcon(id, 22) + "</td>" + Object.keys(MODES).map(function (m) {
+      return '<tr><td class="rec-cat" title="' + esc(cn(id)) + '">' + catIcon(id, 22) + "</td>" + Object.keys(MODES).map(function (m) {
         var v = m === "diario" ? (d && d.date === t && d.done ? d.score : 0) : bestOf(id, m);
         return "<td>" + (v ? meters(v) : "—") + "</td>";
       }).join("") + "</tr>";
     }).join("");
-    return '<section class="panel recs"><h2>Tus récords</h2><table>' + head + rows + "</table>" +
-      '<p class="recs-note">El diario muestra lo de hoy; los demás, tu mejor marca.</p></section>';
+    return '<section class="panel recs"><h2>' + L("Tus récords", "Your records") + "</h2><table>" + head + rows + "</table>" +
+      '<p class="recs-note">' + L("El diario muestra lo de hoy; los demás, tu mejor marca.", "The daily shows today's score; the rest show your best.") +
+      "</p></section>";
   }
 
   // La columna del corgi acompaña al bajar: se queda fija y, si es más alta que la ventana, se fija por su parte de abajo.
@@ -427,13 +468,16 @@
       '<div class="scene" id="scene"><div class="world" id="world"><canvas id="strata"></canvas>' +
       '<div id="ticks"></div><div class="tunnel" id="tunnel"></div><div id="relics"></div>' +
       '<div class="digger" id="digger">' + Corgi.svg(save.corgi, DOG) + '</div><div class="found" id="found"></div></div></div>' +
-      '<header class="hud"><button class="btn ghost" data-go="quit">' + (fin ? "Salir" : "Retirarse") + "</button>" +
-      '<div class="trailbox"><div class="hud-title" style="--c:' + c.color + '">' + catIcon(G.cat, 16) + esc(c.name) + " · " + MODES[G.mode].n +
+      '<header class="hud"><div class="hud-izq"><button class="btn ghost" data-go="quit">' + (fin ? L("Salir", "Quit") : L("Retirarse", "Retire")) +
+      '</button><button class="btn ghost small" data-go="ajustes" title="' + L("Ajustes", "Settings") + '" aria-label="' + L("Ajustes", "Settings") +
+      '">' + engrane(18) + "</button></div>" +
+      '<div class="trailbox"><div class="hud-title" style="--c:' + c.color + '">' + catIcon(G.cat, 16) + esc(cn(G.cat)) + " · " + mn(G.mode) +
       '</div><div class="trail" id="trail"></div></div>' +
       '<div class="depth"><b id="dnum">0 m</b><span id="dpts">0 pts</span></div></header>' +
       '<section class="ask"><div class="timer"><div class="timer-fill" id="tfill"></div><span class="timer-txt" id="ttxt"></span></div>' +
       '<div class="q" id="q"></div><div id="zone"></div></section>'
     );
+    document.body.classList.add("jugando");
     paintWorld();
     G.results.forEach(function (r, i) { if (r.tier >= 0) relic(r.tier, cumul(i + 1), i); });
     drawShaft(); drawDepth(G.score); ask();
@@ -441,7 +485,7 @@
 
   function dot(r, fresh) {
     return '<i class="dot done ' + (fresh ? "fresh " : "") + (r.tier < 0 ? "t-x" : "t-" + r.tier) + '" title="' +
-      esc((r.ans || "Sin respuesta") + " — " + (r.tier < 0 ? "nada" : TIERS[r.tier].n) + " — " + r.q) + '">' +
+      esc((r.ans ? an(r.ans, null, r.q) : L("Sin respuesta", "No answer")) + " — " + (r.tier < 0 ? L("nada", "nothing") : tn(r.tier)) + " — " + qt(r.q)) + '">' +
       (r.tier < 0 ? "0" : r.pts) + "</i>";
   }
   function drawTrail() {
@@ -465,14 +509,14 @@
     G.phase = "ask"; G.qLeft = QTIME; G.last = performance.now(); G.lastTick = 0;
     drawTrail();
     var q = $("q");
-    q.textContent = p.q;
+    q.textContent = qt(p.q);
     q.classList.remove("in"); void q.offsetWidth; q.classList.add("in");
     $("zone").innerHTML =
       '<form id="form" autocomplete="off"><input id="ans" type="text" maxlength="60" spellcheck="false" ' +
-      'placeholder="Escribe tu respuesta" aria-label="Tu respuesta">' +
-      '<button class="btn" type="submit">Cavar</button></form>' +
-      '<div class="fb" id="fb">Piensa en algo que casi nadie diría.</div>' +
-      '<button class="btn ghost small" data-go="skip">Pasar esta consigna' + (G.mode === "contra" ? " (-" + SKIP_PEN + " s)" : "") + "</button>";
+      'placeholder="' + L("Escribe tu respuesta", "Type your answer") + '" aria-label="' + L("Tu respuesta", "Your answer") + '">' +
+      '<button class="btn" type="submit">' + L("Cavar", "Dig") + "</button></form>" +
+      '<div class="fb" id="fb">' + L("Piensa en algo que casi nadie diría.", "Think of something almost nobody would say.") + "</div>" +
+      '<button class="btn ghost small" data-go="skip">' + L("Pasar esta consigna", "Skip this prompt") + (G.mode === "contra" ? " (-" + SKIP_PEN + " s)" : "") + "</button>";
     $("ans").focus();
     // las consignas de cine arman sus miles de respuestas al primer uso: se adelanta mientras se lee la consigna
     setTimeout(function () { void p.answers; }, 60);
@@ -524,7 +568,7 @@
       var fb = $("fb");
       fb.className = "fb bad";
       SFX.miss();
-      fb.textContent = "«" + raw + "» no está en mi lista. Prueba otra.";
+      fb.textContent = L("«" + raw + "» no está en mi lista. Prueba otra.", "“" + raw + "” isn't on my list. Try another one.");
       input.value = ""; input.focus();
       input.classList.remove("shake"); void input.offsetWidth; input.classList.add("shake");
       var dg = $("digger");
@@ -565,11 +609,11 @@
     if (!m) {
       dg.className = "digger sad";
       SFX.miss();
-      $("zone").innerHTML = '<div class="digging">' + esc(raw) + "…</div>";
+      $("zone").innerHTML = '<div class="digging">' + esc(porque(raw)) + "…</div>";
       return setTimeout(function () { if (G === g) reveal(r); }, reduce ? 0 : 550);
     }
     // 1) el corgi se clava y cava  2) baja por el túnel  3) sale con lo que encontró
-    $("zone").innerHTML = '<div class="digging"><span>Cavando</span><i></i><i></i><i></i></div>';
+    $("zone").innerHTML = '<div class="digging"><span>' + L("Cavando", "Digging") + "</span><i></i><i></i><i></i></div>";
     dg.className = "digger dig";
     $("scene").className = "scene rumble";
     burst(tier);
@@ -583,7 +627,7 @@
       SFX.found(tier);
       found.style.top = (yFor(G.score) - 46) + "px";
       found.className = "found show t-" + tier;
-      found.innerHTML = Corgi.item(tier, 60) + "<b>" + t.say + "</b>" + (tier >= 3 ? "<s></s><s></s><s></s><s></s>" : "");
+      found.innerHTML = Corgi.item(tier, 60) + "<b>" + L(t.say, t.sayEn) + "</b>" + (tier >= 3 ? "<s></s><s></s><s></s><s></s>" : "");
       relic(tier, G.score, G.results.length - 1);
       reveal(r);
     }, reduce ? 0 : 1100);
@@ -603,8 +647,8 @@
     }
     if (!elegidas.length) return "";
     elegidas.sort(function (a, b) { return a.tier - b.tier; });
-    return '<div class="rv-sug"><span>Podías decir:</span>' + elegidas.map(function (a) {
-      return '<span class="sug">' + esc(a.name) + chip(a.tier) + "</span>";
+    return '<div class="rv-sug"><span>' + L("Podías decir:", "You could have said:") + "</span>" + elegidas.map(function (a) {
+      return '<span class="sug">' + esc(an(a.name, a.keys, p.q)) + chip(a.tier) + "</span>";
     }).join("") + "</div>";
   }
 
@@ -620,9 +664,9 @@
     for (i = 1; i < w.length; i++) if (w[i] && !/^(un|una|unos|unas|a|al|el|la|los|las|alguien|que|haya|cualquier|algo|lo|de|del)$/.test(w[i])) return w[i];
     return "";
   }
-  function wiki(params) {
-    var url = "https://es.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1" +
-      "&prop=extracts%7Cpageprops%7Cinfo&inprop=url&exintro=1&explaintext=1&exsentences=2&" + params;
+  function wiki(params, host) {
+    var url = "https://" + (host || "es") + ".wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1" +
+      "&prop=extracts%7Cpageprops%7Cinfo%7Clanglinks&lllang=en&inprop=url&exintro=1&explaintext=1&exsentences=2&" + params;
     var ctl = window.AbortController ? new AbortController() : null;
     if (ctl) setTimeout(function () { ctl.abort(); }, 6000);
     return fetch(url, ctl ? { signal: ctl.signal } : {}).then(function (res) { return res.json(); }).then(function (d) {
@@ -633,7 +677,7 @@
   function desamb(pg) { return pg.pageprops && "disambiguation" in pg.pageprops; }
   function frasePagina(pg) {
     // las páginas que son listas ("Anexo:Pokémon de la primera generación") no describen la respuesta
-    if (/^Anexo:/.test(pg.title) || /^(esta es una |la siguiente es una )?lista/i.test(pg.extract || "")) return null;
+    if (/^(Anexo:|List of )/.test(pg.title) || /^(esta es una |la siguiente es una |this is a |the following is a )?lista?\b/i.test(pg.extract || "")) return null;
     var t = (pg.extract || "").replace(/[\u200b\u200e]/g, "").replace(/\s+/g, " ").trim();
     // sin paréntesis (pronunciación, idioma original...), aunque estén anidados
     for (var antes = ""; antes !== t;) { antes = t; t = t.replace(/\s*\([^()]*\)/g, ""); }
@@ -641,10 +685,19 @@
     if (t.length > 230) t = t.slice(0, 227).replace(/\s+\S*$/, "") + "…";
     return { texto: t, url: pg.fullurl };
   }
+  // en inglés, el artículo en español encontrado lleva a su versión en la Wikipedia en inglés (si existe)
+  function enIdioma(pg) {
+    if (LANG !== "en") return frasePagina(pg);
+    var ll = pg.langlinks && pg.langlinks[0] && pg.langlinks[0]["*"];
+    if (!ll) return null;
+    return wiki("titles=" + encodeURIComponent(ll), "en").then(function (p2) {
+      return p2[0] && !("missing" in p2[0]) ? frasePagina(p2[0]) : null;
+    });
+  }
   function describir(a, q, el) {
     if (!el || !window.fetch) return;
     var nombre = a.name.replace(/\s\(\d{4}\)$/, ""), anio = (a.name.match(/\((\d{4})\)$/) || [])[1] || "";
-    var tema = palabraTema(q), clave = a.name + "|" + tema;
+    var tema = palabraTema(q), clave = a.name + "|" + tema + "|" + LANG;
     function poner(d) {
       DESC[clave] = d || false;
       if (!d || !el.isConnected) return;
@@ -659,34 +712,35 @@
         var pg = pgs[i], m = pg.title.match(/^(.*?)(?:\s*\(([^)]*)\))?$/), par = CC.norm(m[2] || "");
         if (desamb(pg) || a.keys.indexOf(CC.norm(m[1])) < 0) continue;
         if (par && !(anio && par.indexOf(anio) >= 0) && !(raiz && par.indexOf(raiz) >= 0)) continue;
-        return frasePagina(pg);
+        return enIdioma(pg);
       }
       if (anio) return null;
       // si no, el artículo con ese nombre exacto (o al que redirige), salvo que sea de desambiguación
       return wiki("titles=" + encodeURIComponent(nombre)).then(function (p2) {
         var pg = p2[0];
-        return !pg || "missing" in pg || desamb(pg) ? null : frasePagina(pg);
+        return !pg || "missing" in pg || desamb(pg) ? null : enIdioma(pg);
       });
     }).then(poner, function () { poner(null); });
   }
 
   function reveal(r) {
-    var m = r.tier >= 0, t = TIERS[r.tier];
+    var m = r.tier >= 0, t = TIERS[r.tier], nom = an(r.ans, G.acierto && G.acierto.keys, r.q);
     G.phase = "reveal";
     var last = MODES[G.mode].finite && G.idx + 1 >= G.deck.length;
     var head = m
-      ? '<div class="rv-ans">' + esc(r.ans) + "</div>" +
-        (r.typed ? '<div class="rv-fix">Escribiste «' + esc(r.typed) + "»; lo tomé como «" + esc(r.ans) + "».</div>" : "") +
-        (r.en ? '<div class="rv-fix">«' + esc(r.en) + "» en español es «" + esc(r.ans) + "».</div>" : "") +
-        '<div class="rv-row">' + chip(r.tier) + '<span class="rv-pts">+' + r.pts + " pts · baja " + r.pts * 10 + " m" +
+      ? '<div class="rv-ans">' + esc(nom) + "</div>" +
+        (r.typed ? '<div class="rv-fix">' + L("Escribiste «" + esc(r.typed) + "»; lo tomé como «" + esc(nom) + "».",
+          "You typed “" + esc(r.typed) + "”; I took it as “" + esc(nom) + "”.") + "</div>" : "") +
+        (r.en && LANG !== "en" ? '<div class="rv-fix">«' + esc(r.en) + "» en español es «" + esc(r.ans) + "».</div>" : "") +
+        '<div class="rv-row">' + chip(r.tier) + '<span class="rv-pts">+' + r.pts + L(" pts · baja ", " pts · down ") + r.pts * 10 + " m" +
         (G.mode === "contra" ? " · +" + t.s + " s" : "") + "</span></div>" +
         '<div class="rv-desc" id="rvDesc" hidden></div>'
-      : '<div class="rv-ans miss">' + esc(r.why) + '</div><div class="rv-row">' + chip(-1) +
+      : '<div class="rv-ans miss">' + esc(porque(r.why)) + '</div><div class="rv-row">' + chip(-1) +
         '<span class="rv-pts">+0 pts' + (r.pen ? " · -" + r.pen + " s" : "") + "</span></div>" +
         sugerencias(G.deck[G.idx]);
     $("zone").innerHTML =
       '<div class="reveal ' + (m ? "t-" + r.tier : "t-x") + '">' + head + "</div>" +
-      '<button class="btn" id="next" data-go="next">' + (last ? "Ver resultado" : "Siguiente") + "</button>";
+      '<button class="btn" id="next" data-go="next">' + (last ? L("Ver resultado", "See results") : L("Siguiente", "Next")) + "</button>";
     $("next").focus();
     if (m && G.acierto) describir(G.acierto, r.q, $("rvDesc"));
     drawTimer();
@@ -755,10 +809,9 @@
   }
 
   function shareText(o) {
-    var c = CC.cats[o.cat];
-    return GAME_NAME + " - " + c.name + " - " + MODES[o.mode].n + (o.mode === "diario" ? " " + (o.fecha || today()) : "") + "\n" +
-      o.results.map(function (r, i) { return (i + 1) + ". " + (r.tier < 0 ? "nada" : TIERS[r.tier].n); }).join("\n") + "\n" +
-      "Cavé " + meters(o.score) + " (" + o.score + " pts)";
+    return GAME_NAME + " - " + cn(o.cat) + " - " + mn(o.mode) + (o.mode === "diario" ? " " + (o.fecha || today()) : "") + "\n" +
+      o.results.map(function (r, i) { return (i + 1) + ". " + (r.tier < 0 ? L("nada", "nothing") : tn(r.tier)); }).join("\n") + "\n" +
+      L("Cavé ", "I dug ") + meters(o.score) + " (" + o.score + " pts)";
   }
 
   // ---------- Curva de campana del resultado ----------
@@ -790,7 +843,9 @@
       for (var j = 0; j < d.length && j <= k; j++) a += j < k ? d[j] : d[j] / 2;
       return a;
     }
-    function frase(q) { return q < 0.01 ? "menos del 1%" : q > 0.99 ? "más del 99%" : "el " + Math.round(q * 100) + "%"; }
+    function frase(q) {
+      return q < 0.01 ? L("menos del 1%", "less than 1%") : q > 0.99 ? L("más del 99%", "over 99%") : L("el ", "") + Math.round(q * 100) + "%";
+    }
     // la curva exacta va en escalones de 5 puntos; se suaviza para que se vea como campana
     var bw = Math.max(8, sd * 0.35);
     function alto(p) {
@@ -810,19 +865,21 @@
     }
     var tx = X(o.score), ty = Y(alto(o.score)), q = pct(o.score);
     var ancla = tx < 60 ? "start" : tx > W - 60 ? "end" : "middle";
-    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Curva estimada de puntajes; cavaste más hondo que ' + frase(q) + ' de los jugadores">' +
+    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + L("Curva estimada de puntajes; cavaste más hondo que ", "Estimated score curve; you beat ") + frase(q) +
+      L(" de los jugadores", " of players") + '">' +
       '<path class="curva-area" d="' + area + '"/><path class="curva-linea" d="' + linea + '"/>' +
       '<line class="curva-base" x1="16" x2="' + (W - 16) + '" y1="' + (H - pie) + '" y2="' + (H - pie) + '"/>' + eje +
       '<line class="curva-guia" id="curvaGuia" x1="0" x2="0" y1="' + top + '" y2="' + (H - pie) + '"/>' +
       '<line class="curva-tu" x1="' + tx.toFixed(1) + '" x2="' + tx.toFixed(1) + '" y1="' + (ty - 4).toFixed(1) + '" y2="' + (H - pie) + '"/>' +
       '<circle class="curva-punto" cx="' + tx.toFixed(1) + '" cy="' + ty.toFixed(1) + '" r="7"/>' +
-      '<text class="curva-tu-txt" x="' + tx.toFixed(1) + '" y="' + Math.max(12, ty - 14).toFixed(1) + '" text-anchor="' + ancla + '">TÚ</text></svg>';
+      '<text class="curva-tu-txt" x="' + tx.toFixed(1) + '" y="' + Math.max(12, ty - 14).toFixed(1) + '" text-anchor="' + ancla + '">' + L("TÚ", "YOU") + "</text></svg>";
     return {
-      html: '<section class="panel curva"><h2>¿Qué tan hondo cavaste?</h2>' +
-        '<p class="curva-txt">Cavaste más hondo que <b>' + frase(q) + "</b> de los jugadores.</p>" +
+      html: '<section class="panel curva"><h2>' + L("¿Qué tan hondo cavaste?", "How deep did you dig?") + "</h2>" +
+        '<p class="curva-txt">' + L("Cavaste más hondo que <b>", "You beat <b>") + frase(q) + L("</b> de los jugadores.", "</b> of players.") + "</p>" +
         '<div class="curva-box" id="curva">' + svg + '<div class="curva-tip" id="curvaTip" hidden></div></div>' +
-        '<p class="nota">Es una estimación: todavía no hay puntajes de otros jugadores, así que la curva sale de cómo le suele ir a una persona en ' +
-        n + (n === 1 ? " consigna." : " consignas.") + "</p></section>",
+        '<p class="nota">' + L("Es una estimación: todavía no hay puntajes de otros jugadores, así que la curva sale de cómo le suele ir a una persona en ",
+          "This is an estimate: there are no scores from other players yet, so the curve comes from how a typical person does on ") +
+        n + (n === 1 ? L(" consigna.", " prompt.") : L(" consignas.", " prompts.")) + "</p></section>",
       activar: function () {
         var box = $("curva"), tip = $("curvaTip"), guia = $("curvaGuia");
         if (!box) return;
@@ -830,7 +887,7 @@
           var r = box.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width * W;
           var pts = Math.round(Math.max(0, Math.min(max, (fx - 16) / (W - 32) * max)) / 5) * 5;
           tip.hidden = false;
-          tip.textContent = meters(pts) + ": más hondo que " + frase(pct(pts));
+          tip.textContent = meters(pts) + L(": más hondo que ", ": beats ") + frase(pct(pts));
           tip.style.left = Math.max(90, Math.min(r.width - 90, e.clientX - r.left)) + "px";
           guia.setAttribute("x1", X(pts)); guia.setAttribute("x2", X(pts)); guia.style.opacity = 1;
         });
@@ -842,16 +899,17 @@
   var shown = null;
   function results(o) {
     stopTimer(); shown = o;
+    vista = function () { results(Object.assign({}, o, { stored: true })); };
     var c = CC.cats[o.cat], fin = MODES[o.mode].finite;
     var hits = o.results.filter(function (r) { return r.tier >= 0; }).length;
     var avg = hits ? o.score / hits : 0;
     if (!o.stored) SFX.done(hits > 0, !!o.record);
-    var say = !hits ? "Hoy no encontré nada… ¡otra vez!"
-      : avg >= 75 ? "¡GUAU! ¡Puro tesoro enterrado!"
-      : avg >= 45 ? "¡Buen hoyo! Olí cosas muy raras."
-      : "Cavé un poco. La próxima, algo más raro.";
+    var say = !hits ? L("Hoy no encontré nada… ¡otra vez!", "Found nothing this time… again!")
+      : avg >= 75 ? L("¡GUAU! ¡Puro tesoro enterrado!", "WOOF! Nothing but buried treasure!")
+      : avg >= 45 ? L("¡Buen hoyo! Olí cosas muy raras.", "Nice hole! I sniffed out some rare stuff.")
+      : L("Cavé un poco. La próxima, algo más raro.", "I dug a little. Next time, something rarer.");
     var rows = o.results.map(function (r, i) {
-      return '<tr style="--i:' + i + '"><td>' + esc(r.q) + "</td><td>" + esc(r.ans || "—") + "</td><td>" +
+      return '<tr style="--i:' + i + '"><td>' + esc(qt(r.q)) + "</td><td>" + esc(r.ans ? an(r.ans, null, r.q) : "—") + "</td><td>" +
         chip(r.tier) + "</td><td>+" + r.pts + "</td></tr>";
     }).join("");
     var curva = campana(o);
@@ -859,21 +917,22 @@
       return '<span style="--i:' + i + '">' + Corgi.item(r.tier, 40) + "</span>";
     }).join("");
     show(
-      '<header class="bar"><button class="btn ghost" data-go="home">Inicio</button>' +
-      '<h1 style="--c:' + c.color + '">' + catIcon(o.cat, 22) + esc(c.name) + " · " + MODES[o.mode].n + "</h1><span></span></header>" +
+      '<header class="bar"><button class="btn ghost" data-go="home">' + L("Inicio", "Home") + "</button>" +
+      '<h1 style="--c:' + c.color + '">' + catIcon(o.cat, 22) + esc(cn(o.cat)) + " · " + mn(o.mode) + "</h1><span></span></header>" +
       '<main class="results">' +
       '<section class="panel score"><div class="stage">' + Corgi.svg(save.corgi, 168, hits ? "happy" : "sadloop") +
       '<div class="mound"></div></div><div><div class="bubble">' + say + "</div>" +
       '<div class="big" id="big">0 m</div><div class="haul">' + haul + "</div>" +
-      '<div class="sub">' + o.score + " pts · " + hits + " de " + o.results.length + " consignas" +
-      (fin ? " · máximo " + meters(700) : "") + (o.record ? ' · <b class="rec">NUEVO RÉCORD</b>' : "") + "</div>" +
-      (o.mode === "diario" ? '<div class="sub">Vuelve mañana por un diario nuevo.</div>' : "") +
+      '<div class="sub">' + o.score + " pts · " + hits + L(" de ", " of ") + o.results.length + L(" consignas", " prompts") +
+      (fin ? L(" · máximo ", " · max ") + meters(700) : "") + (o.record ? ' · <b class="rec">' + L("NUEVO RÉCORD", "NEW RECORD") + "</b>" : "") + "</div>" +
+      (o.mode === "diario" ? '<div class="sub">' + L("Vuelve mañana por un diario nuevo.", "Come back tomorrow for a new daily.") + "</div>" : "") +
       '<div class="acts">' +
-      (o.mode !== "diario" ? '<button class="btn" data-go="again">Jugar de nuevo</button>' : "") +
-      '<button class="btn alt" data-go="share">Copiar resultado</button></div></div></section>' +
+      (o.mode !== "diario" ? '<button class="btn" data-go="again">' + L("Jugar de nuevo", "Play again") + "</button>" : "") +
+      '<button class="btn alt" data-go="share">' + L("Copiar resultado", "Copy result") + "</button></div></div></section>" +
       curva.html +
-      '<section class="panel"><h2>Tu excavación</h2>' +
-      (rows ? '<table class="rt"><tr><th>Consigna</th><th>Tu respuesta</th><th>Hallazgo</th><th>Pts</th></tr>' + rows + "</table>" : "<p>No respondiste ninguna consigna.</p>") +
+      '<section class="panel"><h2>' + L("Tu excavación", "Your dig") + "</h2>" +
+      (rows ? '<table class="rt"><tr><th>' + L("Consigna", "Prompt") + "</th><th>" + L("Tu respuesta", "Your answer") + "</th><th>" +
+        L("Hallazgo", "Find") + "</th><th>Pts</th></tr>" + rows + "</table>" : "<p>" + L("No respondiste ninguna consigna.", "You didn't answer any prompt.") + "</p>") +
       "</section></main>"
     );
     if (curva.activar) curva.activar();
@@ -889,11 +948,11 @@
   }
 
   function copy(text, btn) {
-    function ok() { btn.textContent = "Copiado"; }
+    function ok() { btn.textContent = L("Copiado", "Copied"); }
     function fallback() {
       var ta = document.createElement("textarea");
       ta.value = text; document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); ok(); } catch (e) { btn.textContent = "No se pudo copiar"; }
+      try { document.execCommand("copy"); ok(); } catch (e) { btn.textContent = L("No se pudo copiar", "Couldn't copy"); }
       ta.remove();
     }
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback);
@@ -925,56 +984,61 @@
 
   function panelPage(title, inner) {
     show(
-      '<header class="bar"><button class="btn ghost" data-go="home">Inicio</button>' +
+      '<header class="bar"><button class="btn ghost" data-go="home">' + L("Inicio", "Home") + "</button>" +
       '<h1 style="--c:#f6c12d">' + esc(title) + "</h1><span></span></header>" +
       '<main class="login"><section class="panel">' + inner + "</section></main>"
     );
   }
-  function wait(text) { panelPage("Un momento", '<p class="big-note">' + esc(text) + "</p>"); }
+  function wait(text) { panelPage(L("Un momento", "One moment"), '<p class="big-note">' + esc(text) + "</p>"); }
   function problem(text, retry) {
     retryFn = retry;
-    panelPage("Sin conexión", "<p>" + esc(text) + '</p><div class="acts"><button class="btn" data-go="retry">Reintentar</button>' +
-      '<button class="btn ghost" data-go="home">Volver</button></div>');
+    panelPage(L("Sin conexión", "Offline"), "<p>" + esc(text) + '</p><div class="acts"><button class="btn" data-go="retry">' + L("Reintentar", "Retry") + "</button>" +
+      '<button class="btn ghost" data-go="home">' + L("Volver", "Back") + "</button></div>");
   }
 
   function whoPanel() {
     if (!Online.enabled) return "";
-    return '<section class="panel who"><h2>Jugador</h2>' + (save.player
-      ? '<p class="whoami">Juegas como <b>' + esc(save.player.apodo) + '</b></p><div class="acts">' +
-        '<button class="btn" data-go="board">Tabla de posiciones</button>' +
-        '<button class="btn ghost small" data-go="logout">Cambiar</button></div>'
-      : "<p>Entra con un apodo y un PIN para jugar el diario y aparecer en la tabla.</p><div class=\"acts\">" +
-        '<button class="btn" data-go="login">Entrar</button><button class="btn ghost" data-go="board">Ver tabla</button></div>') +
+    return '<section class="panel who"><h2>' + L("Jugador", "Player") + "</h2>" + (save.player
+      ? '<p class="whoami">' + L("Juegas como ", "Playing as ") + "<b>" + esc(save.player.apodo) + '</b></p><div class="acts">' +
+        '<button class="btn" data-go="board">' + L("Tabla de posiciones", "Leaderboard") + "</button>" +
+        '<button class="btn ghost small" data-go="logout">' + L("Cambiar", "Switch") + "</button></div>"
+      : "<p>" + L("Entra con un apodo y un PIN para jugar el diario y aparecer en la tabla.", "Sign in with a nickname and a PIN to play the daily and appear on the leaderboard.") +
+        '</p><div class="acts"><button class="btn" data-go="login">' + L("Entrar", "Sign in") + '</button><button class="btn ghost" data-go="board">' +
+        L("Ver tabla", "View leaderboard") + "</button></div>") +
       "</section>";
   }
 
   function loginScreen(after, note) {
     loginAfter = after;
-    panelPage("Jugador",
-      "<h2>Tu apodo y tu PIN</h2>" +
-      "<p>Si el apodo es nuevo, se crea con ese PIN. Si ya existe, tienes que poner el mismo PIN. " +
-      "El PIN sirve para que nadie más use tu nombre; no lo compartas.</p>" +
+    panelPage(L("Jugador", "Player"),
+      "<h2>" + L("Tu apodo y tu PIN", "Your nickname and PIN") + "</h2><p>" +
+      L("Si el apodo es nuevo, se crea con ese PIN. Si ya existe, tienes que poner el mismo PIN. " +
+        "El PIN sirve para que nadie más use tu nombre; no lo compartas.",
+        "If the nickname is new, it's created with that PIN. If it already exists, you have to enter the same PIN. " +
+        "The PIN keeps anyone else from using your name; don't share it.") + "</p>" +
       '<form id="loginform" class="lform" autocomplete="off">' +
-      '<label>Apodo<input id="lnick" type="text" maxlength="20" spellcheck="false" placeholder="2 a 20 caracteres"></label>' +
-      '<label>PIN<input id="lpin" type="password" maxlength="12" placeholder="4 a 12 caracteres"></label>' +
-      '<button class="btn" type="submit">Entrar</button></form>' +
+      "<label>" + L("Apodo", "Nickname") + '<input id="lnick" type="text" maxlength="20" spellcheck="false" placeholder="' + L("2 a 20 caracteres", "2 to 20 characters") + '"></label>' +
+      '<label>PIN<input id="lpin" type="password" maxlength="12" placeholder="' + L("4 a 12 caracteres", "4 to 12 characters") + '"></label>' +
+      '<button class="btn" type="submit">' + L("Entrar", "Sign in") + "</button></form>" +
       '<div class="fb' + (note ? " bad" : "") + '" id="lerr">' + esc(note || "") + "</div>");
     var n = $("lnick"); if (n) n.focus();
   }
 
   var LOGIN_ERR = {
-    apodo: "El apodo debe tener de 2 a 20 caracteres: letras, números, punto, guion o guion bajo.",
-    pin_formato: "El PIN debe tener entre 4 y 12 caracteres.",
-    apodo_parecido: "Ya existe un apodo igual pero con otras mayúsculas o minúsculas. Escríbelo tal cual.",
-    pin: "Ese apodo ya existe y el PIN no coincide."
+    apodo: ["El apodo debe tener de 2 a 20 caracteres: letras, números, punto, guion o guion bajo.",
+      "Nicknames need 2 to 20 characters: letters, numbers, period, hyphen or underscore."],
+    pin_formato: ["El PIN debe tener entre 4 y 12 caracteres.", "The PIN needs 4 to 12 characters."],
+    apodo_parecido: ["Ya existe un apodo igual pero con otras mayúsculas o minúsculas. Escríbelo tal cual.",
+      "That nickname already exists with different capitalization. Type it exactly."],
+    pin: ["Ese apodo ya existe y el PIN no coincide.", "That nickname exists and the PIN doesn't match."]
   };
 
   function doLogin() {
     var nick = $("lnick").value.trim(), pin = $("lpin").value, err = $("lerr");
-    if (!nick || !pin) { err.className = "fb bad"; err.textContent = "Escribe tu apodo y tu PIN."; return; }
-    err.className = "fb"; err.textContent = "Entrando…";
+    if (!nick || !pin) { err.className = "fb bad"; err.textContent = L("Escribe tu apodo y tu PIN.", "Enter your nickname and PIN."); return; }
+    err.className = "fb"; err.textContent = L("Entrando…", "Signing in…");
     Online.entrar({ apodo: nick, pin: pin }).then(function (r) {
-      if (!r.ok) { err.className = "fb bad"; err.textContent = LOGIN_ERR[r.error] || "No se pudo entrar."; return; }
+      if (!r.ok) { err.className = "fb bad"; err.textContent = LOGIN_ERR[r.error] ? L(LOGIN_ERR[r.error][0], LOGIN_ERR[r.error][1]) : L("No se pudo entrar.", "Couldn't sign in."); return; }
       save.player = { apodo: nick, pin: pin };
       // los récords que ya tenías en este navegador también suben a la tabla
       Object.keys(save.best).forEach(function (cat) {
@@ -985,70 +1049,73 @@
       persist(); flush();
       if (loginAfter) loginAfter(); else home();
     }).catch(function () {
-      err.className = "fb bad"; err.textContent = "No pude conectar con el servidor. Revisa tu conexión.";
+      err.className = "fb bad"; err.textContent = L("No pude conectar con el servidor. Revisa tu conexión.", "Couldn't reach the server. Check your connection.");
     });
   }
 
   // Empezar una partida. El diario, con conexión, pasa antes por el servidor, que lleva la cuenta de quién ya lo jugó.
   function begin(cat, mode) {
     if (mode !== "diario" || !Online.enabled) return start(cat, mode);
-    if (!save.player) return loginScreen(function () { begin(cat, mode); }, "Para jugar el diario necesitas entrar.");
+    if (!save.player) return loginScreen(function () { begin(cat, mode); }, L("Para jugar el diario necesitas entrar.", "You need to sign in to play the daily."));
     var again = function () { begin(cat, mode); };
-    wait("Consultando el diario de hoy…");
+    wait(L("Consultando el diario de hoy…", "Checking today's daily…"));
     Online.fecha().then(function (fecha) {
       var d = save.daily[cat];
       if (d && d.date === fecha) return start(cat, "diario", fecha);
       return Online.iniciar(save.player, cat).then(function (r) {
         if (r.ok) return start(cat, "diario", String(r.fecha || fecha).slice(0, 10));
-        if (r.error === "pin") { save.player = null; persist(); return loginScreen(again, "El PIN ya no coincide. Entra otra vez."); }
+        if (r.error === "pin") { save.player = null; persist(); return loginScreen(again, L("El PIN ya no coincide. Entra otra vez.", "The PIN no longer matches. Sign in again.")); }
         if (r.error === "ya_jugado") return playedScreen(cat, r);
-        return problem("No se pudo empezar el diario (" + r.error + ").", again);
+        return problem(L("No se pudo empezar el diario (", "Couldn't start the daily (") + r.error + ").", again);
       });
     }).catch(function () {
-      problem("No hay conexión con el servidor. El diario la necesita para llevar la cuenta de quién ya lo jugó.", again);
+      problem(L("No hay conexión con el servidor. El diario la necesita para llevar la cuenta de quién ya lo jugó.",
+        "No connection to the server. The daily needs it to keep track of who already played."), again);
     });
   }
 
   function playedScreen(cat, r) {
-    panelPage("Diario de hoy",
-      "<h2>Ya jugaste este diario</h2><p>" + (r.terminado
-        ? "Tu resultado de hoy en " + esc(CC.cats[cat].name) + " fue de <b>" + meters(r.puntos || 0) + "</b>."
-        : "Ya empezaste el diario de hoy en " + esc(CC.cats[cat].name) + " (quizá en otro dispositivo) y cuenta como jugado.") +
-      "</p><p>Vuelve mañana por uno nuevo. Mientras tanto puedes jugar los otros modos.</p>" +
-      '<div class="acts"><button class="btn" data-go="board">Ver la tabla</button>' +
-      '<button class="btn ghost" data-go="home">Inicio</button></div>');
+    panelPage(L("Diario de hoy", "Today's daily"),
+      "<h2>" + L("Ya jugaste este diario", "You already played this daily") + "</h2><p>" + (r.terminado
+        ? L("Tu resultado de hoy en ", "Your result today in ") + esc(cn(cat)) + L(" fue de <b>", " was <b>") + meters(r.puntos || 0) + "</b>."
+        : L("Ya empezaste el diario de hoy en ", "You already started today's daily in ") + esc(cn(cat)) +
+          L(" (quizá en otro dispositivo) y cuenta como jugado.", " (maybe on another device), so it counts as played.")) +
+      "</p><p>" + L("Vuelve mañana por uno nuevo. Mientras tanto puedes jugar los otros modos.", "Come back tomorrow for a new one. Meanwhile you can play the other modes.") + "</p>" +
+      '<div class="acts"><button class="btn" data-go="board">' + L("Ver la tabla", "View leaderboard") + "</button>" +
+      '<button class="btn ghost" data-go="home">' + L("Inicio", "Home") + "</button></div>");
   }
 
-  var BOARD_MODES = [["diario", "Hoy"], ["clasico", "Libre"], ["sinfinal", "Sin final"], ["contra", "Contrarreloj"]];
+  var BOARD_MODES = [["diario", "Hoy", "Today"], ["clasico", "Libre", "Free play"], ["sinfinal", "Sin final", "Endless"], ["contra", "Contrarreloj", "Time attack"]];
   function board() {
+    vista = board;
     var tok = ++boardTok, v = boardView, me = save.player && save.player.apodo;
     var cats = CC.order.map(function (id) {
-      return '<button class="tab' + (id === v.cat ? " on" : "") + '" data-bcat="' + id + '">' + esc(CC.cats[id].name) + "</button>";
+      return '<button class="tab' + (id === v.cat ? " on" : "") + '" data-bcat="' + id + '">' + esc(cn(id)) + "</button>";
     }).join("");
     var modes = BOARD_MODES.map(function (m) {
-      return '<button class="tab' + (m[0] === v.modo ? " on" : "") + '" data-bmode="' + m[0] + '">' + m[1] + "</button>";
+      return '<button class="tab' + (m[0] === v.modo ? " on" : "") + '" data-bmode="' + m[0] + '">' + L(m[1], m[2]) + "</button>";
     }).join("");
     show(
-      '<header class="bar"><button class="btn ghost" data-go="home">Inicio</button>' +
-      '<h1 style="--c:#f6c12d">Tabla de posiciones</h1><span></span></header>' +
+      '<header class="bar"><button class="btn ghost" data-go="home">' + L("Inicio", "Home") + "</button>" +
+      '<h1 style="--c:#f6c12d">' + L("Tabla de posiciones", "Leaderboard") + "</h1><span></span></header>" +
       '<main class="login"><section class="panel"><div class="tabs">' + cats + '</div><div class="tabs">' + modes +
-      '</div><div id="boardbody" class="boardbody"><p>Cargando…</p></div></section></main>'
+      '</div><div id="boardbody" class="boardbody"><p>' + L("Cargando…", "Loading…") + '</p></div></section></main>'
     );
-    if (!Online.enabled) { $("boardbody").innerHTML = "<p>La tabla en línea todavía no está conectada.</p>"; return; }
+    if (!Online.enabled) { $("boardbody").innerHTML = "<p>" + L("La tabla en línea todavía no está conectada.", "The online leaderboard isn't connected yet.") + "</p>"; return; }
     var req = v.modo === "diario" ? Online.tablaDiaria(v.cat) : Online.tablaRecords(v.cat, v.modo);
     req.then(function (rows) {
       if (tok !== boardTok || !$("boardbody")) return;
       if (!rows.length) {
-        $("boardbody").innerHTML = "<p>" + (v.modo === "diario" ? "Nadie ha terminado el diario de hoy todavía." : "Todavía no hay récords aquí.") + "</p>";
+        $("boardbody").innerHTML = "<p>" + (v.modo === "diario" ? L("Nadie ha terminado el diario de hoy todavía.", "Nobody has finished today's daily yet.") : L("Todavía no hay récords aquí.", "No records here yet.")) + "</p>";
         return;
       }
-      $("boardbody").innerHTML = '<table class="rank"><tr><th>#</th><th>Jugador</th><th>Profundidad</th><th>Puntos</th></tr>' +
+      $("boardbody").innerHTML = '<table class="rank"><tr><th>#</th><th>' + L("Jugador", "Player") + "</th><th>" + L("Profundidad", "Depth") + "</th><th>" + L("Puntos", "Points") + '</th></tr>' +
         rows.map(function (r, i) {
           return '<tr class="' + (r.apodo === me ? "me" : "") + '" style="--i:' + i + '"><td>' + (i + 1) + "</td><td>" + esc(r.apodo) +
             "</td><td>" + meters(r.puntos) + "</td><td>" + r.puntos + "</td></tr>";
         }).join("") + "</table>";
     }).catch(function () {
-      if (tok === boardTok && $("boardbody")) $("boardbody").innerHTML = "<p>No pude cargar la tabla. Revisa tu conexión.</p>";
+      if (tok === boardTok && $("boardbody")) $("boardbody").innerHTML = "<p>" + L("No pude cargar la tabla. Revisa tu conexión.", "Couldn't load the leaderboard. Check your connection.") + "</p>";
     });
   }
 
@@ -1074,6 +1141,7 @@
         return finish();
       case "again": return start(shown.cat, shown.mode);
       case "share": return copy(shareText(shown), el);
+      case "ajustes": return ajustes();
     }
   });
   app.addEventListener("submit", function (e) {
@@ -1093,14 +1161,56 @@
     if (e.target.id === "ans" && e.key.length === 1) SFX.key();
   });
 
-  var muteBtn = $("mute");
-  function paintMute() { muteBtn.textContent = "Sonido: " + (save.sound !== false ? "sí" : "no"); }
-  muteBtn.addEventListener("click", function () {
-    save.sound = save.sound === false;
-    SFX.setOn(save.sound);
-    persist(); paintMute(); SFX.click();
+  // ---------- Ajustes: idioma y sonido ----------
+  var vista = null, gear = $("ajustes");
+  function paintGear() { gear.innerHTML = engrane(16) + "<span>" + L("Ajustes", "Settings") + "</span>"; }
+  function opcion(k, v, txt, on) {
+    return '<button class="tab' + (on ? " on" : "") + '" type="button" data-aj="' + k + '" data-v="' + v + '" aria-pressed="' + on + '">' + txt + "</button>";
+  }
+  function cerrarAjustes() { var c = $("ajustesCapa"); if (c) c.remove(); }
+  function ajustes(otraVez) {
+    cerrarAjustes();
+    var capa = document.createElement("div");
+    capa.id = "ajustesCapa"; capa.className = "capa";
+    capa.innerHTML = '<section class="panel ajustes' + (otraVez ? " quieta" : "") + '" role="dialog" aria-modal="true" aria-labelledby="ajTit">' +
+      '<h2 id="ajTit">' + L("Ajustes", "Settings") + "</h2>" +
+      '<div class="aj-fila"><span>' + L("Idioma", "Language") + '</span><div class="aj-ops">' +
+      opcion("lang", "es", "Español", LANG === "es") + opcion("lang", "en", "English", LANG === "en") + "</div></div>" +
+      '<div class="aj-fila"><span>' + L("Sonido", "Sound") + '</span><div class="aj-ops">' +
+      opcion("sound", "1", L("Sí", "On"), save.sound !== false) + opcion("sound", "0", L("No", "Off"), save.sound === false) + "</div></div>" +
+      (LANG === "en" ? '<p class="aj-nota">The answer bank is in Spanish. Common words and most names also work in English, ' +
+        "and answers show in English when the game knows the translation.</p>" : "") +
+      '<div class="acts"><button class="btn" type="button" data-aj="cerrar">' + L("Listo", "Done") + "</button></div></section>";
+    document.body.appendChild(capa);
+    var on = capa.querySelector(".tab.on");
+    if (on) on.focus();
+  }
+  function cambiarIdioma(l) {
+    if (l === LANG) return;
+    LANG = l; save.lang = l; persist();
+    document.documentElement.lang = l;
+    paintGear();
+    if (G && $("q")) {
+      // a media partida solo se traduce la consigna en pantalla; el resto cambia en la siguiente
+      $("q").textContent = qt(G.deck[G.idx].q);
+    } else if (vista) vista();
+  }
+  document.addEventListener("click", function (e) {
+    var capa = $("ajustesCapa");
+    if (!capa) return;
+    var b = e.target.closest("[data-aj]");
+    if (!b) { if (e.target === capa) cerrarAjustes(); return; }
+    SFX.click();
+    if (b.dataset.aj === "cerrar") return cerrarAjustes();
+    if (b.dataset.aj === "lang") cambiarIdioma(b.dataset.v);
+    if (b.dataset.aj === "sound") { save.sound = b.dataset.v === "1"; SFX.setOn(save.sound); persist(); }
+    ajustes(true);
   });
-  paintMute();
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && $("ajustesCapa")) { cerrarAjustes(); var a = $("ans"); if (a) a.focus(); }
+  });
+  gear.addEventListener("click", function () { SFX.click(); ajustes(); });
+  paintGear();
 
 
   // ---------- Fondo de la página: cielo pintado y tierra con textura ----------

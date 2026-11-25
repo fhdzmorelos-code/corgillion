@@ -252,9 +252,13 @@
       c.prompts.forEach(function (pr) {
         if (pr.q !== row[0]) { return; }
         var claves = {};
-        pr.answers.forEach(function (a) { a.keys.forEach(function (k) { claves[k] = 1; }); });
+        pr.answers.forEach(function (a) { a.keys.forEach(function (k) { claves[k] = a; }); });
         nuevas.forEach(function (a) {
-          if (!a.keys.some(function (k) { return claves[k]; })) { pr.answers.push(a); }
+          var ya = null;
+          a.keys.forEach(function (k) { if (!ya && claves[k]) ya = claves[k]; });
+          if (!ya) { pr.answers.push(a); a.keys.forEach(function (k) { claves[k] = a; }); return; }
+          // la respuesta ya estaba: sus otros nombres (por ejemplo el inglés "Ice Beam") pasan a ser alias de la existente
+          a.keys.forEach(function (k) { if (!claves[k]) { ya.keys.push(k); claves[k] = ya; } });
         });
       });
     });
