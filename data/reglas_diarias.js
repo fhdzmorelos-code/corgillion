@@ -78,3 +78,14 @@ CC.regla("pokemon", { since: "2026-11-25" }, [
   ["Nombra un Pokémon de la quinta generación de un solo tipo", {"gen": 5, "num_tipos": 1}],
   ["Nombra un Pokémon de tipo Hada que también tenga otro tipo", {"tipo": ["Hada"], "num_tipos": 2}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-26" }, [
+  ["Nombra un Pokémon cuyo nombre en español empiece con la letra A", {"empieza": "a"}],
+  ["Nombra un Pokémon de la sexta generación con dos tipos", {"gen": 6, "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Normal con 100 o más de ataque base", {"tipo": ["Normal"], "ataque_min": 100}],
+  ["Nombra un Pokémon que pueda tener la habilidad Electricidad Estática", {"habilidad": "Electricidad Estática"}],
+  ["Nombra un Pokémon de tipo Roca que pese 20 kilos o menos", {"tipo": ["Roca"], "peso_max": 20}],
+  ["Nombra un Pokémon de tipo Volador que no sea de tipo Normal", {"tipo": ["Volador"], "sin_tipo": ["Normal"]}],
+  ["Nombra un Pokémon de tipo Siniestro que también tenga otro tipo", {"tipo": ["Siniestro"], "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Fuego que también tenga otro tipo", {"tipo": ["Fuego"], "num_tipos": 2}]
+]);

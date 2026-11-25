@@ -45,6 +45,14 @@
   ["Nombra un país de África con más de 30 millones de habitantes", {"tipo": "pais", "continente": "África", "pob_min": 30000000}],
   ["Nombra un país de Europa con menos de 5 millones de habitantes", {"tipo": "pais", "continente": "Europa", "pob_max": 5000000}],
   ["Nombra un volcán de Japón, Indonesia o Filipinas", {"tipo": "volcan", "pais": ["JPN", "IDN", "PHL"], "fama_min": 20}]
+ ]},
+ {"since": "2026-11-26", "filas": [
+  ["Nombra un río que pase por Estados Unidos", {"tipo": "rio", "pais": "USA", "fama_min": 30}],
+  ["Nombra una capital nacional cuyo nombre empiece con la letra S o con la letra T", {"tipo": "capital", "empieza": ["s", "t"]}],
+  ["Nombra una ciudad de México cuyo nombre empiece con la letra S o con la letra T", {"tipo": "ciudad", "pais": "MEX", "empieza": ["s", "t"]}],
+  ["Nombra un país de América con más de 10 millones de habitantes", {"tipo": "pais", "continente": "América", "pob_min": 10000000}],
+  ["Nombra un país cuyo nombre en español tenga exactamente seis letras", {"tipo": "pais", "letras": 6}],
+  ["Nombra un país de África cuyo nombre empiece con M, con N o con S", {"tipo": "pais", "continente": "África", "empieza": ["m", "n", "s"]}]
  ]}
  ],
  "completar": [

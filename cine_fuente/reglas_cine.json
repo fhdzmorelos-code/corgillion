@@ -56,6 +56,9 @@
  ]},
  {"since": "2026-11-25", "filas": [
   ["Nombra una película en la que actúe Brad Pitt", {"reparto": "Q35332"}]
+ ]},
+ {"since": "2026-11-26", "filas": [
+  ["Nombra una película de fantasía (Fantasy en IMDb, 1,000+ votos)", {"genero": "Fantasy"}]
  ]}
  ],
  "completar": [

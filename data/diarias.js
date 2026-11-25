@@ -1569,3 +1569,179 @@ CC.add("geografia", { since: "2026-11-25" }, [
     "Templo de Filé/Filae;Templo de Edfu/Edfu;Kom Ombo;Lago Nasser/Lago Náser;Ciudadela de Saladino/Ciudadela de El Cairo;Mezquita de Muhammad Ali/Mezquita de Alabastro;Khan el-Khalili;Monasterio de Santa Catalina;Plaza Tahrir;Oasis de Siwa/Siwa",
     "Templo de Dendera/Dendera;Abidos;Dahshur/Pirámide acodada;Desierto Blanco;Medinet Habu;Rameseum/Ramesseum;Columna de Pompeyo;Catacumbas de Kom el-Shoqafa;Torre de El Cairo"]
 ]);
+
+CC.add("clasica", { since: "2026-11-26" }, [
+  ["Nombra un alimento o una bebida que se haga con maíz",
+    "Tortilla/Tortillas;Tamal/Tamales;Elote/Elotes/Mazorca;Palomitas/Palomitas de maíz/Rosetas de maíz",
+    "Pozole;Esquites/Elote en vaso;Atole;Tostada/Tostadas;Totopos/Nachos;Quesadilla/Quesadillas;Sope/Sopes;Gordita/Gorditas;Taco/Tacos;Enchilada/Enchiladas;Chilaquiles",
+    "Arepa/Arepas;Huarache/Huaraches;Tlacoyo/Tlacoyos;Pan de elote;Champurrado;Cereal de maíz/Corn flakes/Hojuelas de maíz;Polenta;Chalupa/Chalupas",
+    "Tejuino;Pinole;Chicha/Chicha morada;Tlayuda/Tlayudas;Panucho/Panuchos;Pupusa/Pupusas;Uchepo/Uchepos;Memela/Memelas;Molote/Molotes;Whisky bourbon/Bourbon",
+    "Pozol;Humita/Humitas;Maicena/Fécula de maíz;Jarabe de maíz;Aceite de maíz;Mote;Cachapa/Cachapas;Corunda/Corundas",
+    "Tesgüino;Chilate;Nicuatole;Tascalate"],
+
+  ["Nombra un animal nocturno",
+    "Búho/Búhos;Murciélago/Murciélagos;Lechuza/Lechuzas",
+    "Mapache/Mapaches;Tlacuache/Zarigüeya/Zarigüeyas;Luciérnaga/Luciérnagas;Polilla/Polillas;Zorrillo/Mofeta",
+    "Erizo/Erizos;Hámster/Hámsteres;Grillo/Grillos;Cucaracha/Cucarachas;Alacrán/Escorpión;Zorro/Zorros;Armadillo/Armadillos",
+    "Tarsero;Kiwi;Puercoespín;Tejón;Hiena;Ocelote;Cacomixtle;Gecko/Geco",
+    "Aye-aye;Loris/Lori perezoso;Gálago;Kinkajú/Martucha;Chotacabras;Mono nocturno/Mono búho",
+    "Nictibio/Pájaro estaca/Potoo;Kakapo/Kākāpō;Ornitorrinco;Wombat/Uombat"],
+
+  ["Nombra algo que se pueda encontrar en un jardín",
+    "Pasto/Césped/Zacate;Flor/Flores;Árbol/Árboles;Manguera",
+    "Maceta/Macetas;Planta/Plantas;Rosal/Rosas;Regadera;Tierra;Banca/Banco;Fuente",
+    "Podadora/Cortadora de pasto;Rastrillo;Pala;Columpio/Columpios;Asador/Parrilla;Arbusto/Arbustos;Lombriz/Lombrices;Caracol/Caracoles;Mariposa/Mariposas;Hormiga/Hormigas;Piedra/Piedras;Composta/Abono",
+    "Cerca/Reja;Aspersor;Enanito de jardín/Gnomo de jardín;Carretilla;Hamaca;Tijeras de podar;Sombrilla;Alberca/Piscina;Comedero de pájaros/Comedero",
+    "Estanque;Pérgola;Casita para pájaros/Pajarera;Seto;Huerto;Tendedero;Estatua",
+    "Invernadero;Espantapájaros;Reloj de sol;Lámpara solar/Lámparas solares;Enredadera;Brincolín/Trampolín"],
+
+  ["Nombra una parte del sistema digestivo",
+    "Estómago;Boca;Intestino/Intestinos",
+    "Esófago;Intestino delgado;Intestino grueso;Hígado;Colon",
+    "Páncreas;Ano;Recto;Lengua;Diente/Dientes;Vesícula biliar/Vesícula;Faringe;Apéndice",
+    "Duodeno;Glándula salival/Glándulas salivales;Epiglotis;Píloro",
+    "Yeyuno;Íleon;Ciego;Vellosidades intestinales/Vellosidades;Cardias/Esfínter esofágico",
+    "Colon sigmoide/Sigmoide;Válvula ileocecal;Colédoco/Conducto colédoco"],
+
+  ["Nombra una canción de los Beatles",
+    "Hey Jude;Let It Be;Yesterday;Yellow Submarine;Here Comes the Sun",
+    "Come Together;Help!;Twist and Shout;I Want to Hold Your Hand;All You Need Is Love;Something;Love Me Do;She Loves You;A Hard Day's Night",
+    "Penny Lane;Strawberry Fields Forever;Eleanor Rigby;Lucy in the Sky with Diamonds;Blackbird;While My Guitar Gently Weeps;Ob-La-Di, Ob-La-Da/Obladi Oblada;Michelle;Can't Buy Me Love;Hello, Goodbye;Get Back;In My Life",
+    "Day Tripper;Ticket to Ride;Revolution;Norwegian Wood;Nowhere Man;Across the Universe;The Long and Winding Road;Octopus's Garden;Eight Days a Week;With a Little Help from My Friends;Sgt. Pepper's Lonely Hearts Club Band/Sgt. Pepper's;Back in the U.S.S.R.;A Day in the Life;Paperback Writer;Please Please Me",
+    "Drive My Car;From Me to You;I Saw Her Standing There;Helter Skelter;Dear Prudence;Don't Let Me Down;The Ballad of John and Yoko;Now and Then;Taxman;Girl;And I Love Her;I Feel Fine;Lady Madonna;I Am the Walrus;Magical Mystery Tour",
+    "Rain;Hey Bulldog;Happiness Is a Warm Gun;Tomorrow Never Knows;Rocky Raccoon;Golden Slumbers"],
+
+  ["Nombra una prenda o un accesorio que se use en el cuello o sobre los hombros",
+    "Bufanda;Corbata;Collar",
+    "Moño/Corbata de moño/Pajarita/Corbatín;Chal;Rebozo;Pañuelo/Mascada;Cadena",
+    "Poncho;Capa;Gargantilla;Bandana/Paliacate;Estola;Pashmina;Medalla/Medallón;Mochila;Tirantes",
+    "Jorongo;Sarape;Babero;Boa de plumas;Gafete con cordón/Lanyard;Chalina;Hombreras;Collarín",
+    "Alzacuello;Gorguera;Esclavina;Bolero/Torera;Mantilla;Escapulario",
+    "Fular;Plastrón/Corbata ascot;Collar de flores/Lei"],
+
+  ["Nombra un trabajo en el que se trabaje con niños",
+    "Maestro/Maestra/Profesor/Profesora;Niñera/Niñero/Nana;Pediatra",
+    "Educadora/Maestra de kínder/Maestra de preescolar;Payaso/Payasa;Psicólogo infantil/Psicóloga infantil;Entrenador/Entrenadora;Cuidador de guardería/Cuidadora de guardería/Puericultora",
+    "Enfermera pediátrica/Enfermero pediátrico;Odontopediatra/Dentista infantil;Animador de fiestas infantiles/Animador;Mago/Maga;Tutor/Tutora;Director de escuela/Directora de escuela;Cuentacuentos",
+    "Terapeuta de lenguaje/Logopeda/Foniatra;Pedagogo/Pedagoga;Orientador escolar/Orientadora escolar;Trabajador social/Trabajadora social;Monitor de campamento/Guía de campamento;Prefecto/Prefecta;Chofer de autobús escolar/Chofer de transporte escolar;Catequista",
+    "Neonatólogo/Neonatóloga;Psicopedagogo/Psicopedagoga;Maestro de educación especial/Educador especial;Titiritero/Titiritera;Instructor de natación/Maestro de natación;Fotógrafo infantil;Escritor de libros infantiles/Autor de libros infantiles",
+    "Au pair;Juez de menores/Jueza de menores;Ludotecario/Ludotecaria"],
+
+  ["Nombra un aparato que se pueda conectar a internet",
+    "Celular/Teléfono celular/Smartphone/Teléfono;Computadora/Computador/PC;Laptop/Portátil;Tablet/Tableta/iPad",
+    "Televisión inteligente/Smart TV/Televisor/Tele;Consola de videojuegos/Consola;Reloj inteligente/Smartwatch;Router/Módem/Enrutador;Bocina inteligente/Alexa/Echo/Asistente de voz",
+    "Impresora;Cámara de seguridad/Cámara IP;Chromecast;Roku;Kindle/Lector de libros electrónicos;Foco inteligente;Apple TV;Fire TV Stick/Fire Stick",
+    "Refrigerador inteligente/Refri inteligente;Aspiradora robot/Roomba;Timbre inteligente;Termostato inteligente;Auto/Coche/Carro/Automóvil;Lentes de realidad virtual/Visor de realidad virtual/Meta Quest/Oculus",
+    "Enchufe inteligente/Contacto inteligente;Cerradura inteligente;Lavadora inteligente;Báscula inteligente;Monitor de bebé/Cámara para bebé;Pulsera de actividad/Fitbit",
+    "Marco digital/Portarretratos digital;Cafetera inteligente;Repetidor wifi/Extensor de wifi;Raspberry Pi"]
+]);
+
+CC.add("pokemon", { since: "2026-11-26" }, [
+  ["Nombra un juego derivado (spin-off) de Pokémon que no sea de la saga principal",
+    "Pokémon GO;Pokémon Snap;Pokémon Stadium;Pokémon Unite",
+    "Pokémon Mundo Misterioso/Pokémon Mystery Dungeon/Mundo Misterioso;Pokémon Colosseum;Pokkén Tournament/Pokken;Detective Pikachu;Pokémon Ranger;Pokémon Trading Card Game/Pokémon TCG/Pokémon JCC;New Pokémon Snap",
+    "Pokémon XD: Tempestad Oscura/Pokémon XD;Pokémon Pinball;Pokémon Stadium 2;Pokémon Masters EX/Pokémon Masters;Pokémon Café ReMix/Pokémon Café Mix;Pokémon Sleep;Pokémon Puzzle League;Pokémon TCG Pocket/Pokémon Trading Card Game Pocket/JCC Pokémon Pocket",
+    "PokéPark Wii/PokéPark;Pokémon Rumble;Pokémon Conquest;¡Hola, Pikachu!/Hey You, Pikachu!;Pokémon Battle Revolution;Pokémon Quest;Pokémon Shuffle;Pokémon Dash;Pokémon Channel",
+    "Pokémon Picross;Pokémon Puzzle Challenge;Pokémon Duel;Pokémon Playhouse;Pokémon Smile;Pokémon Link!;El regreso de Detective Pikachu/Detective Pikachu Returns",
+    "Pokémon Trozei;Pokémon Ga-Olé;Pokémon Mezastar"],
+
+  ["Nombra un movimiento cuyo nombre en español lleve la palabra Puño o la palabra Patada",
+    "Puño Fuego/Fire Punch;Puño Hielo/Ice Punch;Puño Trueno/Thunder Punch",
+    "Doble Patada/Double Kick;Patada Baja/Low Kick;Patada Salto Alta/High Jump Kick;Puño Certero/Focus Punch;Puño Dinámico/Dynamic Punch;Puño Sombra/Shadow Punch;Puño Bala/Bullet Punch",
+    "Patada Salto/Jump Kick;Puño Drenaje/Drain Punch;Puño Meteoro/Meteor Mash;Patada Ígnea/Blaze Kick;Puño Mareo/Dizzy Punch;Puño Cometa/Comet Punch;Triple Patada/Triple Kick",
+    "Patada Giro/Rolling Kick;Puño Incremento/Power-Up Punch;Patada Tropical/Trop Kick;Puños Plasma/Plasma Fists",
+    "Puño Furia/Rage Fist;Puño Jet/Jet Punch;Patada Hacha/Axe Kick;Patada Relámpago/Thunderous Kick",
+    ""]
+]);
+
+CC.add("deportes", { since: "2026-11-26" }, [
+  ["Nombra un futbolista inglés (actual o histórico)",
+    "David Beckham/Beckham;Wayne Rooney/Rooney;Harry Kane/Kane",
+    "Steven Gerrard/Gerrard;Frank Lampard/Lampard;Jude Bellingham/Bellingham;Bobby Charlton;Gary Lineker/Lineker;Michael Owen;Paul Scholes;Rio Ferdinand;John Terry",
+    "Alan Shearer;Bobby Moore;Raheem Sterling;Bukayo Saka;Phil Foden;Marcus Rashford;Ashley Cole;Jamie Vardy;Declan Rice;Trent Alexander-Arnold;Paul Gascoigne/Gazza;Gordon Banks;Jack Grealish;Cole Palmer",
+    "David Seaman;Peter Shilton;Gary Neville;Sol Campbell;Kevin Keegan;Jordan Henderson;Jordan Pickford;Joe Cole;Peter Crouch;Kyle Walker;Mason Mount;Theo Walcott;Stuart Pearce",
+    "Geoff Hurst;Glenn Hoddle;Bryan Robson;Jamie Carragher;Tony Adams;Ian Wright;Emile Heskey;Robbie Fowler;Jack Wilshere;Teddy Sheringham",
+    "Stanley Matthews;Tom Finney;Jimmy Greaves;Dixie Dean;Nobby Stiles;Chris Waddle;John Barnes"],
+
+  ["Nombra un futbolista que haya jugado en los Tigres de la UANL (actual o histórico)",
+    "André-Pierre Gignac/Gignac;Nahuel Guzmán/Patón Guzmán",
+    "Guido Pizarro;Javier Aquino;Hugo Ayala;Jürgen Damm;Eduardo Vargas;Juninho",
+    "Rafael Carioca;Enner Valencia;Florian Thauvin;Sebastián Córdova;Jesús Dueñas;Jorge Torres Nilo;Carlos Salcido;Lucas Lobos;Diego Lainez;Luis Quiñones",
+    "Damián Álvarez;Walter Gaitán;Tomás Boy;Héctor Mancilla;Kléber Boas;Israel Jiménez;Juan Pablo Vigón;Nicolás López;Chaka Rodríguez/Luis Rodríguez;Francisco Meza",
+    "Alan Pulido;Julián Quiñones;Ozziel Herrera;Jesús Angulo;Kikín Fonseca/Francisco Fonseca",
+    "Osvaldo Batocletti;Gerónimo Barbadillo"],
+
+  ["Nombra un club que juegue o haya jugado en la primera división de Francia (Ligue 1)",
+    "París Saint-Germain/PSG/Paris Saint-Germain;Olympique de Marsella/Marsella/Olympique de Marseille",
+    "Olympique de Lyon/Lyon/Olympique Lyonnais;AS Mónaco/Mónaco;Lille/LOSC Lille",
+    "Girondins de Burdeos/Burdeos/Bordeaux;AS Saint-Étienne/Saint-Étienne;OGC Niza/Niza/Nice;FC Nantes/Nantes;Stade Rennais/Rennes;RC Lens/Lens",
+    "Montpellier;Toulouse/Tolosa;RC Estrasburgo/Estrasburgo/Strasbourg;AJ Auxerre/Auxerre;Stade de Reims/Reims;Stade Brestois/Brest;FC Metz/Metz;Le Havre;Lorient;Angers",
+    "AS Nancy/Nancy;Sochaux;Caen;Guingamp;Bastia;AC Ajaccio/Ajaccio;Troyes;Paris FC;Red Star;Clermont Foot/Clermont",
+    "Dijon;Nîmes;Valenciennes;Sedan;Grenoble;Amiens;Le Mans;Évian Thonon Gaillard/Évian"],
+
+  ["Nombra un jugador que haya jugado en los Steelers de Pittsburgh (actual o histórico)",
+    "Ben Roethlisberger/Big Ben;Terry Bradshaw;Troy Polamalu;T. J. Watt",
+    "Franco Harris;Jerome Bettis;Hines Ward;Antonio Brown;Joe Greene/Mean Joe Greene;Aaron Rodgers;Le'Veon Bell",
+    "Lynn Swann;John Stallworth;Jack Lambert;Mel Blount;Rod Woodson;James Harrison;Russell Wilson;Santonio Holmes;Heath Miller;Cam Heyward/Cameron Heyward;Minkah Fitzpatrick;DK Metcalf",
+    "Jack Ham;Mike Webster;Kordell Stewart;Joey Porter;JuJu Smith-Schuster;George Pickens;Najee Harris;Plaxico Burress;Justin Fields;Jalen Ramsey;Kenny Pickett;Pat Freiermuth;Mike Wallace;Emmanuel Sanders",
+    "Dermontti Dawson;Ryan Clark;Ike Taylor;Casey Hampton;Alan Faneca;Greg Lloyd;Kevin Greene;Willie Parker;Rocky Bleier;L. C. Greenwood;Neil O'Donnell;Maurkice Pouncey",
+    "Tommy Maddox;Bubby Brister;Charlie Batch;Levon Kirkland;Carnell Lake;Yancey Thigpen;LaMarr Woodley;Brett Keisel"],
+
+  ["Nombra un jugador que haya jugado en los Packers de Green Bay (actual o histórico)",
+    "Aaron Rodgers;Brett Favre;Jordan Love",
+    "Bart Starr;Reggie White;Davante Adams;Charles Woodson;Clay Matthews;Donald Driver;Aaron Jones",
+    "Jordy Nelson;Greg Jennings;Ahman Green;Randall Cobb;Josh Jacobs;Jaire Alexander;Desmond Howard;Paul Hornung;Ray Nitschke;Mason Crosby;Sterling Sharpe",
+    "Don Hutson;Jim Taylor;Forrest Gregg;Jerry Kramer;Herb Adderley;Willie Davis;LeRoy Butler;Antonio Freeman;Eddie Lacy;David Bakhtiari;Christian Watson;Jayden Reed",
+    "Dorsey Levens;Robert Brooks;Mark Chmura;Gilbert Brown;Kabeer Gbaja-Biamila;Nick Collins;Tramon Williams;Jermichael Finley;Romeo Doubs;Rashan Gary;Kenny Clark;Za'Darius Smith",
+    "Sam Shields;Josh Sitton;Ryan Grant;Willie Wood;Lynn Dickey;Don Majkowski"],
+
+  ["Nombra un jugador que haya jugado en el Heat de Miami (actual o histórico)",
+    "Dwyane Wade;LeBron James;Shaquille O'Neal/Shaq",
+    "Chris Bosh;Alonzo Mourning;Jimmy Butler;Bam Adebayo;Tyler Herro;Ray Allen",
+    "Tim Hardaway;Udonis Haslem;Gary Payton;Glen Rice;Goran Dragić/Goran Dragic;Hassan Whiteside;Kyle Lowry;Mario Chalmers;Shane Battier;Lamar Odom;Antoine Walker;Jason Williams",
+    "Duncan Robinson;Eddie Jones;Rony Seikaly;Mike Miller;Chris Andersen;Andre Iguodala;Jae Crowder;Kevin Love;Terry Rozier;Andrew Wiggins;P. J. Tucker;Caron Butler;Gabe Vincent;Jamal Mashburn",
+    "Steve Smith;Grant Long;P. J. Brown;Brian Grant;Justise Winslow;Josh Richardson;Dion Waiters;Norris Cole;Joel Anthony;Michael Beasley;Luol Deng",
+    "Keith Askins;Voshon Lenard;Dorell Wright;Eddie House"],
+
+  ["Nombra un golfista profesional famoso (hombre o mujer, actual o histórico)",
+    "Tiger Woods/Tiger;Lorena Ochoa;Jack Nicklaus",
+    "Rory McIlroy;Phil Mickelson;Arnold Palmer;Scottie Scheffler;Seve Ballesteros/Severiano Ballesteros;Sergio García;Jon Rahm",
+    "Gary Player;Ben Hogan;Brooks Koepka;Jordan Spieth;Dustin Johnson;Bryson DeChambeau;Justin Thomas;Rickie Fowler;Annika Sörenstam;Greg Norman;Nick Faldo;Abraham Ancer;Carlos Ortiz",
+    "Ernie Els;Vijay Singh;Tom Watson;Lee Trevino;Bobby Jones;Collin Morikawa;Xander Schauffele;Hideki Matsuyama;Nelly Korda;Lydia Ko;Gaby López/Gabriela López;Bubba Watson;Adam Scott;José María Olazábal",
+    "Nancy Lopez;Padraig Harrington;Fred Couples;Payne Stewart;Sam Snead;Justin Rose;Tommy Fleetwood;Viktor Hovland;Shane Lowry;Colin Montgomerie;Luke Donald",
+    "Walter Hagen;Gene Sarazen;Retief Goosen;Louis Oosthuizen;Jim Furyk;Davis Love III;Zach Johnson;Babe Zaharias"]
+]);
+
+CC.add("geografia", { since: "2026-11-26" }, [
+  ["Nombra una alcaldía de la Ciudad de México",
+    "Coyoacán;Iztapalapa;Cuauhtémoc;Xochimilco",
+    "Benito Juárez;Miguel Hidalgo;Tlalpan;Gustavo A. Madero/GAM;Álvaro Obregón",
+    "Azcapotzalco;Venustiano Carranza;Tláhuac;Iztacalco",
+    "Cuajimalpa/Cuajimalpa de Morelos;Milpa Alta;La Magdalena Contreras/Magdalena Contreras",
+    "",
+    ""],
+
+  ["Nombra una provincia de Ecuador",
+    "Pichincha;Guayas;Galápagos/Islas Galápagos",
+    "Manabí;Azuay;Esmeraldas;El Oro;Loja;Chimborazo;Tungurahua",
+    "Imbabura;Cotopaxi;Los Ríos;Santa Elena;Napo;Santo Domingo de los Tsáchilas/Santo Domingo",
+    "Cañar;Carchi;Bolívar;Pastaza;Orellana;Sucumbíos",
+    "Morona Santiago;Zamora Chinchipe",
+    ""],
+
+  ["Nombra un lugar o monumento famoso de Perú",
+    "Machu Picchu;Lago Titicaca/Titicaca;Líneas de Nazca/Líneas de Nasca/Nazca",
+    "Cuzco/Cusco;Valle Sagrado/Valle Sagrado de los Incas;Montaña de Siete Colores/Vinicunca/Montaña de colores;Plaza de Armas de Lima/Plaza Mayor de Lima;Sacsayhuamán;Huacachina;Cañón del Colca/Colca",
+    "Ollantaytambo;Huayna Picchu;Kuélap;Chan Chan;Islas Ballestas;Reserva Nacional de Paracas/Paracas;Islas de los Uros/Uros;Miraflores;Barranco;Coricancha/Qorikancha",
+    "Moray;Salineras de Maras/Maras;Caral;Chavín de Huántar;Monasterio de Santa Catalina;Huascarán;Pisac;Camino Inca/Camino del Inca;Parque Nacional del Manu/Manu",
+    "Laguna 69;Museo Tumbas Reales de Sipán/Señor de Sipán;Huaca Pucllana;Catedral de Lima;Choquequirao;Cañón del Cotahuasi;Catarata de Gocta/Gocta;Máncora",
+    "Reserva Nacional Tambopata/Tambopata;Pacaya Samiria;Cumbemayo;Ventanillas de Otuzco"],
+
+  ["Nombra un lugar o monumento famoso de China",
+    "Gran Muralla China/Muralla China/Gran Muralla;Ciudad Prohibida",
+    "Guerreros de terracota/Ejército de terracota;Plaza de Tiananmén/Tiananmén;Torre de la Perla Oriental/Perla Oriental;Palacio de Verano;Templo del Cielo;Palacio de Potala/Potala",
+    "Presa de las Tres Gargantas/Tres Gargantas;Río Yangtsé/Yangtsé;El Bund/Bund;Zhangjiajie/Montañas de Zhangjiajie;Gran Buda de Leshan/Buda de Leshan;Nido de Pájaro/Estadio Nacional de Pekín;Templo Shaolin/Shaolin;Río Li",
+    "Torre de Shanghái/Shanghai Tower;Lago del Oeste;Jardines de Suzhou;Montañas Amarillas/Huangshan;Disneyland Shanghái/Shanghai Disneyland;Puerto Victoria/Victoria Harbour;Ruinas de San Pablo",
+    "Cuevas de Mogao;Grutas de Longmen;Jiuzhaigou;Torre de Cantón/Canton Tower;Muralla de Xi'an;Pagoda de la Gran Oca Salvaje;Monte Tai/Taishan;Mutianyu;Badaling",
+    "Terrazas de arroz de Longji/Longji;Grutas de Yungang;Mausoleo de Mao Zedong/Mausoleo de Mao;Bosque de Piedra de Shilin/Bosque de Piedra;Monte Emei"]
+]);
