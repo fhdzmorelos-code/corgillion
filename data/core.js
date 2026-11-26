@@ -70,7 +70,7 @@
 
   function add(id, meta, rows) {
     var prompts = rows.map(function (row, pi) {
-      var answers = build(row);
+      var answers = bilingue(build(row));
       // since: fecha (AAAA-MM-DD) desde la que la consigna existe en el juego; sin fecha, siempre
       return { id: id + ":" + row[0], cat: id, q: row[0], answers: answers, since: (meta && meta.since) || null };
     });
@@ -88,15 +88,42 @@
 
   // Diccionario inglés -> español: "cow=vaca;turkey=pavo|turquía".
   // ENR es el camino de vuelta (español -> inglés), para mostrar las respuestas en inglés cuando el juego está en English.
-  var EN = {}, ENR = {};
+  var EN = Object.create(null), ENR = Object.create(null), ES2EN = Object.create(null);   // sin prototipo: "constructor" es una respuesta válida
+  // ES2EN: nombre en español -> claves en inglés que esa respuesta también acepta (de los dos diccionarios)
+  function ponerEN(es, en) {
+    var k = norm(es), e = norm(en);
+    if (!k || !e || k === e) return;
+    var l = ES2EN[k] || (ES2EN[k] = []);
+    if (l.indexOf(e) < 0) l.push(e);
+  }
   function english(str) {
     str.split(";").forEach(function (pair) {
       var i = pair.indexOf("=");
       if (i <= 0) return;
       var en = pair.slice(0, i).trim(), es = pair.slice(i + 1).split("|");
-      EN[norm(en)] = es;
-      es.forEach(function (x) { var k = norm(x); if (k && !ENR[k]) ENR[k] = en.charAt(0).toUpperCase() + en.slice(1); });
+      var ek = norm(en);
+      EN[ek] = (EN[ek] || []).concat(es.filter(function (x) { return (EN[ek] || []).indexOf(x) < 0; }));
+      es.forEach(function (x) {
+        var k = norm(x);
+        if (k && !ENR[k]) ENR[k] = en.charAt(0).toUpperCase() + en.slice(1);
+        if (es.length === 1) ponerEN(x, en);   // "turkey=pavo|turquía" es ambiguo: esa se resuelve al responder
+      });
     });
+  }
+  // Nombres en inglés sacados de Wikipedia (data/ingles_auto.js): sirven para aceptar la respuesta, no para mostrarla.
+  function englishAuto(o) { for (var es in o) String(o[es]).split("|").forEach(function (en) { ponerEN(es, en); }); }
+  // Cada respuesta acepta también sus nombres en inglés, salvo que otra respuesta de la misma consigna ya use esa clave.
+  function bilingue(answers) {
+    var usadas = Object.create(null);
+    answers.forEach(function (a) { a.keys.forEach(function (k) { usadas[k] = 1; }); });
+    answers.forEach(function (a) {
+      a.keys.slice().forEach(function (k) {
+        var extra = ES2EN[k];
+        if (!extra || !extra.length) return;
+        extra.forEach(function (e) { if (!usadas[e]) { usadas[e] = 1; a.keys.push(e); } });
+      });
+    });
+    return answers;
   }
   // Nombre en inglés de una respuesta, si el diccionario lo tiene (por su nombre o por cualquiera de sus alias).
   function nameEN(name, keys) {
@@ -226,5 +253,5 @@
   }
 
   root.CC = { add: add, build: build, cats: cats, order: order, match: match, matchFinal: matchFinal, norm: norm, english: english, EN: EN,
-    nameEN: nameEN, traducciones: traducciones, traduccionesPatron: traduccionesPatron, qEN: qEN };
+    nameEN: nameEN, englishAuto: englishAuto, bilingue: bilingue, traducciones: traducciones, traduccionesPatron: traduccionesPatron, qEN: qEN };
 })(typeof window !== "undefined" ? window : globalThis);
