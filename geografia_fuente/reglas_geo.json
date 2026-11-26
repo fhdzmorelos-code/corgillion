@@ -53,6 +53,14 @@
   ["Nombra un país de América con más de 10 millones de habitantes", {"tipo": "pais", "continente": "América", "pob_min": 10000000}],
   ["Nombra un país cuyo nombre en español tenga exactamente seis letras", {"tipo": "pais", "letras": 6}],
   ["Nombra un país de África cuyo nombre empiece con M, con N o con S", {"tipo": "pais", "continente": "África", "empieza": ["m", "n", "s"]}]
+ ]},
+ {"since": "2026-11-27", "filas": [
+  ["Nombra una ciudad de Nigeria", {"tipo": "ciudad", "pais": "NGA"}],
+  ["Nombra una ciudad de Indonesia", {"tipo": "ciudad", "pais": "IDN"}],
+  ["Nombra una ciudad de Polonia", {"tipo": "ciudad", "pais": "POL"}],
+  ["Nombra un río de Francia", {"tipo": "rio", "pais": "FRA", "fama_min": 20}],
+  ["Nombra una isla de Indonesia o de Filipinas", {"tipo": "isla", "pais": ["IDN", "PHL"]}],
+  ["Nombra la capital de un país de Asia cuyo nombre empiece con A, B, K o T", {"tipo": "capital", "continente": "Asia", "empieza": ["a", "b", "k", "t"]}]
  ]}
  ],
  "completar": [

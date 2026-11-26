@@ -29,6 +29,9 @@
   ]},
   {"since": "2026-11-25", "filas": [
    ["Nombra un anime psicológico (Psychological en AniList)", {"genero": "Psychological"}]
+  ]},
+ {"since": "2026-11-27", "filas": [
+   ["Nombra un anime de chicas mágicas (Mahou Shoujo en AniList)", {"formato": "serie", "genero": "Mahou Shoujo"}]
   ]}
  ],
  "completar": [

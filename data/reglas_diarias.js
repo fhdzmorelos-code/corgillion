@@ -89,3 +89,14 @@ CC.regla("pokemon", { since: "2026-11-26" }, [
   ["Nombra un Pokémon de tipo Siniestro que también tenga otro tipo", {"tipo": ["Siniestro"], "num_tipos": 2}],
   ["Nombra un Pokémon de tipo Fuego que también tenga otro tipo", {"tipo": ["Fuego"], "num_tipos": 2}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-27" }, [
+  ["Nombra un Pokémon que pueda tener la habilidad Levitación", {"habilidad": "Levitación"}],
+  ["Nombra un Pokémon de tipo Lucha que pese 50 kilos o menos", {"tipo": ["Lucha"], "peso_max": 50}],
+  ["Nombra un Pokémon que habite en el mar", {"habitat": "mar"}],
+  ["Nombra un Pokémon de color amarillo", {"color": "Amarillo"}],
+  ["Nombra un Pokémon cuyo nombre en español tenga cinco letras o menos", {"letras_max": 5}],
+  ["Nombra un Pokémon de tipo Eléctrico que no sea de la primera ni de la segunda generación", {"tipo": ["Eléctrico"], "gen_min": 3}],
+  ["Nombra un Pokémon con 110 o más de velocidad base que no sea legendario ni mítico", {"velocidad_min": 110, "leg": "no"}],
+  ["Nombra un Pokémon de tipo Agua que también tenga otro tipo", {"tipo": ["Agua"], "num_tipos": 2}]
+]);

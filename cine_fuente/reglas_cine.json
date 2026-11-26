@@ -59,6 +59,9 @@
  ]},
  {"since": "2026-11-26", "filas": [
   ["Nombra una película de fantasía (Fantasy en IMDb, 1,000+ votos)", {"genero": "Fantasy"}]
+ ]},
+ {"since": "2026-11-27", "filas": [
+  ["Nombra una película de misterio (Mystery en IMDb, 1,000+ votos)", {"genero": "Mystery"}]
  ]}
  ],
  "completar": [
