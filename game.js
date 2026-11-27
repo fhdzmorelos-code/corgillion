@@ -439,7 +439,7 @@
         persist();
       }
     } else {
-      deck = shuffle(p);
+      deck = bolsa(cat, MODES[mode].finite ? RUN : 1);
       if (MODES[mode].finite) deck = deck.slice(0, RUN);
     }
     G = {
@@ -504,8 +504,28 @@
     el.innerHTML = h;
   }
 
+  // Modos libres (Libre, Sin final, Contrarreloj): cada categoría lleva en el navegador, sin mostrarlo,
+  // la lista de consignas que ya salieron. Se reparten primero las que faltan; cuando ya salieron todas,
+  // empieza otra vuelta con las mismas en otro orden. El diario no la usa ni la cambia.
+  function bolsa(cat, n) {
+    var p = pool(cat), vistas = (save.vistas = save.vistas || {})[cat] || [], ya = {};
+    vistas.forEach(function (id) { ya[id] = 1; });
+    var faltan = shuffle(p.filter(function (x) { return !ya[x.id]; }));
+    if (faltan.length >= n) return faltan;
+    // se acabaron: las que quedaban van primero y detrás el resto revuelto; la vuelta nueva empieza vacía
+    save.vistas[cat] = [];
+    persist();
+    return faltan.concat(shuffle(p.filter(function (x) { return ya[x.id]; })));
+  }
+  function marcarVista(p) {
+    if (G.mode === "diario") return;
+    var l = (save.vistas = save.vistas || {})[G.cat] || (save.vistas[G.cat] = []);
+    if (l.indexOf(p.id) < 0) { l.push(p.id); persist(); }
+  }
+
   function ask() {
     var p = G.deck[G.idx];
+    marcarVista(p);
     G.phase = "ask"; G.qLeft = QTIME; G.last = performance.now(); G.lastTick = 0;
     drawTrail();
     var q = $("q");
@@ -756,7 +776,7 @@
     G.idx++;
     if (G.idx >= G.deck.length) {
       if (MODES[G.mode].finite) return finish();
-      G.deck = G.deck.concat(shuffle(pool(G.cat)));
+      G.deck = G.deck.concat(bolsa(G.cat, 1));
     }
     ask();
   }

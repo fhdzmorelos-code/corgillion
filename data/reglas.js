@@ -260,7 +260,6 @@
           // la respuesta ya estaba: sus otros nombres (por ejemplo el inglés "Ice Beam") pasan a ser alias de la existente
           a.keys.forEach(function (k) { if (!claves[k]) { ya.keys.push(k); claves[k] = ya; } });
         });
-        CC.bilingue(pr.answers);
       });
     });
   };

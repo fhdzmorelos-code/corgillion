@@ -70,7 +70,7 @@
 
   function add(id, meta, rows) {
     var prompts = rows.map(function (row, pi) {
-      var answers = bilingue(build(row));
+      var answers = build(row);   // los nombres en inglés se agregan al final (data/fin.js)
       // since: fecha (AAAA-MM-DD) desde la que la consigna existe en el juego; sin fecha, siempre
       return { id: id + ":" + row[0], cat: id, q: row[0], answers: answers, since: (meta && meta.since) || null };
     });
