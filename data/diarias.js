@@ -1922,3 +1922,187 @@ CC.add("geografia", { since: "2026-11-27" }, [
     "Isla Yakushima/Yakushima;Bosque Aokigahara/Aokigahara;Kumano Kodo;Jardín Ritsurin/Ritsurin;Izumo Taisha/Santuario de Izumo;Isla de los Conejos/Okunoshima;Puente Kintai/Kintaikyo",
     "Isla de los Gatos/Tashirojima;Parque costero Hitachi/Hitachi Seaside Park;Kamikochi;Takayama;Beppu;Cascada Nachi/Nachi Falls"]
 ]);
+
+CC.add("clasica", { since: "2026-11-28" }, [
+  ["Nombra un aparato que se conecte a un enchufe de pared",
+    "Televisión/Televisor/TV/Tele;Refrigerador/Refri/Nevera/Heladera;Licuadora;Cargador de celular/Cargador;Microondas/Horno de microondas;Lámpara",
+    "Plancha;Ventilador;Lavadora;Computadora/PC/Computadora de escritorio;Tostador/Tostadora;Aspiradora;Cafetera;Secadora de pelo/Secador de pelo",
+    "Horno eléctrico;Batidora;Radio;Consola de videojuegos/Consola;Router/Módem/Modem;Aire acondicionado/Clima;Calentador eléctrico;Impresora;Freidora de aire/Air fryer;Arrocera/Olla arrocera/Rice cooker;Olla de cocción lenta/Olla lenta/Slow cooker;Cobija eléctrica/Manta eléctrica;Reproductor de DVD",
+    "Procesador de alimentos/Procesadora;Sandwichera/Sandwich maker;Wafflera/Waffle maker;Humidificador;Purificador de aire;Deshumidificador;Lavavajillas/Lavaplatos;Secadora de ropa;Molino de café eléctrico;Fotocopiadora/Copiadora;Monitor;Bocinas/Altavoces/Speakers;Hervidor eléctrico/Hervidora",
+    "Máquina de coser eléctrica/Máquina de coser;Yogurtera;Máquina de palomitas;Soldador/Cautín;Taladro;Sierra eléctrica;Compresor de aire;Cortacésped eléctrico",
+    "Máquina de algodón de azúcar;Rockola/Jukebox;Tocadiscos/Tornamesa;Rebanadora de fiambres/Cortadora de fiambres;Máquina de raspados"],
+
+  ["Nombra un fenómeno del clima o de la atmósfera",
+    "Lluvia/Rain;Tormenta/Storm;Viento/Wind;Nieve/Snow;Relámpago/Rayo/Lightning;Trueno/Thunder;Huracán/Hurricane",
+    "Granizo/Granizada/Hail;Niebla/Neblina/Fog;Tornado;Arcoíris/Arco iris/Rainbow;Sequía/Drought;Inundación/Flood;Helada/Frost;Rocío/Dew;Llovizna/Drizzle;Ciclón/Cyclone;Tifón/Typhoon;Ola de calor/Heat wave",
+    "Tormenta eléctrica/Electrical storm;Ventisca/Blizzard;Escarcha;Monzón/Monsoon;Chubasco/Aguacero/Downpour;Brisa/Breeze;Tormenta de arena/Tolvanera/Sandstorm;El Niño;La Niña;Frente frío/Cold front;Aurora boreal/Northern lights;Bruma/Mist;Aguanieve/Sleet",
+    "Tromba marina/Waterspout;Rayo globular/Ball lightning;Halo solar/Sun halo;Remolino de polvo/Diablo de polvo/Dust devil;Ráfaga/Gust;Frente cálido/Warm front;Inversión térmica/Temperature inversion;Corriente en chorro/Jet stream;Parhelio/Perro del sol/Sundog;Calima/Haze;Anticiclón/Anticyclone;Depresión tropical/Tropical depression",
+    "Virga;Derecho;Fuego de San Telmo/St. Elmo's fire;Arco circunhorizontal/Fire rainbow;Bomba ciclónica/Bomb cyclone;Pilar solar/Sun pillar;Nubes mammatus/Mammatus;Gloria/Glory;Tormenta seca/Dry thunderstorm",
+    "Cencellada/Rime;Nubes nacaradas/Nacreous clouds;Sprites rojos/Red sprite;Nubes noctilucentes/Noctilucent clouds;Arco de niebla/Fogbow;Efecto Foehn/Foehn;Rayo verde/Green flash"],
+
+  ["Nombra un compositor de música clásica",
+    "Mozart/Wolfgang Amadeus Mozart;Beethoven/Ludwig van Beethoven;Bach/Johann Sebastian Bach;Chopin/Frédéric Chopin",
+    "Vivaldi/Antonio Vivaldi;Chaikovski/Tchaikovsky/Piotr Ilich Chaikovski;Schubert/Franz Schubert;Händel/Handel/Georg Friedrich Händel;Liszt/Franz Liszt;Brahms/Johannes Brahms;Wagner/Richard Wagner;Debussy/Claude Debussy;Verdi/Giuseppe Verdi",
+    "Strauss/Johann Strauss/Richard Strauss;Mahler/Gustav Mahler;Haydn/Joseph Haydn;Rajmáninov/Rachmaninoff/Sergei Rachmaninoff;Ravel/Maurice Ravel;Mendelssohn/Felix Mendelssohn;Schumann/Robert Schumann;Puccini/Giacomo Puccini;Rossini/Gioachino Rossini;Stravinski/Stravinsky/Ígor Stravinski;Grieg/Edvard Grieg;Dvořák/Dvorak/Antonín Dvořák;Paganini/Niccolò Paganini;Bizet/Georges Bizet;Sibelius/Jean Sibelius;Satie/Erik Satie;Pachelbel/Johann Pachelbel",
+    "Prokófiev/Prokofiev/Serguéi Prokófiev;Shostakóvich/Shostakovich/Dmitri Shostakóvich;Músorgski/Mussorgsky/Modest Músorgski;Rimski-Kórsakov/Rimsky-Korsakov;Bartók/Bartok/Béla Bartók;Albéniz/Isaac Albéniz;Granados/Enrique Granados;Falla/Manuel de Falla;Rodrigo/Joaquín Rodrigo;Monteverdi/Claudio Monteverdi;Telemann/Georg Philipp Telemann;Scarlatti/Domenico Scarlatti;Saint-Saëns/Camille Saint-Saëns;Fauré/Gabriel Fauré;Offenbach/Jacques Offenbach;Bruckner/Anton Bruckner;Berlioz/Hector Berlioz;Gershwin/George Gershwin;Copland/Aaron Copland;Elgar/Edward Elgar;Barber/Samuel Barber;Manuel M. Ponce/Manuel Ponce;Silvestre Revueltas/Revueltas;Carlos Chávez",
+    "Purcell/Henry Purcell;Palestrina/Giovanni Pierluigi da Palestrina;Gluck/Christoph Willibald Gluck;Janáček/Janacek/Leoš Janáček;Smetana/Bedřich Smetana;Bruch/Max Bruch;Glinka/Mijaíl Glinka;Borodin/Aleksandr Borodin;Jachaturián/Khachaturian/Aram Jachaturián;Messiaen/Olivier Messiaen;Ligeti/György Ligeti;Britten/Benjamin Britten;Vaughan Williams/Ralph Vaughan Williams;Holst/Gustav Holst;Respighi/Ottorino Respighi;Mascagni/Pietro Mascagni;Leoncavallo/Ruggero Leoncavallo;Donizetti/Gaetano Donizetti;Bellini/Vincenzo Bellini;Tomás Luis de Victoria;Sarasate/Pablo de Sarasate;Villa-Lobos/Heitor Villa-Lobos",
+    "Buxtehude/Dieterich Buxtehude;Couperin/François Couperin;Rameau/Jean-Philippe Rameau;Lully/Jean-Baptiste Lully;Corelli/Arcangelo Corelli;Gesualdo/Carlo Gesualdo;Arvo Pärt/Pärt;Penderecki/Krzysztof Penderecki;Schnittke/Alfred Schnittke;Carl Nielsen/Nielsen;Hindemith/Paul Hindemith;Schönberg/Schoenberg/Arnold Schönberg;Webern/Anton Webern;Alban Berg;John Cage/Cage;Philip Glass;Górecki/Henryk Górecki;Fernando Sor/Sor;Tárrega/Francisco Tárrega"],
+
+  ["Nombra un pez",
+    "Atún/Tuna;Salmón/Salmon;Tiburón/Shark;Pez payaso/Clownfish;Sardina/Sardine;Trucha/Trout;Tilapia",
+    "Bacalao/Cod;Pez dorado/Goldfish;Mojarra;Huachinango/Pargo rojo/Red snapper;Robalo/Lubina/Sea bass;Pez espada/Swordfish;Anchoa/Boquerón/Anchovy;Carpa/Carp;Pez globo/Pufferfish;Pez ángel/Angelfish;Anguila/Eel;Pez betta/Betta/Pez luchador;Mero/Grouper",
+    "Bagre/Catfish;Lucio/Pike;Merluza/Hake;Lenguado/Sole;Dorado/Mahi-mahi;Marlín/Marlin;Barracuda;Manta raya/Mantarraya/Manta ray;Pez león/Lionfish;Caballito de mar/Seahorse;Arenque/Herring;Caballa/Macarela/Mackerel;Piraña/Piranha;Pez luna/Sunfish;Guppy;Pez cirujano azul/Dory/Blue tang;Rémora/Remora;Pez volador/Flying fish;Pez vela/Sailfish;Pejelagarto/Gar",
+    "Rodaballo/Turbot;Besugo/Sea bream;Dorada/Gilthead bream;Salmonete/Red mullet;Rape/Monkfish;Pez sierra/Sawfish;Pez ballesta/Triggerfish;Pez mariposa/Butterflyfish;Lisa/Mugil/Mullet;Esturión/Sturgeon;Cobia;Pez loro/Parrotfish;Pez escorpión/Scorpionfish;Pez piedra/Stonefish;Tetra neón/Neón/Neon tetra;Molly;Platy;Cíclido/Cichlid;Pez remo/Oarfish",
+    "Celacanto/Coelacanth;Pez pulmonado/Lungfish;Pez pescador/Anglerfish;Pez víbora/Viperfish;Pez hacha/Hatchetfish;Pez linterna/Lanternfish;Pez lobo/Wolffish;Pez gota/Blobfish;Pez murciélago/Batfish;Pez cofre/Boxfish;Pez aguja/Needlefish;Pez cuchillo/Knifefish;Pez ciego mexicano/Pez cavernícola/Mexican tetra;Pez cebra/Zebrafish;Pirarucú/Arapaima;Lamprea/Lamprey",
+    "Pez de cristal/Glassfish;Pez trompeta/Trumpetfish;Pez mandarín/Mandarinfish;Charal;Cachorrito del desierto/Pupfish;Pez espátula/Paddlefish;Pez sapo/Toadfish;Pez cardenal/Cardinalfish;Pez Napoleón/Napoleon wrasse"],
+
+  ["Nombra un material de construcción",
+    "Cemento/Concreto/Hormigón;Ladrillo/Tabique/Brick;Madera/Wood;Arena/Sand;Acero/Steel;Vidrio/Cristal/Glass",
+    "Varilla/Varilla corrugada/Rebar;Cal/Lime;Grava/Gravel;Yeso/Plaster;Tablaroca/Panel de yeso/Drywall;Teja/Roof tile;Mármol/Marble;Block/Bloque;Aluminio/Aluminum;Mortero/Mezcla/Mortar",
+    "Azulejo/Loseta/Cerámica/Ceramic tile;Adobe;Piedra/Stone;Granito/Granite;Tezontle;Lámina de zinc/Zinc;Cobre/Copper;PVC;Triplay/Contrachapado/Plywood;Cantera;Mosaico/Mosaic;Bambú/Bamboo;Asfalto/Asphalt",
+    "Paja/Straw;Barro/Arcilla/Clay;Estuco/Stucco;Fibra de vidrio/Fiberglass;Unicel/Poliestireno/Styrofoam;Pizarra/Slate;Ladrillo refractario/Firebrick;Block de vidrio/Glass block;Madera laminada/Madera contralaminada/CLT;Arenisca/Sandstone;Basalto/Basalt;Travertino/Travertine",
+    "Tapial/Adobe apisonado/Rammed earth;Bahareque/Wattle and daub;Ferrocemento;Gabión/Gabion;Titanio/Titanium;Laterita/Laterite;Corcho/Cork;Linóleo/Linoleum;Terrazo/Terrazzo",
+    "Pacas de paja/Straw bale;Hielo/Ice;Ecoladrillo/Ecobrick;Aerogel;Piedra pómez/Pumice;Sillar"],
+
+  ["Nombra un tipo de pan",
+    "Pan de caja/Pan de molde/Sliced bread;Baguette/Baguete;Bolillo;Pan integral/Whole wheat bread;Pan de hamburguesa/Hamburger bun",
+    "Telera;Croissant/Cuernito/Medialuna;Pan pita/Pan árabe/Pita;Pan de hot dog/Hot dog bun;Pan de ajo/Garlic bread;Ciabatta;Pan de centeno/Rye bread;Pan de muerto",
+    "Focaccia;Naan;Brioche;Pan de masa madre/Sourdough;Pan de maíz/Cornbread;Bagel;Pretzel;Pan sin gluten/Gluten-free bread;Bao/Pan al vapor;Chapati;Pan de salvado/Bran bread;Pan de campo/Country bread",
+    "Pan de soda/Soda bread;Pumpernickel;Jalá/Challah;Pan de plátano/Banana bread;Panettone;Hogaza;Pan crujiente/Crispbread/Knäckebröd;Mollete;Lavash;Pan Kaiser/Kaiser roll;Pan de leche/Milk bread",
+    "Matzá/Matzo;Injera;Pan de espelta/Spelt bread;Pan de papa/Potato bread;Pan cubano/Cuban bread;Roti;Paratha;Pan de Ezequiel/Ezekiel bread;Pandesal/Pan de sal",
+    "Pan de nube/Cloud bread;Kulich;Pan de queijo/Pão de queijo;Pan frito/Fry bread;Bannock;Pane carasau/Carasau;Pide;Simit;Barbari;Sangak"],
+
+  ["Nombra un trabajo en el que se use bata",
+    "Médico/Doctor/Doctora;Enfermero/Enfermera/Nurse;Científico/Científica/Scientist;Dentista/Dentist;Farmacéutico/Farmacéutica/Pharmacist",
+    "Veterinario/Veterinaria/Veterinarian;Químico/Química/Chemist;Laboratorista/Técnico de laboratorio/Lab technician;Cocinero/Cocinera/Cook;Carnicero/Butcher;Peluquero/Estilista/Hairdresser;Maestro de primaria/Maestra de primaria/Primary school teacher;Cirujano/Surgeon",
+    "Pediatra/Pediatrician;Radiólogo/Radiologist;Esteticista/Beautician;Barbero/Barber;Panadero/Baker;Pastelero/Pastry chef;Pintor/Painter;Dermatólogo/Dermatologist;Biólogo/Biologist;Investigador/Researcher;Paramédico/Paramedic;Optometrista/Optometrist;Fisioterapeuta/Physiotherapist",
+    "Patólogo/Pathologist;Anestesiólogo/Anesthesiologist;Médico forense/Forense/Forensic examiner;Técnico dental/Dental technician;Podólogo/Podiatrist;Nutriólogo/Nutritionist;Entomólogo/Entomologist;Microbiólogo/Microbiologist;Genetista/Geneticist;Quesero/Cheesemaker",
+    "Criminalista/Forensic scientist;Perfusionista/Perfusionist;Toxicólogo/Toxicologist;Epidemiólogo/Epidemiologist;Virólogo/Virologist;Inmunólogo/Immunologist",
+    "Histotecnólogo/Histotechnologist;Neuropatólogo/Neuropathologist;Citotecnólogo/Cytotechnologist"],
+
+  ["Nombra un deporte que se compita en los Juegos Olímpicos de verano",
+    "Natación/Swimming;Atletismo/Athletics/Track and field;Gimnasia/Gymnastics;Fútbol/Soccer/Football;Baloncesto/Básquetbol/Basketball;Voleibol/Vóleibol/Volleyball",
+    "Tenis/Tennis;Boxeo/Boxing;Judo/Yudo;Ciclismo/Cycling;Remo/Rowing;Clavados/Saltos/Diving;Esgrima/Fencing;Tiro con arco/Archery;Levantamiento de pesas/Halterofilia/Pesas/Weightlifting;Taekwondo;Lucha/Lucha olímpica/Wrestling",
+    "Waterpolo/Polo acuático/Water polo;Hockey sobre césped/Hockey/Field hockey;Balonmano/Handball;Tenis de mesa/Ping pong/Table tennis;Bádminton/Badminton;Triatlón/Triathlon;Pentatlón moderno/Modern pentathlon;Equitación/Hípica/Equestrian;Tiro deportivo/Tiro/Shooting;Vela/Sailing;Piragüismo/Canotaje/Canoeing;Natación artística/Nado sincronizado/Artistic swimming;Gimnasia rítmica/Rhythmic gymnastics;Golf;Rugby/Rugby 7;Surf;Skateboarding/Patineta/Skate;Escalada deportiva/Escalada/Sport climbing;Maratón/Marathon",
+    "Trampolín/Trampoline;BMX;Ciclismo de montaña/Mountain bike;Lanzamiento de jabalina/Jabalina/Javelin;Salto con pértiga/Salto con garrocha/Pole vault;Salto de altura/High jump;Lanzamiento de bala/Lanzamiento de peso/Shot put;Decatlón/Decathlon;Heptatlón/Heptathlon;Marcha atlética/Marcha/Race walking;Natación en aguas abiertas/Aguas abiertas/Marathon swimming;Breaking/Breakdance;Lanzamiento de martillo/Hammer throw;Lanzamiento de disco/Discus throw;Salto de longitud/Salto largo/Long jump;Carrera de obstáculos/Steeplechase;Vallas/Hurdles",
+    "Ciclismo en pista/Track cycling;Ciclismo de ruta/Road cycling;Slalom de canoa/Canoe slalom;Voleibol de playa/Vóley playa/Beach volleyball;Baloncesto 3x3/3x3;Doma clásica/Dressage;Concurso completo de equitación/Eventing;Salto ecuestre/Show jumping;Fosa olímpica/Trap;Skeet;Tiro con pistola/Pistol shooting;Keirin;Windsurf/Windsurfing;Kitesurf/Kitesurfing;Lucha grecorromana/Greco-Roman wrestling;Lucha libre olímpica/Freestyle wrestling",
+    "Madison;Omnium;Persecución por equipos/Team pursuit;BMX freestyle/BMX estilo libre;iQFoil;Skiff 49er/49er"]
+]);
+
+CC.add("deportes", { since: "2026-11-28" }, [
+  ["Nombra un futbolista argentino (actual o histórico)",
+    "Lionel Messi/Messi/Leo Messi;Diego Maradona/Maradona/Diego Armando Maradona",
+    "Ángel Di María/Di María/Fideo Di María;Sergio Agüero/Agüero/Kun Agüero;Gabriel Batistuta/Batistuta/Batigol;Carlos Tévez/Tévez/Carlitos Tévez;Juan Román Riquelme/Riquelme;Javier Zanetti/Zanetti;Mario Kempes/Kempes;Paulo Dybala/Dybala;Lautaro Martínez/Lautaro;Julián Álvarez/Araña Álvarez;Emiliano Martínez/Dibu Martínez/Dibu;Gonzalo Higuaín/Higuaín/Pipita",
+    "Javier Mascherano/Mascherano;Hernán Crespo/Crespo;Claudio Caniggia/Caniggia;Alexis Mac Allister/Mac Allister;Rodrigo De Paul/De Paul;Enzo Fernández;Cristian Romero/Cuti Romero;Nicolás Otamendi/Otamendi;Marcos Rojo;Ezequiel Lavezzi/Lavezzi;Esteban Cambiasso/Cambiasso;Diego Milito;Jorge Valdano/Valdano;Daniel Passarella/Passarella;Óscar Ruggeri/Ruggeri;Sergio Goycochea/Goycochea;Gabriel Heinze/Heinze;Juan Sebastián Verón/Verón;Pablo Aimar/Aimar;Fernando Redondo/Redondo;Roberto Ayala;Alejandro Garnacho/Garnacho",
+    "Ariel Ortega;Martín Palermo/Palermo;Nicolás Burdisso/Burdisso;Walter Samuel;Juan Pablo Sorín/Sorín;Mauro Icardi/Icardi;Ángel Correa;Papu Gómez/Alejandro Gómez;Giovani Lo Celso/Lo Celso;Leandro Paredes;Lucas Biglia/Biglia;Éver Banega/Banega;Nahuel Molina;Lisandro Martínez;Germán Pezzella/Pezzella;Jorge Burruchaga/Burruchaga;José Luis Brown;Ricardo Bochini/Bochini;Osvaldo Ardiles/Ardiles",
+    "Hugo Gatti;Amadeo Carrizo;Omar Sívori/Sívori;Alfredo Di Stéfano/Di Stéfano;Julio Cruz;Claudio Borghi/Borghi;Marcelo Gallardo/Muñeco Gallardo;Mauricio Pochettino/Pochettino;Diego Simeone/Cholo Simeone/Simeone;Maxi Rodríguez;Pablo Zabaleta/Zabaleta;Rodrigo Palacio;Fernando Gago/Gago;Carlos Roa;Gonzalo Montiel/Montiel;Nicolás Tagliafico/Tagliafico;Marcos Acuña;Exequiel Palacios;Thiago Almada/Almada",
+    "Adolfo Pedernera/Pedernera;Ángel Labruna/Labruna;Beto Alonso/Norberto Alonso;Luis Artime/Artime;Américo Gallego;Roberto Perfumo/Perfumo;Antonio Rattín/Rattín;Alberto Tarantini/Tarantini;René Houseman/Houseman"],
+
+  ["Nombra un futbolista que haya jugado en el Real Madrid (actual o histórico)",
+    "Cristiano Ronaldo/CR7/Cristiano;Karim Benzema/Benzema;Luka Modrić/Modric;Sergio Ramos;Raúl/Raúl González/Raúl González Blanco",
+    "Zinedine Zidane/Zidane/Zizou;Iker Casillas/Casillas;Gareth Bale/Bale;Toni Kroos/Kroos;Vinícius Júnior/Vinicius/Vini Jr;Marcelo;Casemiro;David Beckham/Beckham;Luís Figo/Figo;Roberto Carlos;Ronaldo Nazário/R9/El Fenómeno;Eden Hazard/Hazard;Thibaut Courtois/Courtois;Jude Bellingham/Bellingham;Kylian Mbappé/Mbappé/Mbappe",
+    "Alfredo Di Stéfano/Di Stéfano;Ferenc Puskás/Puskás;Francisco Gento/Gento;Santillana;Emilio Butragueño/Butragueño/El Buitre;Hugo Sánchez/Hugo/Pentapichichi;Míchel;Fernando Hierro/Hierro;Fernando Redondo/Redondo;Claude Makélélé/Makélélé;Steve McManaman/McManaman;Robinho;Arjen Robben/Robben;Wesley Sneijder/Sneijder;Ruud van Nistelrooy/Van Nistelrooy;Mesut Özil/Özil/Ozil;Ángel Di María/Di María;Álvaro Morata/Morata;Gonzalo Higuaín/Higuaín;Xabi Alonso;James Rodríguez/James;Dani Carvajal/Carvajal;Isco;Álvaro Arbeloa/Arbeloa;Pepe;Raphaël Varane/Varane;Antonio Rüdiger/Rüdiger;Eduardo Camavinga/Camavinga;Federico Valverde/Valverde;Rodrygo;Éder Militão/Militão;David Alaba/Alaba;Ferland Mendy/Mendy;Nacho/Nacho Fernández;Marco Asensio/Asensio;Martin Ødegaard/Ødegaard",
+    "Raúl Albiol/Albiol;Predrag Mijatović/Mijatović;Davor Šuker/Šuker;Christian Panucci/Panucci;Fernando Morientes/Morientes;Guti;Iván Helguera/Helguera;Míchel Salgado/Salgado;Geremi;Thomas Gravesen/Gravesen;Jonathan Woodgate/Woodgate;Julio Baptista;Rafael van der Vaart/Van der Vaart;Klaas-Jan Huntelaar/Huntelaar;Kaká;Sami Khedira/Khedira;Jesé;Lassana Diarra;Mateo Kovačić/Kovačić;Keylor Navas/Navas;Kepa Arrizabalaga/Kepa;Andriy Lunin/Lunin;Achraf Hakimi/Hakimi;Sergio Reguilón/Reguilón;Dani Ceballos/Ceballos;Fábio Coentrão/Coentrão;Lucas Vázquez;Mariano Díaz/Mariano",
+    "Paco Buyo/Buyo;Manuel Sanchís/Sanchís;Chendo;Ricardo Gallego;Juanito;Uli Stielike/Stielike;Paul Breitner/Breitner;Günter Netzer/Netzer;Amancio Amaro/Amancio;Pirri;José Santamaría/Santamaría;Raymond Kopa/Kopa;Héctor Rial/Rial;Take Kubo/Kubo",
+    "Esteban Granero/Granero;Rubén de la Red/De la Red;Roberto Soldado/Soldado;Javier Saviola/Saviola;Royston Drenthe/Drenthe;Ezequiel Garay/Garay;Antonio Cassano/Cassano;Nuri Şahin/Şahin"],
+
+  ["Nombra un futbolista que haya jugado en el Bayern de Múnich (actual o histórico)",
+    "Robert Lewandowski/Lewandowski;Thomas Müller/Müller/Mueller;Manuel Neuer/Neuer;Franck Ribéry/Ribéry;Arjen Robben/Robben;Harry Kane/Kane",
+    "Franz Beckenbauer/Beckenbauer/Kaiser Franz;Gerd Müller/Der Bomber;Oliver Kahn/Kahn;Bastian Schweinsteiger/Schweinsteiger;Philipp Lahm/Lahm;Joshua Kimmich/Kimmich;Mario Götze/Götze;Leroy Sané/Sané;Jérôme Boateng/Boateng;Kingsley Coman/Coman;Alphonso Davies/Davies;Jamal Musiala/Musiala",
+    "David Alaba/Alaba;Javi Martínez/Javier Martínez;Mats Hummels/Hummels;Xabi Alonso;Toni Kroos/Kroos;Thiago Alcántara/Thiago;Mario Mandžukić/Mandžukić;Luca Toni;James Rodríguez/James;Lothar Matthäus/Matthäus;Karl-Heinz Rummenigge/Rummenigge;Sadio Mané/Mané;Serge Gnabry/Gnabry;Arturo Vidal/Vidal;Douglas Costa;Rafinha;Ivica Olić/Olić;Mario Gómez;Claudio Pizarro/Pizarro;Miroslav Klose/Klose;Roy Makaay/Makaay;Zé Roberto;Michael Ballack/Ballack;Lúcio/Lucio;Giovane Élber/Élber;Hasan Salihamidžić/Salihamidžić;Owen Hargreaves/Hargreaves;Luiz Gustavo;Dante;Eric Maxim Choupo-Moting/Choupo-Moting;Matthijs de Ligt/De Ligt;Dayot Upamecano/Upamecano;Kim Min-jae;Leon Goretzka/Goretzka;Noussair Mazraoui/Mazraoui;Benjamin Pavard/Pavard;Lucas Hernández",
+    "Sepp Maier;Uli Hoeneß/Hoeneß;Jürgen Klinsmann/Klinsmann;Stefan Effenberg/Effenberg;Andreas Brehme/Brehme;Mehmet Scholl/Scholl;Willy Sagnol/Sagnol;Bixente Lizarazu/Lizarazu;Martin Demichelis/Demichelis;Daniel Van Buyten/Van Buyten;Lukas Podolski/Podolski;Marcel Sabitzer/Sabitzer;Ryan Gravenberch/Gravenberch;Corentin Tolisso/Tolisso;Mathys Tel;Michael Olise/Olise;Konrad Laimer/Laimer;Eric Dier/Dier",
+    "Klaus Augenthaler/Augenthaler;Raimond Aumann/Aumann;Jean-Marie Pfaff/Pfaff;Roque Santa Cruz/Santa Cruz;Breno;Daniel Pranjić/Pranjić;Anatoliy Tymoshchuk/Tymoshchuk;Hamit Altıntop/Altıntop;Tim Borowski/Borowski;Mark van Bommel/Van Bommel;Hans-Jörg Butt/Butt",
+    "Samuel Kuffour/Kuffour;Ali Daei/Daei;Thorsten Fink;Carsten Jancker/Jancker;Alexander Zickler/Zickler;Markus Babbel/Babbel;Ciriaco Sforza/Sforza"],
+
+  ["Nombra un jugador que haya jugado en los Eagles de Filadelfia (actual o histórico)",
+    "Jalen Hurts/Hurts;Donovan McNabb/McNabb;Michael Vick/Vick;Brian Dawkins/Dawkins;Nick Foles/Foles;Carson Wentz/Wentz",
+    "Saquon Barkley/Barkley;A.J. Brown/AJ Brown;Jason Kelce;LeSean McCoy/Shady McCoy;DeSean Jackson;Randall Cunningham/Cunningham;Reggie White;Chuck Bednarik/Bednarik;Terrell Owens/T.O.;Brian Westbrook/Westbrook;Zach Ertz/Ertz;Fletcher Cox;Brandon Graham;Malcolm Jenkins;Darren Sproles/Sproles;Jeremy Maclin/Maclin;DeVonta Smith;Lane Johnson;Jordan Mailata/Mailata;Dallas Goedert/Goedert;Haason Reddick/Reddick;Darius Slay/Slay",
+    "Jason Peters;Trent Cole;Duce Staley/Staley;Mike Quick;Harold Carmichael/Carmichael;Ron Jaworski/Jaworski;Wilbert Montgomery;Herman Edwards;Seth Joyner/Joyner;Eric Allen;Clyde Simmons;Troy Vincent;Jon Runyan/Runyan;Tra Thomas;Jevon Kearse/Kearse;Corey Clement/Clement;LeGarrette Blount/Blount;Alshon Jeffery;Nelson Agholor/Agholor;Chris Long;Nigel Bradham/Bradham;Rodney McLeod/McLeod;Miles Sanders",
+    "Tommy McDonald;Pete Pihos/Pihos;Steve Van Buren/Van Buren;Norm Van Brocklin/Van Brocklin;Sonny Jurgensen/Jurgensen;Bill Bergey/Bergey;Keith Byars/Byars;Mike Mamula/Mamula;Irving Fryar/Fryar;Ricky Watters/Watters;Charlie Garner;Hugh Douglas;Jeremiah Trotter/Trotter;Dhani Jones;Quintin Mikell/Mikell;Asante Samuel;Lito Sheppard/Sheppard;Todd Herremans/Herremans",
+    "Al Wistert/Wistert;Jim Ringo/Ringo;Mike Ditka/Ditka;Vince Papale/Papale;Roman Gabriel;Adrian Burk;Bobby Walston/Walston",
+    "Pete Retzlaff/Retzlaff;Vai Sikahema/Sikahema;Alex Wojciechowicz/Wojciechowicz;Tom Brookshier/Brookshier;Bobby Hoying/Hoying;Koy Detmer/Detmer;Jeff Garcia;Kevin Kolb/Kolb"],
+
+  ["Nombra un jugador que haya jugado en los Seahawks de Seattle (actual o histórico)",
+    "Russell Wilson/Wilson;Marshawn Lynch/Lynch/Beast Mode;Richard Sherman/Sherman;Steve Largent/Largent",
+    "Earl Thomas;Kam Chancellor/Chancellor;Bobby Wagner/Wagner;DK Metcalf/Metcalf;Tyler Lockett/Lockett;Shaun Alexander;Walter Jones;Cortez Kennedy;Matt Hasselbeck/Hasselbeck;Geno Smith;Michael Bennett;Cliff Avril/Avril;Jimmy Graham;Doug Baldwin/Baldwin;Percy Harvin/Harvin;Brian Bosworth/Bosworth;Kenneth Walker III/Kenneth Walker;Jaxon Smith-Njigba/JSN",
+    "Lofa Tatupu/Tatupu;Russell Okung/Okung;Max Unger/Unger;Golden Tate;Sidney Rice;Jermaine Kearse;Chris Clemons;Bruce Irvin/Irvin;K.J. Wright;Marcus Trufant/Trufant;Chris Carson;Rashaad Penny/Penny;Quandre Diggs/Diggs;Jamal Adams;Dave Krieg/Krieg;Jim Zorn/Zorn;Curt Warner;Warren Moon;Joey Galloway/Galloway;Julian Peterson;Steven Hauschka/Hauschka;Jon Ryan",
+    "Brandon Mebane/Mebane;Red Bryant;Malcolm Smith;Paul Richardson;Byron Maxwell/Maxwell;Jarran Reed;Darrell Jackson;Zach Miller;Brian Blades/Blades;Joe Nash;Eugene Robinson;Bobby Engram/Engram;Koren Robinson;Mack Strong;Rick Mirer/Mirer;Trent Dilfer/Dilfer;Seneca Wallace;Tarvaris Jackson;Matt Flynn;Charlie Whitehurst/Whitehurst;Kenny Easley/Easley",
+    "Norm Johnson;Jacob Green;Dan McGwire/McGwire;Rufus Porter;Michael Sinclair;Shawn Springs/Springs;Steve Niehaus/Niehaus",
+    "Brock Huard/Huard;Jon Kitna/Kitna;John Randle/Randle;Jeff Feagles/Feagles"],
+
+  ["Nombra un jugador que haya jugado en los Rockets de Houston (actual o histórico)",
+    "Hakeem Olajuwon/Olajuwon/Hakeem;James Harden/Harden;Yao Ming/Yao;Tracy McGrady/McGrady/T-Mac;Clyde Drexler/Drexler",
+    "Charles Barkley/Barkley;Russell Westbrook/Westbrook;Chris Paul/CP3;Kevin Durant/Durant;Dikembe Mutombo/Mutombo;Moses Malone/Moses;Steve Francis;Robert Horry/Horry;Carmelo Anthony/Melo;Dwight Howard;Jeremy Lin;Metta World Peace/Ron Artest/Artest",
+    "Sam Cassell/Cassell;Vernon Maxwell;Patrick Beverley/Beverley;Trevor Ariza/Ariza;Jalen Green;Alperen Şengün/Sengun;Rudy Tomjanovich/Tomjanovich;Elvin Hayes;Ralph Sampson/Sampson;Calvin Murphy;Luis Scola/Scola;Shane Battier/Battier;Kyle Lowry/Lowry;Mario Elie/Elie;Otis Thorpe/Thorpe;Eric Gordon;Aaron Brooks;Chandler Parsons/Parsons;Clint Capela/Capela;Kenny Smith;Jabari Smith Jr.;Amen Thompson;Fred VanVleet/VanVleet;Dillon Brooks",
+    "Cuttino Mobley/Mobley;Maurice Taylor;Kelvin Cato/Cato;Buck Johnson;Matt Bullard/Bullard;Rick Barry;Robert Reid;Lewis Lloyd;Donatas Motiejūnas/Motiejūnas;Corey Brewer;Nenê/Nene",
+    "Mike Newlin/Newlin;John Lucas;Allen Leavell/Leavell",
+    "Sleepy Floyd/Eric Floyd;Zan Tabak/Tabak;Kevin Willis"],
+
+  ["Nombra un medallista olímpico famoso de los Juegos de verano (de cualquier país)",
+    "Usain Bolt/Bolt;Michael Phelps/Phelps;Simone Biles/Biles;Nadia Comăneci/Nadia Comaneci/Comăneci;Muhammad Ali/Cassius Clay",
+    "Mark Spitz/Spitz;Katie Ledecky/Ledecky;Serena Williams/Serena;Venus Williams/Venus;LeBron James/LeBron;Kobe Bryant/Kobe;Michael Jordan;Lionel Messi/Messi;Neymar/Neymar Jr;Rafael Nadal/Nadal;Roger Federer/Federer;Novak Djokovic/Djokovic;Jesse Owens/Owens;Ana Gabriela Guevara/Guevara;Allyson Felix/Felix;Florence Griffith Joyner/Flo-Jo;Mo Farah/Farah;Eliud Kipchoge/Kipchoge",
+    "Ian Thorpe;Michael Johnson;Carl Lewis;Haile Gebrselassie/Gebrselassie;Yelena Isinbayeva/Isinbáyeva;Sergey Bubka/Bubka;Kerri Strug/Strug;Larisa Latynina/Latynina;Paavo Nurmi/Nurmi;Emil Zátopek/Zatopek;Abebe Bikila/Bikila;Wilma Rudolph;Jackie Joyner-Kersee/Joyner-Kersee;Dawn Fraser;Johnny Weissmuller/Weissmuller;Duke Kahanamoku/Kahanamoku;Joaquín Capilla/Capilla;Soraya Jiménez;Humberto Mariles/Mariles;Paola Espinosa;Alejandra Orozco;Fernando Platas/Platas;Oribe Peralta/Peralta;Guadalupe González/Lupita González;Daniel Bautista;Óscar De La Hoya/De La Hoya",
+    "Justin Gatlin/Gatlin;Ryan Lochte/Lochte;Adam Peaty/Peaty;Caeleb Dressel/Dressel;Alexander Karelin/Karelin;Mijaín López;Teófilo Stevenson/Stevenson;Javier Sotomayor/Sotomayor;Kenenisa Bekele/Bekele;Tirunesh Dibaba/Dibaba;Shelly-Ann Fraser-Pryce/Fraser-Pryce;Elaine Thompson-Herah/Thompson-Herah;Armand Duplantis/Duplantis/Mondo Duplantis;Sifan Hassan;Léon Marchand/Marchand;Sun Yang;Lin Dan;Gabby Douglas;Aly Raisman/Raisman;Tom Daley/Daley;Greg Louganis/Louganis;Mary Lou Retton/Retton;Olga Korbut/Korbut;Věra Čáslavská/Caslavska;Kōhei Uchimura/Uchimura",
+    "Ray Ewry/Ewry;Bob Beamon/Beamon;Dick Fosbury/Fosbury;Al Oerter/Oerter;Harrison Dillard/Dillard;Fanny Blankers-Koen/Blankers-Koen;Babe Didrikson;Alberto Juantorena/Juantorena;Lasse Virén/Virén;Matt Biondi/Biondi;Alexander Popov/Popov;Pieter van den Hoogenband/Van den Hoogenband;Inge de Bruijn/De Bruijn;Kristin Otto;Krisztina Egerszegi/Egerszegi;Dara Torres",
+    "Jim Thorpe;Ville Ritola/Ritola;Hannes Kolehmainen/Kolehmainen;Ulrike Meyfarth/Meyfarth;Betty Cuthbert/Cuthbert;Vitaly Scherbo/Scherbo;Kornelia Ender/Ender"]
+]);
+
+CC.add("geografia", { since: "2026-11-28" }, [
+  ["Nombra una región de Italia",
+    "Toscana/Tuscany;Lombardía/Lombardy;Sicilia/Sicily;Lacio/Lazio",
+    "Véneto/Veneto;Campania;Piamonte/Piedmont;Cerdeña/Sardinia;Liguria;Emilia-Romaña/Emilia-Romagna;Apulia/Puglia",
+    "Calabria;Umbría/Umbria;Marcas/Marche;Abruzos/Abruzzo;Friuli-Venecia Julia/Friuli Venezia Giulia/Friuli;Trentino-Alto Adigio/Trentino-Alto Adige/Trentino",
+    "Basilicata/Lucania;Molise;Valle de Aosta/Aosta Valley",
+    "",
+    ""],
+
+  ["Nombra un estado o un territorio de Australia",
+    "Nueva Gales del Sur/New South Wales;Queensland;Victoria",
+    "Australia Occidental/Western Australia;Tasmania",
+    "Australia Meridional/South Australia;Territorio del Norte/Northern Territory",
+    "Territorio de la Capital Australiana/Australian Capital Territory/ACT",
+    "Isla Norfolk/Norfolk Island;Isla de Navidad/Christmas Island;Islas Cocos/Cocos Islands/Islas Cocos (Keeling);Islas Heard y McDonald/Heard Island and McDonald Islands;Territorio Antártico Australiano/Australian Antarctic Territory",
+    ""],
+
+  ["Nombra un lugar o monumento famoso de París",
+    "Torre Eiffel/Eiffel Tower;Museo del Louvre/Louvre;Arco del Triunfo/Arc de Triomphe;Catedral de Notre-Dame/Notre-Dame/Notre Dame",
+    "Campos Elíseos/Champs-Élysées/Champs Elysees;Basílica del Sagrado Corazón/Sagrado Corazón/Sacré-Cœur/Sacre Coeur;Río Sena/Sena/Seine;Montmartre;Moulin Rouge",
+    "Museo de Orsay/Musée d'Orsay/Orsay;Centro Pompidou/Pompidou;Barrio Latino/Quartier Latin/Latin Quarter;Panteón de París/Panteón/Panthéon;Jardín de las Tullerías/Jardines de las Tullerías/Tuileries;Plaza de la Concordia/Place de la Concorde;Ópera Garnier/Palais Garnier/Ópera de París;Isla de la Cité/Île de la Cité;Pirámide del Louvre/Louvre Pyramid",
+    "Cementerio Père-Lachaise/Père Lachaise;Jardines de Luxemburgo/Jardín de Luxemburgo/Luxembourg Gardens;Torre Montparnasse/Montparnasse;Los Inválidos/Les Invalides/Hôtel des Invalides;Gran Palacio/Grand Palais;Petit Palais/Pequeño Palacio;Plaza Vendôme/Place Vendôme;Puente Alejandro III/Pont Alexandre III;Pont Neuf/Puente Nuevo;La Défense/Grande Arche;Bosque de Bolonia/Bois de Boulogne;Isla de San Luis/Île Saint-Louis;Museo Rodin/Musée Rodin;Plaza de los Vosgos/Place des Vosges;Santa Capilla/Sainte-Chapelle;Conciergerie",
+    "Catacumbas de París/Catacumbas/Catacombs;Museo Picasso;Museo de la Orangerie/Orangerie;Palais de Tokyo;Fundación Louis Vuitton;Torre Saint-Jacques;Parque de Buttes-Chaumont/Buttes-Chaumont;Canal Saint-Martin;Muro de los Te Quiero/Mur des je t'aime;Pasaje Jouffroy/Passage Jouffroy;Shakespeare and Company;Café de Flore;Les Deux Magots;Ciudad de las Ciencias/Cité des Sciences;Gran Mezquita de París/Grande Mosquée",
+    "Museo Carnavalet;Museo de Cluny;Parque Monceau/Parc Monceau;Bateau-Lavoir;Mercado de las Pulgas de Saint-Ouen/Marché aux Puces;Palacio Real de París/Palais Royal;Ayuntamiento de París/Hôtel de Ville;Palacio del Elíseo/Élysée;Roland Garros/Stade Roland-Garros;Parque de los Príncipes/Parc des Princes"],
+
+  ["Nombra un lugar o monumento famoso de Grecia",
+    "Partenón/Parthenon;Acrópolis/Acropolis;Santorini/Thira;Delfos/Delphi;Olimpia/Olympia",
+    "Mykonos;Meteora/Meteoros;Monte Olimpo/Olimpo/Mount Olympus;Creta/Crete;Palacio de Cnosos/Cnosos/Knossos;Cabo Sunión/Templo de Poseidón/Sunion;Estadio Panatenaico/Panathenaic Stadium;Plaka;Corinto/Corinth;Rodas/Rhodes",
+    "Templo de Zeus Olímpico/Olympieion;Ágora antigua de Atenas/Ágora/Ancient Agora;Teatro de Epidauro/Epidauro/Epidaurus;Micenas/Mycenae;Corfú/Corfu;Zakynthos/Zante/Zacinto;Playa de Navagio/Navagio/Shipwreck Beach;Oia;Monte Athos/Athos/Mount Athos;Esparta/Sparta;Termópilas/Thermopylae;Cefalonia/Kefalonia;Garganta de Samaria/Gargantas de Samaria/Samaria Gorge",
+    "Teatro de Dioniso/Theatre of Dionysus;Erecteion/Erechtheion/Erecteón;Templo de Atenea Niké/Athena Nike;Museo de la Acrópolis/Acropolis Museum;Torre de los Vientos/Tower of the Winds;Monte Licabeto/Licabeto/Lycabettus;Tesalónica/Salónica/Thessaloniki;Torre Blanca/White Tower;Naxos;Paros;Milos/Melos;Patmos;Delos;Hidra/Hydra;Egina/Aegina;Lesbos/Lesvos;Garganta de Vikos/Vikos;Monemvasia;Mistrás/Mystras;Nauplia/Nafplio;Vergina/Aigai",
+    "Tholos de Delfos/Tholos;Templo de Apolo en Bassae/Bassae;Asclepeion/Asklepieion;Lindos;Mesolongi/Missolonghi;Playa de Balos/Balos;Playa de Elafonisi/Elafonisi;Cueva de Melissani/Melissani;Samotracia/Samothrace;Filipos/Philippi;Dodona;Akrotiri;Ítaca/Ithaca;Skiathos",
+    "Pilos/Pylos/Navarino;Monte Pelión/Pelion;Kastelorizo/Kastellorizo;Zagori;Skopelos;Alonissos;Léucade/Lefkada/Lefkas;Kalymnos;Gavdos;Quíos/Chios;Samos"]
+]);
+
+CC.add("pokemon", { since: "2026-11-28" }, [
+  ["Nombra una máquina oculta (MO) de los juegos de Pokémon",
+    "Corte/Cut;Surf;Vuelo/Fly;Fuerza/Strength",
+    "Destello/Flash;Cascada/Waterfall;Buceo/Dive;Golpe Roca/Rock Smash",
+    "Treparrocas/Rock Climb;Torbellino/Whirlpool",
+    "Despejar/Defog",
+    "",
+    ""],
+
+  ["Nombra un profesor Pokémon de los juegos",
+    "Profesor Oak/Oak/Samuel Oak/Profesor Roble",
+    "Profesor Elm/Elm;Profesor Abedul/Abedul/Birch;Profesor Serbal/Serbal/Rowan;Profesora Encina/Encina/Juniper",
+    "Profesor Sicomoro/Sicomoro/Sycamore;Profesor Kukui/Kukui;Profesora Magnolia/Magnolia",
+    "Profesora Sada/Sada;Profesor Turo/Turo;Profesor Laventon/Laventon",
+    "",
+    ""],
+
+  ["Nombra un miembro del Alto Mando de alguna región Pokémon (en los juegos)",
+    "Lance;Lorelei;Bruno;Agatha",
+    "Koga;Karen;Will;Sidney;Phoebe;Glacia;Drake",
+    "Aaron;Bertha;Flint;Lucian;Shauntal;Grimsley;Caitlin;Marshal",
+    "Malva;Siebold;Wikstrom;Drasna;Hala;Olivia;Acerola;Kahili",
+    "Rika;Poppy;Larry;Hassel",
+    ""]
+]);

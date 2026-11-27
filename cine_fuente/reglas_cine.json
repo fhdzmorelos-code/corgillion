@@ -62,6 +62,9 @@
  ]},
  {"since": "2026-11-27", "filas": [
   ["Nombra una película de misterio (Mystery en IMDb, 1,000+ votos)", {"genero": "Mystery"}]
+ ]},
+ {"since": "2026-11-28", "filas": [
+  ["Nombra una serie de crimen (Crime en IMDb, 1,000+ votos)", {"tipo": "serie", "genero": "Crime"}]
  ]}
  ],
  "completar": [

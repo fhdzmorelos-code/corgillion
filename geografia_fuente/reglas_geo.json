@@ -61,6 +61,14 @@
   ["Nombra un río de Francia", {"tipo": "rio", "pais": "FRA", "fama_min": 20}],
   ["Nombra una isla de Indonesia o de Filipinas", {"tipo": "isla", "pais": ["IDN", "PHL"]}],
   ["Nombra la capital de un país de Asia cuyo nombre empiece con A, B, K o T", {"tipo": "capital", "continente": "Asia", "empieza": ["a", "b", "k", "t"]}]
+ ]},
+ {"since": "2026-11-28", "filas": [
+  ["Nombra una ciudad de Irán", {"tipo": "ciudad", "pais": "IRN"}],
+  ["Nombra una ciudad de Ucrania", {"tipo": "ciudad", "pais": "UKR"}],
+  ["Nombra una ciudad de Rusia con más de 300 mil habitantes", {"tipo": "ciudad", "pais": "RUS", "pob_min": 300000}],
+  ["Nombra un río de España", {"tipo": "rio", "pais": "ESP"}],
+  ["Nombra un lago de África", {"tipo": "lago", "continente": "África", "fama_min": 25}],
+  ["Nombra una ciudad de la India con más de un millón de habitantes", {"tipo": "ciudad", "pais": "IND", "pob_min": 1000000}]
  ]}
  ],
  "completar": [
@@ -68,7 +76,7 @@
   ["Nombra una isla de Asia", {"tipo": "isla", "continente": "Asia", "fama_min": 30}],
   ["Nombra una ciudad de Estados Unidos", {"tipo": "ciudad", "pais": "USA"}],
   ["Nombra una ciudad de España", {"tipo": "ciudad", "pais": "ESP"}],
-  ["Nombra una ciudad de Italia", {"tipo": "ciudad", "pais": "ITA"}],
+  ["Nombra una ciudad de Irán", {"tipo": "ciudad", "pais": "IRN"}],
   ["Nombra una ciudad de Alemania", {"tipo": "ciudad", "pais": "DEU"}],
   ["Nombra una ciudad de Francia", {"tipo": "ciudad", "pais": "FRA"}],
   ["Nombra una ciudad de China", {"tipo": "ciudad", "pais": "CHN"}],
@@ -76,7 +84,7 @@
   ["Nombra una ciudad del Reino Unido", {"tipo": "ciudad", "pais": "GBR"}],
   ["Nombra una ciudad de Colombia", {"tipo": "ciudad", "pais": "COL"}],
   ["Nombra una ciudad de la India", {"tipo": "ciudad", "pais": "IND"}],
-  ["Nombra una ciudad de Canadá", {"tipo": "ciudad", "pais": "CAN"}],
+  ["Nombra una ciudad de Ucrania", {"tipo": "ciudad", "pais": "UKR"}],
   ["Nombra una ciudad de Brasil", {"tipo": "ciudad", "pais": "BRA"}],
   ["Nombra una ciudad de Centroamérica", {"tipo": "ciudad", "pais": ["GTM", "BLZ", "HND", "SLV", "NIC", "CRI", "PAN"]}],
   ["Nombra una ciudad de Sudamérica que no sea capital de su país", {"tipo": "ciudad", "continente": "Sudamérica", "capital": false}],

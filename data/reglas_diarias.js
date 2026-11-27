@@ -100,3 +100,13 @@ CC.regla("pokemon", { since: "2026-11-27" }, [
   ["Nombra un Pokémon con 110 o más de velocidad base que no sea legendario ni mítico", {"velocidad_min": 110, "leg": "no"}],
   ["Nombra un Pokémon de tipo Agua que también tenga otro tipo", {"tipo": ["Agua"], "num_tipos": 2}]
 ]);
+
+CC.regla("pokemon", { since: "2026-11-28" }, [
+  ["Nombra un Pokémon de tipo Dragón que también tenga otro tipo", {"tipo": ["Dragón"], "num_tipos": 2}],
+  ["Nombra un Pokémon cuyo nombre en español empiece con la letra R", {"empieza": "r"}],
+  ["Nombra un Pokémon que pueda tener la habilidad Espesura", {"habilidad": "Espesura"}],
+  ["Nombra un Pokémon de tipo Planta con 100 o más de ataque especial base", {"tipo": ["Planta"], "ataque_esp_min": 100}],
+  ["Nombra un Pokémon de la séptima generación con dos tipos", {"gen": 7, "num_tipos": 2}],
+  ["Nombra un Pokémon de tipo Fantasma que mida un metro o más", {"tipo": ["Fantasma"], "alt_min": 1}],
+  ["Nombra un Pokémon cuyo nombre en español termine en la letra E", {"termina": "e"}]
+]);

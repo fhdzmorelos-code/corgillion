@@ -40,6 +40,9 @@
  ]},
  {"since": "2026-11-26", "filas": [
   ["Nombra un videojuego de PlayStation 3", {"plataforma": "Q10683"}]
+ ]},
+ {"since": "2026-11-28", "filas": [
+  ["Nombra un videojuego de Xbox One", {"plataforma": "Q13361286"}]
  ]}
  ],
  "completar": [
