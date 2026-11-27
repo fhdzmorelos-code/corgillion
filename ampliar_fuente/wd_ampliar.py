@@ -25,7 +25,7 @@ PLANTILLA = """SELECT ?item ?es ?en ?sl ?taxon (GROUP_CONCAT(DISTINCT ?alt; sepa
   OPTIONAL { ?item skos:altLabel ?alt FILTER(lang(?alt) = "es") }
 } GROUP BY ?item ?es ?en ?sl ?taxon"""
 EXCLUIR = {"micrófono", "alto", "planta aromática", "pseudofruto", "johann wolfgang von goethe", "rabindranath tagore",
-           "matsuo bashō", "felix baumgartner", "mezcla de especias", "aceite de guindilla"}
+           "matsuo bashō", "felix baumgartner", "mezcla de especias", "aceite de guindilla", "north rhine", "región de edmonton capital"}
 CLUB = re.compile(r"(?i)\s*\b(F\.?\s?C\.?|A\.?\s?F\.?\s?C\.?|C\.?\s?F\.?|Football Club|Fútbol Club|Futebol Clube|Foot Ball Club|Club de Fútbol)\b\.?")
 
 

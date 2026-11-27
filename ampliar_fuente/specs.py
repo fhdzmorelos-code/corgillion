@@ -88,4 +88,42 @@ SPECS = [
     ("Nombra un futbolista que haya jugado en los Pumas de la UNAM (actual o histórico)",) + equipo_id("Q1143000", 6),
     ("Nombra un futbolista que haya jugado en los Tigres de la UANL (actual o histórico)",) + equipo_id("Q849823", 6),
     ("Nombra un club de fútbol de Sudamérica", "?item wdt:P31 wd:Q476028 ; wdt:P17 ?p . ?p wdt:P30 wd:Q18 .", 15, "club"),
+
+    # ---------- segunda ronda: música ----------
+    ("Nombra un compositor de música clásica", "?item wdt:P106 wd:Q36834 ; wdt:P31 wd:Q5 ; wdt:P136|wdt:P101 wd:Q9730 .", 30, "persona"),
+    ("Nombra una cantante de pop", "?item wdt:P106 wd:Q177220 ; wdt:P136 wd:Q37073 ; wdt:P21 wd:Q6581072 ; wdt:P31 wd:Q5 .", 40, "persona"),
+    ("Nombra un cantante o grupo de reguetón", '?g rdfs:label "reggaeton"@en . ?item wdt:P136 ?g . { ?item wdt:P31 wd:Q5 . } UNION { ?item wdt:P31/wdt:P279* wd:Q215380 . }', 8, "persona"),
+    ("Nombra una banda de rock del Reino Unido", "?item wdt:P31/wdt:P279* wd:Q215380 ; wdt:P136/wdt:P279* wd:Q11399 ; wdt:P495 wd:Q145 .", 25, "persona"),
+    ("Nombra una canción de Shakira", "?item wdt:P175 wd:Q34424 . ?item wdt:P31 ?t . VALUES ?t { wd:Q7366 wd:Q134556 }", 2, "persona"),
+
+    # ---------- segunda ronda: ciudades (más de 50 mil habitantes) ----------
+    ("Nombra una ciudad de Japón",) + (lambda q: (q, 12, "cosa"))("?item wdt:P17 wd:Q17 ; wdt:P1082 ?pop . FILTER(?pop >= 50000) ?item wdt:P31/wdt:P279* wd:Q515 ."),
+    ("Nombra una ciudad de Italia",) + (lambda q: (q, 20, "cosa"))("?item wdt:P17 wd:Q38 ; wdt:P1082 ?pop . FILTER(?pop >= 30000) ?item wdt:P31 wd:Q747074 ."),
+    ("Nombra una ciudad de Francia",) + (lambda q: (q, 20, "cosa"))("?item wdt:P17 wd:Q142 ; wdt:P1082 ?pop . FILTER(?pop >= 30000) ?item wdt:P31 wd:Q484170 ."),
+    ("Nombra una ciudad de Alemania",) + (lambda q: (q, 20, "cosa"))("?item wdt:P17 wd:Q183 ; wdt:P1082 ?pop . FILTER(?pop >= 40000) ?item wdt:P31/wdt:P279* wd:Q515 ."),
+    ("Nombra una ciudad de España",) + (lambda q: (q, 15, "cosa"))("?item wdt:P17 wd:Q29 ; wdt:P1082 ?pop . FILTER(?pop >= 30000) ?item wdt:P31 wd:Q2074737 ."),
+    ("Nombra una ciudad del Reino Unido",) + (lambda q: (q, 15, "cosa"))("?item wdt:P17 wd:Q145 ; wdt:P1082 ?pop . FILTER(?pop >= 40000) ?item wdt:P31/wdt:P279* wd:Q486972 ."),
+    ("Nombra una ciudad de Colombia",) + (lambda q: (q, 8, "cosa"))("?item wdt:P17 wd:Q739 ; wdt:P1082 ?pop . FILTER(?pop >= 40000) ?item wdt:P31/wdt:P279* wd:Q486972 ."),
+    ("Nombra una ciudad de Canadá",) + (lambda q: (q, 10, "cosa"))("?item wdt:P17 wd:Q16 ; wdt:P1082 ?pop . FILTER(?pop >= 25000) ?item wdt:P31/wdt:P279* wd:Q486972 ."),
+    ("Nombra una ciudad de Polonia",) + (lambda q: (q, 15, "cosa"))("?item wdt:P17 wd:Q36 ; wdt:P1082 ?pop . FILTER(?pop >= 40000) ?item wdt:P31/wdt:P279* wd:Q515 ."),
+    ("Nombra una ciudad de Ucrania",) + (lambda q: (q, 15, "cosa"))("?item wdt:P17 wd:Q212 ; wdt:P1082 ?pop . FILTER(?pop >= 40000) ?item wdt:P31/wdt:P279* wd:Q515 ."),
+    ("Nombra una ciudad de Argentina",) + (lambda q: (q, 8, "cosa"))("?item wdt:P17 wd:Q414 ; wdt:P1082 ?pop . FILTER(?pop >= 30000) ?item wdt:P31/wdt:P279* wd:Q486972 ."),
+    ("Nombra una ciudad de Corea del Sur",) + (lambda q: (q, 12, "cosa"))("?item wdt:P17 wd:Q884 ; wdt:P1082 ?pop . FILTER(?pop >= 50000) ?item wdt:P31/wdt:P279* wd:Q515 ."),
+    ("Nombra una ciudad de Australia",) + (lambda q: (q, 10, "cosa"))("?item wdt:P17 wd:Q408 ; wdt:P1082 ?pop . FILTER(?pop >= 20000) ?item wdt:P31/wdt:P279* wd:Q486972 ."),
+    ("Nombra una ciudad de Brasil",) + (lambda q: (q, 15, "cosa"))("?item wdt:P17 wd:Q155 ; wdt:P1082 ?pop . FILTER(?pop >= 150000) ?item wdt:P31 wd:Q3184121 ."),
+
+    # ---------- segunda ronda: deportes ----------
+    ("Nombra un futbolista argentino (actual o histórico)",) + futbolistas_de("Q414", 30),
+    ("Nombra un portero o arquero de fútbol famoso (actual o histórico)", "?item wdt:P413 wd:Q201330 ; wdt:P106 wd:Q937857 ; wdt:P31 wd:Q5 ; p:P54/pq:P1350 [] .", 30, "persona"),
+    ("Nombra un jugador que haya jugado en los Knicks de Nueva York (actual o histórico)",) + equipo("New York Knicks"),
+    ("Nombra un jugador que haya jugado en los Rockets de Houston (actual o histórico)",) + equipo("Houston Rockets"),
+    ("Nombra un jugador que haya jugado en los Seahawks de Seattle (actual o histórico)",) + equipo("Seattle Seahawks", 8),
+    ("Nombra un jugador que haya jugado en los 49ers de San Francisco (actual o histórico)",) + equipo("San Francisco 49ers", 8),
+    ("Nombra un jugador que haya jugado en los Chiefs de Kansas City (actual o histórico)",) + equipo("Kansas City Chiefs", 8),
+    ("Nombra un jugador que haya jugado en los Eagles de Filadelfia (actual o histórico)",) + equipo("Philadelphia Eagles", 8),
+    ("Nombra un pelotero que haya jugado en los Dodgers de Los Ángeles (actual o histórico)",) + equipo("Los Angeles Dodgers", 10),
+    ("Nombra un futbolista que haya jugado en la Juventus (actual o histórico)",) + equipo("Juventus FC", 20),
+    ("Nombra un futbolista que haya jugado en el FC Barcelona (actual o histórico)",) + equipo("FC Barcelona", 20),
+    ("Nombra un futbolista que haya jugado en el Bayern de Múnich (actual o histórico)",) + equipo("FC Bayern Munich", 20),
+    ("Nombra un futbolista que haya jugado en el Chelsea (actual o histórico)",) + equipo("Chelsea F.C.", 20),
 ]

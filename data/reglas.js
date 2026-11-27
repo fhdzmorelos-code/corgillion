@@ -229,7 +229,7 @@
       var nuevas = CC.build(row);
       c.prompts.forEach(function (pr) {
         if (pr.q !== fila[0]) { return; }
-        var claves = {};
+        var claves = Object.create(null);
         pr.answers.forEach(function (a) { a.keys.forEach(function (k) { claves[k] = 1; }); });
         nuevas.forEach(function (a) {
           if (a.keys.some(function (k) { return claves[k]; })) { return; }
@@ -251,7 +251,7 @@
       var nuevas = CC.build(row);
       c.prompts.forEach(function (pr) {
         if (pr.q !== row[0]) { return; }
-        var claves = {};
+        var claves = Object.create(null);
         pr.answers.forEach(function (a) { a.keys.forEach(function (k) { claves[k] = a; }); });
         nuevas.forEach(function (a) {
           var ya = null;
