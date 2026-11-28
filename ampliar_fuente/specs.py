@@ -12,6 +12,13 @@ def equipo_id(qid, minimo=6):
     return ("?item wdt:P54 wd:%s ; wdt:P31 wd:Q5 ." % qid, minimo, "persona_es")
 
 
+def personajes(qids, minimo=3):
+    # personajes de ficción que aparecen en la obra o pertenecen a su universo o franquicia
+    vals = " ".join("wd:" + q for q in qids.split())
+    return ("VALUES ?w { %s } { ?item wdt:P1441 ?w } UNION { ?item wdt:P1080 ?w } UNION { ?item wdt:P8345 ?w } "
+            "?item wdt:P31/wdt:P279* wd:Q95074 ." % vals, minimo, "persona_es")
+
+
 def futbolistas_de(pais_qid, minimo):
     return ("?item wdt:P106 wd:Q937857 ; wdt:P1532 wd:%s ; wdt:P31 wd:Q5 ." % pais_qid, minimo, "persona")
 
@@ -126,4 +133,36 @@ SPECS = [
     ("Nombra un futbolista que haya jugado en el FC Barcelona (actual o histórico)",) + equipo("FC Barcelona", 20),
     ("Nombra un futbolista que haya jugado en el Bayern de Múnich (actual o histórico)",) + equipo("FC Bayern Munich", 20),
     ("Nombra un futbolista que haya jugado en el Chelsea (actual o histórico)",) + equipo("Chelsea F.C.", 20),
+
+    # ---------- tercera ronda: personajes (de la obra o de su franquicia) ----------
+    ("Nombra un personaje de Los Simpson",) + personajes("Q886 Q7764350"),
+    ("Nombra un personaje de Star Wars",) + personajes("Q462 Q19786052", 6),
+    ("Nombra un personaje de Harry Potter",) + personajes("Q216930 Q30739117"),
+    ("Nombra un personaje de los Looney Tunes",) + personajes("Q622435"),
+    ("Nombra un personaje de Bob Esponja",) + personajes("Q83279 Q98109524"),
+    ("Nombra un personaje de las películas de Shrek",) + personajes("Q1203222"),
+    ("Nombra un personaje de Toy Story",) + personajes("Q2316015"),
+    ("Nombra un personaje de la saga Super Mario",) + personajes("Q4803535"),
+    ("Nombra un personaje de la saga Sonic",) + personajes("Q1046812 Q29906232"),
+    ("Nombra un personaje de Dragon Ball",) + personajes("Q2020 Q239506 Q15051307"),
+    ("Nombra un personaje de Naruto",) + personajes("Q642 Q25929253 Q26971382"),
+    ("Nombra un personaje de One Piece",) + personajes("Q673 Q28667972 Q710324"),
+    ("Nombra un personaje de Juego de Tronos (Game of Thrones)",) + personajes("Q45875 Q23572"),
+    ("Nombra un personaje de Attack on Titan (Shingeki no Kyojin)",) + personajes("Q586025 Q22126305"),
+    ("Nombra un personaje de Demon Slayer (Kimetsu no Yaiba)",) + personajes("Q105037706 Q24862683 Q63350570", 1),
+
+    # ---------- tercera ronda: NFL y selecciones ----------
+    ("Nombra un jugador de la NFL que no haya sido mariscal de campo (quarterback)", "?item wdt:P106 wd:Q19204627 ; wdt:P31 wd:Q5 . ?item wdt:P54 ?tm . ?tm wdt:P118 wd:Q1215884 . FILTER NOT EXISTS { ?item wdt:P106 wd:Q13474373 } FILTER NOT EXISTS { ?item wdt:P413 wd:Q622747 }", 25, "persona"),
+    ("Nombra un receptor abierto (wide receiver) de la NFL (actual o histórico)", "?item wdt:P413 wd:Q918224 ; wdt:P31 wd:Q5 . ?item wdt:P54 ?tm . ?tm wdt:P118 wd:Q1215884 . FILTER NOT EXISTS { ?item wdt:P106 wd:Q13474373 }", 6, "persona"),
+    ("Nombra un corredor (running back) de la NFL (actual o histórico)", "?item wdt:P413 wd:Q912985 ; wdt:P31 wd:Q5 . ?item wdt:P54 ?tm . ?tm wdt:P118 wd:Q1215884 . FILTER NOT EXISTS { ?item wdt:P106 wd:Q13474373 }", 6, "persona"),
+    ("Nombra un ala cerrada (tight end) de la NFL (actual o histórico)", "?item wdt:P413 wd:Q1153176 ; wdt:P31 wd:Q5 . ?item wdt:P54 ?tm . ?tm wdt:P118 wd:Q1215884 . FILTER NOT EXISTS { ?item wdt:P106 wd:Q13474373 }", 5, "persona"),
+    ("Nombra un jugador defensivo de la NFL (actual o histórico)", "?item wdt:P413 ?pos ; wdt:P31 wd:Q5 . VALUES ?pos { wd:Q528145 wd:Q869161 wd:Q903354 wd:Q2550304 wd:Q24994 wd:Q10566551 } ?item wdt:P54 ?tm . ?tm wdt:P118 wd:Q1215884 . FILTER NOT EXISTS { ?item wdt:P106 wd:Q13474373 }", 8, "persona"),
+    ("Nombra un jugador que haya jugado en la selección de Argentina o en la de Brasil", "?item wdt:P54 ?t ; wdt:P31 wd:Q5 . VALUES ?t { wd:Q79800 wd:Q83459 }", 25, "persona"),
+
+    # ---------- tercera ronda: más ciudades ----------
+    ("Nombra una ciudad de Perú o de Chile", "?item wdt:P17 ?pais ; wdt:P1082 ?pop . VALUES ?pais { wd:Q419 wd:Q298 } FILTER(?pop >= 30000) ?item wdt:P31/wdt:P279* wd:Q486972 .", 8, "cosa"),
+    ("Nombra una ciudad de Venezuela o de Ecuador", "?item wdt:P17 ?pais ; wdt:P1082 ?pop . VALUES ?pais { wd:Q717 wd:Q736 } FILTER(?pop >= 30000) ?item wdt:P31/wdt:P279* wd:Q486972 .", 8, "cosa"),
+    ("Nombra una ciudad de Turquía", "?item wdt:P17 wd:Q43 ; wdt:P1082 ?pop . FILTER(?pop >= 80000) ?item wdt:P31/wdt:P279* wd:Q486972 .", 15, "cosa"),
+    ("Nombra una ciudad de China", "?item wdt:P17 wd:Q148 ; wdt:P1082 ?pop . FILTER(?pop >= 500000) ?item wdt:P31/wdt:P279* wd:Q515 .", 25, "cosa"),
+    ("Nombra una ciudad de Estados Unidos", "?item wdt:P17 wd:Q30 ; wdt:P31 wd:Q1093829 ; wdt:P1082 ?pop . FILTER(?pop >= 100000)", 30, "cosa"),
 ]
